@@ -1,0 +1,44 @@
+[
+  {
+    "source": "https://github.com/openfootball/belgium/blob/master/2023-24/be1.txt",
+    "parsed": 313,
+    "new_results": 313,
+    "season": "2023-24",
+    "league": "be.1"
+  },
+  {
+    "source": "https://github.com/openfootball/belgium/blob/master/2025-26/be1.txt",
+    "parsed": 121,
+    "new_results": 17,
+    "season": "2025-26",
+    "league": "be.1"
+  },
+  {
+    "source": "https://github.com/openfootball/europe/blob/master/turkey/2023-24_tr1.txt",
+    "parsed": 380,
+    "new_results": 380,
+    "season": "2023-24",
+    "league": "tr.1"
+  },
+  {
+    "source": "https://github.com/openfootball/europe/blob/master/turkey/2025-26_tr1.txt",
+    "parsed": 99,
+    "new_results": 0,
+    "season": "2025-26",
+    "league": "tr.1"
+  },
+  {
+    "source": "https://github.com/openfootball/europe/blob/master/greece/2023-24_gr1.txt",
+    "parsed": 240,
+    "new_results": 240,
+    "season": "2023-24",
+    "league": "gr.1"
+  },
+  {
+    "source": "https://github.com/openfootball/europe/blob/master/greece/2025-26_gr1.txt",
+    "parsed": 62,
+    "new_results": 0,
+    "season": "2025-26",
+    "league": "gr.1"
+  }
+]

@@ -32,7 +32,10 @@ def features(rows, window, half_life):
         for m in rs:
             day=date.fromisoformat(m['date']); cutoff=(day-timedelta(days=2)).isoformat()
             while cursor<len(rs) and rs[cursor]['date']<cutoff:
-                r=rs[cursor];h,a=r['home'],r['away'];rh,ra=rating[h],rating[a]
+                r=rs[cursor]
+                # Unplayed prospective fixtures get features but never enter history.
+                if r.get('pending'):cursor+=1;continue
+                h,a=r['home'],r['away'];rh,ra=rating[h],rating[a]
                 expected=1/(1+10**((ra-rh-60)/400));out=1 if r['hg']>r['ag'] else .5 if r['hg']==r['ag'] else 0
                 rating[h]+=20*(out-expected);rating[a]-=20*(out-expected)
                 teams[h].append((r['hg'],r['ag'],1,ra,r['date']))

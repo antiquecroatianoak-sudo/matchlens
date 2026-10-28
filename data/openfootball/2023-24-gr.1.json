@@ -1,0 +1,3098 @@
+{
+  "name": "gr.1 2023-24",
+  "matches": [
+    {
+      "round": "Matchday 1",
+      "date": "2023-08-18",
+      "team1": "Volos NFC",
+      "team2": "Lamia",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "21:00"
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2023-08-20",
+      "team1": "PAS Giannina",
+      "team2": "AE Kifisias",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2023-08-20",
+      "team1": "OFI Heraklion",
+      "team2": "Aris Saloniki",
+      "score": {
+        "ft": [
+          3,
+          2
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2023-08-20",
+      "team1": "PAOK Saloniki",
+      "team2": "Asteras Tripolis",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2023-08-20",
+      "team1": "Olympiakos Piraeus",
+      "team2": "Panserraikos",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "22:00"
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2023-10-08",
+      "team1": "AEK Athen",
+      "team2": "Panetolikos",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2023-10-08",
+      "team1": "Panathinaikos",
+      "team2": "Atromitos",
+      "score": {
+        "ft": [
+          5,
+          0
+        ]
+      },
+      "time": "21:30"
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2023-08-25",
+      "team1": "Panetolikos",
+      "team2": "PAS Giannina",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "21:00"
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2023-08-26",
+      "team1": "Asteras Tripolis",
+      "team2": "OFI Heraklion",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2023-08-26",
+      "team1": "Panathinaikos",
+      "team2": "Volos NFC",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2023-08-26",
+      "team1": "AEK Athen",
+      "team2": "Panserraikos",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "21:30"
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2023-08-27",
+      "team1": "Lamia",
+      "team2": "Aris Saloniki",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "19:15"
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2023-08-27",
+      "team1": "PAOK Saloniki",
+      "team2": "AE Kifisias",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "21:00"
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2023-08-27",
+      "team1": "Olympiakos Piraeus",
+      "team2": "Atromitos",
+      "score": {
+        "ft": [
+          4,
+          0
+        ]
+      },
+      "time": "21:30"
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2023-09-01",
+      "team1": "AE Kifisias",
+      "team2": "Atromitos",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "21:00"
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2023-09-02",
+      "team1": "Panserraikos",
+      "team2": "Panetolikos",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "21:00"
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2023-09-03",
+      "team1": "Aris Saloniki",
+      "team2": "Asteras Tripolis",
+      "score": {
+        "ft": [
+          3,
+          2
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2023-09-03",
+      "team1": "OFI Heraklion",
+      "team2": "PAOK Saloniki",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2023-09-03",
+      "team1": "Olympiakos Piraeus",
+      "team2": "Lamia",
+      "score": {
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2023-09-03",
+      "team1": "Volos NFC",
+      "team2": "AEK Athen",
+      "score": {
+        "ft": [
+          2,
+          3
+        ]
+      },
+      "time": "21:30"
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2023-09-03",
+      "team1": "PAS Giannina",
+      "team2": "Panathinaikos",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "21:45"
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2023-09-16",
+      "team1": "Lamia",
+      "team2": "OFI Heraklion",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2023-09-16",
+      "team1": "Panetolikos",
+      "team2": "Panathinaikos",
+      "score": {
+        "ft": [
+          0,
+          5
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2023-09-17",
+      "team1": "Asteras Tripolis",
+      "team2": "PAS Giannina",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "15:00"
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2023-09-17",
+      "team1": "AE Kifisias",
+      "team2": "Panserraikos",
+      "score": {
+        "ft": [
+          4,
+          4
+        ]
+      },
+      "time": "18:00"
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2023-09-17",
+      "team1": "PAOK Saloniki",
+      "team2": "Aris Saloniki",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2023-09-17",
+      "team1": "AEK Athen",
+      "team2": "Olympiakos Piraeus",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "21:30"
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2023-09-18",
+      "team1": "Atromitos",
+      "team2": "Volos NFC",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "18:00"
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2023-09-23",
+      "team1": "OFI Heraklion",
+      "team2": "Atromitos",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2023-09-23",
+      "team1": "Panserraikos",
+      "team2": "Lamia",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2023-09-24",
+      "team1": "Olympiakos Piraeus",
+      "team2": "AE Kifisias",
+      "score": {
+        "ft": [
+          4,
+          0
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2023-09-24",
+      "team1": "Aris Saloniki",
+      "team2": "Panetolikos",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2023-09-24",
+      "team1": "Volos NFC",
+      "team2": "Asteras Tripolis",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2023-09-24",
+      "team1": "PAS Giannina",
+      "team2": "PAOK Saloniki",
+      "score": {
+        "ft": [
+          1,
+          3
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2023-09-25",
+      "team1": "Panathinaikos",
+      "team2": "AEK Athen",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "21:00"
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2023-09-27",
+      "team1": "Panetolikos",
+      "team2": "OFI Heraklion",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2023-09-27",
+      "team1": "AE Kifisias",
+      "team2": "Lamia",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "18:00"
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2023-09-27",
+      "team1": "Olympiakos Piraeus",
+      "team2": "Aris Saloniki",
+      "score": {
+        "ft": [
+          4,
+          1
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2023-09-27",
+      "team1": "PAOK Saloniki",
+      "team2": "Volos NFC",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2023-09-28",
+      "team1": "Panserraikos",
+      "team2": "PAS Giannina",
+      "score": {
+        "ft": [
+          3,
+          2
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2023-09-28",
+      "team1": "Asteras Tripolis",
+      "team2": "Panathinaikos",
+      "score": {
+        "ft": [
+          1,
+          4
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2023-09-28",
+      "team1": "AEK Athen",
+      "team2": "Atromitos",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "21:00"
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2023-10-01",
+      "team1": "Lamia",
+      "team2": "Panetolikos",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "15:00"
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2023-10-01",
+      "team1": "Aris Saloniki",
+      "team2": "AE Kifisias",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2023-10-01",
+      "team1": "Panathinaikos",
+      "team2": "PAOK Saloniki",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2023-10-01",
+      "team1": "PAS Giannina",
+      "team2": "Olympiakos Piraeus",
+      "score": {
+        "ft": [
+          0,
+          3
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2023-10-02",
+      "team1": "Atromitos",
+      "team2": "Asteras Tripolis",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "18:00"
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2023-10-02",
+      "team1": "OFI Heraklion",
+      "team2": "AEK Athen",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2023-11-29",
+      "team1": "Volos NFC",
+      "team2": "Panserraikos",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2023-10-20",
+      "team1": "Lamia",
+      "team2": "PAS Giannina",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2023-10-21",
+      "team1": "Panetolikos",
+      "team2": "Volos NFC",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2023-10-21",
+      "team1": "Panserraikos",
+      "team2": "Aris Saloniki",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2023-10-22",
+      "team1": "Asteras Tripolis",
+      "team2": "AEK Athen",
+      "score": {
+        "ft": [
+          0,
+          3
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2023-10-22",
+      "team1": "AE Kifisias",
+      "team2": "OFI Heraklion",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2023-10-22",
+      "team1": "PAOK Saloniki",
+      "team2": "Atromitos",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "18:30"
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2023-10-22",
+      "team1": "Olympiakos Piraeus",
+      "team2": "Panathinaikos",
+      "score": {
+        "ft": [
+          0,
+          3
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2023-10-28",
+      "team1": "Volos NFC",
+      "team2": "AE Kifisias",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2023-10-28",
+      "team1": "Atromitos",
+      "team2": "Panetolikos",
+      "score": {
+        "ft": [
+          3,
+          2
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2023-10-29",
+      "team1": "Asteras Tripolis",
+      "team2": "Lamia",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2023-10-29",
+      "team1": "Panathinaikos",
+      "team2": "Panserraikos",
+      "score": {
+        "ft": [
+          5,
+          0
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2023-10-29",
+      "team1": "Aris Saloniki",
+      "team2": "PAS Giannina",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2023-10-30",
+      "team1": "AEK Athen",
+      "team2": "PAOK Saloniki",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2023-10-30",
+      "team1": "OFI Heraklion",
+      "team2": "Olympiakos Piraeus",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "time": "21:30"
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2023-11-04",
+      "team1": "Lamia",
+      "team2": "Panathinaikos",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2023-11-04",
+      "team1": "AE Kifisias",
+      "team2": "AEK Athen",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2023-11-05",
+      "team1": "Panetolikos",
+      "team2": "Asteras Tripolis",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2023-11-05",
+      "team1": "PAS Giannina",
+      "team2": "Volos NFC",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2023-11-05",
+      "team1": "Olympiakos Piraeus",
+      "team2": "PAOK Saloniki",
+      "score": {
+        "ft": [
+          2,
+          4
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2023-11-05",
+      "team1": "Aris Saloniki",
+      "team2": "Atromitos",
+      "score": {
+        "ft": [
+          1,
+          3
+        ]
+      },
+      "time": "20:15"
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2023-11-06",
+      "team1": "Panserraikos",
+      "team2": "OFI Heraklion",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "18:00"
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2023-11-11",
+      "team1": "OFI Heraklion",
+      "team2": "PAS Giannina",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2023-11-11",
+      "team1": "Atromitos",
+      "team2": "Panserraikos",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2023-11-11",
+      "team1": "Volos NFC",
+      "team2": "Aris Saloniki",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2023-11-12",
+      "team1": "PAOK Saloniki",
+      "team2": "Panetolikos",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2023-11-12",
+      "team1": "AEK Athen",
+      "team2": "Lamia",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2023-11-12",
+      "team1": "Asteras Tripolis",
+      "team2": "Olympiakos Piraeus",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2023-11-12",
+      "team1": "AE Kifisias",
+      "team2": "Panathinaikos",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "21:30"
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2023-11-24",
+      "team1": "OFI Heraklion",
+      "team2": "Volos NFC",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "18:15"
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2023-11-25",
+      "team1": "Olympiakos Piraeus",
+      "team2": "Panetolikos",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2023-11-25",
+      "team1": "PAOK Saloniki",
+      "team2": "Panserraikos",
+      "score": {
+        "ft": [
+          5,
+          0
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2023-11-26",
+      "team1": "AE Kifisias",
+      "team2": "Asteras Tripolis",
+      "score": {
+        "ft": [
+          1,
+          3
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2023-11-26",
+      "team1": "PAS Giannina",
+      "team2": "AEK Athen",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2023-11-26",
+      "team1": "Lamia",
+      "team2": "Atromitos",
+      "score": {
+        "ft": [
+          3,
+          3
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2023-11-26",
+      "team1": "Aris Saloniki",
+      "team2": "Panathinaikos",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2023-12-02",
+      "team1": "Panetolikos",
+      "team2": "AE Kifisias",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2023-12-02",
+      "team1": "Asteras Tripolis",
+      "team2": "Panserraikos",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2023-12-03",
+      "team1": "Volos NFC",
+      "team2": "Olympiakos Piraeus",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "16:30"
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2023-12-03",
+      "team1": "Atromitos",
+      "team2": "PAS Giannina",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2023-12-03",
+      "team1": "Panathinaikos",
+      "team2": "OFI Heraklion",
+      "score": {
+        "ft": [
+          4,
+          0
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2023-12-04",
+      "team1": "PAOK Saloniki",
+      "team2": "Lamia",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "18:00"
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2023-12-04",
+      "team1": "AEK Athen",
+      "team2": "Aris Saloniki",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "21:00"
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2023-12-16",
+      "team1": "AE Kifisias",
+      "team2": "PAS Giannina",
+      "score": {
+        "ft": [
+          4,
+          2
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2023-12-17",
+      "team1": "Aris Saloniki",
+      "team2": "OFI Heraklion",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "15:00"
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2023-12-17",
+      "team1": "Asteras Tripolis",
+      "team2": "PAOK Saloniki",
+      "score": {
+        "ft": [
+          1,
+          4
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2023-12-17",
+      "team1": "Lamia",
+      "team2": "Volos NFC",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2023-12-17",
+      "team1": "Atromitos",
+      "team2": "Panathinaikos",
+      "score": {
+        "ft": [
+          3,
+          2
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2023-12-18",
+      "team1": "Panetolikos",
+      "team2": "AEK Athen",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2023-12-18",
+      "team1": "Panserraikos",
+      "team2": "Olympiakos Piraeus",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "18:00"
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2023-12-20",
+      "team1": "Aris Saloniki",
+      "team2": "Lamia",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2023-12-20",
+      "team1": "Volos NFC",
+      "team2": "Panathinaikos",
+      "score": {
+        "ft": [
+          0,
+          3
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2023-12-21",
+      "team1": "PAS Giannina",
+      "team2": "Panetolikos",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "15:00"
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2023-12-21",
+      "team1": "Panserraikos",
+      "team2": "AEK Athen",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2023-12-21",
+      "team1": "OFI Heraklion",
+      "team2": "Asteras Tripolis",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2023-12-21",
+      "team1": "AE Kifisias",
+      "team2": "PAOK Saloniki",
+      "score": {
+        "ft": [
+          0,
+          6
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2023-12-21",
+      "team1": "Atromitos",
+      "team2": "Olympiakos Piraeus",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2024-01-03",
+      "team1": "Asteras Tripolis",
+      "team2": "Aris Saloniki",
+      "score": {
+        "ft": [
+          3,
+          2
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2024-01-03",
+      "team1": "Lamia",
+      "team2": "Olympiakos Piraeus",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2024-01-03",
+      "team1": "AEK Athen",
+      "team2": "Volos NFC",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2024-01-03",
+      "team1": "PAOK Saloniki",
+      "team2": "OFI Heraklion",
+      "score": {
+        "ft": [
+          4,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2024-01-03",
+      "team1": "Panathinaikos",
+      "team2": "PAS Giannina",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "21:00"
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2024-01-04",
+      "team1": "Panetolikos",
+      "team2": "Panserraikos",
+      "score": {
+        "ft": [
+          3,
+          2
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2024-01-04",
+      "team1": "Atromitos",
+      "team2": "AE Kifisias",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2024-01-07",
+      "team1": "Panserraikos",
+      "team2": "AE Kifisias",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "15:00"
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2024-01-07",
+      "team1": "Volos NFC",
+      "team2": "Atromitos",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2024-01-07",
+      "team1": "Panathinaikos",
+      "team2": "Panetolikos",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2024-01-07",
+      "team1": "PAS Giannina",
+      "team2": "Asteras Tripolis",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2024-01-07",
+      "team1": "Aris Saloniki",
+      "team2": "PAOK Saloniki",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2024-01-07",
+      "team1": "Olympiakos Piraeus",
+      "team2": "AEK Athen",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "21:00"
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2024-01-08",
+      "team1": "OFI Heraklion",
+      "team2": "Lamia",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2024-01-13",
+      "team1": "Atromitos",
+      "team2": "OFI Heraklion",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2024-01-13",
+      "team1": "Lamia",
+      "team2": "Panserraikos",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2024-01-14",
+      "team1": "Panetolikos",
+      "team2": "Aris Saloniki",
+      "score": {
+        "ft": [
+          0,
+          4
+        ]
+      },
+      "time": "15:00"
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2024-01-14",
+      "team1": "AE Kifisias",
+      "team2": "Olympiakos Piraeus",
+      "score": {
+        "ft": [
+          2,
+          3
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2024-01-14",
+      "team1": "Asteras Tripolis",
+      "team2": "Volos NFC",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2024-01-14",
+      "team1": "AEK Athen",
+      "team2": "Panathinaikos",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2024-01-14",
+      "team1": "PAOK Saloniki",
+      "team2": "PAS Giannina",
+      "score": {
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2024-01-20",
+      "team1": "Lamia",
+      "team2": "AE Kifisias",
+      "score": {
+        "ft": [
+          4,
+          1
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2024-01-20",
+      "team1": "PAS Giannina",
+      "team2": "Panserraikos",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2024-01-20",
+      "team1": "OFI Heraklion",
+      "team2": "Panetolikos",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2024-01-21",
+      "team1": "Volos NFC",
+      "team2": "PAOK Saloniki",
+      "score": {
+        "ft": [
+          1,
+          5
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2024-01-21",
+      "team1": "Atromitos",
+      "team2": "AEK Athen",
+      "score": {
+        "ft": [
+          0,
+          5
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2024-01-21",
+      "team1": "Panathinaikos",
+      "team2": "Asteras Tripolis",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2024-01-21",
+      "team1": "Aris Saloniki",
+      "team2": "Olympiakos Piraeus",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2024-01-27",
+      "team1": "Panetolikos",
+      "team2": "Lamia",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2024-01-27",
+      "team1": "Panserraikos",
+      "team2": "Volos NFC",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2024-01-27",
+      "team1": "AE Kifisias",
+      "team2": "Aris Saloniki",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2024-01-28",
+      "team1": "AEK Athen",
+      "team2": "OFI Heraklion",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2024-01-28",
+      "team1": "Asteras Tripolis",
+      "team2": "Atromitos",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2024-01-28",
+      "team1": "Olympiakos Piraeus",
+      "team2": "PAS Giannina",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2024-01-28",
+      "team1": "PAOK Saloniki",
+      "team2": "Panathinaikos",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2024-02-03",
+      "team1": "Volos NFC",
+      "team2": "Panetolikos",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2024-02-03",
+      "team1": "Panserraikos",
+      "team2": "Aris Saloniki",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2024-02-04",
+      "team1": "OFI Heraklion",
+      "team2": "AE Kifisias",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2024-02-04",
+      "team1": "AEK Athen",
+      "team2": "Asteras Tripolis",
+      "score": {
+        "ft": [
+          4,
+          2
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2024-02-04",
+      "team1": "PAS Giannina",
+      "team2": "Lamia",
+      "score": {
+        "ft": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2024-02-04",
+      "team1": "Atromitos",
+      "team2": "PAOK Saloniki",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2024-02-04",
+      "team1": "Panathinaikos",
+      "team2": "Olympiakos Piraeus",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "21:00"
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2024-02-10",
+      "team1": "Olympiakos Piraeus",
+      "team2": "OFI Heraklion",
+      "score": {
+        "ft": [
+          4,
+          0
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2024-02-10",
+      "team1": "PAS Giannina",
+      "team2": "Aris Saloniki",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2024-02-10",
+      "team1": "Panetolikos",
+      "team2": "Atromitos",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2024-02-11",
+      "team1": "AE Kifisias",
+      "team2": "Volos NFC",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2024-02-11",
+      "team1": "Panserraikos",
+      "team2": "Panathinaikos",
+      "score": {
+        "ft": [
+          0,
+          3
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2024-02-11",
+      "team1": "Lamia",
+      "team2": "Asteras Tripolis",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2024-02-11",
+      "team1": "PAOK Saloniki",
+      "team2": "AEK Athen",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2024-02-17",
+      "team1": "Atromitos",
+      "team2": "Aris Saloniki",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2024-02-17",
+      "team1": "Panathinaikos",
+      "team2": "Lamia",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2024-02-18",
+      "team1": "Volos NFC",
+      "team2": "PAS Giannina",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "15:30"
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2024-02-18",
+      "team1": "AEK Athen",
+      "team2": "AE Kifisias",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2024-02-18",
+      "team1": "PAOK Saloniki",
+      "team2": "Olympiakos Piraeus",
+      "score": {
+        "ft": [
+          1,
+          4
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2024-02-19",
+      "team1": "OFI Heraklion",
+      "team2": "Panserraikos",
+      "score": {
+        "ft": [
+          4,
+          0
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2024-02-19",
+      "team1": "Asteras Tripolis",
+      "team2": "Panetolikos",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "18:00"
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2024-02-24",
+      "team1": "Lamia",
+      "team2": "AEK Athen",
+      "score": {
+        "ft": [
+          1,
+          3
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2024-02-24",
+      "team1": "Panserraikos",
+      "team2": "Atromitos",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2024-02-25",
+      "team1": "PAS Giannina",
+      "team2": "OFI Heraklion",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "16:30"
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2024-02-25",
+      "team1": "Panetolikos",
+      "team2": "PAOK Saloniki",
+      "score": {
+        "ft": [
+          1,
+          3
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2024-02-25",
+      "team1": "Olympiakos Piraeus",
+      "team2": "Asteras Tripolis",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "18:00"
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2024-02-25",
+      "team1": "Aris Saloniki",
+      "team2": "Volos NFC",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2024-02-25",
+      "team1": "Panathinaikos",
+      "team2": "AE Kifisias",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2024-02-28",
+      "team1": "Asteras Tripolis",
+      "team2": "AE Kifisias",
+      "score": {
+        "ft": [
+          3,
+          3
+        ]
+      },
+      "time": "15:00"
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2024-02-28",
+      "team1": "Volos NFC",
+      "team2": "OFI Heraklion",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2024-02-28",
+      "team1": "Atromitos",
+      "team2": "Lamia",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2024-02-28",
+      "team1": "Panetolikos",
+      "team2": "Olympiakos Piraeus",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2024-02-28",
+      "team1": "AEK Athen",
+      "team2": "PAS Giannina",
+      "score": {
+        "ft": [
+          4,
+          2
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2024-02-28",
+      "team1": "Panserraikos",
+      "team2": "PAOK Saloniki",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2024-02-28",
+      "team1": "Panathinaikos",
+      "team2": "Aris Saloniki",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "21:00"
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2024-03-03",
+      "team1": "Aris Saloniki",
+      "team2": "AEK Athen",
+      "score": {
+        "ft": [
+          3,
+          3
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2024-03-03",
+      "team1": "AE Kifisias",
+      "team2": "Panetolikos",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2024-03-03",
+      "team1": "Lamia",
+      "team2": "PAOK Saloniki",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2024-03-03",
+      "team1": "OFI Heraklion",
+      "team2": "Panathinaikos",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2024-03-03",
+      "team1": "Olympiakos Piraeus",
+      "team2": "Volos NFC",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2024-03-03",
+      "team1": "Panserraikos",
+      "team2": "Asteras Tripolis",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2024-03-03",
+      "team1": "PAS Giannina",
+      "team2": "Atromitos",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Relegation, Matchday 1",
+      "date": "2024-03-16",
+      "team1": "Asteras Tripolis",
+      "team2": "Volos NFC",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Relegation, Matchday 1",
+      "date": "2024-03-16",
+      "team1": "AE Kifisias",
+      "team2": "OFI Heraklion",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Relegation, Matchday 1",
+      "date": "2024-03-16",
+      "team1": "Atromitos",
+      "team2": "PAS Giannina",
+      "score": {
+        "ft": [
+          3,
+          2
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Relegation, Matchday 1",
+      "date": "2024-03-16",
+      "team1": "Panetolikos",
+      "team2": "Panserraikos",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Relegation, Matchday 2",
+      "date": "2024-03-30",
+      "team1": "Panserraikos",
+      "team2": "Asteras Tripolis",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "15:00"
+    },
+    {
+      "round": "Relegation, Matchday 2",
+      "date": "2024-03-30",
+      "team1": "Volos NFC",
+      "team2": "AE Kifisias",
+      "score": {
+        "ft": [
+          4,
+          1
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Relegation, Matchday 2",
+      "date": "2024-03-30",
+      "team1": "PAS Giannina",
+      "team2": "Panetolikos",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Relegation, Matchday 2",
+      "date": "2024-03-30",
+      "team1": "OFI Heraklion",
+      "team2": "Atromitos",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Relegation, Matchday 3",
+      "date": "2024-04-06",
+      "team1": "Atromitos",
+      "team2": "Panserraikos",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Relegation, Matchday 3",
+      "date": "2024-04-06",
+      "team1": "Asteras Tripolis",
+      "team2": "AE Kifisias",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Relegation, Matchday 3",
+      "date": "2024-04-06",
+      "team1": "Panetolikos",
+      "team2": "Volos NFC",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Relegation, Matchday 3",
+      "date": "2024-04-06",
+      "team1": "OFI Heraklion",
+      "team2": "PAS Giannina",
+      "score": {
+        "ft": [
+          4,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Relegation, Matchday 4",
+      "date": "2024-04-13",
+      "team1": "Panserraikos",
+      "team2": "OFI Heraklion",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "15:00"
+    },
+    {
+      "round": "Relegation, Matchday 4",
+      "date": "2024-04-13",
+      "team1": "Volos NFC",
+      "team2": "Atromitos",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "17:30"
+    },
+    {
+      "round": "Relegation, Matchday 4",
+      "date": "2024-04-13",
+      "team1": "PAS Giannina",
+      "team2": "Asteras Tripolis",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Relegation, Matchday 4",
+      "date": "2024-04-13",
+      "team1": "AE Kifisias",
+      "team2": "Panetolikos",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Relegation, Matchday 5",
+      "date": "2024-04-20",
+      "team1": "OFI Heraklion",
+      "team2": "Volos NFC",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "18:30"
+    },
+    {
+      "round": "Relegation, Matchday 5",
+      "date": "2024-04-20",
+      "team1": "Asteras Tripolis",
+      "team2": "Panetolikos",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Relegation, Matchday 5",
+      "date": "2024-04-20",
+      "team1": "Atromitos",
+      "team2": "AE Kifisias",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Relegation, Matchday 5",
+      "date": "2024-04-21",
+      "team1": "Panserraikos",
+      "team2": "PAS Giannina",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "15:00"
+    },
+    {
+      "round": "Relegation, Matchday 6",
+      "date": "2024-04-27",
+      "team1": "Asteras Tripolis",
+      "team2": "OFI Heraklion",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Relegation, Matchday 6",
+      "date": "2024-04-27",
+      "team1": "Volos NFC",
+      "team2": "Panserraikos",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Relegation, Matchday 6",
+      "date": "2024-04-27",
+      "team1": "AE Kifisias",
+      "team2": "PAS Giannina",
+      "score": {
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Relegation, Matchday 6",
+      "date": "2024-04-27",
+      "team1": "Panetolikos",
+      "team2": "Atromitos",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Relegation, Matchday 7",
+      "date": "2024-05-11",
+      "team1": "Atromitos",
+      "team2": "Asteras Tripolis",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Relegation, Matchday 7",
+      "date": "2024-05-11",
+      "team1": "OFI Heraklion",
+      "team2": "Panetolikos",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Relegation, Matchday 7",
+      "date": "2024-05-11",
+      "team1": "Panserraikos",
+      "team2": "AE Kifisias",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Relegation, Matchday 7",
+      "date": "2024-05-11",
+      "team1": "PAS Giannina",
+      "team2": "Volos NFC",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Championship, Matchday 1",
+      "date": "2024-03-10",
+      "team1": "Lamia",
+      "team2": "AEK Athen",
+      "score": {
+        "ft": [
+          0,
+          4
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Championship, Matchday 1",
+      "date": "2024-03-10",
+      "team1": "Olympiakos Piraeus",
+      "team2": "Panathinaikos",
+      "score": {
+        "ft": [
+          1,
+          3
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Championship, Matchday 1",
+      "date": "2024-03-10",
+      "team1": "PAOK Saloniki",
+      "team2": "Aris Saloniki",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "21:00"
+    },
+    {
+      "round": "Championship, Matchday 2",
+      "date": "2024-03-31",
+      "team1": "Panathinaikos",
+      "team2": "PAOK Saloniki",
+      "score": {
+        "ft": [
+          2,
+          3
+        ]
+      },
+      "time": "18:00"
+    },
+    {
+      "round": "Championship, Matchday 2",
+      "date": "2024-03-31",
+      "team1": "AEK Athen",
+      "team2": "Olympiakos Piraeus",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Championship, Matchday 2",
+      "date": "2024-03-31",
+      "team1": "Aris Saloniki",
+      "team2": "Lamia",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Championship, Matchday 3",
+      "date": "2024-04-03",
+      "team1": "Olympiakos Piraeus",
+      "team2": "Aris Saloniki",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Championship, Matchday 3",
+      "date": "2024-04-03",
+      "team1": "PAOK Saloniki",
+      "team2": "Lamia",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Championship, Matchday 3",
+      "date": "2024-04-03",
+      "team1": "Panathinaikos",
+      "team2": "AEK Athen",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "21:00"
+    },
+    {
+      "round": "Championship, Matchday 4",
+      "date": "2024-04-07",
+      "team1": "Lamia",
+      "team2": "Olympiakos Piraeus",
+      "score": {
+        "ft": [
+          1,
+          5
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Championship, Matchday 4",
+      "date": "2024-04-07",
+      "team1": "Aris Saloniki",
+      "team2": "Panathinaikos",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Championship, Matchday 4",
+      "date": "2024-04-07",
+      "team1": "AEK Athen",
+      "team2": "PAOK Saloniki",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Championship, Matchday 5",
+      "date": "2024-04-14",
+      "team1": "Panathinaikos",
+      "team2": "Lamia",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Championship, Matchday 5",
+      "date": "2024-04-14",
+      "team1": "AEK Athen",
+      "team2": "Aris Saloniki",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Championship, Matchday 5",
+      "date": "2024-05-12",
+      "team1": "PAOK Saloniki",
+      "team2": "Olympiakos Piraeus",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Championship, Matchday 6",
+      "date": "2024-04-21",
+      "team1": "Lamia",
+      "team2": "Panathinaikos",
+      "score": {
+        "ft": [
+          0,
+          5
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Championship, Matchday 6",
+      "date": "2024-04-21",
+      "team1": "Aris Saloniki",
+      "team2": "AEK Athen",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Championship, Matchday 6",
+      "date": "2024-04-21",
+      "team1": "Olympiakos Piraeus",
+      "team2": "PAOK Saloniki",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Championship, Matchday 7",
+      "date": "2024-04-24",
+      "team1": "Lamia",
+      "team2": "PAOK Saloniki",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Championship, Matchday 7",
+      "date": "2024-04-24",
+      "team1": "Aris Saloniki",
+      "team2": "Olympiakos Piraeus",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Championship, Matchday 7",
+      "date": "2024-04-24",
+      "team1": "AEK Athen",
+      "team2": "Panathinaikos",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Championship, Matchday 8",
+      "date": "2024-04-28",
+      "team1": "Olympiakos Piraeus",
+      "team2": "Lamia",
+      "score": {
+        "ft": [
+          4,
+          1
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Championship, Matchday 8",
+      "date": "2024-04-28",
+      "team1": "PAOK Saloniki",
+      "team2": "AEK Athen",
+      "score": {
+        "ft": [
+          3,
+          2
+        ]
+      },
+      "time": "19:30"
+    },
+    {
+      "round": "Championship, Matchday 8",
+      "date": "2024-04-28",
+      "team1": "Panathinaikos",
+      "team2": "Aris Saloniki",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Championship, Matchday 9",
+      "date": "2024-05-15",
+      "team1": "Lamia",
+      "team2": "Aris Saloniki",
+      "score": {
+        "ft": [
+          2,
+          4
+        ]
+      },
+      "time": "18:00"
+    },
+    {
+      "round": "Championship, Matchday 9",
+      "date": "2024-05-15",
+      "team1": "Olympiakos Piraeus",
+      "team2": "AEK Athen",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Championship, Matchday 9",
+      "date": "2024-05-15",
+      "team1": "PAOK Saloniki",
+      "team2": "Panathinaikos",
+      "score": {
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Championship, Matchday 10",
+      "date": "2024-05-19",
+      "team1": "AEK Athen",
+      "team2": "Lamia",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Championship, Matchday 10",
+      "date": "2024-05-19",
+      "team1": "Aris Saloniki",
+      "team2": "PAOK Saloniki",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Championship, Matchday 10",
+      "date": "2024-05-19",
+      "team1": "Panathinaikos",
+      "team2": "Olympiakos Piraeus",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      }
+    }
+  ],
+  "supplemental_source": "https://github.com/openfootball/europe/blob/master/greece/2023-24_gr1.txt"
+}
