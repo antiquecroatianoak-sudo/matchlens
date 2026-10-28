@@ -1,0 +1,75 @@
+{
+  "version": "daily-filters-v1",
+  "generated_at": "2026-10-28T21:05:30.455424+00:00",
+  "config": {
+    "window": 50,
+    "half_life": 15,
+    "ridge": 0.01,
+    "group": "snaga",
+    "rho": -0.1,
+    "temperature": 1.0
+  },
+  "rules": [
+    {
+      "id": "all",
+      "top": null,
+      "threshold": 0.0
+    },
+    {
+      "id": "top10",
+      "top": 10,
+      "threshold": 0.0
+    },
+    {
+      "id": "top50",
+      "top": 50,
+      "threshold": 0.0
+    },
+    {
+      "id": "p60",
+      "top": null,
+      "threshold": 0.6
+    },
+    {
+      "id": "p65",
+      "top": null,
+      "threshold": 0.65
+    },
+    {
+      "id": "p70",
+      "top": null,
+      "threshold": 0.7
+    },
+    {
+      "id": "p75",
+      "top": null,
+      "threshold": 0.75
+    },
+    {
+      "id": "p80",
+      "top": null,
+      "threshold": 0.8
+    },
+    {
+      "id": "p85",
+      "top": null,
+      "threshold": 0.85
+    },
+    {
+      "id": "p90",
+      "top": null,
+      "threshold": 0.9
+    },
+    {
+      "id": "p95",
+      "top": null,
+      "threshold": 0.95
+    }
+  ],
+  "day_timezone": "Source calendar date; no kickoff times",
+  "tie_break": "probability descending, stable offer id ascending",
+  "top_k_scope": "All five supported markets from all ten leagues in each source calendar day; multiple offers per fixture allowed",
+  "data_sha256": "33a2fec26c965d297a3c911ffd74637f21b826409d1e3c6d288232d3d266d842",
+  "audit_status": "Descriptive reanalysis of already viewed 2024/25 and 2025/26",
+  "odds_2_plus": "Unavailable: no timestamped historical odds"
+}

@@ -24,3 +24,10 @@ Završeni izlaz se ne prepisuje: svaki ciklus ima svoju mapu. Arhivirani prvi pr
 Razvojni prozori su 2022/23 i 2023/24, uz treniranje samo na ranijim sezonama. Naknadno pregledane 2024/25 i 2025/26 su opisna ponovna analiza. Objavljivanje novih stvarnih preporuka nije uključeno. Uspoređeni osnovni regresijski model također se odabire isključivo u razvojnim prozorima; usporedba se radi na istim utakmicama.
 
 GitHub izdanje treba kanonske JSON snapshotove na putanjama iz izvornog manifesta; ne preuzimati bez provjere hashova i istih upstream dopuna. Sam izvorni manifest nije zamjena za cijeli podatkovni skup. Izvorni platformski runtime nije dio prijenosa analitike.
+
+## Dnevni filtri i novi razvojni ciklus
+
+    python -m analytics.filter_audit --output data/experiments/novi-dnevni-filtri
+    OPENBLAS_NUM_THREADS=1 python -m analytics.direct_model --output data/experiments/novi-izravni-model
+
+Obje skripte odbijaju prepisati završen eksperiment. Dnevni filtri uključuju neocijenjene ponude u poredak, arhiviraju cijeli skup ponuda i izvještaj, te ne optimiziraju prag prema najvišem audit postotku. direct-v1 ima 12 konfiguracija, odvojeno učenje/tuning 2022/23 i kalibraciju 2023/24, pa opisni audit na već viđenim sezonama. Lošiji kandidati i temperature ostaju sačuvani. Ne mijenjaju ranije zaključani model niti predstavljaju novi neovisni dokaz.

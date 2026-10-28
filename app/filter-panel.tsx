@@ -1,0 +1,28 @@
+'use client';
+import {useState} from 'react';
+import report from './filter-summary.json';
+import direct from './direct-summary.json';
+const n=(v:number,d=0)=>v.toLocaleString('hr-HR',{minimumFractionDigits:d,maximumFractionDigits:d});
+const pct=(v:number|null)=>v===null?'—':n(v*100,2)+'%';
+const title=(id:string)=>id==='all'?'Sve ponude':id==='top10'?'Dnevni Top 10':id==='top50'?'Dnevni Top 50':'Vjerojatnost ≥ '+id.slice(1)+'%';
+const names:Record<string,string>={home:'1 · domaćin',draw:'X · remi',away:'2 · gost','over2.5':'Više od 2,5','under2.5':'Manje od 2,5'};
+export default function FilterPanel(){
+ const [id,setId]=useState('top10');const selected=report.analysis.find(r=>r.rule.id===id)!;
+ return <section className="panel notes">
+  <div className="panel-heading"><h2>Stvarna provjera naših filtara</h2><span className="tag">POVIJESNA PONOVNA ANALIZA</span></div>
+  <p>Za svaki povijesni dan rangiramo svih pet ponuda iz deset liga po procijenjenoj vjerojatnosti. Više ponuda iste utakmice je dopušteno. Top 10 i Top 50 biraju se zasebno za svaki dan.</p>
+  <div className="alert">Stroži odabir može podići postotak uz mnogo manje ponuda. To je učinak filtra na postojećem modelu. Sezone 2024./25. i 2025./26. već su pregledane; ove brojke ne dokazuju buduću točnost.</div>
+  <div className="table-wrap"><table><thead><tr><th>Filter</th><th>Odabrano</th><th>Pogoci</th><th>Promašaji</th><th>Bez ishoda</th><th>Točnost ocijenjenih</th><th>Obuhvat utakmica</th></tr></thead><tbody>{report.analysis.filter(r=>r.rule.id!=='all').map(r=><tr key={r.rule.id}><td><button type="button" className="text-button" onClick={()=>setId(r.rule.id)} aria-pressed={id===r.rule.id}>{title(r.rule.id)}</button></td><td>{n(r.selected)}</td><td>{n(r.hits)}</td><td>{n(r.misses)}</td><td>{n(r.unscored)}</td><td><strong>{pct(r.hit_rate)}</strong></td><td>{pct(r.match_coverage)}</td></tr>)}</tbody></table></div>
+  <p className="small muted">Odabrano = pogoci + promašaji + nepoznati ishodi. Točnost koristi samo ocijenjene ponude. Obuhvat je udio jedinstvenih utakmica s barem jednom odabranom ponudom među utakmicama koje model može obraditi.</p>
+  <label>Detalji filtra <select value={id} onChange={e=>setId(e.target.value)}>{report.analysis.filter(r=>r.rule.id!=='all').map(r=><option value={r.rule.id} key={r.rule.id}>{title(r.rule.id)}</option>)}</select></label>
+  <div className="stats">{[['Ocijenjene ponude',n(selected.scored)],['Pogoci / promašaji',n(selected.hits)+' / '+n(selected.misses)],['Točnost',pct(selected.hit_rate)],['Jedinstvene utakmice',n(selected.unique_matches)]].map(([label,value])=><article className="stat" key={label}><span>{label}</span><strong>{value}</strong></article>)}</div>
+  <div className="table-wrap"><table><thead><tr><th>Tržište</th><th>Ocijenjeno</th><th>Pogoci</th><th>Promašaji</th><th>Točnost</th></tr></thead><tbody>{Object.entries(selected.by_market).map(([key,r])=><tr key={key}><td>{names[key]}</td><td>{n(r.scored)}</td><td>{n(r.hits)}</td><td>{n(r.misses)}</td><td>{pct(r.hit_rate)}</td></tr>)}</tbody></table></div>
+  <div className="table-wrap"><table><thead><tr><th>Sezona</th><th>Ocijenjeno</th><th>Pogoci</th><th>Promašaji</th><th>Bez ishoda</th><th>Točnost</th></tr></thead><tbody>{Object.entries(selected.by_season).map(([season,r])=><tr key={season}><td>{season}</td><td>{n(r.scored)}</td><td>{n(r.hits)}</td><td>{n(r.misses)}</td><td>{n(r.unscored)}</td><td>{pct(r.hit_rate)}</td></tr>)}</tbody></table></div>
+  <p className="muted">Obrađeno {n(report.eligible_fixtures)} od {n(report.target_fixtures)} navedenih susreta; {n(report.skipped_fixtures)} preskočeno zbog nedovoljne povijesti. Nepoznati ishodi ostaju u skupu za rangiranje. Naknadni popis utakmica nije arhiva rasporeda poznatog prije početka, pa nedostajući susreti mogu promijeniti dnevni poredak.</p>
+  <p className="small muted">Top 50 može uključivati slabije ili suprotne ponude iste utakmice kada je dnevni izbor malen. Sve ponude iste utakmice su povezane. Za koeficijent 2,00+ nema provjerljivog povijesnog testa jer nemamo vremenski označene kvote.</p>
+  <details><summary>Novi ciklus modeliranja: izravno učenje ishoda i golova</summary>
+  <p>Dodani su promjenjivost broja golova, učestalost utakmica bez primljenog ili postignutog gola, remiji, noviji trend i zaglađena povijest međusobnih susreta. Uspoređeno 12 konfiguracija izravne klasifikacije, uz odvojenu kalibraciju na 2023./24.</p>
+  <div className="table-wrap"><table><thead><tr><th>Model · iste utakmice</th><th>Brier · niže bolje</th><th>1X2</th><th>Golovi</th><th>Najvjerojatnija ponuda</th></tr></thead><tbody>{[['Postojeći Poisson + Elo',direct.reference],['Izravni model',direct.raw_audit],['Izravni model nakon kalibracije',direct.audit]].map(([label,data])=>{const r=data as typeof direct.audit;return <tr key={String(label)}><td>{String(label)}</td><td>{n(r.family_brier,5)}</td><td>{pct(r.outcome_hit_rate)}</td><td>{pct(r.goals_hit_rate)}</td><td>{pct(r.top_pick_hit_rate)}</td></tr>;})}</tbody></table></div>
+  <p className="small muted">To su razvojni kandidati. Ne zamjenjuju postojeći model samo zato što je jedna naknadno pregledana metrika viša. Vanjski podaci o postavama, ozljedama, taktici i vremenu još nisu uključeni.</p></details>
+ </section>;
+}

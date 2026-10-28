@@ -1,0 +1,1626 @@
+{
+  "protocol": {
+    "version": "daily-filters-v1",
+    "generated_at": "2026-10-28T21:05:30.455424+00:00",
+    "config": {
+      "window": 50,
+      "half_life": 15,
+      "ridge": 0.01,
+      "group": "snaga",
+      "rho": -0.1,
+      "temperature": 1.0
+    },
+    "rules": [
+      {
+        "id": "all",
+        "top": null,
+        "threshold": 0.0
+      },
+      {
+        "id": "top10",
+        "top": 10,
+        "threshold": 0.0
+      },
+      {
+        "id": "top50",
+        "top": 50,
+        "threshold": 0.0
+      },
+      {
+        "id": "p60",
+        "top": null,
+        "threshold": 0.6
+      },
+      {
+        "id": "p65",
+        "top": null,
+        "threshold": 0.65
+      },
+      {
+        "id": "p70",
+        "top": null,
+        "threshold": 0.7
+      },
+      {
+        "id": "p75",
+        "top": null,
+        "threshold": 0.75
+      },
+      {
+        "id": "p80",
+        "top": null,
+        "threshold": 0.8
+      },
+      {
+        "id": "p85",
+        "top": null,
+        "threshold": 0.85
+      },
+      {
+        "id": "p90",
+        "top": null,
+        "threshold": 0.9
+      },
+      {
+        "id": "p95",
+        "top": null,
+        "threshold": 0.95
+      }
+    ],
+    "day_timezone": "Source calendar date; no kickoff times",
+    "tie_break": "probability descending, stable offer id ascending",
+    "top_k_scope": "All five supported markets from all ten leagues in each source calendar day; multiple offers per fixture allowed",
+    "data_sha256": "33a2fec26c965d297a3c911ffd74637f21b826409d1e3c6d288232d3d266d842",
+    "audit_status": "Descriptive reanalysis of already viewed 2024/25 and 2025/26",
+    "odds_2_plus": "Unavailable: no timestamped historical odds"
+  },
+  "dataset_matches": 20517,
+  "target_fixtures": 6346,
+  "eligible_fixtures": 6243,
+  "skipped_fixtures": 103,
+  "pool_offers": 31215,
+  "pool_unscored": 2355,
+  "analysis": [
+    {
+      "rule": {
+        "id": "all",
+        "top": null,
+        "threshold": 0.0
+      },
+      "selected": 31215,
+      "scored": 28860,
+      "unscored": 2355,
+      "hits": 11544,
+      "misses": 17316,
+      "hit_rate": 0.4,
+      "mean_probability": 0.4,
+      "offer_coverage": 1.0,
+      "match_coverage": 1.0,
+      "unique_matches": 6243,
+      "days": 399,
+      "wilson95": [
+        0.3943616251636193,
+        0.4056649926296234
+      ],
+      "by_market": {
+        "home": {
+          "selected": 6243,
+          "scored": 5772,
+          "unscored": 471,
+          "hits": 2504,
+          "misses": 3268,
+          "hit_rate": 0.4338184338184338,
+          "mean_probability": 0.43349701218990505,
+          "offer_coverage": 1.0,
+          "match_coverage": 1.0,
+          "unique_matches": 6243,
+          "days": 399,
+          "wilson95": [
+            0.4210811544026457,
+            0.4466437467313281
+          ]
+        },
+        "draw": {
+          "selected": 6243,
+          "scored": 5772,
+          "unscored": 471,
+          "hits": 1462,
+          "misses": 4310,
+          "hit_rate": 0.2532917532917533,
+          "mean_probability": 0.24737393210288713,
+          "offer_coverage": 1.0,
+          "match_coverage": 1.0,
+          "unique_matches": 6243,
+          "days": 399,
+          "wilson95": [
+            0.24223893457070406,
+            0.2646727387664131
+          ]
+        },
+        "away": {
+          "selected": 6243,
+          "scored": 5772,
+          "unscored": 471,
+          "hits": 1806,
+          "misses": 3966,
+          "hit_rate": 0.3128898128898129,
+          "mean_probability": 0.31912905570720784,
+          "offer_coverage": 1.0,
+          "match_coverage": 1.0,
+          "unique_matches": 6243,
+          "days": 399,
+          "wilson95": [
+            0.3010558634937524,
+            0.32497265280125215
+          ]
+        },
+        "over2.5": {
+          "selected": 6243,
+          "scored": 5772,
+          "unscored": 471,
+          "hits": 3070,
+          "misses": 2702,
+          "hit_rate": 0.5318780318780318,
+          "mean_probability": 0.5414711645583297,
+          "offer_coverage": 1.0,
+          "match_coverage": 1.0,
+          "unique_matches": 6243,
+          "days": 399,
+          "wilson95": [
+            0.5189883698174714,
+            0.5447252903693055
+          ]
+        },
+        "under2.5": {
+          "selected": 6243,
+          "scored": 5772,
+          "unscored": 471,
+          "hits": 2702,
+          "misses": 3070,
+          "hit_rate": 0.4681219681219681,
+          "mean_probability": 0.45852883544167033,
+          "offer_coverage": 1.0,
+          "match_coverage": 1.0,
+          "unique_matches": 6243,
+          "days": 399,
+          "wilson95": [
+            0.4552747096306945,
+            0.48101163018252846
+          ]
+        }
+      },
+      "by_season": {
+        "2024-25": {
+          "selected": 15985,
+          "scored": 15865,
+          "unscored": 120,
+          "hits": 6346,
+          "misses": 9519,
+          "hit_rate": 0.4,
+          "mean_probability": 0.4,
+          "offer_coverage": 1.0,
+          "match_coverage": 1.0,
+          "unique_matches": 3197,
+          "days": 204,
+          "wilson95": [
+            0.392401955757506,
+            0.4076464593562332
+          ]
+        },
+        "2025-26": {
+          "selected": 15230,
+          "scored": 12995,
+          "unscored": 2235,
+          "hits": 5198,
+          "misses": 7797,
+          "hit_rate": 0.4,
+          "mean_probability": 0.4,
+          "offer_coverage": 1.0,
+          "match_coverage": 1.0,
+          "unique_matches": 3046,
+          "days": 195,
+          "wilson95": [
+            0.3916077690206237,
+            0.408451335613168
+          ]
+        }
+      }
+    },
+    {
+      "rule": {
+        "id": "top10",
+        "top": 10,
+        "threshold": 0.0
+      },
+      "selected": 3825,
+      "scored": 3648,
+      "unscored": 177,
+      "hits": 2222,
+      "misses": 1426,
+      "hit_rate": 0.6091008771929824,
+      "mean_probability": 0.610363851724475,
+      "offer_coverage": 0.122537241710716,
+      "match_coverage": 0.3600832932884831,
+      "unique_matches": 2248,
+      "days": 399,
+      "wilson95": [
+        0.5931597706018619,
+        0.6248124521728518
+      ],
+      "by_market": {
+        "home": {
+          "selected": 1212,
+          "scored": 1141,
+          "unscored": 71,
+          "hits": 764,
+          "misses": 377,
+          "hit_rate": 0.6695880806310254,
+          "mean_probability": 0.6754572577982411,
+          "offer_coverage": 0.1941374339259971,
+          "match_coverage": 0.1941374339259971,
+          "unique_matches": 1212,
+          "days": 392,
+          "wilson95": [
+            0.6417668201225383,
+            0.6962712523269433
+          ]
+        },
+        "draw": {
+          "selected": 91,
+          "scored": 88,
+          "unscored": 3,
+          "hits": 34,
+          "misses": 54,
+          "hit_rate": 0.38636363636363635,
+          "mean_probability": 0.24648601955470417,
+          "offer_coverage": 0.014576325484542688,
+          "match_coverage": 0.014576325484542688,
+          "unique_matches": 91,
+          "days": 68,
+          "wilson95": [
+            0.2914209943081463,
+            0.49081242993387464
+          ]
+        },
+        "away": {
+          "selected": 509,
+          "scored": 481,
+          "unscored": 28,
+          "hits": 289,
+          "misses": 192,
+          "hit_rate": 0.6008316008316008,
+          "mean_probability": 0.598481801456632,
+          "offer_coverage": 0.08153131507288162,
+          "match_coverage": 0.08153131507288162,
+          "unique_matches": 509,
+          "days": 321,
+          "wilson95": [
+            0.5564337929477495,
+            0.6436316062364257
+          ]
+        },
+        "over2.5": {
+          "selected": 1335,
+          "scored": 1286,
+          "unscored": 49,
+          "hits": 770,
+          "misses": 516,
+          "hit_rate": 0.5987558320373251,
+          "mean_probability": 0.6205884699529371,
+          "offer_coverage": 0.2138395002402691,
+          "match_coverage": 0.2138395002402691,
+          "unique_matches": 1335,
+          "days": 399,
+          "wilson95": [
+            0.5717109967075212,
+            0.6252124300151963
+          ]
+        },
+        "under2.5": {
+          "selected": 678,
+          "scored": 652,
+          "unscored": 26,
+          "hits": 365,
+          "misses": 287,
+          "hit_rate": 0.5598159509202454,
+          "mean_probability": 0.5341615204941116,
+          "offer_coverage": 0.10860163382988948,
+          "match_coverage": 0.10860163382988948,
+          "unique_matches": 678,
+          "days": 285,
+          "wilson95": [
+            0.521472300511986,
+            0.5974588816372125
+          ]
+        }
+      },
+      "by_season": {
+        "2024-25": {
+          "selected": 1960,
+          "scored": 1924,
+          "unscored": 36,
+          "hits": 1181,
+          "misses": 743,
+          "hit_rate": 0.6138253638253638,
+          "mean_probability": 0.6186504112169873,
+          "offer_coverage": 0.12261495151704724,
+          "match_coverage": 0.3600250234594933,
+          "unique_matches": 1151,
+          "days": 204,
+          "wilson95": [
+            0.5918640170967036,
+            0.635333088762787
+          ]
+        },
+        "2025-26": {
+          "selected": 1865,
+          "scored": 1724,
+          "unscored": 141,
+          "hits": 1041,
+          "misses": 683,
+          "hit_rate": 0.6038283062645011,
+          "mean_probability": 0.6011159744254069,
+          "offer_coverage": 0.12245567957977675,
+          "match_coverage": 0.3601444517399869,
+          "unique_matches": 1097,
+          "days": 195,
+          "wilson95": [
+            0.5805344382878698,
+            0.6266604974351949
+          ]
+        }
+      }
+    },
+    {
+      "rule": {
+        "id": "top50",
+        "top": 50,
+        "threshold": 0.0
+      },
+      "selected": 13555,
+      "scored": 12830,
+      "unscored": 725,
+      "hits": 6389,
+      "misses": 6441,
+      "hit_rate": 0.49797349961028836,
+      "mean_probability": 0.5039542816179291,
+      "offer_coverage": 0.43424635591862887,
+      "match_coverage": 0.9410539804581131,
+      "unique_matches": 5875,
+      "days": 399,
+      "wilson95": [
+        0.4893237061004065,
+        0.5066245062749098
+      ],
+      "by_market": {
+        "home": {
+          "selected": 2946,
+          "scored": 2777,
+          "unscored": 169,
+          "hits": 1540,
+          "misses": 1237,
+          "hit_rate": 0.5545552754771336,
+          "mean_probability": 0.5550386941697486,
+          "offer_coverage": 0.4718885151369534,
+          "match_coverage": 0.4718885151369534,
+          "unique_matches": 2946,
+          "days": 399,
+          "wilson95": [
+            0.5360071045413684,
+            0.5729527209240133
+          ]
+        },
+        "draw": {
+          "selected": 1239,
+          "scored": 1207,
+          "unscored": 32,
+          "hits": 322,
+          "misses": 885,
+          "hit_rate": 0.2667771333885667,
+          "mean_probability": 0.2506718619747815,
+          "offer_coverage": 0.19846227775108122,
+          "match_coverage": 0.19846227775108122,
+          "unique_matches": 1239,
+          "days": 257,
+          "wilson95": [
+            0.24259473877859766,
+            0.292439351854261
+          ]
+        },
+        "away": {
+          "selected": 2050,
+          "scored": 1963,
+          "unscored": 87,
+          "hits": 807,
+          "misses": 1156,
+          "hit_rate": 0.41110545084055017,
+          "mean_probability": 0.42762302699668475,
+          "offer_coverage": 0.3283677719045331,
+          "match_coverage": 0.3283677719045331,
+          "unique_matches": 2050,
+          "days": 399,
+          "wilson95": [
+            0.3895334093090502,
+            0.433024734137215
+          ]
+        },
+        "over2.5": {
+          "selected": 4406,
+          "scored": 4170,
+          "unscored": 236,
+          "hits": 2329,
+          "misses": 1841,
+          "hit_rate": 0.5585131894484412,
+          "mean_probability": 0.574498061314652,
+          "offer_coverage": 0.7057504404933526,
+          "match_coverage": 0.7057504404933526,
+          "unique_matches": 4406,
+          "days": 399,
+          "wilson95": [
+            0.5433947057384771,
+            0.5735239661408047
+          ]
+        },
+        "under2.5": {
+          "selected": 2914,
+          "scored": 2713,
+          "unscored": 201,
+          "hits": 1391,
+          "misses": 1322,
+          "hit_rate": 0.5127165499447106,
+          "mean_probability": 0.5111496956758151,
+          "offer_coverage": 0.46676277430722407,
+          "match_coverage": 0.46676277430722407,
+          "unique_matches": 2914,
+          "days": 399,
+          "wilson95": [
+            0.49390342619705635,
+            0.5314937127401385
+          ]
+        }
+      },
+      "by_season": {
+        "2024-25": {
+          "selected": 7025,
+          "scored": 6942,
+          "unscored": 83,
+          "hits": 3483,
+          "misses": 3459,
+          "hit_rate": 0.5017286084701815,
+          "mean_probability": 0.507060547352663,
+          "offer_coverage": 0.43947450735064125,
+          "match_coverage": 0.9468251485767908,
+          "unique_matches": 3027,
+          "days": 204,
+          "wilson95": [
+            0.4899691214534338,
+            0.513486183442638
+          ]
+        },
+        "2025-26": {
+          "selected": 6530,
+          "scored": 5888,
+          "unscored": 642,
+          "hits": 2906,
+          "misses": 2982,
+          "hit_rate": 0.4935461956521739,
+          "mean_probability": 0.5002919689938594,
+          "offer_coverage": 0.4287590282337492,
+          "match_coverage": 0.9349967170059094,
+          "unique_matches": 2848,
+          "days": 195,
+          "wilson95": [
+            0.4807843573090688,
+            0.506316449708367
+          ]
+        }
+      }
+    },
+    {
+      "rule": {
+        "id": "p60",
+        "top": null,
+        "threshold": 0.6
+      },
+      "selected": 3532,
+      "scored": 3346,
+      "unscored": 186,
+      "hits": 2216,
+      "misses": 1130,
+      "hit_rate": 0.6622833233711894,
+      "mean_probability": 0.6805656257521362,
+      "offer_coverage": 0.11315072881627422,
+      "match_coverage": 0.40028832292167227,
+      "unique_matches": 2499,
+      "days": 365,
+      "wilson95": [
+        0.6460808774519292,
+        0.678113569762992
+      ],
+      "by_market": {
+        "home": {
+          "selected": 1222,
+          "scored": 1147,
+          "unscored": 75,
+          "hits": 833,
+          "misses": 314,
+          "hit_rate": 0.7262423714036618,
+          "mean_probability": 0.7163685142038765,
+          "offer_coverage": 0.19573922793528753,
+          "match_coverage": 0.19573922793528753,
+          "unique_matches": 1222,
+          "days": 300,
+          "wilson95": [
+            0.6997150265966497,
+            0.7512593417858003
+          ]
+        },
+        "draw": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "away": {
+          "selected": 507,
+          "scored": 470,
+          "unscored": 37,
+          "hits": 315,
+          "misses": 155,
+          "hit_rate": 0.6702127659574468,
+          "mean_probability": 0.6847596243003728,
+          "offer_coverage": 0.08121095627102355,
+          "match_coverage": 0.08121095627102355,
+          "unique_matches": 507,
+          "days": 211,
+          "wilson95": [
+            0.6264797161633187,
+            0.7111859672030358
+          ]
+        },
+        "over2.5": {
+          "selected": 1499,
+          "scored": 1446,
+          "unscored": 53,
+          "hits": 910,
+          "misses": 536,
+          "hit_rate": 0.6293222683264177,
+          "mean_probability": 0.6614158745597921,
+          "offer_coverage": 0.24010892199263176,
+          "match_coverage": 0.24010892199263176,
+          "unique_matches": 1499,
+          "days": 304,
+          "wilson95": [
+            0.6041160273834969,
+            0.6538432120385933
+          ]
+        },
+        "under2.5": {
+          "selected": 304,
+          "scored": 283,
+          "unscored": 21,
+          "hits": 158,
+          "misses": 125,
+          "hit_rate": 0.558303886925795,
+          "mean_probability": 0.6263375262903421,
+          "offer_coverage": 0.04869453788242832,
+          "match_coverage": 0.04869453788242832,
+          "unique_matches": 304,
+          "days": 189,
+          "wilson95": [
+            0.5000500044343313,
+            0.6149961263993166
+          ]
+        }
+      },
+      "by_season": {
+        "2024-25": {
+          "selected": 1913,
+          "scored": 1899,
+          "unscored": 14,
+          "hits": 1258,
+          "misses": 641,
+          "hit_rate": 0.6624539231174302,
+          "mean_probability": 0.6822091656439403,
+          "offer_coverage": 0.11967469502658742,
+          "match_coverage": 0.4188301532686894,
+          "unique_matches": 1339,
+          "days": 188,
+          "wilson95": [
+            0.6408767458628327,
+            0.6833751759879726
+          ]
+        },
+        "2025-26": {
+          "selected": 1619,
+          "scored": 1447,
+          "unscored": 172,
+          "hits": 958,
+          "misses": 489,
+          "hit_rate": 0.6620594333102972,
+          "mean_probability": 0.6784086926114755,
+          "offer_coverage": 0.10630334865397242,
+          "match_coverage": 0.3808273145108339,
+          "unique_matches": 1160,
+          "days": 177,
+          "wilson95": [
+            0.6372873329978711,
+            0.6859733493796666
+          ]
+        }
+      }
+    },
+    {
+      "rule": {
+        "id": "p65",
+        "top": null,
+        "threshold": 0.65
+      },
+      "selected": 1977,
+      "scored": 1862,
+      "unscored": 115,
+      "hits": 1332,
+      "misses": 530,
+      "hit_rate": 0.715359828141783,
+      "mean_probability": 0.7263666385410635,
+      "offer_coverage": 0.06333493512734262,
+      "match_coverage": 0.22601313471087617,
+      "unique_matches": 1411,
+      "days": 306,
+      "wilson95": [
+        0.6944367704378479,
+        0.7353961053451269
+      ],
+      "by_market": {
+        "home": {
+          "selected": 902,
+          "scored": 841,
+          "unscored": 61,
+          "hits": 629,
+          "misses": 212,
+          "hit_rate": 0.7479191438763377,
+          "mean_probability": 0.7494894615144299,
+          "offer_coverage": 0.14448181963799456,
+          "match_coverage": 0.14448181963799456,
+          "unique_matches": 902,
+          "days": 272,
+          "wilson95": [
+            0.7174910720776458,
+            0.7760926596938588
+          ]
+        },
+        "draw": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "away": {
+          "selected": 315,
+          "scored": 290,
+          "unscored": 25,
+          "hits": 213,
+          "misses": 77,
+          "hit_rate": 0.7344827586206897,
+          "mean_probability": 0.7225522015001343,
+          "offer_coverage": 0.05045651129264776,
+          "match_coverage": 0.05045651129264776,
+          "unique_matches": 315,
+          "days": 176,
+          "wilson95": [
+            0.6808316281204946,
+            0.7820029921057444
+          ]
+        },
+        "over2.5": {
+          "selected": 720,
+          "scored": 692,
+          "unscored": 28,
+          "hits": 468,
+          "misses": 224,
+          "hit_rate": 0.6763005780346821,
+          "mean_probability": 0.7032356235859194,
+          "offer_coverage": 0.11532916866890917,
+          "match_coverage": 0.11532916866890917,
+          "unique_matches": 720,
+          "days": 233,
+          "wilson95": [
+            0.6405493488484435,
+            0.7101052390709499
+          ]
+        },
+        "under2.5": {
+          "selected": 40,
+          "scored": 39,
+          "unscored": 1,
+          "hits": 22,
+          "misses": 17,
+          "hit_rate": 0.5641025641025641,
+          "mean_probability": 0.666534714700761,
+          "offer_coverage": 0.006407176037161621,
+          "match_coverage": 0.006407176037161621,
+          "unique_matches": 40,
+          "days": 37,
+          "wilson95": [
+            0.40975691648669477,
+            0.7069524612431037
+          ]
+        }
+      },
+      "by_season": {
+        "2024-25": {
+          "selected": 1097,
+          "scored": 1091,
+          "unscored": 6,
+          "hits": 775,
+          "misses": 316,
+          "hit_rate": 0.7103574702108157,
+          "mean_probability": 0.7258645843979012,
+          "offer_coverage": 0.06862683766030654,
+          "match_coverage": 0.24272755708476698,
+          "unique_matches": 776,
+          "days": 157,
+          "wilson95": [
+            0.6827408362844604,
+            0.7364979460086497
+          ]
+        },
+        "2025-26": {
+          "selected": 880,
+          "scored": 771,
+          "unscored": 109,
+          "hits": 557,
+          "misses": 214,
+          "hit_rate": 0.7224383916990921,
+          "mean_probability": 0.7270770679446823,
+          "offer_coverage": 0.05778069599474721,
+          "match_coverage": 0.20847012475377544,
+          "unique_matches": 635,
+          "days": 149,
+          "wilson95": [
+            0.6897864808985914,
+            0.7528847211845351
+          ]
+        }
+      }
+    },
+    {
+      "rule": {
+        "id": "p70",
+        "top": null,
+        "threshold": 0.7
+      },
+      "selected": 1094,
+      "scored": 1025,
+      "unscored": 69,
+      "hits": 796,
+      "misses": 229,
+      "hit_rate": 0.7765853658536586,
+      "mean_probability": 0.7705349149785756,
+      "offer_coverage": 0.03504725292327407,
+      "match_coverage": 0.1335896203748198,
+      "unique_matches": 834,
+      "days": 256,
+      "wilson95": [
+        0.750079579006157,
+        0.8010257396402376
+      ],
+      "by_market": {
+        "home": {
+          "selected": 621,
+          "scored": 575,
+          "unscored": 46,
+          "hits": 457,
+          "misses": 118,
+          "hit_rate": 0.7947826086956522,
+          "mean_probability": 0.7841496608780132,
+          "offer_coverage": 0.09947140797693417,
+          "match_coverage": 0.09947140797693417,
+          "unique_matches": 621,
+          "days": 238,
+          "wilson95": [
+            0.7598679080866713,
+            0.8257846826774105
+          ]
+        },
+        "draw": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "away": {
+          "selected": 178,
+          "scored": 163,
+          "unscored": 15,
+          "hits": 126,
+          "misses": 37,
+          "hit_rate": 0.7730061349693251,
+          "mean_probability": 0.7614739355501425,
+          "offer_coverage": 0.028511933365369214,
+          "match_coverage": 0.028511933365369214,
+          "unique_matches": 178,
+          "days": 125,
+          "wilson95": [
+            0.7028486433685777,
+            0.8305919092919516
+          ]
+        },
+        "over2.5": {
+          "selected": 294,
+          "scored": 286,
+          "unscored": 8,
+          "hits": 212,
+          "misses": 74,
+          "hit_rate": 0.7412587412587412,
+          "mean_probability": 0.7485717517234777,
+          "offer_coverage": 0.047092743873137916,
+          "match_coverage": 0.047092743873137916,
+          "unique_matches": 294,
+          "days": 166,
+          "wilson95": [
+            0.6875418887695683,
+            0.7885804733020756
+          ]
+        },
+        "under2.5": {
+          "selected": 1,
+          "scored": 1,
+          "unscored": 0,
+          "hits": 1,
+          "misses": 0,
+          "hit_rate": 1.0,
+          "mean_probability": 0.7004603605946608,
+          "offer_coverage": 0.00016017940092904052,
+          "match_coverage": 0.00016017940092904052,
+          "unique_matches": 1,
+          "days": 1,
+          "wilson95": [
+            0.20654931437723745,
+            1
+          ]
+        }
+      },
+      "by_season": {
+        "2024-25": {
+          "selected": 607,
+          "scored": 604,
+          "unscored": 3,
+          "hits": 459,
+          "misses": 145,
+          "hit_rate": 0.7599337748344371,
+          "mean_probability": 0.7687828130928888,
+          "offer_coverage": 0.03797309978104473,
+          "match_coverage": 0.1416953393806694,
+          "unique_matches": 453,
+          "days": 135,
+          "wilson95": [
+            0.7242961180442691,
+            0.7922859535525062
+          ]
+        },
+        "2025-26": {
+          "selected": 487,
+          "scored": 421,
+          "unscored": 66,
+          "hits": 337,
+          "misses": 84,
+          "hit_rate": 0.8004750593824228,
+          "mean_probability": 0.7730486193466395,
+          "offer_coverage": 0.031976362442547604,
+          "match_coverage": 0.12508207485226527,
+          "unique_matches": 381,
+          "days": 121,
+          "wilson95": [
+            0.759659075265108,
+            0.8358571926205542
+          ]
+        }
+      }
+    },
+    {
+      "rule": {
+        "id": "p75",
+        "top": null,
+        "threshold": 0.75
+      },
+      "selected": 617,
+      "scored": 575,
+      "unscored": 42,
+      "hits": 465,
+      "misses": 110,
+      "hit_rate": 0.808695652173913,
+      "mean_probability": 0.8081144129521963,
+      "offer_coverage": 0.0197661380746436,
+      "match_coverage": 0.08121095627102355,
+      "unique_matches": 507,
+      "days": 215,
+      "wilson95": [
+        0.7745393132330075,
+        0.8387546977441281
+      ],
+      "by_market": {
+        "home": {
+          "selected": 410,
+          "scored": 376,
+          "unscored": 34,
+          "hits": 307,
+          "misses": 69,
+          "hit_rate": 0.8164893617021277,
+          "mean_probability": 0.8164179428257382,
+          "offer_coverage": 0.06567355438090662,
+          "match_coverage": 0.06567355438090662,
+          "unique_matches": 410,
+          "days": 203,
+          "wilson95": [
+            0.7742300677701661,
+            0.8523471382539636
+          ]
+        },
+        "draw": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "away": {
+          "selected": 86,
+          "scored": 81,
+          "unscored": 5,
+          "hits": 62,
+          "misses": 19,
+          "hit_rate": 0.7654320987654321,
+          "mean_probability": 0.798841737452173,
+          "offer_coverage": 0.013775428479897486,
+          "match_coverage": 0.013775428479897486,
+          "unique_matches": 86,
+          "days": 73,
+          "wilson95": [
+            0.6624527035476533,
+            0.8443749794943978
+          ]
+        },
+        "over2.5": {
+          "selected": 121,
+          "scored": 118,
+          "unscored": 3,
+          "hits": 96,
+          "misses": 22,
+          "hit_rate": 0.8135593220338984,
+          "mean_probability": 0.7880208492492315,
+          "offer_coverage": 0.019381707512413904,
+          "match_coverage": 0.019381707512413904,
+          "unique_matches": 121,
+          "days": 90,
+          "wilson95": [
+            0.7338165429504817,
+            0.8735300918998186
+          ]
+        },
+        "under2.5": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        }
+      },
+      "by_season": {
+        "2024-25": {
+          "selected": 329,
+          "scored": 327,
+          "unscored": 2,
+          "hits": 254,
+          "misses": 73,
+          "hit_rate": 0.7767584097859327,
+          "mean_probability": 0.8075831605840124,
+          "offer_coverage": 0.02058179543321864,
+          "match_coverage": 0.08289020957147325,
+          "unique_matches": 265,
+          "days": 112,
+          "wilson95": [
+            0.7285586965945555,
+            0.8185311410732695
+          ]
+        },
+        "2025-26": {
+          "selected": 288,
+          "scored": 248,
+          "unscored": 40,
+          "hits": 211,
+          "misses": 37,
+          "hit_rate": 0.8508064516129032,
+          "mean_probability": 0.8088148949054068,
+          "offer_coverage": 0.01891004596191727,
+          "match_coverage": 0.07944845699277742,
+          "unique_matches": 242,
+          "days": 103,
+          "wilson95": [
+            0.8011290130188811,
+            0.8897818513590305
+          ]
+        }
+      }
+    },
+    {
+      "rule": {
+        "id": "p80",
+        "top": null,
+        "threshold": 0.8
+      },
+      "selected": 301,
+      "scored": 282,
+      "unscored": 19,
+      "hits": 242,
+      "misses": 40,
+      "hit_rate": 0.8581560283687943,
+      "mean_probability": 0.8437041782787519,
+      "offer_coverage": 0.00964279993592824,
+      "match_coverage": 0.04292807944898286,
+      "unique_matches": 268,
+      "days": 159,
+      "wilson95": [
+        0.8126114679346585,
+        0.8940739822215165
+      ],
+      "by_market": {
+        "home": {
+          "selected": 224,
+          "scored": 208,
+          "unscored": 16,
+          "hits": 182,
+          "misses": 26,
+          "hit_rate": 0.875,
+          "mean_probability": 0.8492587448109538,
+          "offer_coverage": 0.03588018580810508,
+          "match_coverage": 0.03588018580810508,
+          "unique_matches": 224,
+          "days": 144,
+          "wilson95": [
+            0.8231486931476293,
+            0.9132510695260256
+          ]
+        },
+        "draw": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "away": {
+          "selected": 44,
+          "scored": 41,
+          "unscored": 3,
+          "hits": 30,
+          "misses": 11,
+          "hit_rate": 0.7317073170731707,
+          "mean_probability": 0.8261596140084971,
+          "offer_coverage": 0.0070478936408777835,
+          "match_coverage": 0.0070478936408777835,
+          "unique_matches": 44,
+          "days": 40,
+          "wilson95": [
+            0.5806646689292336,
+            0.8430503595218832
+          ]
+        },
+        "over2.5": {
+          "selected": 33,
+          "scored": 33,
+          "unscored": 0,
+          "hits": 30,
+          "misses": 3,
+          "hit_rate": 0.9090909090909091,
+          "mean_probability": 0.8304913690782199,
+          "offer_coverage": 0.005285920230658337,
+          "match_coverage": 0.005285920230658337,
+          "unique_matches": 33,
+          "days": 29,
+          "wilson95": [
+            0.7642739435353026,
+            0.9685960584754184
+          ]
+        },
+        "under2.5": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        }
+      },
+      "by_season": {
+        "2024-25": {
+          "selected": 158,
+          "scored": 158,
+          "unscored": 0,
+          "hits": 134,
+          "misses": 24,
+          "hit_rate": 0.8481012658227848,
+          "mean_probability": 0.843908743097294,
+          "offer_coverage": 0.009884266499843603,
+          "match_coverage": 0.04535502033156084,
+          "unique_matches": 145,
+          "days": 83,
+          "wilson95": [
+            0.7839275462564425,
+            0.8957499653128903
+          ]
+        },
+        "2025-26": {
+          "selected": 143,
+          "scored": 124,
+          "unscored": 19,
+          "hits": 108,
+          "misses": 16,
+          "hit_rate": 0.8709677419354839,
+          "mean_probability": 0.8434435231067385,
+          "offer_coverage": 0.009389363099146422,
+          "match_coverage": 0.040380827314510835,
+          "unique_matches": 123,
+          "days": 76,
+          "wilson95": [
+            0.800649662877178,
+            0.9189916870313515
+          ]
+        }
+      }
+    },
+    {
+      "rule": {
+        "id": "p85",
+        "top": null,
+        "threshold": 0.85
+      },
+      "selected": 110,
+      "scored": 103,
+      "unscored": 7,
+      "hits": 87,
+      "misses": 16,
+      "hit_rate": 0.8446601941747572,
+      "mean_probability": 0.8796916946083634,
+      "offer_coverage": 0.0035239468204388918,
+      "match_coverage": 0.016178119493833094,
+      "unique_matches": 101,
+      "days": 81,
+      "wilson95": [
+        0.7624742780120963,
+        0.9020617624322336
+      ],
+      "by_market": {
+        "home": {
+          "selected": 95,
+          "scored": 88,
+          "unscored": 7,
+          "hits": 75,
+          "misses": 13,
+          "hit_rate": 0.8522727272727273,
+          "mean_probability": 0.8817757482928049,
+          "offer_coverage": 0.01521704308825885,
+          "match_coverage": 0.01521704308825885,
+          "unique_matches": 95,
+          "days": 76,
+          "wilson95": [
+            0.7634888952813075,
+            0.9115874895684275
+          ]
+        },
+        "draw": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "away": {
+          "selected": 6,
+          "scored": 6,
+          "unscored": 0,
+          "hits": 4,
+          "misses": 2,
+          "hit_rate": 0.6666666666666666,
+          "mean_probability": 0.8701914551568475,
+          "offer_coverage": 0.0009610764055742432,
+          "match_coverage": 0.0009610764055742432,
+          "unique_matches": 6,
+          "days": 6,
+          "wilson95": [
+            0.299993315138392,
+            0.9032285888942195
+          ]
+        },
+        "over2.5": {
+          "selected": 9,
+          "scored": 9,
+          "unscored": 0,
+          "hits": 8,
+          "misses": 1,
+          "hit_rate": 0.8888888888888888,
+          "mean_probability": 0.8656477737726109,
+          "offer_coverage": 0.0014416146083613647,
+          "match_coverage": 0.0014416146083613647,
+          "unique_matches": 9,
+          "days": 9,
+          "wilson95": [
+            0.5650002944233439,
+            0.9801091123614551
+          ]
+        },
+        "under2.5": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        }
+      },
+      "by_season": {
+        "2024-25": {
+          "selected": 61,
+          "scored": 61,
+          "unscored": 0,
+          "hits": 52,
+          "misses": 9,
+          "hit_rate": 0.8524590163934426,
+          "mean_probability": 0.8750423803828495,
+          "offer_coverage": 0.0038160775727244293,
+          "match_coverage": 0.017516421645292463,
+          "unique_matches": 56,
+          "days": 43,
+          "wilson95": [
+            0.742767647052789,
+            0.9203883149206723
+          ]
+        },
+        "2025-26": {
+          "selected": 49,
+          "scored": 42,
+          "unscored": 7,
+          "hits": 35,
+          "misses": 7,
+          "hit_rate": 0.8333333333333334,
+          "mean_probability": 0.8864442700311335,
+          "offer_coverage": 0.0032173342087984244,
+          "match_coverage": 0.014773473407747865,
+          "unique_matches": 45,
+          "days": 38,
+          "wilson95": [
+            0.6939599725535115,
+            0.9168408335360192
+          ]
+        }
+      }
+    },
+    {
+      "rule": {
+        "id": "p90",
+        "top": null,
+        "threshold": 0.9
+      },
+      "selected": 22,
+      "scored": 21,
+      "unscored": 1,
+      "hits": 16,
+      "misses": 5,
+      "hit_rate": 0.7619047619047619,
+      "mean_probability": 0.919999820342464,
+      "offer_coverage": 0.0007047893640877783,
+      "match_coverage": 0.0035239468204388918,
+      "unique_matches": 22,
+      "days": 18,
+      "wilson95": [
+        0.5490882631704924,
+        0.8937198697736354
+      ],
+      "by_market": {
+        "home": {
+          "selected": 22,
+          "scored": 21,
+          "unscored": 1,
+          "hits": 16,
+          "misses": 5,
+          "hit_rate": 0.7619047619047619,
+          "mean_probability": 0.919999820342464,
+          "offer_coverage": 0.0035239468204388918,
+          "match_coverage": 0.0035239468204388918,
+          "unique_matches": 22,
+          "days": 18,
+          "wilson95": [
+            0.5490882631704924,
+            0.8937198697736354
+          ]
+        },
+        "draw": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "away": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "over2.5": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "under2.5": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        }
+      },
+      "by_season": {
+        "2024-25": {
+          "selected": 9,
+          "scored": 9,
+          "unscored": 0,
+          "hits": 8,
+          "misses": 1,
+          "hit_rate": 0.8888888888888888,
+          "mean_probability": 0.9244136805084209,
+          "offer_coverage": 0.0005630278385986863,
+          "match_coverage": 0.0028151391929934315,
+          "unique_matches": 9,
+          "days": 7,
+          "wilson95": [
+            0.5650002944233439,
+            0.9801091123614551
+          ]
+        },
+        "2025-26": {
+          "selected": 13,
+          "scored": 12,
+          "unscored": 1,
+          "hits": 8,
+          "misses": 4,
+          "hit_rate": 0.6666666666666666,
+          "mean_probability": 0.9166894252179963,
+          "offer_coverage": 0.0008535784635587656,
+          "match_coverage": 0.004267892317793828,
+          "unique_matches": 13,
+          "days": 11,
+          "wilson95": [
+            0.39062208887279953,
+            0.8618799089087867
+          ]
+        }
+      }
+    },
+    {
+      "rule": {
+        "id": "p95",
+        "top": null,
+        "threshold": 0.95
+      },
+      "selected": 0,
+      "scored": 0,
+      "unscored": 0,
+      "hits": 0,
+      "misses": 0,
+      "hit_rate": null,
+      "mean_probability": null,
+      "offer_coverage": 0.0,
+      "match_coverage": 0.0,
+      "unique_matches": 0,
+      "days": 0,
+      "wilson95": null,
+      "by_market": {
+        "home": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "draw": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "away": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "over2.5": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "under2.5": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        }
+      },
+      "by_season": {
+        "2024-25": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "2025-26": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Already viewed seasons; no independent accuracy claim.",
+    "Fixture list is a retrospective snapshot, not an archived pre-kickoff schedule. Missing fixtures can change daily ranks.",
+    "Unknown outcomes remain in the ranking pool and are counted as unscored, never as losses or 0:0.",
+    "Day precision only; no reconstruction of odds or exact kickoff times.",
+    "Multiple offers from the same fixture are dependent. Wilson intervals are descriptive and assume independence; do not use them as proof.",
+    "Probability thresholds filter a fixed model; a higher selected hit rate is not a better model for all fixtures.",
+    "No live recommendations, odds 2+ test, ROI, lineups, weather or tactical inputs."
+  ]
+}

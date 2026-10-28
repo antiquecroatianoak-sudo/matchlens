@@ -1,0 +1,31 @@
+{
+  "protocol": "direct-v1",
+  "created_at": "2026-10-28T21:07:01.995946+00:00",
+  "tuning_season": "2022-23",
+  "calibration_season": "2023-24",
+  "config": {
+    "group": "history",
+    "ridge": 0.1,
+    "tuning": {
+      "matches": 2383,
+      "family_brier": 0.2192424475441323,
+      "outcome_log_loss": 0.9758100276203759,
+      "goals_log_loss": 0.6830858389122417,
+      "outcome_hit_rate": 0.5434326479227864,
+      "goals_hit_rate": 0.56105749055812,
+      "top_pick_hit_rate": 0.5912715065044062,
+      "top_pick_mean_probability": 0.6061319663310271
+    }
+  },
+  "temperature": 0.85,
+  "candidates": 12,
+  "source_sha256": "33a2fec26c965d297a3c911ffd74637f21b826409d1e3c6d288232d3d266d842",
+  "extra_features": [
+    "team total-goal mean and standard deviation over last 10",
+    "clean-sheet, failed-to-score and draw frequencies",
+    "last-three scoring trend versus last ten",
+    "smoothed head-to-head goal difference and total",
+    "nonlinear Elo and attack-defense interactions"
+  ],
+  "audit_status": "Already viewed seasons, descriptive comparison only"
+}
