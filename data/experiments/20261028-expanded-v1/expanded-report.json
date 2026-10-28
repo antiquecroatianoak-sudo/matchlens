@@ -1,0 +1,1430 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-28T20:42:18.366018+00:00",
+  "status": "development_reanalysis_only",
+  "dataset_matches": 20517,
+  "leagues": {
+    "en.1": "Engleska",
+    "it.1": "Italija",
+    "es.1": "Španjolska",
+    "de.1": "Njemačka",
+    "fr.1": "Francuska",
+    "pt.1": "Portugal",
+    "be.1": "Belgija",
+    "nl.1": "Nizozemska",
+    "tr.1": "Turska",
+    "gr.1": "Grčka"
+  },
+  "coverage": [
+    {
+      "league": "be.1",
+      "season": "2019-20",
+      "listed": 240,
+      "scored": 232,
+      "missing_results": 8
+    },
+    {
+      "league": "de.1",
+      "season": "2019-20",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "en.1",
+      "season": "2019-20",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "es.1",
+      "season": "2019-20",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "fr.1",
+      "season": "2019-20",
+      "listed": 380,
+      "scored": 279,
+      "missing_results": 101
+    },
+    {
+      "league": "gr.1",
+      "season": "2019-20",
+      "listed": 240,
+      "scored": 240,
+      "missing_results": 0
+    },
+    {
+      "league": "it.1",
+      "season": "2019-20",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "nl.1",
+      "season": "2019-20",
+      "listed": 306,
+      "scored": 232,
+      "missing_results": 74
+    },
+    {
+      "league": "pt.1",
+      "season": "2019-20",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "tr.1",
+      "season": "2019-20",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "be.1",
+      "season": "2020-21",
+      "listed": 330,
+      "scored": 330,
+      "missing_results": 0
+    },
+    {
+      "league": "de.1",
+      "season": "2020-21",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "en.1",
+      "season": "2020-21",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "es.1",
+      "season": "2020-21",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "fr.1",
+      "season": "2020-21",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "gr.1",
+      "season": "2020-21",
+      "listed": 240,
+      "scored": 240,
+      "missing_results": 0
+    },
+    {
+      "league": "it.1",
+      "season": "2020-21",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "nl.1",
+      "season": "2020-21",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "pt.1",
+      "season": "2020-21",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "tr.1",
+      "season": "2020-21",
+      "listed": 420,
+      "scored": 420,
+      "missing_results": 0
+    },
+    {
+      "league": "de.1",
+      "season": "2021-22",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "en.1",
+      "season": "2021-22",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "es.1",
+      "season": "2021-22",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "fr.1",
+      "season": "2021-22",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "it.1",
+      "season": "2021-22",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "nl.1",
+      "season": "2021-22",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "pt.1",
+      "season": "2021-22",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "de.1",
+      "season": "2022-23",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "en.1",
+      "season": "2022-23",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "es.1",
+      "season": "2022-23",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "fr.1",
+      "season": "2022-23",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "it.1",
+      "season": "2022-23",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "nl.1",
+      "season": "2022-23",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "pt.1",
+      "season": "2022-23",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "be.1",
+      "season": "2023-24",
+      "listed": 313,
+      "scored": 313,
+      "missing_results": 0
+    },
+    {
+      "league": "de.1",
+      "season": "2023-24",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "en.1",
+      "season": "2023-24",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "es.1",
+      "season": "2023-24",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "fr.1",
+      "season": "2023-24",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "gr.1",
+      "season": "2023-24",
+      "listed": 240,
+      "scored": 240,
+      "missing_results": 0
+    },
+    {
+      "league": "it.1",
+      "season": "2023-24",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "nl.1",
+      "season": "2023-24",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "pt.1",
+      "season": "2023-24",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "tr.1",
+      "season": "2023-24",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "be.1",
+      "season": "2024-25",
+      "listed": 313,
+      "scored": 313,
+      "missing_results": 0
+    },
+    {
+      "league": "de.1",
+      "season": "2024-25",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "en.1",
+      "season": "2024-25",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "es.1",
+      "season": "2024-25",
+      "listed": 380,
+      "scored": 370,
+      "missing_results": 10
+    },
+    {
+      "league": "fr.1",
+      "season": "2024-25",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "gr.1",
+      "season": "2024-25",
+      "listed": 236,
+      "scored": 236,
+      "missing_results": 0
+    },
+    {
+      "league": "it.1",
+      "season": "2024-25",
+      "listed": 380,
+      "scored": 370,
+      "missing_results": 10
+    },
+    {
+      "league": "nl.1",
+      "season": "2024-25",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "pt.1",
+      "season": "2024-25",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "tr.1",
+      "season": "2024-25",
+      "listed": 342,
+      "scored": 338,
+      "missing_results": 4
+    },
+    {
+      "league": "be.1",
+      "season": "2025-26",
+      "listed": 240,
+      "scored": 121,
+      "missing_results": 119
+    },
+    {
+      "league": "de.1",
+      "season": "2025-26",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "en.1",
+      "season": "2025-26",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "es.1",
+      "season": "2025-26",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "fr.1",
+      "season": "2025-26",
+      "listed": 306,
+      "scored": 305,
+      "missing_results": 1
+    },
+    {
+      "league": "gr.1",
+      "season": "2025-26",
+      "listed": 182,
+      "scored": 62,
+      "missing_results": 120
+    },
+    {
+      "league": "it.1",
+      "season": "2025-26",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "nl.1",
+      "season": "2025-26",
+      "listed": 306,
+      "scored": 305,
+      "missing_results": 1
+    },
+    {
+      "league": "pt.1",
+      "season": "2025-26",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "tr.1",
+      "season": "2025-26",
+      "listed": 306,
+      "scored": 99,
+      "missing_results": 207
+    }
+  ],
+  "development_seasons": [
+    "2022-23",
+    "2023-24"
+  ],
+  "audit_seasons": [
+    "2024-25",
+    "2025-26"
+  ],
+  "configurations_tested": 1701,
+  "selected": {
+    "id": 1423,
+    "config": {
+      "window": 50,
+      "half_life": 15,
+      "ridge": 0.01,
+      "group": "snaga",
+      "rho": -0.1,
+      "temperature": 1.0
+    },
+    "score": 0.21695284140009513,
+    "folds": {
+      "2022-23": {
+        "matches": 2383,
+        "family_brier": 0.21826103708399652,
+        "outcome_log_loss": 0.9707784750057974,
+        "goals_log_loss": 0.681792157689503,
+        "outcome_hit_rate": 0.5455308434746118,
+        "goals_hit_rate": 0.5631556861099455,
+        "top_pick_hit_rate": 0.600083927822073,
+        "top_pick_mean_probability": 0.6105471413121044
+      },
+      "2023-24": {
+        "matches": 2864,
+        "family_brier": 0.21564464571619374,
+        "outcome_log_loss": 0.9687343742969127,
+        "goals_log_loss": 0.6710244388321063,
+        "outcome_hit_rate": 0.5373603351955307,
+        "goals_hit_rate": 0.5778631284916201,
+        "top_pick_hit_rate": 0.6068435754189944,
+        "top_pick_mean_probability": 0.597289500770955
+      }
+    }
+  },
+  "lock": {
+    "protocol": "expanded-v1",
+    "selected_config": {
+      "window": 50,
+      "half_life": 15,
+      "ridge": 0.01,
+      "group": "snaga",
+      "rho": -0.1,
+      "temperature": 1.0
+    },
+    "selection_seasons": [
+      "2022-23",
+      "2023-24"
+    ],
+    "selection_score": 0.21695284140009513,
+    "trials": 1701,
+    "source_sha256": "33a2fec26c965d297a3c911ffd74637f21b826409d1e3c6d288232d3d266d842",
+    "audit_status": "Previously viewed seasons: descriptive reanalysis, NOT an independent final test",
+    "prospective_test": "Unseen future results after model lock; no results claimed"
+  },
+  "development_leaderboard": [
+    {
+      "id": 1423,
+      "config": {
+        "window": 50,
+        "half_life": 15,
+        "ridge": 0.01,
+        "group": "snaga",
+        "rho": -0.1,
+        "temperature": 1.0
+      },
+      "score": 0.21695284140009513,
+      "folds": {
+        "2022-23": {
+          "matches": 2383,
+          "family_brier": 0.21826103708399652,
+          "outcome_log_loss": 0.9707784750057974,
+          "goals_log_loss": 0.681792157689503,
+          "outcome_hit_rate": 0.5455308434746118,
+          "goals_hit_rate": 0.5631556861099455,
+          "top_pick_hit_rate": 0.600083927822073,
+          "top_pick_mean_probability": 0.6105471413121044
+        },
+        "2023-24": {
+          "matches": 2864,
+          "family_brier": 0.21564464571619374,
+          "outcome_log_loss": 0.9687343742969127,
+          "goals_log_loss": 0.6710244388321063,
+          "outcome_hit_rate": 0.5373603351955307,
+          "goals_hit_rate": 0.5778631284916201,
+          "top_pick_hit_rate": 0.6068435754189944,
+          "top_pick_mean_probability": 0.597289500770955
+        }
+      }
+    },
+    {
+      "id": 1360,
+      "config": {
+        "window": 50,
+        "half_life": 15,
+        "ridge": 0.001,
+        "group": "snaga",
+        "rho": -0.1,
+        "temperature": 1.0
+      },
+      "score": 0.2169543493531254,
+      "folds": {
+        "2022-23": {
+          "matches": 2383,
+          "family_brier": 0.2182738620922032,
+          "outcome_log_loss": 0.9708383895615037,
+          "goals_log_loss": 0.6818282697841531,
+          "outcome_hit_rate": 0.5451112043642468,
+          "goals_hit_rate": 0.5627360469995804,
+          "top_pick_hit_rate": 0.5992446496013428,
+          "top_pick_mean_probability": 0.610972204141004
+        },
+        "2023-24": {
+          "matches": 2864,
+          "family_brier": 0.21563483661404761,
+          "outcome_log_loss": 0.9686518287477649,
+          "goals_log_loss": 0.6710183076447854,
+          "outcome_hit_rate": 0.5377094972067039,
+          "goals_hit_rate": 0.577513966480447,
+          "top_pick_hit_rate": 0.6061452513966481,
+          "top_pick_mean_probability": 0.5976517786347381
+        }
+      }
+    },
+    {
+      "id": 1486,
+      "config": {
+        "window": 50,
+        "half_life": 15,
+        "ridge": 0.1,
+        "group": "snaga",
+        "rho": -0.1,
+        "temperature": 1.0
+      },
+      "score": 0.2169577594465366,
+      "folds": {
+        "2022-23": {
+          "matches": 2383,
+          "family_brier": 0.21816244028836068,
+          "outcome_log_loss": 0.9703010131849171,
+          "goals_log_loss": 0.6815150484149204,
+          "outcome_hit_rate": 0.5455308434746118,
+          "goals_hit_rate": 0.5639949643306756,
+          "top_pick_hit_rate": 0.6005035669324381,
+          "top_pick_mean_probability": 0.6064282015053558
+        },
+        "2023-24": {
+          "matches": 2864,
+          "family_brier": 0.21575307860471254,
+          "outcome_log_loss": 0.9696021151657889,
+          "goals_log_loss": 0.6711117107856965,
+          "outcome_hit_rate": 0.5373603351955307,
+          "goals_hit_rate": 0.5782122905027933,
+          "top_pick_hit_rate": 0.6068435754189944,
+          "top_pick_mean_probability": 0.5938674188765533
+        }
+      }
+    },
+    {
+      "id": 1675,
+      "config": {
+        "window": 50,
+        "half_life": 30,
+        "ridge": 0.1,
+        "group": "snaga",
+        "rho": -0.1,
+        "temperature": 1.0
+      },
+      "score": 0.21700121601335798,
+      "folds": {
+        "2022-23": {
+          "matches": 2383,
+          "family_brier": 0.21811897637008218,
+          "outcome_log_loss": 0.9709834939542923,
+          "goals_log_loss": 0.681078600143089,
+          "outcome_hit_rate": 0.5446915652538816,
+          "goals_hit_rate": 0.5631556861099455,
+          "top_pick_hit_rate": 0.6009232060428031,
+          "top_pick_mean_probability": 0.6063954398091466
+        },
+        "2023-24": {
+          "matches": 2864,
+          "family_brier": 0.2158834556566338,
+          "outcome_log_loss": 0.9702369887615064,
+          "goals_log_loss": 0.6713468042284415,
+          "outcome_hit_rate": 0.5366620111731844,
+          "goals_hit_rate": 0.5806564245810056,
+          "top_pick_hit_rate": 0.6075418994413407,
+          "top_pick_mean_probability": 0.5941066199911768
+        }
+      }
+    },
+    {
+      "id": 1612,
+      "config": {
+        "window": 50,
+        "half_life": 30,
+        "ridge": 0.01,
+        "group": "snaga",
+        "rho": -0.1,
+        "temperature": 1.0
+      },
+      "score": 0.2170033330544448,
+      "folds": {
+        "2022-23": {
+          "matches": 2383,
+          "family_brier": 0.21822749257456348,
+          "outcome_log_loss": 0.9715249507037539,
+          "goals_log_loss": 0.6813729742859627,
+          "outcome_hit_rate": 0.5430130088124213,
+          "goals_hit_rate": 0.5631556861099455,
+          "top_pick_hit_rate": 0.5979857322702475,
+          "top_pick_mean_probability": 0.6104403140298612
+        },
+        "2023-24": {
+          "matches": 2864,
+          "family_brier": 0.2157791735343261,
+          "outcome_log_loss": 0.9693252142075842,
+          "goals_log_loss": 0.6712959947754773,
+          "outcome_hit_rate": 0.535963687150838,
+          "goals_hit_rate": 0.5813547486033519,
+          "top_pick_hit_rate": 0.6057960893854749,
+          "top_pick_mean_probability": 0.597727697586919
+        }
+      }
+    },
+    {
+      "id": 1549,
+      "config": {
+        "window": 50,
+        "half_life": 30,
+        "ridge": 0.001,
+        "group": "snaga",
+        "rho": -0.1,
+        "temperature": 1.0
+      },
+      "score": 0.2170061510554926,
+      "folds": {
+        "2022-23": {
+          "matches": 2383,
+          "family_brier": 0.21824217671507093,
+          "outcome_log_loss": 0.9715919145849005,
+          "goals_log_loss": 0.6814139232905051,
+          "outcome_hit_rate": 0.5430130088124213,
+          "goals_hit_rate": 0.5635753252203105,
+          "top_pick_hit_rate": 0.5971464540495174,
+          "top_pick_mean_probability": 0.6108546200163903
+        },
+        "2023-24": {
+          "matches": 2864,
+          "family_brier": 0.21577012539591423,
+          "outcome_log_loss": 0.9692343832084317,
+          "goals_log_loss": 0.671296546514994,
+          "outcome_hit_rate": 0.5363128491620112,
+          "goals_hit_rate": 0.5810055865921788,
+          "top_pick_hit_rate": 0.6054469273743017,
+          "top_pick_mean_probability": 0.598122336897515
+        }
+      }
+    },
+    {
+      "id": 1489,
+      "config": {
+        "window": 50,
+        "half_life": 15,
+        "ridge": 0.1,
+        "group": "snaga",
+        "rho": 0.0,
+        "temperature": 1.0
+      },
+      "score": 0.21702736739142553,
+      "folds": {
+        "2022-23": {
+          "matches": 2383,
+          "family_brier": 0.2180990310149507,
+          "outcome_log_loss": 0.9697672991414321,
+          "goals_log_loss": 0.6815150484149204,
+          "outcome_hit_rate": 0.5455308434746118,
+          "goals_hit_rate": 0.5639949643306756,
+          "top_pick_hit_rate": 0.6030214015946286,
+          "top_pick_mean_probability": 0.6098199601348299
+        },
+        "2023-24": {
+          "matches": 2864,
+          "family_brier": 0.21595570376790038,
+          "outcome_log_loss": 0.9723713340439084,
+          "goals_log_loss": 0.6711117107856965,
+          "outcome_hit_rate": 0.5373603351955307,
+          "goals_hit_rate": 0.5782122905027933,
+          "top_pick_hit_rate": 0.6085893854748603,
+          "top_pick_mean_probability": 0.5968671780901564
+        }
+      }
+    },
+    {
+      "id": 1426,
+      "config": {
+        "window": 50,
+        "half_life": 15,
+        "ridge": 0.01,
+        "group": "snaga",
+        "rho": 0.0,
+        "temperature": 1.0
+      },
+      "score": 0.21703028992439993,
+      "folds": {
+        "2022-23": {
+          "matches": 2383,
+          "family_brier": 0.2182050968940427,
+          "outcome_log_loss": 0.9702157254031653,
+          "goals_log_loss": 0.681792157689503,
+          "outcome_hit_rate": 0.5455308434746118,
+          "goals_hit_rate": 0.5631556861099455,
+          "top_pick_hit_rate": 0.6005035669324381,
+          "top_pick_mean_probability": 0.6139636365265075
+        },
+        "2023-24": {
+          "matches": 2864,
+          "family_brier": 0.21585548295475718,
+          "outcome_log_loss": 0.9715209366696328,
+          "goals_log_loss": 0.6710244388321063,
+          "outcome_hit_rate": 0.5373603351955307,
+          "goals_hit_rate": 0.5778631284916201,
+          "top_pick_hit_rate": 0.6096368715083799,
+          "top_pick_mean_probability": 0.6003716407519227
+        }
+      }
+    },
+    {
+      "id": 1363,
+      "config": {
+        "window": 50,
+        "half_life": 15,
+        "ridge": 0.001,
+        "group": "snaga",
+        "rho": 0.0,
+        "temperature": 1.0
+      },
+      "score": 0.21703250820205694,
+      "folds": {
+        "2022-23": {
+          "matches": 2383,
+          "family_brier": 0.21821853232104832,
+          "outcome_log_loss": 0.9702717285699776,
+          "goals_log_loss": 0.6818282697841531,
+          "outcome_hit_rate": 0.5451112043642468,
+          "goals_hit_rate": 0.5627360469995804,
+          "top_pick_hit_rate": 0.599664288711708,
+          "top_pick_mean_probability": 0.6143897625248982
+        },
+        "2023-24": {
+          "matches": 2864,
+          "family_brier": 0.2158464840830656,
+          "outcome_log_loss": 0.9714398360800288,
+          "goals_log_loss": 0.6710183076447854,
+          "outcome_hit_rate": 0.5377094972067039,
+          "goals_hit_rate": 0.577513966480447,
+          "top_pick_hit_rate": 0.6096368715083799,
+          "top_pick_mean_probability": 0.6007418562764221
+        }
+      }
+    },
+    {
+      "id": 1441,
+      "config": {
+        "window": 50,
+        "half_life": 15,
+        "ridge": 0.01,
+        "group": "svi",
+        "rho": -0.1,
+        "temperature": 1.0
+      },
+      "score": 0.21705361814940122,
+      "folds": {
+        "2022-23": {
+          "matches": 2383,
+          "family_brier": 0.21846027355292139,
+          "outcome_log_loss": 0.9720652401108623,
+          "goals_log_loss": 0.6820528422863121,
+          "outcome_hit_rate": 0.5459504825849769,
+          "goals_hit_rate": 0.5623164078892152,
+          "top_pick_hit_rate": 0.5992446496013428,
+          "top_pick_mean_probability": 0.6099973404357907
+        },
+        "2023-24": {
+          "matches": 2864,
+          "family_brier": 0.21564696274588108,
+          "outcome_log_loss": 0.9684260072471694,
+          "goals_log_loss": 0.6711728996780724,
+          "outcome_hit_rate": 0.5380586592178771,
+          "goals_hit_rate": 0.5796089385474861,
+          "top_pick_hit_rate": 0.6075418994413407,
+          "top_pick_mean_probability": 0.5969763982354265
+        }
+      }
+    }
+  ],
+  "factor_families": [
+    {
+      "group": "osnovni",
+      "development_score": 0.21839466786671458,
+      "delta_vs_base": 0.0,
+      "config": {
+        "window": 50,
+        "half_life": 30,
+        "ridge": 0.001,
+        "group": "osnovni",
+        "rho": 0.0,
+        "temperature": 1.0
+      },
+      "outcome_log_loss": 0.9753786702436964,
+      "outcome_log_loss_improvement": 0.0,
+      "goals_log_loss": 0.6802238090266696,
+      "goals_log_loss_improvement": 0.0
+    },
+    {
+      "group": "teren",
+      "development_score": 0.21846024654907203,
+      "delta_vs_base": -6.55786823574589e-05,
+      "config": {
+        "window": 50,
+        "half_life": 30,
+        "ridge": 0.001,
+        "group": "teren",
+        "rho": 0.0,
+        "temperature": 1.0
+      },
+      "outcome_log_loss": 0.9759462775196961,
+      "outcome_log_loss_improvement": -0.0005676072759996931,
+      "goals_log_loss": 0.6802536631277722,
+      "goals_log_loss_improvement": -2.985410110267761e-05
+    },
+    {
+      "group": "protivnici",
+      "development_score": 0.2182652069994154,
+      "delta_vs_base": 0.00012946086729917483,
+      "config": {
+        "window": 50,
+        "half_life": 30,
+        "ridge": 0.001,
+        "group": "protivnici",
+        "rho": 0.0,
+        "temperature": 1.0
+      },
+      "outcome_log_loss": 0.9753354512864275,
+      "outcome_log_loss_improvement": 4.3218957268886804e-05,
+      "goals_log_loss": 0.6797186624252962,
+      "goals_log_loss_improvement": 0.0005051466013733519
+    },
+    {
+      "group": "forma",
+      "development_score": 0.21802841695159342,
+      "delta_vs_base": 0.00036625091512115793,
+      "config": {
+        "window": 50,
+        "half_life": 30,
+        "ridge": 0.1,
+        "group": "forma",
+        "rho": -0.1,
+        "temperature": 0.85
+      },
+      "outcome_log_loss": 0.9723230159711396,
+      "outcome_log_loss_improvement": 0.003055654272556829,
+      "goals_log_loss": 0.6797785747414127,
+      "goals_log_loss_improvement": 0.00044523428525689024
+    },
+    {
+      "group": "snaga",
+      "development_score": 0.21695284140009513,
+      "delta_vs_base": 0.0014418264666194447,
+      "config": {
+        "window": 50,
+        "half_life": 15,
+        "ridge": 0.01,
+        "group": "snaga",
+        "rho": -0.1,
+        "temperature": 1.0
+      },
+      "outcome_log_loss": 0.969756424651355,
+      "outcome_log_loss_improvement": 0.005622245592341368,
+      "goals_log_loss": 0.6764082982608046,
+      "goals_log_loss_improvement": 0.003815510765864949
+    },
+    {
+      "group": "odmor",
+      "development_score": 0.21838785948436626,
+      "delta_vs_base": 6.8083823483167105e-06,
+      "config": {
+        "window": 50,
+        "half_life": 30,
+        "ridge": 0.001,
+        "group": "odmor",
+        "rho": 0.0,
+        "temperature": 1.0
+      },
+      "outcome_log_loss": 0.9753203970817141,
+      "outcome_log_loss_improvement": 5.8273161982258515e-05,
+      "goals_log_loss": 0.6802214497183885,
+      "goals_log_loss_improvement": 2.359308281074668e-06
+    },
+    {
+      "group": "svi",
+      "development_score": 0.21705361814940122,
+      "delta_vs_base": 0.0013410497173133584,
+      "config": {
+        "window": 50,
+        "half_life": 15,
+        "ridge": 0.01,
+        "group": "svi",
+        "rho": -0.1,
+        "temperature": 1.0
+      },
+      "outcome_log_loss": 0.9702456236790158,
+      "outcome_log_loss_improvement": 0.00513304656468061,
+      "goals_log_loss": 0.6766128709821922,
+      "goals_log_loss_improvement": 0.0036109380444773187
+    }
+  ],
+  "drop_factor_importance": [
+    {
+      "factor": "snaga",
+      "score_without": 0.21831571172285086,
+      "score_full": 0.21705361814940122,
+      "delta": 0.0012620935734496408
+    },
+    {
+      "factor": "odmor",
+      "score_without": 0.21706175716659967,
+      "score_full": 0.21705361814940122,
+      "delta": 8.139017198455223e-06
+    },
+    {
+      "factor": "forma",
+      "score_without": 0.21705191619432967,
+      "score_full": 0.21705361814940122,
+      "delta": -1.7019550715424714e-06
+    },
+    {
+      "factor": "protivnici",
+      "score_without": 0.2170161620562288,
+      "score_full": 0.21705361814940122,
+      "delta": -3.74560931724055e-05
+    },
+    {
+      "factor": "teren",
+      "score_without": 0.21698262934239942,
+      "score_full": 0.21705361814940122,
+      "delta": -7.098880700179278e-05
+    }
+  ],
+  "features": [
+    "napad",
+    "obrana protivnika",
+    "napad na istom terenu",
+    "obrana na istom terenu",
+    "snaga ranijih protivnika napada",
+    "snaga ranijih protivnika obrane",
+    "novija forma",
+    "Elo razlika",
+    "razmak ligaških utakmica"
+  ],
+  "model_weights": {
+    "napad": 0.6959052792053817,
+    "obrana protivnika": 0.5027753052514272,
+    "Elo razlika": 0.4804325696177624
+  },
+  "audit": {
+    "matches": 5772,
+    "family_brier": 0.21869063325973034,
+    "outcome_log_loss": 0.9798270062322789,
+    "goals_log_loss": 0.6784159789522103,
+    "outcome_hit_rate": 0.520963270963271,
+    "goals_hit_rate": 0.5663548163548163,
+    "top_pick_hit_rate": 0.5954608454608454,
+    "top_pick_mean_probability": 0.6051370876682194
+  },
+  "audit_calibration": {
+    "home": [
+      {
+        "n": 131,
+        "prob": 0.07504335777230459,
+        "rate": 0.07633587786259542
+      },
+      {
+        "n": 566,
+        "prob": 0.15578806503788542,
+        "rate": 0.16431095406360424
+      },
+      {
+        "n": 799,
+        "prob": 0.25366814653526193,
+        "rate": 0.25406758448060074
+      },
+      {
+        "n": 1124,
+        "prob": 0.35190603884169996,
+        "rate": 0.3718861209964413
+      },
+      {
+        "n": 1156,
+        "prob": 0.4488396328941773,
+        "rate": 0.4359861591695502
+      },
+      {
+        "n": 849,
+        "prob": 0.5481525224066628,
+        "rate": 0.5217903415783275
+      },
+      {
+        "n": 572,
+        "prob": 0.6482318720052251,
+        "rate": 0.6573426573426573
+      },
+      {
+        "n": 367,
+        "prob": 0.7472485996844117,
+        "rate": 0.7493188010899182
+      },
+      {
+        "n": 187,
+        "prob": 0.8413145598582175,
+        "rate": 0.8877005347593583
+      },
+      {
+        "n": 21,
+        "prob": 0.9199998203424642,
+        "rate": 0.7619047619047619
+      }
+    ],
+    "draw": [
+      {
+        "n": 70,
+        "prob": 0.08072298774796809,
+        "rate": 0.11428571428571428
+      },
+      {
+        "n": 848,
+        "prob": 0.16282822863786497,
+        "rate": 0.14976415094339623
+      },
+      {
+        "n": 4376,
+        "prob": 0.2595418628095686,
+        "rate": 0.2694241316270567
+      },
+      {
+        "n": 478,
+        "prob": 0.3103727979412656,
+        "rate": 0.30962343096234307
+      }
+    ],
+    "away": [
+      {
+        "n": 507,
+        "prob": 0.06540727422902815,
+        "rate": 0.055226824457593686
+      },
+      {
+        "n": 1084,
+        "prob": 0.1533096448688556,
+        "rate": 0.14760147601476015
+      },
+      {
+        "n": 1371,
+        "prob": 0.25081551236391675,
+        "rate": 0.25455871626549964
+      },
+      {
+        "n": 1147,
+        "prob": 0.34634764993623207,
+        "rate": 0.33565823888404533
+      },
+      {
+        "n": 713,
+        "prob": 0.44528855206909684,
+        "rate": 0.42917251051893407
+      },
+      {
+        "n": 480,
+        "prob": 0.5462649656162865,
+        "rate": 0.5479166666666667
+      },
+      {
+        "n": 307,
+        "prob": 0.644028573050495,
+        "rate": 0.6156351791530945
+      },
+      {
+        "n": 122,
+        "prob": 0.7397353059043021,
+        "rate": 0.7868852459016393
+      },
+      {
+        "n": 41,
+        "prob": 0.826159614008497,
+        "rate": 0.7317073170731707
+      }
+    ],
+    "over2.5": [
+      {
+        "n": 1,
+        "prob": 0.29953963940533923,
+        "rate": 0.0
+      },
+      {
+        "n": 282,
+        "prob": 0.37392532063981504,
+        "rate": 0.4432624113475177
+      },
+      {
+        "n": 1694,
+        "prob": 0.45732483127607804,
+        "rate": 0.4510035419126328
+      },
+      {
+        "n": 2349,
+        "prob": 0.5485353184230354,
+        "rate": 0.5410813111962537
+      },
+      {
+        "n": 1160,
+        "prob": 0.6399274427763317,
+        "rate": 0.6017241379310345
+      },
+      {
+        "n": 253,
+        "prob": 0.7378865842424243,
+        "rate": 0.7193675889328063
+      },
+      {
+        "n": 33,
+        "prob": 0.8304913690782199,
+        "rate": 0.9090909090909091
+      }
+    ],
+    "under2.5": [
+      {
+        "n": 33,
+        "prob": 0.16950863092178012,
+        "rate": 0.09090909090909091
+      },
+      {
+        "n": 253,
+        "prob": 0.2621134157575757,
+        "rate": 0.28063241106719367
+      },
+      {
+        "n": 1160,
+        "prob": 0.36007255722366827,
+        "rate": 0.39827586206896554
+      },
+      {
+        "n": 2349,
+        "prob": 0.45146468157696457,
+        "rate": 0.45891868880374626
+      },
+      {
+        "n": 1694,
+        "prob": 0.542675168723922,
+        "rate": 0.5489964580873672
+      },
+      {
+        "n": 282,
+        "prob": 0.626074679360185,
+        "rate": 0.5567375886524822
+      },
+      {
+        "n": 1,
+        "prob": 0.7004603605946608,
+        "rate": 1.0
+      }
+    ]
+  },
+  "baseline": {
+    "matches": 5772,
+    "family_brier": 0.21976901984692815,
+    "outcome_log_loss": 0.9855519053735842,
+    "goals_log_loss": 0.680665402406518,
+    "outcome_hit_rate": 0.5218295218295218,
+    "goals_hit_rate": 0.5623700623700624,
+    "top_pick_hit_rate": 0.5921690921690922,
+    "top_pick_mean_probability": 0.60732163254697
+  },
+  "baseline_config": {
+    "window": 50,
+    "half_life": 30,
+    "ridge": 0.001,
+    "group": "osnovni",
+    "rho": 0.0,
+    "temperature": 1.0
+  },
+  "league_reference": {
+    "matches": 5772,
+    "family_brier": 0.23217765878604135,
+    "outcome_log_loss": 1.074191844474405,
+    "goals_log_loss": 0.6884004690112628,
+    "outcome_hit_rate": 0.4338184338184338,
+    "goals_hit_rate": 0.5355162855162855,
+    "top_pick_hit_rate": 0.5355162855162855,
+    "top_pick_mean_probability": 0.5498362422603149
+  },
+  "by_league": {
+    "en.1": {
+      "name": "Engleska",
+      "matches": 750,
+      "family_brier": 0.2243034624512693,
+      "outcome_log_loss": 1.002571189537437,
+      "goals_log_loss": 0.6900542333334808,
+      "outcome_hit_rate": 0.5053333333333333,
+      "goals_hit_rate": 0.5573333333333333,
+      "top_pick_hit_rate": 0.564,
+      "top_pick_mean_probability": 0.601945674753537
+    },
+    "it.1": {
+      "name": "Italija",
+      "matches": 740,
+      "family_brier": 0.22292674095156362,
+      "outcome_log_loss": 0.9810381192284028,
+      "goals_log_loss": 0.6939452591143012,
+      "outcome_hit_rate": 0.5135135135135135,
+      "goals_hit_rate": 0.5351351351351351,
+      "top_pick_hit_rate": 0.572972972972973,
+      "top_pick_mean_probability": 0.6004439937281768
+    },
+    "es.1": {
+      "name": "Španjolska",
+      "matches": 745,
+      "family_brier": 0.21736170704380045,
+      "outcome_log_loss": 0.9788759004292906,
+      "goals_log_loss": 0.6749465270060943,
+      "outcome_hit_rate": 0.5302013422818792,
+      "goals_hit_rate": 0.5570469798657718,
+      "top_pick_hit_rate": 0.5973154362416108,
+      "top_pick_mean_probability": 0.6061180836648162
+    },
+    "de.1": {
+      "name": "Njemačka",
+      "matches": 597,
+      "family_brier": 0.21420677124947135,
+      "outcome_log_loss": 0.9996194508348317,
+      "goals_log_loss": 0.6509792894655835,
+      "outcome_hit_rate": 0.5175879396984925,
+      "goals_hit_rate": 0.6231155778894473,
+      "top_pick_hit_rate": 0.6298157453936348,
+      "top_pick_mean_probability": 0.6283783235282887
+    },
+    "fr.1": {
+      "name": "Francuska",
+      "matches": 606,
+      "family_brier": 0.2204192800568528,
+      "outcome_log_loss": 0.9853222302492135,
+      "goals_log_loss": 0.6835558722863878,
+      "outcome_hit_rate": 0.528052805280528,
+      "goals_hit_rate": 0.5676567656765676,
+      "top_pick_hit_rate": 0.6105610561056105,
+      "top_pick_mean_probability": 0.5883733902852472
+    },
+    "pt.1": {
+      "name": "Portugal",
+      "matches": 602,
+      "family_brier": 0.21132435811182423,
+      "outcome_log_loss": 0.9348960826999114,
+      "goals_log_loss": 0.6693662214046074,
+      "outcome_hit_rate": 0.5415282392026578,
+      "goals_hit_rate": 0.6029900332225914,
+      "top_pick_hit_rate": 0.6345514950166113,
+      "top_pick_mean_probability": 0.6188474672262307
+    },
+    "be.1": {
+      "name": "Belgija",
+      "matches": 424,
+      "family_brier": 0.22518345071232862,
+      "outcome_log_loss": 1.01137328623044,
+      "goals_log_loss": 0.6907425842109138,
+      "outcome_hit_rate": 0.5023584905660378,
+      "goals_hit_rate": 0.5188679245283019,
+      "top_pick_hit_rate": 0.5400943396226415,
+      "top_pick_mean_probability": 0.576943798608809
+    },
+    "nl.1": {
+      "name": "Nizozemska",
+      "matches": 596,
+      "family_brier": 0.21495385719827573,
+      "outcome_log_loss": 0.9702766395078296,
+      "goals_log_loss": 0.6660743027833924,
+      "outcome_hit_rate": 0.511744966442953,
+      "goals_hit_rate": 0.5956375838926175,
+      "top_pick_hit_rate": 0.6023489932885906,
+      "top_pick_mean_probability": 0.6278158469801723
+    },
+    "tr.1": {
+      "name": "Turska",
+      "matches": 423,
+      "family_brier": 0.21389327993450988,
+      "outcome_log_loss": 0.9513180136993624,
+      "goals_log_loss": 0.671817835866845,
+      "outcome_hit_rate": 0.5437352245862884,
+      "goals_hit_rate": 0.5531914893617021,
+      "top_pick_hit_rate": 0.6004728132387707,
+      "top_pick_mean_probability": 0.5926403668281413
+    },
+    "gr.1": {
+      "name": "Grčka",
+      "matches": 289,
+      "family_brier": 0.22288771331045235,
+      "outcome_log_loss": 0.9764779861689572,
+      "goals_log_loss": 0.6991683623177878,
+      "outcome_hit_rate": 0.5190311418685121,
+      "goals_hit_rate": 0.5259515570934256,
+      "top_pick_hit_rate": 0.6055363321799307,
+      "top_pick_mean_probability": 0.5943733105834254
+    }
+  },
+  "by_season": {
+    "2024-25": {
+      "matches": 3173,
+      "family_brier": 0.2180838901063871,
+      "outcome_log_loss": 0.9769649834500937,
+      "goals_log_loss": 0.67746711094638,
+      "outcome_hit_rate": 0.5256854711629373,
+      "goals_hit_rate": 0.5726441853135834,
+      "top_pick_hit_rate": 0.6028994642294359,
+      "top_pick_mean_probability": 0.6070426307581069
+    },
+    "2025-26": {
+      "matches": 2599,
+      "family_brier": 0.21943137817144967,
+      "outcome_log_loss": 0.9833211186939464,
+      "goals_log_loss": 0.6795744084183506,
+      "outcome_hit_rate": 0.5151981531358215,
+      "goals_hit_rate": 0.5586764140053867,
+      "top_pick_hit_rate": 0.5863793766833397,
+      "top_pick_mean_probability": 0.6028106974318928
+    }
+  },
+  "paired_brier_delta": {
+    "estimate": -0.0010783865871977739,
+    "weekly_bootstrap_95": [
+      -0.001700064862886188,
+      -0.00036666396887733067
+    ],
+    "interpretation": "Descriptive interval; excludes model selection uncertainty; not proof of independent improvement"
+  },
+  "limitations": [
+    "2024/25 and 2025/26 already inspected: descriptive reanalysis only; prospective holdout remains required.",
+    "Partial source coverage, especially 2025/26; no claim of complete seasons or final rounds.",
+    "No lineup, injury, tactical, xG, weather, coach, media or timestamped odds data.",
+    "Rest is time between recorded league fixtures, not actual recovery including cups/Europe.",
+    "Elo and opponent adjustment are result-derived strength proxies, not a measure of tactical style.",
+    "Team names are source strings; historical renames/transfers are not resolved globally.",
+    "Results assumed available after >2 calendar days; no archived publication timestamps.",
+    "Fixed deterministic grid, equal season Brier weighting; 1701 trials are correlated, not independent evidence.",
+    "No ROI, odds 2+ evaluation, exact-score claim or live recommendations."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "protocol": "expanded-v1",
+  "selected_config": {
+    "window": 50,
+    "half_life": 15,
+    "ridge": 0.01,
+    "group": "snaga",
+    "rho": -0.1,
+    "temperature": 1.0
+  },
+  "selection_seasons": [
+    "2022-23",
+    "2023-24"
+  ],
+  "selection_score": 0.21695284140009513,
+  "trials": 1701,
+  "source_sha256": "33a2fec26c965d297a3c911ffd74637f21b826409d1e3c6d288232d3d266d842",
+  "audit_status": "Previously viewed seasons: descriptive reanalysis, NOT an independent final test",
+  "prospective_test": "Unseen future results after model lock; no results claimed"
+}

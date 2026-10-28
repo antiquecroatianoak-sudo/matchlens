@@ -22,11 +22,34 @@ Vinext/React na Sites, samostalni D1, korisnički odvojeni zapisi, privatno obja
 ## Upute za predaju
 Predati ovaj plan i kod tek na potvrđeni zasebni nogometni GitHub/Claude kanal. Ne koristiti postojeće komentare ili sesije drugih aplikacija. Najprije tražiti tehnički pregled podataka i vremenskog testiranja, zatim implementaciju po fazama s pregledom koda. Objavljen komentar nije potvrda da je Claude pokrenuo rad; zabilježiti link predaje i njegov odgovor zasebno.
 
-## Dogovoreno 28.10.2026.: pomična povijesna provjera
-- Krenuti rano u povijesnoj sezoni, primjerice prognozom 5. kola iz podataka dostupnih prije tih utakmica; zatim otkriti ishode i pomaknuti granicu na 6., 7. i sljedeća kola. Ponavljati kroz više sezona i liga uz praćenje razlika u pokrivenosti.
-- Koristiti stvarne termine i vrijeme dostupnosti, ne samo broj kola: odgođene utakmice i naknadno objavljeni podaci ne smiju ući prerano. Definirati unaprijed prognoziramo li cijelo kolo prije prve utakmice ili svaki susret zasebno.
-- Usporediti prozore posljednjih 20 i 50 dostupnih utakmica i težinu novijih rezultata. Rani dio sezone može koristiti ranije sezone, uz kontrolu promjena igrača, trenera i lige; ako povijesti nema dovoljno, jasno označiti manjak.
-- Rezultati otkrivenog kola smiju služiti samo idućim koracima. Nikad prepisivati spremljenu prognozu prethodnog kola nakon što je ishod poznat. Čuvati verziju modela, ulazne podatke, vremensku granicu i sve isprobane konfiguracije.
-- Težine, prozor i tržište birati unutar ranijih razvojnih/validacijskih razdoblja. Za konačnu provjeru sačuvati kasnije razdoblje koje nije korišteno za izbor; unaprijed zadano ponovno učenje smije koristiti samo tada već otkrivene ishode, bez naknadnog mijenjanja pravila prema završnom rezultatu.
-- Važnost skupina faktora mjeriti na vremenski izdvojenim prognozama usporedbom s osnovnim modelom i uklanjanjem skupina. Rangirati zasebno po tržištu, uz nesigurnost i oprez kod povezanih faktora. Veći uzorak omogućuje pouzdaniju provjeru; ne jamči veću točnost.
-- Prikazivati pogotke, Brier/log loss, kalibraciju, broj prognoza/preskakanja i rezultat uz stvarno dostupne kvote. Posebno označiti ono što nije moguće povijesno rekonstruirati.
+## Vizualna tema — 28.10.2026.
+Korisnik je odobrio tamnu plavo-crnu temu prema referentnoj slici: blagi zakrivljeni plavi valovi na podlozi te okviri s naglašenom plavom koja postupno pada prema crnoj. Tema je u app/theme.css, uključena nakon osnovnih stilova. Zadržati čitljivost na mobilnom uređaju.
+
+## Rangiranje prognoza — dogovor 28.10.2026.
+Početna stranica prikazuje Top 10 po kalibriranoj procijenjenoj vjerojatnosti, sve vrste kladioničkih ponuda zajedno. Zasebna ikona otvara podprozor s do 50. Dopušteno je više različitih ponuda iste utakmice. Vjerojatnost prikazati s dvije decimale. Dodatni podprozor „Koeficijent 2,00+” prvo filtrira sve prihvatljive prognoze s dostupnom kvotom >= 2,00, zatim rangira po vjerojatnosti i prikazuje do 50; ne filtrirati samo prethodni Top 50. Kvota nije vjerojatnost. Ne ograničavati vrste ponuda na 1X2. Točna granica i pravila obračuna dio su identiteta ponude.
+
+Implementirano: sva tri prikaza, sortiranje, uklanjanje duplikata iste ponude, isključivanje proteklih/isteklih/neprovjerenih prognoza i ručnih procjena. Bez izmišljenih prognoza za popunjavanje liste. Još nije implementirano: treniranje/kalibracija modela i automatska izrada prognoza. Podatkovni ugovor `prediction` zahtijeva broj `prob` (0–100), `matchId`, `market`, `selection`, `modelVersion`, `validationId`, `validatedAt`, `generatedAt`, `kickoff`, `validUntil`, `calibrated: true`, `status: verified`; `odds` je zasebna brojčana kvota. Oznake potvrde smije izdavati tek provjereni modelski cjevovod, ne ručni dnevnik.
+
+## Aktivni opseg modela — 28.10.2026.
+Korisnik je odabrao prvih deset liga prema aktualnom UEFA petogodišnjem poretku: Engleska, Italija, Španjolska, Njemačka, Francuska, Portugal, Belgija, Nizozemska, Turska i Grčka. Završni povijesni test ograničiti na dvije posljednje završene sezone, 2024./25. i 2025./26. Starije sezone služe učenju i izboru parametara. Početne ponude su isključivo 1, X, 2 i više/manje od 2,5 gola u regularnom vremenu; kartoni i ostala tržišta odgođeni su. To ima prednost nad ranijim širim pilotom.
+
+Traži se velik broj pomičnih vremenskih testova. Prva mreža: 27 kombinacija prozora 10/20/50 utakmica, poluvremena težine 5/10/30 utakmica i zaglađivanja 4/8/16. Parametri birani na 2022./23., zasebna kalibracija na 2023./24., zaključani završni test na 2024./25. i 2025./26. Računati prognozu prije otkrivanja ishoda i po datumima, uz konzervativno izostavljanje posljednja dva dana rezultata. Ponavljanje testova nije jamstvo vrlo visoke točnosti. Za buduće promjene modela ova dva završna razdoblja više nisu potpuno neviđeni dokaz; potreban novi neovisni test.
+
+Podaci OpenFootball / CC0: izvorni JSON snapshotovi s hashom i porijeklom. Dio liga/sezona je nepotpun; nedostajuće rezultate ne pretvarati u 0:0. Format score:[0,0] u izvoru je izričit rezultat, odsutni score nije rezultat. Izvor nema arhivirane povijesne oznake prve objave, pa rezultat predstavlja retrospektivnu simulaciju dostupnosti uz pretpostavku, ne potpuno rekonstruiranu tadašnju bazu. Nisu uključeni postave, taktika, ozljede, kvote ni drugi faktori; oni i dalje zahtijevaju nove izvore i mjerenje doprinosa.
+
+## Naknadni odabir zamjenskih liga
+Vlasnik je odobrio da se nepotpune lige privremeno stave na stranu i zamijene sljedećima po UEFA poretku uz potvrđenu pokrivenost obiju sezona. Izričito provjeriti Bugarsku i Rumunjsku kao moguće zamjene. Ne predstavljati ih kao već testirane dok rezultati po datumima i fazama nisu uvezeni. Dosadašnji javni pilot ostaje označen izvornim skupom liga i ne smije se tiho preimenovati.
+
+## Važeća odluka vlasnika — bez Bugarske i Rumunjske
+Korisnik je 28.10.2026. izričito odabrao nastavak bez Bugarske i Rumunjske. Obje izostaviti iz kandidata za zamjenu; ne čekati njihove podatke. Nastaviti redom po UEFA poretku i uključiti samo zamjenske lige s potvrđenim rezultatima po utakmicama, datumima i fazama za obje testne sezone. Prethodno navedena provjera BG/RO ostaje povijesni zapis, nije aktivna zadaća. Zamjenske lige još nisu potvrđene niti ubačene u već objavljeni pilot.
+
+## Važeći nastavak — zadržati postojeće lige i širiti povijesno učenje
+Posljednja izričita odluka vlasnika ima prednost nad gornjim planom zamjena: nastaviti s postojećih deset liga, bez traženja zamjena, bez Bugarske i Rumunjske. Aktivni cilj ostaje 1X2 i više/manje 2,5 gola; točan broj golova nije zasebno ugovoren cilj modela.
+
+Vlasnik traži ponovljeno testiranje različitih faktora i njihovih težina. Svaki novi razvojni ciklus mora imati novu mapu eksperimenta, zapis isprobanih postavki, vremenske granice, zaključanu odabranu konfiguraciju, prognoze i rezultate. Isti završeni eksperiment ne prepisivati. Ponovno izvođenje istih postavki na istim podacima služi ponovljivosti, ne poboljšava samo po sebi model.
+
+Implementiran prošireni ciklus: Poissonova regresija s naučenim težinama, sedam skupina obilježja, prozori 10/20/50, poluvrijeme težine 5/15/30, tri jačine regularizacije, tri korekcije malih rezultata i tri postavke kalibracijske temperature — ukupno 1.701 kombinacija. Obilježja su izvedena samo iz ranije dostupnih rezultata: napad/obrana, domaći/gostujući učinak, snaga prethodnih protivnika, novija forma, Elo razlika i razmak zabilježenih ligaških utakmica. Posljednji faktor nije cjeloviti odmor bez kupova/Europe.
+
+Model za razvojnu sezonu uči se na prethodnim sezonama; izbor se radi na 2022./23. i 2023./24., s jednakom težinom tih sezona po obiteljskom Brieru. Sezone 2024./25. i 2025./26. ostaju ponovna opisna analiza jer su već viđene u starom pilotu. Nikakvo novo podešavanje ne čini ih ponovno neovisnim testom. Za novi dokaz treba unaprijed zaključana verzija i stvarno neviđeno razdoblje.
+
+Doprinos mjeriti usporedbom skupina i izostavljanjem skupine uz ponovno učenje. Ne nametati unaprijed da svi faktori moraju poboljšati predviđanje. Sve izvorno dogovorene postave, ozljede, treneri, taktička međudjelovanja, kvaliteta prilika, vrijeme/teren i mediji ostaju u dugoročnom planu; ne izmišljati ih iz konačnih rezultata. Dodavati ih tek s provjerenim vremenski označenim ulazom i novom razvojnom usporedbom.

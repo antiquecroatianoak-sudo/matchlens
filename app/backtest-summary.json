@@ -1,0 +1,804 @@
+{
+  "generated_at": "2026-10-28T20:26:49.698176+00:00",
+  "dataset_matches": 20517,
+  "configurations_tested": 27,
+  "splits": {
+    "warmup": [
+      "2019-20",
+      "2020-21",
+      "2021-22"
+    ],
+    "tuning": [
+      "2022-23"
+    ],
+    "calibration": [
+      "2023-24"
+    ],
+    "test": [
+      "2024-25",
+      "2025-26"
+    ]
+  },
+  "selected_config": {
+    "window": 50,
+    "half_life": 30,
+    "prior": 8
+  },
+  "final_test": {
+    "matches": 5772,
+    "family_brier": 0.2212350985126914,
+    "top_pick_hit_rate": 0.5767498267498268,
+    "top_pick_mean_probability": 0.5991522724878681,
+    "outcome_hit_rate": 0.5102217602217602,
+    "goals_hit_rate": 0.5519750519750519
+  },
+  "raw_final_test": {
+    "matches": 5772,
+    "family_brier": 0.21993727395732893,
+    "top_pick_hit_rate": 0.590956340956341,
+    "top_pick_mean_probability": 0.605565736327167,
+    "outcome_hit_rate": 0.5232155232155232,
+    "goals_hit_rate": 0.5583853083853084
+  },
+  "baseline_final_test": {
+    "matches": 5772,
+    "family_brier": 0.23217765878604135,
+    "top_pick_hit_rate": 0.5355162855162855,
+    "top_pick_mean_probability": 0.5498362422603149,
+    "outcome_hit_rate": 0.4338184338184338,
+    "goals_hit_rate": 0.5355162855162855
+  },
+  "by_league": {
+    "en.1": {
+      "name": "Engleska",
+      "calibrated": {
+        "matches": 750,
+        "family_brier": 0.22619630208716507,
+        "top_pick_hit_rate": 0.568,
+        "top_pick_mean_probability": 0.5971863778916093,
+        "outcome_hit_rate": 0.4866666666666667,
+        "goals_hit_rate": 0.5626666666666666
+      },
+      "raw": {
+        "matches": 750,
+        "family_brier": 0.22481331235410978,
+        "top_pick_hit_rate": 0.5733333333333334,
+        "top_pick_mean_probability": 0.5966542031409343,
+        "outcome_hit_rate": 0.5,
+        "goals_hit_rate": 0.5546666666666666
+      },
+      "baseline": {
+        "matches": 750,
+        "family_brier": 0.23291199839735138,
+        "top_pick_hit_rate": 0.5613333333333334,
+        "top_pick_mean_probability": 0.5885824721057472,
+        "outcome_hit_rate": 0.41733333333333333,
+        "goals_hit_rate": 0.5613333333333334
+      },
+      "tuning_matches": 375,
+      "calibration_matches": 375
+    },
+    "it.1": {
+      "name": "Italija",
+      "calibrated": {
+        "matches": 740,
+        "family_brier": 0.2249159693823987,
+        "top_pick_hit_rate": 0.5337837837837838,
+        "top_pick_mean_probability": 0.5843539222212072,
+        "outcome_hit_rate": 0.518918918918919,
+        "goals_hit_rate": 0.5013513513513513
+      },
+      "raw": {
+        "matches": 740,
+        "family_brier": 0.22431306839144644,
+        "top_pick_hit_rate": 0.5594594594594594,
+        "top_pick_mean_probability": 0.5993756309072373,
+        "outcome_hit_rate": 0.5243243243243243,
+        "goals_hit_rate": 0.5202702702702703
+      },
+      "baseline": {
+        "matches": 740,
+        "family_brier": 0.23466085540248233,
+        "top_pick_hit_rate": 0.5297297297297298,
+        "top_pick_mean_probability": 0.5255082545949415,
+        "outcome_hit_rate": 0.3972972972972973,
+        "goals_hit_rate": 0.5297297297297298
+      },
+      "tuning_matches": 370,
+      "calibration_matches": 375
+    },
+    "es.1": {
+      "name": "Španjolska",
+      "calibrated": {
+        "matches": 745,
+        "family_brier": 0.21895043595105584,
+        "top_pick_hit_rate": 0.5731543624161074,
+        "top_pick_mean_probability": 0.5922126993607725,
+        "outcome_hit_rate": 0.5154362416107383,
+        "goals_hit_rate": 0.5436241610738255
+      },
+      "raw": {
+        "matches": 745,
+        "family_brier": 0.21915417302834272,
+        "top_pick_hit_rate": 0.5852348993288591,
+        "top_pick_mean_probability": 0.611817903079408,
+        "outcome_hit_rate": 0.5342281879194631,
+        "goals_hit_rate": 0.548993288590604
+      },
+      "baseline": {
+        "matches": 745,
+        "family_brier": 0.2318412153795456,
+        "top_pick_hit_rate": 0.5046979865771812,
+        "top_pick_mean_probability": 0.514022171011207,
+        "outcome_hit_rate": 0.4657718120805369,
+        "goals_hit_rate": 0.5046979865771812
+      },
+      "tuning_matches": 370,
+      "calibration_matches": 375
+    },
+    "de.1": {
+      "name": "Njemačka",
+      "calibrated": {
+        "matches": 597,
+        "family_brier": 0.21751859571714688,
+        "top_pick_hit_rate": 0.6180904522613065,
+        "top_pick_mean_probability": 0.6238329289182216,
+        "outcome_hit_rate": 0.5041876046901173,
+        "goals_hit_rate": 0.6180904522613065
+      },
+      "raw": {
+        "matches": 597,
+        "family_brier": 0.21536611357537272,
+        "top_pick_hit_rate": 0.6164154103852596,
+        "top_pick_mean_probability": 0.6246559490128577,
+        "outcome_hit_rate": 0.5108877721943048,
+        "goals_hit_rate": 0.6231155778894473
+      },
+      "baseline": {
+        "matches": 597,
+        "family_brier": 0.2274525715924955,
+        "top_pick_hit_rate": 0.6197654941373534,
+        "top_pick_mean_probability": 0.6165496372327726,
+        "outcome_hit_rate": 0.4137353433835846,
+        "goals_hit_rate": 0.6197654941373534
+      },
+      "tuning_matches": 306,
+      "calibration_matches": 296
+    },
+    "fr.1": {
+      "name": "Francuska",
+      "calibrated": {
+        "matches": 606,
+        "family_brier": 0.22135458810750114,
+        "top_pick_hit_rate": 0.5907590759075908,
+        "top_pick_mean_probability": 0.594122057515219,
+        "outcome_hit_rate": 0.5264026402640264,
+        "goals_hit_rate": 0.5429042904290429
+      },
+      "raw": {
+        "matches": 606,
+        "family_brier": 0.22124358499167926,
+        "top_pick_hit_rate": 0.6039603960396039,
+        "top_pick_mean_probability": 0.5942440137705735,
+        "outcome_hit_rate": 0.5297029702970297,
+        "goals_hit_rate": 0.5610561056105611
+      },
+      "baseline": {
+        "matches": 606,
+        "family_brier": 0.231401665245698,
+        "top_pick_hit_rate": 0.5396039603960396,
+        "top_pick_mean_probability": 0.5380925735824493,
+        "outcome_hit_rate": 0.4636963696369637,
+        "goals_hit_rate": 0.5396039603960396
+      },
+      "tuning_matches": 370,
+      "calibration_matches": 276
+    },
+    "pt.1": {
+      "name": "Portugal",
+      "calibrated": {
+        "matches": 602,
+        "family_brier": 0.2144354663615855,
+        "top_pick_hit_rate": 0.6046511627906976,
+        "top_pick_mean_probability": 0.6027975225198849,
+        "outcome_hit_rate": 0.5398671096345515,
+        "goals_hit_rate": 0.5631229235880398
+      },
+      "raw": {
+        "matches": 602,
+        "family_brier": 0.21341568915310904,
+        "top_pick_hit_rate": 0.6212624584717608,
+        "top_pick_mean_probability": 0.6170157795011015,
+        "outcome_hit_rate": 0.553156146179402,
+        "goals_hit_rate": 0.5697674418604651
+      },
+      "baseline": {
+        "matches": 602,
+        "family_brier": 0.23424501269104148,
+        "top_pick_hit_rate": 0.4750830564784053,
+        "top_pick_mean_probability": 0.5051877931918596,
+        "outcome_hit_rate": 0.420265780730897,
+        "goals_hit_rate": 0.4750830564784053
+      },
+      "tuning_matches": 296,
+      "calibration_matches": 278
+    },
+    "be.1": {
+      "name": "Belgija",
+      "calibrated": {
+        "matches": 424,
+        "family_brier": 0.22935440997960505,
+        "top_pick_hit_rate": 0.5283018867924528,
+        "top_pick_mean_probability": 0.5876064127227147,
+        "outcome_hit_rate": 0.4481132075471698,
+        "goals_hit_rate": 0.5117924528301887
+      },
+      "raw": {
+        "matches": 424,
+        "family_brier": 0.22727070420555348,
+        "top_pick_hit_rate": 0.5542452830188679,
+        "top_pick_mean_probability": 0.5913560260406622,
+        "outcome_hit_rate": 0.49056603773584906,
+        "goals_hit_rate": 0.5188679245283019
+      },
+      "baseline": {
+        "matches": 424,
+        "family_brier": 0.23468072009452895,
+        "top_pick_hit_rate": 0.49292452830188677,
+        "top_pick_mean_probability": 0.5277857666020965,
+        "outcome_hit_rate": 0.4363207547169811,
+        "goals_hit_rate": 0.49292452830188677
+      },
+      "tuning_matches": 0,
+      "calibration_matches": 209
+    },
+    "nl.1": {
+      "name": "Nizozemska",
+      "calibrated": {
+        "matches": 596,
+        "family_brier": 0.2196403475142925,
+        "top_pick_hit_rate": 0.5973154362416108,
+        "top_pick_mean_probability": 0.6247749880023106,
+        "outcome_hit_rate": 0.5234899328859061,
+        "goals_hit_rate": 0.587248322147651
+      },
+      "raw": {
+        "matches": 596,
+        "family_brier": 0.2164365353244198,
+        "top_pick_hit_rate": 0.6023489932885906,
+        "top_pick_mean_probability": 0.6220388380722797,
+        "outcome_hit_rate": 0.5201342281879194,
+        "goals_hit_rate": 0.587248322147651
+      },
+      "baseline": {
+        "matches": 596,
+        "family_brier": 0.2295521273227185,
+        "top_pick_hit_rate": 0.587248322147651,
+        "top_pick_mean_probability": 0.6037523161628715,
+        "outcome_hit_rate": 0.44798657718120805,
+        "goals_hit_rate": 0.587248322147651
+      },
+      "tuning_matches": 296,
+      "calibration_matches": 272
+    },
+    "tr.1": {
+      "name": "Turska",
+      "calibrated": {
+        "matches": 423,
+        "family_brier": 0.21798011784196297,
+        "top_pick_hit_rate": 0.5815602836879432,
+        "top_pick_mean_probability": 0.5964534504938989,
+        "outcome_hit_rate": 0.5106382978723404,
+        "goals_hit_rate": 0.5555555555555556
+      },
+      "raw": {
+        "matches": 423,
+        "family_brier": 0.21556991982757634,
+        "top_pick_hit_rate": 0.5933806146572104,
+        "top_pick_mean_probability": 0.5927561999098486,
+        "outcome_hit_rate": 0.5390070921985816,
+        "goals_hit_rate": 0.5484633569739953
+      },
+      "baseline": {
+        "matches": 423,
+        "family_brier": 0.23129569332154526,
+        "top_pick_hit_rate": 0.541371158392435,
+        "top_pick_mean_probability": 0.5368269340695464,
+        "outcome_hit_rate": 0.46099290780141844,
+        "goals_hit_rate": 0.541371158392435
+      },
+      "tuning_matches": 0,
+      "calibration_matches": 273
+    },
+    "gr.1": {
+      "name": "Grčka",
+      "calibrated": {
+        "matches": 289,
+        "family_brier": 0.2225561603473744,
+        "top_pick_hit_rate": 0.5674740484429066,
+        "top_pick_mean_probability": 0.5800540295352912,
+        "outcome_hit_rate": 0.5155709342560554,
+        "goals_hit_rate": 0.5155709342560554
+      },
+      "raw": {
+        "matches": 289,
+        "family_brier": 0.2212386664260693,
+        "top_pick_hit_rate": 0.615916955017301,
+        "top_pick_mean_probability": 0.5945035460197243,
+        "outcome_hit_rate": 0.532871972318339,
+        "goals_hit_rate": 0.5397923875432526
+      },
+      "baseline": {
+        "matches": 289,
+        "family_brier": 0.234895660070466,
+        "top_pick_hit_rate": 0.4532871972318339,
+        "top_pick_mean_probability": 0.523919333354374,
+        "outcome_hit_rate": 0.42214532871972316,
+        "goals_hit_rate": 0.4532871972318339
+      },
+      "tuning_matches": 0,
+      "calibration_matches": 135
+    }
+  },
+  "coverage": [
+    {
+      "league": "be.1",
+      "season": "2019-20",
+      "listed": 240,
+      "scored": 232,
+      "missing_results": 8
+    },
+    {
+      "league": "de.1",
+      "season": "2019-20",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "en.1",
+      "season": "2019-20",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "es.1",
+      "season": "2019-20",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "fr.1",
+      "season": "2019-20",
+      "listed": 380,
+      "scored": 279,
+      "missing_results": 101
+    },
+    {
+      "league": "gr.1",
+      "season": "2019-20",
+      "listed": 240,
+      "scored": 240,
+      "missing_results": 0
+    },
+    {
+      "league": "it.1",
+      "season": "2019-20",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "nl.1",
+      "season": "2019-20",
+      "listed": 306,
+      "scored": 232,
+      "missing_results": 74
+    },
+    {
+      "league": "pt.1",
+      "season": "2019-20",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "tr.1",
+      "season": "2019-20",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "be.1",
+      "season": "2020-21",
+      "listed": 330,
+      "scored": 330,
+      "missing_results": 0
+    },
+    {
+      "league": "de.1",
+      "season": "2020-21",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "en.1",
+      "season": "2020-21",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "es.1",
+      "season": "2020-21",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "fr.1",
+      "season": "2020-21",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "gr.1",
+      "season": "2020-21",
+      "listed": 240,
+      "scored": 240,
+      "missing_results": 0
+    },
+    {
+      "league": "it.1",
+      "season": "2020-21",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "nl.1",
+      "season": "2020-21",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "pt.1",
+      "season": "2020-21",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "tr.1",
+      "season": "2020-21",
+      "listed": 420,
+      "scored": 420,
+      "missing_results": 0
+    },
+    {
+      "league": "de.1",
+      "season": "2021-22",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "en.1",
+      "season": "2021-22",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "es.1",
+      "season": "2021-22",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "fr.1",
+      "season": "2021-22",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "it.1",
+      "season": "2021-22",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "nl.1",
+      "season": "2021-22",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "pt.1",
+      "season": "2021-22",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "de.1",
+      "season": "2022-23",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "en.1",
+      "season": "2022-23",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "es.1",
+      "season": "2022-23",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "fr.1",
+      "season": "2022-23",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "it.1",
+      "season": "2022-23",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "nl.1",
+      "season": "2022-23",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "pt.1",
+      "season": "2022-23",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "be.1",
+      "season": "2023-24",
+      "listed": 313,
+      "scored": 313,
+      "missing_results": 0
+    },
+    {
+      "league": "de.1",
+      "season": "2023-24",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "en.1",
+      "season": "2023-24",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "es.1",
+      "season": "2023-24",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "fr.1",
+      "season": "2023-24",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "gr.1",
+      "season": "2023-24",
+      "listed": 240,
+      "scored": 240,
+      "missing_results": 0
+    },
+    {
+      "league": "it.1",
+      "season": "2023-24",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "nl.1",
+      "season": "2023-24",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "pt.1",
+      "season": "2023-24",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "tr.1",
+      "season": "2023-24",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "be.1",
+      "season": "2024-25",
+      "listed": 313,
+      "scored": 313,
+      "missing_results": 0
+    },
+    {
+      "league": "de.1",
+      "season": "2024-25",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "en.1",
+      "season": "2024-25",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "es.1",
+      "season": "2024-25",
+      "listed": 380,
+      "scored": 370,
+      "missing_results": 10
+    },
+    {
+      "league": "fr.1",
+      "season": "2024-25",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "gr.1",
+      "season": "2024-25",
+      "listed": 236,
+      "scored": 236,
+      "missing_results": 0
+    },
+    {
+      "league": "it.1",
+      "season": "2024-25",
+      "listed": 380,
+      "scored": 370,
+      "missing_results": 10
+    },
+    {
+      "league": "nl.1",
+      "season": "2024-25",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "pt.1",
+      "season": "2024-25",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "tr.1",
+      "season": "2024-25",
+      "listed": 342,
+      "scored": 338,
+      "missing_results": 4
+    },
+    {
+      "league": "be.1",
+      "season": "2025-26",
+      "listed": 240,
+      "scored": 121,
+      "missing_results": 119
+    },
+    {
+      "league": "de.1",
+      "season": "2025-26",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "en.1",
+      "season": "2025-26",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "es.1",
+      "season": "2025-26",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "fr.1",
+      "season": "2025-26",
+      "listed": 306,
+      "scored": 305,
+      "missing_results": 1
+    },
+    {
+      "league": "gr.1",
+      "season": "2025-26",
+      "listed": 182,
+      "scored": 62,
+      "missing_results": 120
+    },
+    {
+      "league": "it.1",
+      "season": "2025-26",
+      "listed": 380,
+      "scored": 380,
+      "missing_results": 0
+    },
+    {
+      "league": "nl.1",
+      "season": "2025-26",
+      "listed": 306,
+      "scored": 305,
+      "missing_results": 1
+    },
+    {
+      "league": "pt.1",
+      "season": "2025-26",
+      "listed": 306,
+      "scored": 306,
+      "missing_results": 0
+    },
+    {
+      "league": "tr.1",
+      "season": "2025-26",
+      "listed": 306,
+      "scored": 99,
+      "missing_results": 207
+    }
+  ],
+  "limitations": [
+    "Retrospective data snapshot, not archived as-of publication times. Two-day result-availability assumption.",
+    "Ten leagues, available full-time scores only: no lineups, tactics, injuries, weather or odds.",
+    "2025/26 source snapshots have missing final scores: partial test, not complete final-round evidence.",
+    "Belgium, Turkey and Greece have missing 2021-23 source files; global configuration learned from other leagues. Calibration coverage varies.",
+    "Current top-ten league selection is retrospective, not a historically fixed universe.",
+    "No ROI or odds-2+ evaluation without historical executable odds.",
+    "Candidate and calibration method fixed before final test; do not retune on this test.",
+    "Probabilities require further independent prospective verification; no live tips enabled.",
+    "High-probability market selection can favor easy low-odds outcomes; hit rate alone is not evidence of advantage."
+  ]
+}
