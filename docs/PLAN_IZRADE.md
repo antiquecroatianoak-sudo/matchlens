@@ -21,3 +21,12 @@ Vinext/React na Sites, samostalni D1, korisnički odvojeni zapisi, privatno obja
 
 ## Upute za predaju
 Predati ovaj plan i kod tek na potvrđeni zasebni nogometni GitHub/Claude kanal. Ne koristiti postojeće komentare ili sesije drugih aplikacija. Najprije tražiti tehnički pregled podataka i vremenskog testiranja, zatim implementaciju po fazama s pregledom koda. Objavljen komentar nije potvrda da je Claude pokrenuo rad; zabilježiti link predaje i njegov odgovor zasebno.
+
+## Dogovoreno 28.10.2026.: pomična povijesna provjera
+- Krenuti rano u povijesnoj sezoni, primjerice prognozom 5. kola iz podataka dostupnih prije tih utakmica; zatim otkriti ishode i pomaknuti granicu na 6., 7. i sljedeća kola. Ponavljati kroz više sezona i liga uz praćenje razlika u pokrivenosti.
+- Koristiti stvarne termine i vrijeme dostupnosti, ne samo broj kola: odgođene utakmice i naknadno objavljeni podaci ne smiju ući prerano. Definirati unaprijed prognoziramo li cijelo kolo prije prve utakmice ili svaki susret zasebno.
+- Usporediti prozore posljednjih 20 i 50 dostupnih utakmica i težinu novijih rezultata. Rani dio sezone može koristiti ranije sezone, uz kontrolu promjena igrača, trenera i lige; ako povijesti nema dovoljno, jasno označiti manjak.
+- Rezultati otkrivenog kola smiju služiti samo idućim koracima. Nikad prepisivati spremljenu prognozu prethodnog kola nakon što je ishod poznat. Čuvati verziju modela, ulazne podatke, vremensku granicu i sve isprobane konfiguracije.
+- Težine, prozor i tržište birati unutar ranijih razvojnih/validacijskih razdoblja. Za konačnu provjeru sačuvati kasnije razdoblje koje nije korišteno za izbor; unaprijed zadano ponovno učenje smije koristiti samo tada već otkrivene ishode, bez naknadnog mijenjanja pravila prema završnom rezultatu.
+- Važnost skupina faktora mjeriti na vremenski izdvojenim prognozama usporedbom s osnovnim modelom i uklanjanjem skupina. Rangirati zasebno po tržištu, uz nesigurnost i oprez kod povezanih faktora. Veći uzorak omogućuje pouzdaniju provjeru; ne jamči veću točnost.
+- Prikazivati pogotke, Brier/log loss, kalibraciju, broj prognoza/preskakanja i rezultat uz stvarno dostupne kvote. Posebno označiti ono što nije moguće povijesno rekonstruirati.
