@@ -1,0 +1,47 @@
+{
+  "source": "OpenFootball football.json / CC0",
+  "files": [
+    {
+      "file": "2026-27-en.1.json",
+      "url": "https://raw.githubusercontent.com/openfootball/football.json/master/2026-27/en.1.json",
+      "sha256": "cee60edde5dd9eefdd57c6aee50fc99c645d5bcb2b9e6511115aefb2f6cf8b9d",
+      "fetched_at": "2026-10-28T20:58:46+00:00"
+    },
+    {
+      "file": "2026-27-it.1.json",
+      "url": "https://raw.githubusercontent.com/openfootball/football.json/master/2026-27/it.1.json",
+      "sha256": "45bf5c5c340742e8053f5de51b4cd8dccc12dbbc703ddc2a04d5aae32abae2c0",
+      "fetched_at": "2026-10-28T20:58:46+00:00"
+    },
+    {
+      "file": "2026-27-es.1.json",
+      "url": "https://raw.githubusercontent.com/openfootball/football.json/master/2026-27/es.1.json",
+      "sha256": "3082417ea0171b860ffffda9df26ab2575a6930f8316fcb616561507bc6b9768",
+      "fetched_at": "2026-10-28T20:58:46+00:00"
+    },
+    {
+      "file": "2026-27-de.1.json",
+      "url": "https://raw.githubusercontent.com/openfootball/football.json/master/2026-27/de.1.json",
+      "sha256": "38e399ae3b9cdb01ecc3e6d9724a8812e95bbe8e22b9df7b69fde077a7c6f760",
+      "fetched_at": "2026-10-28T20:58:47+00:00"
+    },
+    {
+      "file": "2026-27-fr.1.json",
+      "url": "https://raw.githubusercontent.com/openfootball/football.json/master/2026-27/fr.1.json",
+      "sha256": "73e8e72f4fe8153f120faada06179d9617337526920a9fec51a4c4f4af23bcf1",
+      "fetched_at": "2026-10-28T20:58:47+00:00"
+    },
+    {
+      "file": "2026-27-pt.1.json",
+      "url": "https://raw.githubusercontent.com/openfootball/football.json/master/2026-27/pt.1.json",
+      "sha256": "2e6ad191876c996a3b56f04ff80ac266a20357ef10b4879bf46a8b845002a3a1",
+      "fetched_at": "2026-10-28T20:58:47+00:00"
+    },
+    {
+      "file": "2026-27-nl.1.json",
+      "url": "https://raw.githubusercontent.com/openfootball/football.json/master/2026-27/nl.1.json",
+      "sha256": "f2ba1edfac65d86f6ddd9947437d0860e0e913b72de2e2fc00202c3365f62e76",
+      "fetched_at": "2026-10-28T20:58:47+00:00"
+    }
+  ]
+}

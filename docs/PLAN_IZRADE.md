@@ -53,3 +53,6 @@ Implementiran prošireni ciklus: Poissonova regresija s naučenim težinama, sed
 Model za razvojnu sezonu uči se na prethodnim sezonama; izbor se radi na 2022./23. i 2023./24., s jednakom težinom tih sezona po obiteljskom Brieru. Sezone 2024./25. i 2025./26. ostaju ponovna opisna analiza jer su već viđene u starom pilotu. Nikakvo novo podešavanje ne čini ih ponovno neovisnim testom. Za novi dokaz treba unaprijed zaključana verzija i stvarno neviđeno razdoblje.
 
 Doprinos mjeriti usporedbom skupina i izostavljanjem skupine uz ponovno učenje. Ne nametati unaprijed da svi faktori moraju poboljšati predviđanje. Sve izvorno dogovorene postave, ozljede, treneri, taktička međudjelovanja, kvaliteta prilika, vrijeme/teren i mediji ostaju u dugoročnom planu; ne izmišljati ih iz konačnih rezultata. Dodavati ih tek s provjerenim vremenski označenim ulazom i novom razvojnom usporedbom.
+
+## Prospektivni test i GitHub suradnja — 28.10.2026.
+Zaključana konfiguracija expanded-v1 sada se provjerava na stvarno neviđenim utakmicama 2026./27. (`data/experiments/20261028-prospective-v1/`), s unaprijed upisanim pravilima u lock datoteci. Razmjena zadataka ChatGPT ↔ Claude predviđena je preko `@claude` komentara i GitHub Actiona; vlasnikovi koraci i status testiranja su u `docs/SURADNJA_GITHUB.md`.
