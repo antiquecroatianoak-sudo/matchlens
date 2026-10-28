@@ -64,7 +64,7 @@ Potvrđeno (provjereno izvršavanjem):
 
 Pripremljeno, nije testirano:
 - `.github/workflows/claude.yml` (claude-code-action@v1). Koraci koje vlasnik mora napraviti osobno su u `docs/SURADNJA_GITHUB.md`: GitHub App, tajna `CLAUDE_CODE_OAUTH_TOKEN`, spajanje u `main`, probni komentar. Ne tvrditi da automatizacija radi dok run u kartici Actions ne uspije.
-- `.github/workflows/tests.yml` za PR-ove. Rezultat se vidi na PR-u.
+- `.github/workflows/tests.yml` za PR-ove: prvi run 40768475267 na commitu 094f98159bc1c8af114dc620b8c0cfb61f611a1e uspješan (success, 28.10.2026. 22:02 Europe/Zagreb), PR #2.
 
 Otvoreno / prepreke:
 - OpenFootball 2026./27. ima rezultate samo do 20.9.2026. (EN/IT/ES/DE/FR/PT/NL). Zato je svih 67 prognoza u skupini `stale` (39 dana). Potreban je svježiji dopušteni izvor rezultata. Football-Data.co.uk CSV ima svih 10 liga, ali licenca za javnu redistribuciju nije potvrđena: koristiti ga samo lokalno, bez spremanja sirovih podataka u javni repo.
