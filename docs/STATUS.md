@@ -24,3 +24,6 @@ Kanonski plan: docs/PLAN_IZRADE.md. Obvezan početak rada: AGENTS.md. Upute za C
 3. Dovršiti samostalno razvojno okruženje i provjeru API-ja, autentikacije i izolacije korisnika.
 4. Provjeriti izvore i njihove uvjete, pokrivenost i stvarni dohvat; zatim povezati prvi povijesni pilot.
 5. Razvijati osnovni model i vremenski odvojenu evaluaciju prema kanonskom planu. Ne izmišljati prognoze ni uspješnost.
+
+## Dopuna: provjera izvora
+Izvještaj docs/IZVORI_PROVJERA_2026-10-28.md spremljen je commitom 843844fd501c420f93e01de30de9798757ff6e5c i objavljen kao dopuna issuea #1. Uspješno probno dohvaćeni: 380 susreta EPL 2024/25 iz Football-Data.co.uk, StatsBomb katalog s 80 kombinacija natjecanja/sezone i Open-Meteo uzorak 24 satna zapisa. To nisu podaci integrirani u aplikaciju. SofaScore nije potvrđen dopušteni masovni izvor; puni uvjeti StatsBomb licence i ostali faktori tek slijede. Sljedeći podatkovni korak je CSV adapter uz provjeru vremenske zone, identiteta i nedostajućih vrijednosti. Glavni plan već sadrži odobrenu pomičnu povijesnu provjeru.
