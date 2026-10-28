@@ -44,3 +44,31 @@ Korisnik je 28.10.2026. izričito odabrao nastavak bez Bugarske i Rumunjske. Obj
 
 ## Potvrđena objava proširenog ciklusa
 Sites verzija 5 uspješno je objavljena na https://matchlens-luka.lushlily1.chatgpt.site. Izvorni commit a39f0fd5cab6c425048a881f6d5005f8e430cec1; deployment appgdep_6ae25ed958dc81918af648b3d0c7d50d, status succeeded. GitHub istraživačka analitika i izvještaj spremljeni commitom 0d623027ed098ed445f58e0a665b74f317f8fcdf. Prijenos je ograničen na projektne datoteke i agregirane nalaze; ne sadrži platformski paket ni tajne. Buduće prognoze nisu aktivirane. Vizualni QA ostaje nepotvrđen zbog odbijene veze preview preglednika.
+
+## Claude Code nastavak — 28.10.2026., oko 22:15 Europe/Zagreb
+Sesija: https://claude.ai/code/session_01XjqfQVhHbKVrHjWEGhqkqh (ručno pokrenuta, ne preko `@claude`). Preuzimanje potvrđeno u issueu #1. Grana `claude/prospective-lock-ci`.
+
+Potvrđeno (provjereno izvršavanjem):
+- Repozitorij prije ovog rada nije imao GitHub Actions workflowe. Integracija na `@claude` nije postojala.
+- Sirovi snapshotovi nisu bili u GitHubu, pa su 3 od 12 testova padala na čistom klonu. Ponovno su izgrađeni s OpenFootballa (CC0) i spremljeni u `data/openfootball/` i `data/upstream/`. Pohranjeni su kao JSON s indent=2, uz spajanje TXT dopuna.
+  - 58/64 datoteka je bajt-identično manifestu.
+  - 6 datoteka (2019-20 BE/FR/NL, 2024-25 ES/IT/TR) upstream je u međuvremenu promijenio, uz iste brojeve utakmica i rezultata.
+  - Provjera: zaključani expanded-v1 ponovljen je točno iz ovih podataka (20.517 utakmica; audit Brier 0,21869063; isti koeficijenti; razvojni rezultat 0,21695284). Grid od 1.701 konfiguracije nije ponovno pokretan.
+- `analytics/verify_snapshots.py` provjerava ili ponovno gradi snapshotove prema manifestu i prijavljuje razlike.
+- 14 Python testova prolazi lokalno (Python 3.13, numpy 2.3.5, scipy 1.17.0). Novi testovi potvrđuju da buduće neodigrane utakmice ne ulaze u povijest.
+- **Prospektivni test `data/experiments/20261028-prospective-v1/`:**
+  - Zaključana konfiguracija expanded-v1; koeficijenti jednom naučeni na 18.905 utakmica s rezultatima prije 28.10.2026.
+  - 67 prognoza zamrznuto prije početka utakmica od 29.10. do 4.11.2026. (7 liga).
+  - SHA-256 dnevnika `eeaccee74f694b49bfc282e3ed84048a2abe65797741044770a773ce3d1731b8` objavljen je u issueu #1 (komentar 6480577279) kao vremenski žig poslužitelja.
+  - Polje `source_lock` u lock datoteci ručno je skraćeno s apsolutne na relativnu putanju prije ikakvih ishoda. To je jedina naknadna izmjena.
+
+Pripremljeno, nije testirano:
+- `.github/workflows/claude.yml` (claude-code-action@v1). Koraci koje vlasnik mora napraviti osobno su u `docs/SURADNJA_GITHUB.md`: GitHub App, tajna `CLAUDE_CODE_OAUTH_TOKEN`, spajanje u `main`, probni komentar. Ne tvrditi da automatizacija radi dok run u kartici Actions ne uspije.
+- `.github/workflows/tests.yml` za PR-ove. Rezultat se vidi na PR-u.
+
+Otvoreno / prepreke:
+- OpenFootball 2026./27. ima rezultate samo do 20.9.2026. (EN/IT/ES/DE/FR/PT/NL). Zato je svih 67 prognoza u skupini `stale` (39 dana). Potreban je svježiji dopušteni izvor rezultata. Football-Data.co.uk CSV ima svih 10 liga, ali licenca za javnu redistribuciju nije potvrđena: koristiti ga samo lokalno, bez spremanja sirovih podataka u javni repo.
+- TR/GR/BE 2026./27.: TXT drugog formata (`Tim  2-2 (0-0)  Tim`) i sponzorski nazivi klubova (npr. „Atiker Konyaspor”). Treba parser i kanonsko mapiranje naziva prije uključivanja.
+- Ocjenu raditi tek kad izvor objavi rezultate; tvrdnje tek nakon ≥200 ocijenjenih utakmica.
+
+Sljedeći korak: svakih nekoliko dana pokrenuti `snapshot` i `predict --as-of <danas>` za nova kola (dodaje samo nove utakmice), a nakon objave rezultata `score`. Kriterij dovršenosti: ≥200 ocijenjenih prognoza i izvještaj odvojeno za `fresh` i `stale`.
