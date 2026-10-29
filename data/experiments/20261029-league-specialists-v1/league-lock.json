@@ -1,0 +1,293 @@
+{
+  "name": "league-specialists-v1",
+  "created_at": "2026-10-29T07:36:22.237066+00:00",
+  "selection": {
+    "outcome": {
+      "en.1": {
+        "config": {
+          "id": 0,
+          "alpha": 0.0,
+          "ridge": null
+        },
+        "development_matches": 750,
+        "reason": "development_log_loss",
+        "development_score": 0.9609486628135139
+      },
+      "it.1": {
+        "config": {
+          "id": 0,
+          "alpha": 0.0,
+          "ridge": null
+        },
+        "development_matches": 745,
+        "reason": "development_log_loss",
+        "development_score": 0.988565606429102
+      },
+      "es.1": {
+        "config": {
+          "id": 0,
+          "alpha": 0.0,
+          "ridge": null
+        },
+        "development_matches": 745,
+        "reason": "development_log_loss",
+        "development_score": 0.9800235728245581
+      },
+      "de.1": {
+        "config": {
+          "id": 11,
+          "alpha": 0.75,
+          "ridge": 0.1
+        },
+        "development_matches": 602,
+        "reason": "development_log_loss",
+        "development_score": 0.9900575081663623
+      },
+      "fr.1": {
+        "config": {
+          "id": 4,
+          "alpha": 1.0,
+          "ridge": 0.001
+        },
+        "development_matches": 646,
+        "reason": "development_log_loss",
+        "development_score": 1.0082557311644935
+      },
+      "pt.1": {
+        "config": {
+          "id": 0,
+          "alpha": 0.0,
+          "ridge": null
+        },
+        "development_matches": 574,
+        "reason": "development_log_loss",
+        "development_score": 0.9212957227304424
+      },
+      "be.1": {
+        "config": {
+          "id": 0,
+          "alpha": 0.0,
+          "ridge": null
+        },
+        "development_matches": 209,
+        "reason": "development_log_loss",
+        "development_score": 0.9859798234657848
+      },
+      "nl.1": {
+        "config": {
+          "id": 3,
+          "alpha": 0.75,
+          "ridge": 0.001
+        },
+        "development_matches": 568,
+        "reason": "development_log_loss",
+        "development_score": 0.9305798560602927
+      },
+      "tr.1": {
+        "config": {
+          "id": 3,
+          "alpha": 0.75,
+          "ridge": 0.001
+        },
+        "development_matches": 273,
+        "reason": "development_log_loss",
+        "development_score": 0.9673363515192245
+      },
+      "gr.1": {
+        "config": {
+          "id": 0,
+          "alpha": 0.0,
+          "ridge": null
+        },
+        "development_matches": 135,
+        "reason": "insufficient_development_matches",
+        "development_score": 0.9413697436092074
+      }
+    },
+    "goals": {
+      "en.1": {
+        "config": {
+          "id": 0,
+          "alpha": 0.0,
+          "ridge": null
+        },
+        "development_matches": 750,
+        "reason": "development_log_loss",
+        "development_score": 0.6661446629503465
+      },
+      "it.1": {
+        "config": {
+          "id": 3,
+          "alpha": 0.75,
+          "ridge": 0.001
+        },
+        "development_matches": 745,
+        "reason": "development_log_loss",
+        "development_score": 0.6880717840043575
+      },
+      "es.1": {
+        "config": {
+          "id": 3,
+          "alpha": 0.75,
+          "ridge": 0.001
+        },
+        "development_matches": 745,
+        "reason": "development_log_loss",
+        "development_score": 0.6770220557980614
+      },
+      "de.1": {
+        "config": {
+          "id": 11,
+          "alpha": 0.75,
+          "ridge": 0.1
+        },
+        "development_matches": 602,
+        "reason": "development_log_loss",
+        "development_score": 0.6657910642461714
+      },
+      "fr.1": {
+        "config": {
+          "id": 11,
+          "alpha": 0.75,
+          "ridge": 0.1
+        },
+        "development_matches": 646,
+        "reason": "development_log_loss",
+        "development_score": 0.68554721160167
+      },
+      "pt.1": {
+        "config": {
+          "id": 11,
+          "alpha": 0.75,
+          "ridge": 0.1
+        },
+        "development_matches": 574,
+        "reason": "development_log_loss",
+        "development_score": 0.677983014663202
+      },
+      "be.1": {
+        "config": {
+          "id": 0,
+          "alpha": 0.0,
+          "ridge": null
+        },
+        "development_matches": 209,
+        "reason": "development_log_loss",
+        "development_score": 0.6779945228470253
+      },
+      "nl.1": {
+        "config": {
+          "id": 0,
+          "alpha": 0.0,
+          "ridge": null
+        },
+        "development_matches": 568,
+        "reason": "development_log_loss",
+        "development_score": 0.6639827380072241
+      },
+      "tr.1": {
+        "config": {
+          "id": 4,
+          "alpha": 1.0,
+          "ridge": 0.001
+        },
+        "development_matches": 273,
+        "reason": "development_log_loss",
+        "development_score": 0.6763352113332528
+      },
+      "gr.1": {
+        "config": {
+          "id": 0,
+          "alpha": 0.0,
+          "ridge": null
+        },
+        "development_matches": 135,
+        "reason": "insufficient_development_matches",
+        "development_score": 0.674123069921109
+      }
+    }
+  },
+  "candidates": [
+    {
+      "id": 0,
+      "alpha": 0.0,
+      "ridge": null
+    },
+    {
+      "id": 1,
+      "alpha": 0.25,
+      "ridge": 0.001
+    },
+    {
+      "id": 2,
+      "alpha": 0.5,
+      "ridge": 0.001
+    },
+    {
+      "id": 3,
+      "alpha": 0.75,
+      "ridge": 0.001
+    },
+    {
+      "id": 4,
+      "alpha": 1.0,
+      "ridge": 0.001
+    },
+    {
+      "id": 5,
+      "alpha": 0.25,
+      "ridge": 0.01
+    },
+    {
+      "id": 6,
+      "alpha": 0.5,
+      "ridge": 0.01
+    },
+    {
+      "id": 7,
+      "alpha": 0.75,
+      "ridge": 0.01
+    },
+    {
+      "id": 8,
+      "alpha": 1.0,
+      "ridge": 0.01
+    },
+    {
+      "id": 9,
+      "alpha": 0.25,
+      "ridge": 0.1
+    },
+    {
+      "id": 10,
+      "alpha": 0.5,
+      "ridge": 0.1
+    },
+    {
+      "id": 11,
+      "alpha": 0.75,
+      "ridge": 0.1
+    },
+    {
+      "id": 12,
+      "alpha": 1.0,
+      "ridge": 0.1
+    }
+  ],
+  "minimum_local_training": 200,
+  "minimum_development": 200,
+  "source_sha256": "33a2fec26c965d297a3c911ffd74637f21b826409d1e3c6d288232d3d266d842",
+  "code_sha256": "e59543c4042dc484a369609193c0cefd324d704c414f3a83bd586176ff068c10",
+  "source_lock_sha256": "234927c27f32f2de3b00b1bd622338b9f7f3de660a091b822e3a947a2ef84bd8",
+  "development_seasons": [
+    "2022-23",
+    "2023-24"
+  ],
+  "audit_seasons": [
+    "2024-25",
+    "2025-26"
+  ],
+  "audit_status": "Already inspected seasons: descriptive reanalysis, not independent evidence",
+  "goal90": "Target only. At least 200 scored distinct fixtures and match-cluster bootstrap lower bound above 90% for descriptive evidence; no independent claim on viewed data.",
+  "external_person_data_included": false
+}

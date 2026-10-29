@@ -112,6 +112,22 @@
       "evidence": [
         "https://github.com/openfootball/football.json"
       ]
+    },
+    {
+      "id": "wyscout-open",
+      "name": "Wyscout · Pappalardo i sur. · otvoreni skup",
+      "url": "https://www.nature.com/articles/s41597-019-0247-7",
+      "category": "Povijesni treneri, postave i događaji",
+      "status": "CC BY 4.0 · kandidat za odvojeni pilot",
+      "active": false,
+      "purpose": "Kandidat za stvarne identitete trenera i igrača te ranije učinke. Nema aktivnog dohvata niti treninga ovim skupom.",
+      "coverage": "Pet velikih liga 2017./18., SP 2018. i EURO 2016.; ne pokriva naše testne sezone 2024./25. i 2025./26. ili svih deset liga.",
+      "access": "Autorski podatkovni članak navodi objavljeni skup pod CC BY 4.0 uz atribuciju. To se odnosi na objavljeni skup, ne na puni Wyscout API ili druge podatke pružatelja.",
+      "timing": "Raspoloživost izvornog podatka prije utakmice još nije rekonstruirana. Koristiti coachId iz konkretne utakmice, a ne današnji currentTeamId. Sama prisutnost playerId i duela ne dokazuje izravni par protivnika.",
+      "evidence": [
+        "https://www.nature.com/articles/s41597-019-0247-7",
+        "https://doi.org/10.6084/m9.figshare.c.4415000"
+      ]
     }
   ]
 }
