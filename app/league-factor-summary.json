@@ -1,0 +1,2745 @@
+{
+  "protocol": {
+    "name": "league-factor-search-v1",
+    "created_at": "2026-10-29T07:45:23.328557+00:00",
+    "selection": {
+      "outcome": {
+        "en.1": {
+          "config": {
+            "id": 19,
+            "alpha": 0.75,
+            "ridge": 0.01,
+            "group": "full_context"
+          },
+          "development_matches": 750,
+          "reason": "development_log_loss",
+          "development_score": 0.9588944773943713,
+          "reused_prior_candidate": false
+        },
+        "it.1": {
+          "config": {
+            "id": 38,
+            "alpha": 0.5,
+            "ridge": 0.001,
+            "group": "attack_defence_only"
+          },
+          "development_matches": 745,
+          "reason": "development_log_loss",
+          "development_score": 0.9877805789988786,
+          "reused_prior_candidate": false
+        },
+        "es.1": {
+          "config": {
+            "id": 0,
+            "alpha": 0.0,
+            "ridge": null,
+            "group": "pooled"
+          },
+          "development_matches": 745,
+          "reason": "development_log_loss",
+          "development_score": 0.9800235728245581,
+          "reused_prior_candidate": true
+        },
+        "de.1": {
+          "config": {
+            "id": 34,
+            "alpha": 0.5,
+            "ridge": 0.1,
+            "group": "without_current_elo"
+          },
+          "development_matches": 602,
+          "reason": "development_log_loss",
+          "development_score": 0.988141394371693,
+          "reused_prior_candidate": false
+        },
+        "fr.1": {
+          "config": {
+            "id": 38,
+            "alpha": 0.5,
+            "ridge": 0.001,
+            "group": "attack_defence_only"
+          },
+          "development_matches": 646,
+          "reason": "development_log_loss",
+          "development_score": 1.0082358650281134,
+          "reused_prior_candidate": false
+        },
+        "pt.1": {
+          "config": {
+            "id": 0,
+            "alpha": 0.0,
+            "ridge": null,
+            "group": "pooled"
+          },
+          "development_matches": 574,
+          "reason": "development_log_loss",
+          "development_score": 0.9212957227304424,
+          "reused_prior_candidate": true
+        },
+        "be.1": {
+          "config": {
+            "id": 26,
+            "alpha": 0.5,
+            "ridge": 0.001,
+            "group": "without_current_elo"
+          },
+          "development_matches": 209,
+          "reason": "development_log_loss",
+          "development_score": 0.9837083999778902,
+          "reused_prior_candidate": false
+        },
+        "nl.1": {
+          "config": {
+            "id": 39,
+            "alpha": 0.75,
+            "ridge": 0.001,
+            "group": "attack_defence_only"
+          },
+          "development_matches": 568,
+          "reason": "development_log_loss",
+          "development_score": 0.9283850758927752,
+          "reused_prior_candidate": false
+        },
+        "tr.1": {
+          "config": {
+            "id": 3,
+            "alpha": 0.75,
+            "ridge": 0.001,
+            "group": "snaga"
+          },
+          "development_matches": 273,
+          "reason": "development_log_loss",
+          "development_score": 0.9673363515192245,
+          "reused_prior_candidate": true
+        },
+        "gr.1": {
+          "config": {
+            "id": 0,
+            "alpha": 0.0,
+            "ridge": null,
+            "group": "pooled"
+          },
+          "development_matches": 135,
+          "reason": "insufficient_development_matches",
+          "development_score": 0.9413697436092074,
+          "reused_prior_candidate": true
+        }
+      },
+      "goals": {
+        "en.1": {
+          "config": {
+            "id": 23,
+            "alpha": 0.75,
+            "ridge": 0.1,
+            "group": "full_context"
+          },
+          "development_matches": 750,
+          "reason": "development_log_loss",
+          "development_score": 0.664428626858123,
+          "reused_prior_candidate": false
+        },
+        "it.1": {
+          "config": {
+            "id": 34,
+            "alpha": 0.5,
+            "ridge": 0.1,
+            "group": "without_current_elo"
+          },
+          "development_matches": 745,
+          "reason": "development_log_loss",
+          "development_score": 0.6873092231874921,
+          "reused_prior_candidate": false
+        },
+        "es.1": {
+          "config": {
+            "id": 27,
+            "alpha": 0.75,
+            "ridge": 0.001,
+            "group": "without_current_elo"
+          },
+          "development_matches": 745,
+          "reason": "development_log_loss",
+          "development_score": 0.6755077980376767,
+          "reused_prior_candidate": false
+        },
+        "de.1": {
+          "config": {
+            "id": 46,
+            "alpha": 0.5,
+            "ridge": 0.1,
+            "group": "attack_defence_only"
+          },
+          "development_matches": 602,
+          "reason": "development_log_loss",
+          "development_score": 0.6657272438277316,
+          "reused_prior_candidate": false
+        },
+        "fr.1": {
+          "config": {
+            "id": 23,
+            "alpha": 0.75,
+            "ridge": 0.1,
+            "group": "full_context"
+          },
+          "development_matches": 646,
+          "reason": "development_log_loss",
+          "development_score": 0.6853262805301535,
+          "reused_prior_candidate": false
+        },
+        "pt.1": {
+          "config": {
+            "id": 11,
+            "alpha": 0.75,
+            "ridge": 0.1,
+            "group": "snaga"
+          },
+          "development_matches": 574,
+          "reason": "development_log_loss",
+          "development_score": 0.677983014663202,
+          "reused_prior_candidate": true
+        },
+        "be.1": {
+          "config": {
+            "id": 0,
+            "alpha": 0.0,
+            "ridge": null,
+            "group": "pooled"
+          },
+          "development_matches": 209,
+          "reason": "development_log_loss",
+          "development_score": 0.6779945228470253,
+          "reused_prior_candidate": true
+        },
+        "nl.1": {
+          "config": {
+            "id": 0,
+            "alpha": 0.0,
+            "ridge": null,
+            "group": "pooled"
+          },
+          "development_matches": 568,
+          "reason": "development_log_loss",
+          "development_score": 0.6639827380072241,
+          "reused_prior_candidate": true
+        },
+        "tr.1": {
+          "config": {
+            "id": 16,
+            "alpha": 1.0,
+            "ridge": 0.001,
+            "group": "full_context"
+          },
+          "development_matches": 273,
+          "reason": "development_log_loss",
+          "development_score": 0.6758434923304047,
+          "reused_prior_candidate": false
+        },
+        "gr.1": {
+          "config": {
+            "id": 0,
+            "alpha": 0.0,
+            "ridge": null,
+            "group": "pooled"
+          },
+          "development_matches": 135,
+          "reason": "insufficient_development_matches",
+          "development_score": 0.674123069921109,
+          "reused_prior_candidate": true
+        }
+      }
+    },
+    "new_groups": {
+      "full_context": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "without_current_elo": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8
+      ],
+      "attack_defence_only": [
+        0,
+        1
+      ]
+    },
+    "new_candidates": [
+      {
+        "id": 13,
+        "alpha": 0.25,
+        "ridge": 0.001,
+        "group": "full_context"
+      },
+      {
+        "id": 14,
+        "alpha": 0.5,
+        "ridge": 0.001,
+        "group": "full_context"
+      },
+      {
+        "id": 15,
+        "alpha": 0.75,
+        "ridge": 0.001,
+        "group": "full_context"
+      },
+      {
+        "id": 16,
+        "alpha": 1.0,
+        "ridge": 0.001,
+        "group": "full_context"
+      },
+      {
+        "id": 17,
+        "alpha": 0.25,
+        "ridge": 0.01,
+        "group": "full_context"
+      },
+      {
+        "id": 18,
+        "alpha": 0.5,
+        "ridge": 0.01,
+        "group": "full_context"
+      },
+      {
+        "id": 19,
+        "alpha": 0.75,
+        "ridge": 0.01,
+        "group": "full_context"
+      },
+      {
+        "id": 20,
+        "alpha": 1.0,
+        "ridge": 0.01,
+        "group": "full_context"
+      },
+      {
+        "id": 21,
+        "alpha": 0.25,
+        "ridge": 0.1,
+        "group": "full_context"
+      },
+      {
+        "id": 22,
+        "alpha": 0.5,
+        "ridge": 0.1,
+        "group": "full_context"
+      },
+      {
+        "id": 23,
+        "alpha": 0.75,
+        "ridge": 0.1,
+        "group": "full_context"
+      },
+      {
+        "id": 24,
+        "alpha": 1.0,
+        "ridge": 0.1,
+        "group": "full_context"
+      },
+      {
+        "id": 25,
+        "alpha": 0.25,
+        "ridge": 0.001,
+        "group": "without_current_elo"
+      },
+      {
+        "id": 26,
+        "alpha": 0.5,
+        "ridge": 0.001,
+        "group": "without_current_elo"
+      },
+      {
+        "id": 27,
+        "alpha": 0.75,
+        "ridge": 0.001,
+        "group": "without_current_elo"
+      },
+      {
+        "id": 28,
+        "alpha": 1.0,
+        "ridge": 0.001,
+        "group": "without_current_elo"
+      },
+      {
+        "id": 29,
+        "alpha": 0.25,
+        "ridge": 0.01,
+        "group": "without_current_elo"
+      },
+      {
+        "id": 30,
+        "alpha": 0.5,
+        "ridge": 0.01,
+        "group": "without_current_elo"
+      },
+      {
+        "id": 31,
+        "alpha": 0.75,
+        "ridge": 0.01,
+        "group": "without_current_elo"
+      },
+      {
+        "id": 32,
+        "alpha": 1.0,
+        "ridge": 0.01,
+        "group": "without_current_elo"
+      },
+      {
+        "id": 33,
+        "alpha": 0.25,
+        "ridge": 0.1,
+        "group": "without_current_elo"
+      },
+      {
+        "id": 34,
+        "alpha": 0.5,
+        "ridge": 0.1,
+        "group": "without_current_elo"
+      },
+      {
+        "id": 35,
+        "alpha": 0.75,
+        "ridge": 0.1,
+        "group": "without_current_elo"
+      },
+      {
+        "id": 36,
+        "alpha": 1.0,
+        "ridge": 0.1,
+        "group": "without_current_elo"
+      },
+      {
+        "id": 37,
+        "alpha": 0.25,
+        "ridge": 0.001,
+        "group": "attack_defence_only"
+      },
+      {
+        "id": 38,
+        "alpha": 0.5,
+        "ridge": 0.001,
+        "group": "attack_defence_only"
+      },
+      {
+        "id": 39,
+        "alpha": 0.75,
+        "ridge": 0.001,
+        "group": "attack_defence_only"
+      },
+      {
+        "id": 40,
+        "alpha": 1.0,
+        "ridge": 0.001,
+        "group": "attack_defence_only"
+      },
+      {
+        "id": 41,
+        "alpha": 0.25,
+        "ridge": 0.01,
+        "group": "attack_defence_only"
+      },
+      {
+        "id": 42,
+        "alpha": 0.5,
+        "ridge": 0.01,
+        "group": "attack_defence_only"
+      },
+      {
+        "id": 43,
+        "alpha": 0.75,
+        "ridge": 0.01,
+        "group": "attack_defence_only"
+      },
+      {
+        "id": 44,
+        "alpha": 1.0,
+        "ridge": 0.01,
+        "group": "attack_defence_only"
+      },
+      {
+        "id": 45,
+        "alpha": 0.25,
+        "ridge": 0.1,
+        "group": "attack_defence_only"
+      },
+      {
+        "id": 46,
+        "alpha": 0.5,
+        "ridge": 0.1,
+        "group": "attack_defence_only"
+      },
+      {
+        "id": 47,
+        "alpha": 0.75,
+        "ridge": 0.1,
+        "group": "attack_defence_only"
+      },
+      {
+        "id": 48,
+        "alpha": 1.0,
+        "ridge": 0.1,
+        "group": "attack_defence_only"
+      }
+    ],
+    "source_sha256": "33a2fec26c965d297a3c911ffd74637f21b826409d1e3c6d288232d3d266d842",
+    "previous_report_sha256": "7a1493e7347d61f814c2b2224eb7c6ef1fb4346cd137aadd4b2f984d02948a17",
+    "code_sha256": "d797a561effce4b5f96c38eb9fd1e2933bc4922402a5a4dd3e94a0dc272f80ff",
+    "development_seasons": [
+      "2022-23",
+      "2023-24"
+    ],
+    "audit_seasons": [
+      "2024-25",
+      "2025-26"
+    ],
+    "minimum_local_training": 200,
+    "minimum_development": 200,
+    "audit_status": "Already viewed seasons; descriptive reanalysis only",
+    "external_person_data_included": false,
+    "goal90": "Target only. At least 200 scored distinct fixtures and match-cluster bootstrap lower bound above 90% for descriptive evidence; no independent claim on viewed data."
+  },
+  "configurations_per_league_market": 49,
+  "selection_slots": 20,
+  "development_comparisons": 980,
+  "new_development_comparisons": 720,
+  "reused_development_comparisons": 260,
+  "audit": {
+    "matches": 5772,
+    "family_brier": 0.2191220558016568,
+    "outcome_log_loss": 0.9803739288894898,
+    "goals_log_loss": 0.6800280666734182,
+    "outcome_hit_rate": 0.522002772002772,
+    "goals_hit_rate": 0.5628898128898129,
+    "top_pick_hit_rate": 0.5913028413028413,
+    "top_pick_mean_probability": 0.6078185759871317
+  },
+  "pooled": {
+    "matches": 5772,
+    "family_brier": 0.21852458845488126,
+    "outcome_log_loss": 0.979807177260864,
+    "goals_log_loss": 0.6777101227430821,
+    "outcome_hit_rate": 0.520963270963271,
+    "goals_hit_rate": 0.5677408177408177,
+    "top_pick_hit_rate": 0.5985793485793486,
+    "top_pick_mean_probability": 0.6030999611751324
+  },
+  "previous_local": {
+    "matches": 5772,
+    "family_brier": 0.21857763108629633,
+    "outcome_log_loss": 0.97964097849592,
+    "goals_log_loss": 0.6779424136178207,
+    "outcome_hit_rate": 0.5218295218295218,
+    "goals_hit_rate": 0.5635828135828136,
+    "top_pick_hit_rate": 0.5933818433818434,
+    "top_pick_mean_probability": 0.6046159561322405
+  },
+  "by_league": {
+    "en.1": {
+      "name": "Engleska",
+      "candidate": {
+        "matches": 750,
+        "family_brier": 0.2258230598773511,
+        "outcome_log_loss": 1.003985057961867,
+        "goals_log_loss": 0.696313815127192,
+        "outcome_hit_rate": 0.5026666666666667,
+        "goals_hit_rate": 0.5613333333333334,
+        "top_pick_hit_rate": 0.5773333333333334,
+        "top_pick_mean_probability": 0.6274000313034321
+      },
+      "pooled": {
+        "matches": 750,
+        "family_brier": 0.2238072788588854,
+        "outcome_log_loss": 1.002521623603326,
+        "goals_log_loss": 0.6879575124262319,
+        "outcome_hit_rate": 0.5013333333333333,
+        "goals_hit_rate": 0.5613333333333334,
+        "top_pick_hit_rate": 0.5706666666666667,
+        "top_pick_mean_probability": 0.6022909076070261
+      },
+      "previous_local": {
+        "matches": 750,
+        "family_brier": 0.2238072788588854,
+        "outcome_log_loss": 1.002521623603326,
+        "goals_log_loss": 0.6879575124262319,
+        "outcome_hit_rate": 0.5013333333333333,
+        "goals_hit_rate": 0.5613333333333334,
+        "top_pick_hit_rate": 0.5706666666666667,
+        "top_pick_mean_probability": 0.6022909076070261
+      },
+      "outcome": {
+        "config": {
+          "id": 19,
+          "alpha": 0.75,
+          "ridge": 0.01,
+          "group": "full_context"
+        },
+        "development_matches": 750,
+        "reason": "development_log_loss",
+        "development_score": 0.9588944773943713,
+        "reused_prior_candidate": false
+      },
+      "goals": {
+        "config": {
+          "id": 23,
+          "alpha": 0.75,
+          "ridge": 0.1,
+          "group": "full_context"
+        },
+        "development_matches": 750,
+        "reason": "development_log_loss",
+        "development_score": 0.664428626858123,
+        "reused_prior_candidate": false
+      }
+    },
+    "it.1": {
+      "name": "Italija",
+      "candidate": {
+        "matches": 740,
+        "family_brier": 0.22319199724157904,
+        "outcome_log_loss": 0.9828958272695013,
+        "goals_log_loss": 0.6942890521341603,
+        "outcome_hit_rate": 0.5202702702702703,
+        "goals_hit_rate": 0.5243243243243243,
+        "top_pick_hit_rate": 0.5635135135135135,
+        "top_pick_mean_probability": 0.5952753576615164
+      },
+      "pooled": {
+        "matches": 740,
+        "family_brier": 0.22274904587546196,
+        "outcome_log_loss": 0.9808440462769427,
+        "goals_log_loss": 0.6931974926022294,
+        "outcome_hit_rate": 0.5148648648648648,
+        "goals_hit_rate": 0.5256756756756756,
+        "top_pick_hit_rate": 0.5702702702702702,
+        "top_pick_mean_probability": 0.5971972510951103
+      },
+      "previous_local": {
+        "matches": 740,
+        "family_brier": 0.22288390698152605,
+        "outcome_log_loss": 0.9808440462769427,
+        "goals_log_loss": 0.6937677667181349,
+        "outcome_hit_rate": 0.5148648648648648,
+        "goals_hit_rate": 0.518918918918919,
+        "top_pick_hit_rate": 0.5648648648648649,
+        "top_pick_mean_probability": 0.6030855108196248
+      },
+      "outcome": {
+        "config": {
+          "id": 38,
+          "alpha": 0.5,
+          "ridge": 0.001,
+          "group": "attack_defence_only"
+        },
+        "development_matches": 745,
+        "reason": "development_log_loss",
+        "development_score": 0.9877805789988786,
+        "reused_prior_candidate": false
+      },
+      "goals": {
+        "config": {
+          "id": 34,
+          "alpha": 0.5,
+          "ridge": 0.1,
+          "group": "without_current_elo"
+        },
+        "development_matches": 745,
+        "reason": "development_log_loss",
+        "development_score": 0.6873092231874921,
+        "reused_prior_candidate": false
+      }
+    },
+    "es.1": {
+      "name": "Španjolska",
+      "candidate": {
+        "matches": 745,
+        "family_brier": 0.2184191764125976,
+        "outcome_log_loss": 0.978837068163667,
+        "goals_log_loss": 0.6791525538431574,
+        "outcome_hit_rate": 0.5302013422818792,
+        "goals_hit_rate": 0.5463087248322148,
+        "top_pick_hit_rate": 0.5879194630872483,
+        "top_pick_mean_probability": 0.6152097894012016
+      },
+      "pooled": {
+        "matches": 745,
+        "family_brier": 0.21745196546177897,
+        "outcome_log_loss": 0.978837068163667,
+        "goals_log_loss": 0.6753411757611195,
+        "outcome_hit_rate": 0.5302013422818792,
+        "goals_hit_rate": 0.5610738255033557,
+        "top_pick_hit_rate": 0.6013422818791946,
+        "top_pick_mean_probability": 0.6047488850163765
+      },
+      "previous_local": {
+        "matches": 745,
+        "family_brier": 0.21752484782578155,
+        "outcome_log_loss": 0.978837068163667,
+        "goals_log_loss": 0.675584271871455,
+        "outcome_hit_rate": 0.5302013422818792,
+        "goals_hit_rate": 0.5583892617449664,
+        "top_pick_hit_rate": 0.5973154362416108,
+        "top_pick_mean_probability": 0.6063562021777346
+      },
+      "outcome": {
+        "config": {
+          "id": 0,
+          "alpha": 0.0,
+          "ridge": null,
+          "group": "pooled"
+        },
+        "development_matches": 745,
+        "reason": "development_log_loss",
+        "development_score": 0.9800235728245581,
+        "reused_prior_candidate": true
+      },
+      "goals": {
+        "config": {
+          "id": 27,
+          "alpha": 0.75,
+          "ridge": 0.001,
+          "group": "without_current_elo"
+        },
+        "development_matches": 745,
+        "reason": "development_log_loss",
+        "development_score": 0.6755077980376767,
+        "reused_prior_candidate": false
+      }
+    },
+    "de.1": {
+      "name": "Njemačka",
+      "candidate": {
+        "matches": 597,
+        "family_brier": 0.21414084598225286,
+        "outcome_log_loss": 1.000562174650695,
+        "goals_log_loss": 0.6501932217236138,
+        "outcome_hit_rate": 0.5159128978224455,
+        "goals_hit_rate": 0.6298157453936348,
+        "top_pick_hit_rate": 0.6214405360134003,
+        "top_pick_mean_probability": 0.6226668207650767
+      },
+      "pooled": {
+        "matches": 597,
+        "family_brier": 0.21393150554857596,
+        "outcome_log_loss": 0.9994346447875421,
+        "goals_log_loss": 0.6499261999009548,
+        "outcome_hit_rate": 0.5192629815745393,
+        "goals_hit_rate": 0.6331658291457286,
+        "top_pick_hit_rate": 0.6398659966499163,
+        "top_pick_mean_probability": 0.6266895494342732
+      },
+      "previous_local": {
+        "matches": 597,
+        "family_brier": 0.21368060343281312,
+        "outcome_log_loss": 0.9985988197985541,
+        "goals_log_loss": 0.6490594703061069,
+        "outcome_hit_rate": 0.5192629815745393,
+        "goals_hit_rate": 0.626465661641541,
+        "top_pick_hit_rate": 0.626465661641541,
+        "top_pick_mean_probability": 0.6234691403341922
+      },
+      "outcome": {
+        "config": {
+          "id": 34,
+          "alpha": 0.5,
+          "ridge": 0.1,
+          "group": "without_current_elo"
+        },
+        "development_matches": 602,
+        "reason": "development_log_loss",
+        "development_score": 0.988141394371693,
+        "reused_prior_candidate": false
+      },
+      "goals": {
+        "config": {
+          "id": 46,
+          "alpha": 0.5,
+          "ridge": 0.1,
+          "group": "attack_defence_only"
+        },
+        "development_matches": 602,
+        "reason": "development_log_loss",
+        "development_score": 0.6657272438277316,
+        "reused_prior_candidate": false
+      }
+    },
+    "fr.1": {
+      "name": "Francuska",
+      "candidate": {
+        "matches": 606,
+        "family_brier": 0.2203798638631757,
+        "outcome_log_loss": 0.9847208289859687,
+        "goals_log_loss": 0.6836416775230759,
+        "outcome_hit_rate": 0.5297029702970297,
+        "goals_hit_rate": 0.5594059405940595,
+        "top_pick_hit_rate": 0.6023102310231023,
+        "top_pick_mean_probability": 0.5874809271071273
+      },
+      "pooled": {
+        "matches": 606,
+        "family_brier": 0.22015030472724847,
+        "outcome_log_loss": 0.984992786213713,
+        "goals_log_loss": 0.6825633381992924,
+        "outcome_hit_rate": 0.528052805280528,
+        "goals_hit_rate": 0.566006600660066,
+        "top_pick_hit_rate": 0.6089108910891089,
+        "top_pick_mean_probability": 0.5854679380148374
+      },
+      "previous_local": {
+        "matches": 606,
+        "family_brier": 0.22043830930455227,
+        "outcome_log_loss": 0.9844979258313142,
+        "goals_log_loss": 0.6839546509890713,
+        "outcome_hit_rate": 0.5313531353135313,
+        "goals_hit_rate": 0.5561056105610561,
+        "top_pick_hit_rate": 0.6039603960396039,
+        "top_pick_mean_probability": 0.5907695739992264
+      },
+      "outcome": {
+        "config": {
+          "id": 38,
+          "alpha": 0.5,
+          "ridge": 0.001,
+          "group": "attack_defence_only"
+        },
+        "development_matches": 646,
+        "reason": "development_log_loss",
+        "development_score": 1.0082358650281134,
+        "reused_prior_candidate": false
+      },
+      "goals": {
+        "config": {
+          "id": 23,
+          "alpha": 0.75,
+          "ridge": 0.1,
+          "group": "full_context"
+        },
+        "development_matches": 646,
+        "reason": "development_log_loss",
+        "development_score": 0.6853262805301535,
+        "reused_prior_candidate": false
+      }
+    },
+    "pt.1": {
+      "name": "Portugal",
+      "candidate": {
+        "matches": 602,
+        "family_brier": 0.21123480769190697,
+        "outcome_log_loss": 0.9351032031761438,
+        "goals_log_loss": 0.6688186241601084,
+        "outcome_hit_rate": 0.5431893687707641,
+        "goals_hit_rate": 0.5996677740863787,
+        "top_pick_hit_rate": 0.6411960132890365,
+        "top_pick_mean_probability": 0.6178123329466431
+      },
+      "pooled": {
+        "matches": 602,
+        "family_brier": 0.21139504332939021,
+        "outcome_log_loss": 0.9351032031761438,
+        "goals_log_loss": 0.6694679339208318,
+        "outcome_hit_rate": 0.5431893687707641,
+        "goals_hit_rate": 0.5996677740863787,
+        "top_pick_hit_rate": 0.6395348837209303,
+        "top_pick_mean_probability": 0.6159983376674741
+      },
+      "previous_local": {
+        "matches": 602,
+        "family_brier": 0.21123480769190697,
+        "outcome_log_loss": 0.9351032031761438,
+        "goals_log_loss": 0.6688186241601084,
+        "outcome_hit_rate": 0.5431893687707641,
+        "goals_hit_rate": 0.5996677740863787,
+        "top_pick_hit_rate": 0.6411960132890365,
+        "top_pick_mean_probability": 0.6178123329466431
+      },
+      "outcome": {
+        "config": {
+          "id": 0,
+          "alpha": 0.0,
+          "ridge": null,
+          "group": "pooled"
+        },
+        "development_matches": 574,
+        "reason": "development_log_loss",
+        "development_score": 0.9212957227304424,
+        "reused_prior_candidate": true
+      },
+      "goals": {
+        "config": {
+          "id": 11,
+          "alpha": 0.75,
+          "ridge": 0.1,
+          "group": "snaga"
+        },
+        "development_matches": 574,
+        "reason": "development_log_loss",
+        "development_score": 0.677983014663202,
+        "reused_prior_candidate": true
+      }
+    },
+    "be.1": {
+      "name": "Belgija",
+      "candidate": {
+        "matches": 424,
+        "family_brier": 0.22481522727926712,
+        "outcome_log_loss": 1.0108621405195999,
+        "goals_log_loss": 0.6895290546878761,
+        "outcome_hit_rate": 0.49292452830188677,
+        "goals_hit_rate": 0.5235849056603774,
+        "top_pick_hit_rate": 0.5448113207547169,
+        "top_pick_mean_probability": 0.572139225220319
+      },
+      "pooled": {
+        "matches": 424,
+        "family_brier": 0.22492267649015119,
+        "outcome_log_loss": 1.0114840124345035,
+        "goals_log_loss": 0.6895290546878761,
+        "outcome_hit_rate": 0.5070754716981132,
+        "goals_hit_rate": 0.5235849056603774,
+        "top_pick_hit_rate": 0.5448113207547169,
+        "top_pick_mean_probability": 0.5753307183847062
+      },
+      "previous_local": {
+        "matches": 424,
+        "family_brier": 0.22492267649015119,
+        "outcome_log_loss": 1.0114840124345035,
+        "goals_log_loss": 0.6895290546878761,
+        "outcome_hit_rate": 0.5070754716981132,
+        "goals_hit_rate": 0.5235849056603774,
+        "top_pick_hit_rate": 0.5448113207547169,
+        "top_pick_mean_probability": 0.5753307183847062
+      },
+      "outcome": {
+        "config": {
+          "id": 26,
+          "alpha": 0.5,
+          "ridge": 0.001,
+          "group": "without_current_elo"
+        },
+        "development_matches": 209,
+        "reason": "development_log_loss",
+        "development_score": 0.9837083999778902,
+        "reused_prior_candidate": false
+      },
+      "goals": {
+        "config": {
+          "id": 0,
+          "alpha": 0.0,
+          "ridge": null,
+          "group": "pooled"
+        },
+        "development_matches": 209,
+        "reason": "development_log_loss",
+        "development_score": 0.6779945228470253,
+        "reused_prior_candidate": true
+      }
+    },
+    "nl.1": {
+      "name": "Nizozemska",
+      "candidate": {
+        "matches": 596,
+        "family_brier": 0.21492979540915402,
+        "outcome_log_loss": 0.9714776131283445,
+        "goals_log_loss": 0.6658239833028287,
+        "outcome_hit_rate": 0.5184563758389261,
+        "goals_hit_rate": 0.5989932885906041,
+        "top_pick_hit_rate": 0.6124161073825504,
+        "top_pick_mean_probability": 0.6181521435477229
+      },
+      "pooled": {
+        "matches": 596,
+        "family_brier": 0.21483767380372068,
+        "outcome_log_loss": 0.9699025742551285,
+        "goals_log_loss": 0.6658239833028287,
+        "outcome_hit_rate": 0.5100671140939598,
+        "goals_hit_rate": 0.5989932885906041,
+        "top_pick_hit_rate": 0.6157718120805369,
+        "top_pick_mean_probability": 0.6250807597909364
+      },
+      "previous_local": {
+        "matches": 596,
+        "family_brier": 0.2149197237969615,
+        "outcome_log_loss": 0.9705192783938564,
+        "goals_log_loss": 0.6658239833028287,
+        "outcome_hit_rate": 0.5100671140939598,
+        "goals_hit_rate": 0.5989932885906041,
+        "top_pick_hit_rate": 0.6124161073825504,
+        "top_pick_mean_probability": 0.6273524548097454
+      },
+      "outcome": {
+        "config": {
+          "id": 39,
+          "alpha": 0.75,
+          "ridge": 0.001,
+          "group": "attack_defence_only"
+        },
+        "development_matches": 568,
+        "reason": "development_log_loss",
+        "development_score": 0.9283850758927752,
+        "reused_prior_candidate": false
+      },
+      "goals": {
+        "config": {
+          "id": 0,
+          "alpha": 0.0,
+          "ridge": null,
+          "group": "pooled"
+        },
+        "development_matches": 568,
+        "reason": "development_log_loss",
+        "development_score": 0.6639827380072241,
+        "reused_prior_candidate": true
+      }
+    },
+    "tr.1": {
+      "name": "Turska",
+      "candidate": {
+        "matches": 423,
+        "family_brier": 0.21548873478136357,
+        "outcome_log_loss": 0.9505816807833757,
+        "goals_log_loss": 0.6785314084646651,
+        "outcome_hit_rate": 0.5484633569739953,
+        "goals_hit_rate": 0.5437352245862884,
+        "top_pick_hit_rate": 0.5673758865248227,
+        "top_pick_mean_probability": 0.6086941125320694
+      },
+      "pooled": {
+        "matches": 423,
+        "family_brier": 0.213806899416074,
+        "outcome_log_loss": 0.9518298652462108,
+        "goals_log_loss": 0.6713382325000108,
+        "outcome_hit_rate": 0.541371158392435,
+        "goals_hit_rate": 0.5673758865248227,
+        "top_pick_hit_rate": 0.6052009456264775,
+        "top_pick_mean_probability": 0.5907150341706058
+      },
+      "previous_local": {
+        "matches": 423,
+        "family_brier": 0.21422033992651437,
+        "outcome_log_loss": 0.9505816807833757,
+        "goals_log_loss": 0.6732362466241147,
+        "outcome_hit_rate": 0.5484633569739953,
+        "goals_hit_rate": 0.5508274231678487,
+        "top_pick_hit_rate": 0.5791962174940898,
+        "top_pick_mean_probability": 0.5894370125347058
+      },
+      "outcome": {
+        "config": {
+          "id": 3,
+          "alpha": 0.75,
+          "ridge": 0.001,
+          "group": "snaga"
+        },
+        "development_matches": 273,
+        "reason": "development_log_loss",
+        "development_score": 0.9673363515192245,
+        "reused_prior_candidate": true
+      },
+      "goals": {
+        "config": {
+          "id": 16,
+          "alpha": 1.0,
+          "ridge": 0.001,
+          "group": "full_context"
+        },
+        "development_matches": 273,
+        "reason": "development_log_loss",
+        "development_score": 0.6758434923304047,
+        "reused_prior_candidate": false
+      }
+    },
+    "gr.1": {
+      "name": "Grčka",
+      "candidate": {
+        "matches": 289,
+        "family_brier": 0.22281543518061192,
+        "outcome_log_loss": 0.9773085508553616,
+        "goals_log_loss": 0.6984528290383388,
+        "outcome_hit_rate": 0.5190311418685121,
+        "goals_hit_rate": 0.5121107266435986,
+        "top_pick_hit_rate": 0.5778546712802768,
+        "top_pick_mean_probability": 0.5909753025614561
+      },
+      "pooled": {
+        "matches": 289,
+        "family_brier": 0.22281543518061192,
+        "outcome_log_loss": 0.9773085508553616,
+        "goals_log_loss": 0.6984528290383388,
+        "outcome_hit_rate": 0.5190311418685121,
+        "goals_hit_rate": 0.5121107266435986,
+        "top_pick_hit_rate": 0.5778546712802768,
+        "top_pick_mean_probability": 0.5909753025614561
+      },
+      "previous_local": {
+        "matches": 289,
+        "family_brier": 0.22281543518061192,
+        "outcome_log_loss": 0.9773085508553616,
+        "goals_log_loss": 0.6984528290383388,
+        "outcome_hit_rate": 0.5190311418685121,
+        "goals_hit_rate": 0.5121107266435986,
+        "top_pick_hit_rate": 0.5778546712802768,
+        "top_pick_mean_probability": 0.5909753025614561
+      },
+      "outcome": {
+        "config": {
+          "id": 0,
+          "alpha": 0.0,
+          "ridge": null,
+          "group": "pooled"
+        },
+        "development_matches": 135,
+        "reason": "insufficient_development_matches",
+        "development_score": 0.9413697436092074,
+        "reused_prior_candidate": true
+      },
+      "goals": {
+        "config": {
+          "id": 0,
+          "alpha": 0.0,
+          "ridge": null,
+          "group": "pooled"
+        },
+        "development_matches": 135,
+        "reason": "insufficient_development_matches",
+        "development_score": 0.674123069921109,
+        "reused_prior_candidate": true
+      }
+    }
+  },
+  "filters": [
+    {
+      "rule": {
+        "id": "all",
+        "top": null,
+        "threshold": 0.0
+      },
+      "selected": 31215,
+      "scored": 28860,
+      "unscored": 2355,
+      "hits": 11544,
+      "misses": 17316,
+      "hit_rate": 0.4,
+      "mean_probability": 0.4,
+      "offer_coverage": 1.0,
+      "match_coverage": 1.0,
+      "unique_matches": 6243,
+      "days": 399,
+      "wilson95": [
+        0.3943616251636193,
+        0.4056649926296234
+      ],
+      "by_market": {
+        "home": {
+          "selected": 6243,
+          "scored": 5772,
+          "unscored": 471,
+          "hits": 2504,
+          "misses": 3268,
+          "hit_rate": 0.4338184338184338,
+          "mean_probability": 0.43203095760217264,
+          "offer_coverage": 1.0,
+          "match_coverage": 1.0,
+          "unique_matches": 6243,
+          "days": 399,
+          "wilson95": [
+            0.4210811544026457,
+            0.4466437467313281
+          ]
+        },
+        "draw": {
+          "selected": 6243,
+          "scored": 5772,
+          "unscored": 471,
+          "hits": 1462,
+          "misses": 4310,
+          "hit_rate": 0.2532917532917533,
+          "mean_probability": 0.25026632017581496,
+          "offer_coverage": 1.0,
+          "match_coverage": 1.0,
+          "unique_matches": 6243,
+          "days": 399,
+          "wilson95": [
+            0.24223893457070406,
+            0.2646727387664131
+          ]
+        },
+        "away": {
+          "selected": 6243,
+          "scored": 5772,
+          "unscored": 471,
+          "hits": 1806,
+          "misses": 3966,
+          "hit_rate": 0.3128898128898129,
+          "mean_probability": 0.3177027222220124,
+          "offer_coverage": 1.0,
+          "match_coverage": 1.0,
+          "unique_matches": 6243,
+          "days": 399,
+          "wilson95": [
+            0.3010558634937524,
+            0.32497265280125215
+          ]
+        },
+        "over2.5": {
+          "selected": 6243,
+          "scored": 5772,
+          "unscored": 471,
+          "hits": 3070,
+          "misses": 2702,
+          "hit_rate": 0.5318780318780318,
+          "mean_probability": 0.5480428796441885,
+          "offer_coverage": 1.0,
+          "match_coverage": 1.0,
+          "unique_matches": 6243,
+          "days": 399,
+          "wilson95": [
+            0.5189883698174714,
+            0.5447252903693055
+          ]
+        },
+        "under2.5": {
+          "selected": 6243,
+          "scored": 5772,
+          "unscored": 471,
+          "hits": 2702,
+          "misses": 3070,
+          "hit_rate": 0.4681219681219681,
+          "mean_probability": 0.4519571203558114,
+          "offer_coverage": 1.0,
+          "match_coverage": 1.0,
+          "unique_matches": 6243,
+          "days": 399,
+          "wilson95": [
+            0.4552747096306945,
+            0.48101163018252846
+          ]
+        }
+      },
+      "by_season": {
+        "2024-25": {
+          "selected": 15985,
+          "scored": 15865,
+          "unscored": 120,
+          "hits": 6346,
+          "misses": 9519,
+          "hit_rate": 0.4,
+          "mean_probability": 0.4,
+          "offer_coverage": 1.0,
+          "match_coverage": 1.0,
+          "unique_matches": 3197,
+          "days": 204,
+          "wilson95": [
+            0.392401955757506,
+            0.4076464593562332
+          ]
+        },
+        "2025-26": {
+          "selected": 15230,
+          "scored": 12995,
+          "unscored": 2235,
+          "hits": 5198,
+          "misses": 7797,
+          "hit_rate": 0.4,
+          "mean_probability": 0.4,
+          "offer_coverage": 1.0,
+          "match_coverage": 1.0,
+          "unique_matches": 3046,
+          "days": 195,
+          "wilson95": [
+            0.3916077690206237,
+            0.408451335613168
+          ]
+        }
+      },
+      "scored_unique_matches": 5772,
+      "match_cluster_bootstrap95": [
+        0.4,
+        0.4
+      ],
+      "historical_90_evidence": false,
+      "independent_90_confirmed": false
+    },
+    {
+      "rule": {
+        "id": "top10",
+        "top": 10,
+        "threshold": 0.0
+      },
+      "selected": 3825,
+      "scored": 3647,
+      "unscored": 178,
+      "hits": 2227,
+      "misses": 1420,
+      "hit_rate": 0.6106388812722786,
+      "mean_probability": 0.6084188193219733,
+      "offer_coverage": 0.122537241710716,
+      "match_coverage": 0.36216562550056064,
+      "unique_matches": 2261,
+      "days": 399,
+      "wilson95": [
+        0.5947051827355431,
+        0.6263397487145012
+      ],
+      "by_market": {
+        "home": {
+          "selected": 1120,
+          "scored": 1057,
+          "unscored": 63,
+          "hits": 719,
+          "misses": 338,
+          "hit_rate": 0.6802270577105014,
+          "mean_probability": 0.663716101958509,
+          "offer_coverage": 0.17940092904052538,
+          "match_coverage": 0.17940092904052538,
+          "unique_matches": 1120,
+          "days": 392,
+          "wilson95": [
+            0.6515014801336715,
+            0.7076473793231849
+          ]
+        },
+        "draw": {
+          "selected": 93,
+          "scored": 90,
+          "unscored": 3,
+          "hits": 35,
+          "misses": 55,
+          "hit_rate": 0.3888888888888889,
+          "mean_probability": 0.24737339975662556,
+          "offer_coverage": 0.014896684286400768,
+          "match_coverage": 0.014896684286400768,
+          "unique_matches": 93,
+          "days": 70,
+          "wilson95": [
+            0.2946991721093655,
+            0.49217541134937376
+          ]
+        },
+        "away": {
+          "selected": 471,
+          "scored": 443,
+          "unscored": 28,
+          "hits": 264,
+          "misses": 179,
+          "hit_rate": 0.5959367945823928,
+          "mean_probability": 0.5797477344067484,
+          "offer_coverage": 0.07544449783757809,
+          "match_coverage": 0.07544449783757809,
+          "unique_matches": 471,
+          "days": 307,
+          "wilson95": [
+            0.5496061604222029,
+            0.64061790747054
+          ]
+        },
+        "over2.5": {
+          "selected": 1475,
+          "scored": 1416,
+          "unscored": 59,
+          "hits": 847,
+          "misses": 569,
+          "hit_rate": 0.5981638418079096,
+          "mean_probability": 0.6297329112615669,
+          "offer_coverage": 0.23626461637033477,
+          "match_coverage": 0.23626461637033477,
+          "unique_matches": 1475,
+          "days": 399,
+          "wilson95": [
+            0.572395546000915,
+            0.6234009623155162
+          ]
+        },
+        "under2.5": {
+          "selected": 666,
+          "scored": 641,
+          "unscored": 25,
+          "hits": 362,
+          "misses": 279,
+          "hit_rate": 0.5647425897035881,
+          "mean_probability": 0.5406581273485616,
+          "offer_coverage": 0.10667948101874099,
+          "match_coverage": 0.10667948101874099,
+          "unique_matches": 666,
+          "days": 299,
+          "wilson95": [
+            0.5260883521836348,
+            0.6026254562488953
+          ]
+        }
+      },
+      "by_season": {
+        "2024-25": {
+          "selected": 1960,
+          "scored": 1926,
+          "unscored": 34,
+          "hits": 1182,
+          "misses": 744,
+          "hit_rate": 0.6137071651090342,
+          "mean_probability": 0.6202263098042946,
+          "offer_coverage": 0.12261495151704724,
+          "match_coverage": 0.36252736940882074,
+          "unique_matches": 1159,
+          "days": 204,
+          "wilson95": [
+            0.5917563255094763,
+            0.6352053235928582
+          ]
+        },
+        "2025-26": {
+          "selected": 1865,
+          "scored": 1721,
+          "unscored": 144,
+          "hits": 1045,
+          "misses": 676,
+          "hit_rate": 0.6072051133062173,
+          "mean_probability": 0.595204858445186,
+          "offer_coverage": 0.12245567957977675,
+          "match_coverage": 0.3617859487852922,
+          "unique_matches": 1102,
+          "days": 195,
+          "wilson95": [
+            0.583917600241969,
+            0.6300151053484289
+          ]
+        }
+      },
+      "scored_unique_matches": 2153,
+      "match_cluster_bootstrap95": [
+        0.5947975375833552,
+        0.6259642912087166
+      ],
+      "historical_90_evidence": false,
+      "independent_90_confirmed": false
+    },
+    {
+      "rule": {
+        "id": "top50",
+        "top": 50,
+        "threshold": 0.0
+      },
+      "selected": 13555,
+      "scored": 12805,
+      "unscored": 750,
+      "hits": 6365,
+      "misses": 6440,
+      "hit_rate": 0.4970714564623194,
+      "mean_probability": 0.5039008523406364,
+      "offer_coverage": 0.43424635591862887,
+      "match_coverage": 0.9489027711036361,
+      "unique_matches": 5924,
+      "days": 399,
+      "wilson95": [
+        0.4884135743376564,
+        0.5057310951673011
+      ],
+      "by_market": {
+        "home": {
+          "selected": 2914,
+          "scored": 2747,
+          "unscored": 167,
+          "hits": 1523,
+          "misses": 1224,
+          "hit_rate": 0.5544230069166364,
+          "mean_probability": 0.5467349331419038,
+          "offer_coverage": 0.46676277430722407,
+          "match_coverage": 0.46676277430722407,
+          "unique_matches": 2914,
+          "days": 399,
+          "wilson95": [
+            0.5357731991902354,
+            0.5729208147963735
+          ]
+        },
+        "draw": {
+          "selected": 1240,
+          "scored": 1208,
+          "unscored": 32,
+          "hits": 321,
+          "misses": 887,
+          "hit_rate": 0.26572847682119205,
+          "mean_probability": 0.25272455299183033,
+          "offer_coverage": 0.19862245715201024,
+          "match_coverage": 0.19862245715201024,
+          "unique_matches": 1240,
+          "days": 257,
+          "wilson95": [
+            0.24159020079954108,
+            0.29135200390865235
+          ]
+        },
+        "away": {
+          "selected": 1982,
+          "scored": 1896,
+          "unscored": 86,
+          "hits": 768,
+          "misses": 1128,
+          "hit_rate": 0.4050632911392405,
+          "mean_probability": 0.41783162292702525,
+          "offer_coverage": 0.31747557264135834,
+          "match_coverage": 0.31747557264135834,
+          "unique_matches": 1982,
+          "days": 399,
+          "wilson95": [
+            0.38318015322343335,
+            0.4273303510459775
+          ]
+        },
+        "over2.5": {
+          "selected": 4633,
+          "scored": 4325,
+          "unscored": 308,
+          "hits": 2409,
+          "misses": 1916,
+          "hit_rate": 0.5569942196531792,
+          "mean_probability": 0.5814657395469236,
+          "offer_coverage": 0.7421111645042447,
+          "match_coverage": 0.7421111645042447,
+          "unique_matches": 4633,
+          "days": 399,
+          "wilson95": [
+            0.5421459216159183,
+            0.5717413631668116
+          ]
+        },
+        "under2.5": {
+          "selected": 2786,
+          "scored": 2629,
+          "unscored": 157,
+          "hits": 1344,
+          "misses": 1285,
+          "hit_rate": 0.5112209965766451,
+          "mean_probability": 0.5090263264575218,
+          "offer_coverage": 0.4462598109883069,
+          "match_coverage": 0.4462598109883069,
+          "unique_matches": 2786,
+          "days": 399,
+          "wilson95": [
+            0.4921106425372473,
+            0.5302986065279917
+          ]
+        }
+      },
+      "by_season": {
+        "2024-25": {
+          "selected": 7025,
+          "scored": 6942,
+          "unscored": 83,
+          "hits": 3472,
+          "misses": 3470,
+          "hit_rate": 0.5001440507058484,
+          "mean_probability": 0.5085783225170073,
+          "offer_coverage": 0.43947450735064125,
+          "match_coverage": 0.950891460744448,
+          "unique_matches": 3040,
+          "days": 204,
+          "wilson95": [
+            0.48838537029766244,
+            0.5119025717770103
+          ]
+        },
+        "2025-26": {
+          "selected": 6530,
+          "scored": 5863,
+          "unscored": 667,
+          "hits": 2893,
+          "misses": 2970,
+          "hit_rate": 0.49343339587242024,
+          "mean_probability": 0.49836256171052107,
+          "offer_coverage": 0.4287590282337492,
+          "match_coverage": 0.9468154957321077,
+          "unique_matches": 2884,
+          "days": 195,
+          "wilson95": [
+            0.4806445162181768,
+            0.5062308748179605
+          ]
+        }
+      },
+      "scored_unique_matches": 5498,
+      "match_cluster_bootstrap95": [
+        0.4904129775351788,
+        0.5038311930046092
+      ],
+      "historical_90_evidence": false,
+      "independent_90_confirmed": false
+    },
+    {
+      "rule": {
+        "id": "p60",
+        "top": null,
+        "threshold": 0.6
+      },
+      "selected": 3656,
+      "scored": 3463,
+      "unscored": 193,
+      "hits": 2282,
+      "misses": 1181,
+      "hit_rate": 0.6589662142650881,
+      "mean_probability": 0.6767887196556561,
+      "offer_coverage": 0.11712317795931443,
+      "match_coverage": 0.423033797853596,
+      "unique_matches": 2641,
+      "days": 366,
+      "wilson95": [
+        0.6430089284408333,
+        0.6745712127561985
+      ],
+      "by_market": {
+        "home": {
+          "selected": 1134,
+          "scored": 1059,
+          "unscored": 75,
+          "hits": 768,
+          "misses": 291,
+          "hit_rate": 0.7252124645892352,
+          "mean_probability": 0.7103594720480702,
+          "offer_coverage": 0.18164344065353197,
+          "match_coverage": 0.18164344065353197,
+          "unique_matches": 1134,
+          "days": 293,
+          "wilson95": [
+            0.6975484498515802,
+            0.7512484953948623
+          ]
+        },
+        "draw": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "away": {
+          "selected": 428,
+          "scored": 398,
+          "unscored": 30,
+          "hits": 281,
+          "misses": 117,
+          "hit_rate": 0.7060301507537688,
+          "mean_probability": 0.6815709245064484,
+          "offer_coverage": 0.06855678359762934,
+          "match_coverage": 0.06855678359762934,
+          "unique_matches": 428,
+          "days": 202,
+          "wilson95": [
+            0.6594736156677975,
+            0.7486475385836818
+          ]
+        },
+        "over2.5": {
+          "selected": 1716,
+          "scored": 1654,
+          "unscored": 62,
+          "hits": 1026,
+          "misses": 628,
+          "hit_rate": 0.6203143893591294,
+          "mean_probability": 0.6632864424062433,
+          "offer_coverage": 0.2748678519942335,
+          "match_coverage": 0.2748678519942335,
+          "unique_matches": 1716,
+          "days": 313,
+          "wilson95": [
+            0.5966727700616563,
+            0.643398436918001
+          ]
+        },
+        "under2.5": {
+          "selected": 378,
+          "scored": 352,
+          "unscored": 26,
+          "hits": 207,
+          "misses": 145,
+          "hit_rate": 0.5880681818181818,
+          "mean_probability": 0.6338285556111868,
+          "offer_coverage": 0.06054781355117732,
+          "match_coverage": 0.06054781355117732,
+          "unique_matches": 378,
+          "days": 206,
+          "wilson95": [
+            0.5359703067122715,
+            0.6382645904958172
+          ]
+        }
+      },
+      "by_season": {
+        "2024-25": {
+          "selected": 2062,
+          "scored": 2051,
+          "unscored": 11,
+          "hits": 1353,
+          "misses": 698,
+          "hit_rate": 0.6596782057532911,
+          "mean_probability": 0.6805673234080702,
+          "offer_coverage": 0.12899593368783235,
+          "match_coverage": 0.4588676884579293,
+          "unique_matches": 1467,
+          "days": 191,
+          "wilson95": [
+            0.638890918203918,
+            0.6798684669488007
+          ]
+        },
+        "2025-26": {
+          "selected": 1594,
+          "scored": 1412,
+          "unscored": 182,
+          "hits": 929,
+          "misses": 483,
+          "hit_rate": 0.6579320113314447,
+          "mean_probability": 0.6713001103807258,
+          "offer_coverage": 0.1046618516086671,
+          "match_coverage": 0.3854235062376888,
+          "unique_matches": 1174,
+          "days": 175,
+          "wilson95": [
+            0.6327889557579636,
+            0.6822180651351029
+          ]
+        }
+      },
+      "scored_unique_matches": 2508,
+      "match_cluster_bootstrap95": [
+        0.6425229548491341,
+        0.67547631450639
+      ],
+      "historical_90_evidence": false,
+      "independent_90_confirmed": false
+    },
+    {
+      "rule": {
+        "id": "p65",
+        "top": null,
+        "threshold": 0.65
+      },
+      "selected": 2032,
+      "scored": 1914,
+      "unscored": 118,
+      "hits": 1369,
+      "misses": 545,
+      "hit_rate": 0.7152560083594567,
+      "mean_probability": 0.7198395391593155,
+      "offer_coverage": 0.06509690853756207,
+      "match_coverage": 0.2383469485824123,
+      "unique_matches": 1488,
+      "days": 313,
+      "wilson95": [
+        0.6946226459061663,
+        0.7350270502197526
+      ],
+      "by_market": {
+        "home": {
+          "selected": 799,
+          "scored": 746,
+          "unscored": 53,
+          "hits": 572,
+          "misses": 174,
+          "hit_rate": 0.7667560321715817,
+          "mean_probability": 0.7464544386829698,
+          "offer_coverage": 0.12798334134230338,
+          "match_coverage": 0.12798334134230338,
+          "unique_matches": 799,
+          "days": 257,
+          "wilson95": [
+            0.7350896617011262,
+            0.7956892053755895
+          ]
+        },
+        "draw": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "away": {
+          "selected": 264,
+          "scored": 241,
+          "unscored": 23,
+          "hits": 179,
+          "misses": 62,
+          "hit_rate": 0.7427385892116183,
+          "mean_probability": 0.7196387172607517,
+          "offer_coverage": 0.0422873618452667,
+          "match_coverage": 0.0422873618452667,
+          "unique_matches": 264,
+          "days": 163,
+          "wilson95": [
+            0.684044451709471,
+            0.79381579533996
+          ]
+        },
+        "over2.5": {
+          "selected": 878,
+          "scored": 839,
+          "unscored": 39,
+          "hits": 566,
+          "misses": 273,
+          "hit_rate": 0.6746126340882003,
+          "mean_probability": 0.7010896485315801,
+          "offer_coverage": 0.14063751401569757,
+          "match_coverage": 0.14063751401569757,
+          "unique_matches": 878,
+          "days": 256,
+          "wilson95": [
+            0.6421765260948424,
+            0.7054570613771911
+          ]
+        },
+        "under2.5": {
+          "selected": 91,
+          "scored": 88,
+          "unscored": 3,
+          "hits": 52,
+          "misses": 36,
+          "hit_rate": 0.5909090909090909,
+          "mean_probability": 0.6735309172227031,
+          "offer_coverage": 0.014576325484542688,
+          "match_coverage": 0.014576325484542688,
+          "unique_matches": 91,
+          "days": 81,
+          "wilson95": [
+            0.4864808526118738,
+            0.6877324079945095
+          ]
+        }
+      },
+      "by_season": {
+        "2024-25": {
+          "selected": 1214,
+          "scored": 1209,
+          "unscored": 5,
+          "hits": 848,
+          "misses": 361,
+          "hit_rate": 0.7014061207609594,
+          "mean_probability": 0.7200226556191784,
+          "offer_coverage": 0.07594619956208946,
+          "match_coverage": 0.27807319361901783,
+          "unique_matches": 889,
+          "days": 173,
+          "wilson95": [
+            0.6750047260424008,
+            0.726531679609113
+          ]
+        },
+        "2025-26": {
+          "selected": 818,
+          "scored": 705,
+          "unscored": 113,
+          "hits": 521,
+          "misses": 184,
+          "hit_rate": 0.7390070921985815,
+          "mean_probability": 0.7195255139111255,
+          "offer_coverage": 0.05370978332239002,
+          "match_coverage": 0.19665134602757714,
+          "unique_matches": 599,
+          "days": 140,
+          "wilson95": [
+            0.7053554107851443,
+            0.7700682482100136
+          ]
+        }
+      },
+      "scored_unique_matches": 1409,
+      "match_cluster_bootstrap95": [
+        0.6950021363608619,
+        0.7366809934646251
+      ],
+      "historical_90_evidence": false,
+      "independent_90_confirmed": false
+    },
+    {
+      "rule": {
+        "id": "p70",
+        "top": null,
+        "threshold": 0.7
+      },
+      "selected": 1047,
+      "scored": 973,
+      "unscored": 74,
+      "hits": 753,
+      "misses": 220,
+      "hit_rate": 0.7738951695786228,
+      "mean_probability": 0.7654296286919704,
+      "offer_coverage": 0.03354156655454109,
+      "match_coverage": 0.12461957392279353,
+      "unique_matches": 778,
+      "days": 251,
+      "wilson95": [
+        0.7465639263359396,
+        0.7990722106104509
+      ],
+      "by_market": {
+        "home": {
+          "selected": 542,
+          "scored": 501,
+          "unscored": 41,
+          "hits": 402,
+          "misses": 99,
+          "hit_rate": 0.8023952095808383,
+          "mean_probability": 0.7817839848739498,
+          "offer_coverage": 0.08681723530353996,
+          "match_coverage": 0.08681723530353996,
+          "unique_matches": 542,
+          "days": 225,
+          "wilson95": [
+            0.7652833867823922,
+            0.8349050381298678
+          ]
+        },
+        "draw": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "away": {
+          "selected": 152,
+          "scored": 137,
+          "unscored": 15,
+          "hits": 107,
+          "misses": 30,
+          "hit_rate": 0.781021897810219,
+          "mean_probability": 0.7558873848119837,
+          "offer_coverage": 0.02434726894121416,
+          "match_coverage": 0.02434726894121416,
+          "unique_matches": 152,
+          "days": 113,
+          "wilson95": [
+            0.7046291889884262,
+            0.8420848300564137
+          ]
+        },
+        "over2.5": {
+          "selected": 342,
+          "scored": 324,
+          "unscored": 18,
+          "hits": 237,
+          "misses": 87,
+          "hit_rate": 0.7314814814814815,
+          "mean_probability": 0.7458224219379292,
+          "offer_coverage": 0.05478135511773186,
+          "match_coverage": 0.05478135511773186,
+          "unique_matches": 342,
+          "days": 179,
+          "wilson95": [
+            0.6807186075695537,
+            0.7768196200224584
+          ]
+        },
+        "under2.5": {
+          "selected": 11,
+          "scored": 11,
+          "unscored": 0,
+          "hits": 7,
+          "misses": 4,
+          "hit_rate": 0.6363636363636364,
+          "mean_probability": 0.7169287153006827,
+          "offer_coverage": 0.0017619734102194459,
+          "match_coverage": 0.0017619734102194459,
+          "unique_matches": 11,
+          "days": 11,
+          "wilson95": [
+            0.35380117450784887,
+            0.8483352890463243
+          ]
+        }
+      },
+      "by_season": {
+        "2024-25": {
+          "selected": 615,
+          "scored": 612,
+          "unscored": 3,
+          "hits": 460,
+          "misses": 152,
+          "hit_rate": 0.7516339869281046,
+          "mean_probability": 0.7656109414558351,
+          "offer_coverage": 0.03847356897091023,
+          "match_coverage": 0.1401313731623397,
+          "unique_matches": 448,
+          "days": 135,
+          "wilson95": [
+            0.7159040447562878,
+            0.784224674394587
+          ]
+        },
+        "2025-26": {
+          "selected": 432,
+          "scored": 361,
+          "unscored": 71,
+          "hits": 293,
+          "misses": 68,
+          "hit_rate": 0.8116343490304709,
+          "mean_probability": 0.7651222508208202,
+          "offer_coverage": 0.028365068942875903,
+          "match_coverage": 0.10833880499015101,
+          "unique_matches": 330,
+          "days": 116,
+          "wilson95": [
+            0.7680976730116331,
+            0.8486085552971925
+          ]
+        }
+      },
+      "scored_unique_matches": 722,
+      "match_cluster_bootstrap95": [
+        0.7453733346558307,
+        0.8037225777732985
+      ],
+      "historical_90_evidence": false,
+      "independent_90_confirmed": false
+    },
+    {
+      "rule": {
+        "id": "p75",
+        "top": null,
+        "threshold": 0.75
+      },
+      "selected": 541,
+      "scored": 499,
+      "unscored": 42,
+      "hits": 414,
+      "misses": 85,
+      "hit_rate": 0.8296593186372746,
+      "mean_probability": 0.8056153615794759,
+      "offer_coverage": 0.017331411180522185,
+      "match_coverage": 0.06839660419670031,
+      "unique_matches": 427,
+      "days": 203,
+      "wilson95": [
+        0.7941864739089286,
+        0.8600952966745838
+      ],
+      "by_market": {
+        "home": {
+          "selected": 339,
+          "scored": 311,
+          "unscored": 28,
+          "hits": 264,
+          "misses": 47,
+          "hit_rate": 0.8488745980707395,
+          "mean_probability": 0.8163113359584661,
+          "offer_coverage": 0.05430081691494474,
+          "match_coverage": 0.05430081691494474,
+          "unique_matches": 339,
+          "days": 186,
+          "wilson95": [
+            0.8048262455279787,
+            0.8844095394058729
+          ]
+        },
+        "draw": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "away": {
+          "selected": 69,
+          "scored": 63,
+          "unscored": 6,
+          "hits": 48,
+          "misses": 15,
+          "hit_rate": 0.7619047619047619,
+          "mean_probability": 0.796040955294172,
+          "offer_coverage": 0.011052378664103796,
+          "match_coverage": 0.011052378664103796,
+          "unique_matches": 69,
+          "days": 61,
+          "wilson95": [
+            0.6436433989030312,
+            0.8500621632170939
+          ]
+        },
+        "over2.5": {
+          "selected": 133,
+          "scored": 125,
+          "unscored": 8,
+          "hits": 102,
+          "misses": 23,
+          "hit_rate": 0.816,
+          "mean_probability": 0.7838292780923414,
+          "offer_coverage": 0.02130386032356239,
+          "match_coverage": 0.02130386032356239,
+          "unique_matches": 133,
+          "days": 100,
+          "wilson95": [
+            0.7390108120784816,
+            0.874145859097856
+          ]
+        },
+        "under2.5": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        }
+      },
+      "by_season": {
+        "2024-25": {
+          "selected": 309,
+          "scored": 309,
+          "unscored": 0,
+          "hits": 245,
+          "misses": 64,
+          "hit_rate": 0.7928802588996764,
+          "mean_probability": 0.8071100974220994,
+          "offer_coverage": 0.019330622458554894,
+          "match_coverage": 0.0747575852361589,
+          "unique_matches": 239,
+          "days": 111,
+          "wilson95": [
+            0.7442345300144956,
+            0.8343332873147947
+          ]
+        },
+        "2025-26": {
+          "selected": 232,
+          "scored": 190,
+          "unscored": 42,
+          "hits": 169,
+          "misses": 21,
+          "hit_rate": 0.8894736842105263,
+          "mean_probability": 0.8031844490775251,
+          "offer_coverage": 0.015233092580433356,
+          "match_coverage": 0.061720288903479976,
+          "unique_matches": 188,
+          "days": 92,
+          "wilson95": [
+            0.8369463496900674,
+            0.92656420630973
+          ]
+        }
+      },
+      "scored_unique_matches": 393,
+      "match_cluster_bootstrap95": [
+        0.7938103420062183,
+        0.8641732283464567
+      ],
+      "historical_90_evidence": false,
+      "independent_90_confirmed": false
+    },
+    {
+      "rule": {
+        "id": "p80",
+        "top": null,
+        "threshold": 0.8
+      },
+      "selected": 257,
+      "scored": 237,
+      "unscored": 20,
+      "hits": 203,
+      "misses": 34,
+      "hit_rate": 0.8565400843881856,
+      "mean_probability": 0.8411418972141826,
+      "offer_coverage": 0.008233221207752684,
+      "match_coverage": 0.03652090341182124,
+      "unique_matches": 228,
+      "days": 144,
+      "wilson95": [
+        0.8062182238878932,
+        0.8954882050115434
+      ],
+      "by_market": {
+        "home": {
+          "selected": 195,
+          "scored": 178,
+          "unscored": 17,
+          "hits": 154,
+          "misses": 24,
+          "hit_rate": 0.8651685393258427,
+          "mean_probability": 0.8469043349320021,
+          "offer_coverage": 0.0312349831811629,
+          "match_coverage": 0.0312349831811629,
+          "unique_matches": 195,
+          "days": 134,
+          "wilson95": [
+            0.8072166036462891,
+            0.9076918712586954
+          ]
+        },
+        "draw": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "away": {
+          "selected": 32,
+          "scored": 30,
+          "unscored": 2,
+          "hits": 24,
+          "misses": 6,
+          "hit_rate": 0.8,
+          "mean_probability": 0.819887823270497,
+          "offer_coverage": 0.005125740829729297,
+          "match_coverage": 0.005125740829729297,
+          "unique_matches": 32,
+          "days": 30,
+          "wilson95": [
+            0.6269430358685175,
+            0.9049489282271013
+          ]
+        },
+        "over2.5": {
+          "selected": 30,
+          "scored": 29,
+          "unscored": 1,
+          "hits": 25,
+          "misses": 4,
+          "hit_rate": 0.8620689655172413,
+          "mean_probability": 0.8277594249568951,
+          "offer_coverage": 0.004805382027871216,
+          "match_coverage": 0.004805382027871216,
+          "unique_matches": 30,
+          "days": 27,
+          "wilson95": [
+            0.6944100627964798,
+            0.9450256003588804
+          ]
+        },
+        "under2.5": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        }
+      },
+      "by_season": {
+        "2024-25": {
+          "selected": 152,
+          "scored": 152,
+          "unscored": 0,
+          "hits": 129,
+          "misses": 23,
+          "hit_rate": 0.8486842105263158,
+          "mean_probability": 0.8424755094224569,
+          "offer_coverage": 0.009508914607444479,
+          "match_coverage": 0.041914294651235535,
+          "unique_matches": 134,
+          "days": 80,
+          "wilson95": [
+            0.7831736424205157,
+            0.8970047953465486
+          ]
+        },
+        "2025-26": {
+          "selected": 105,
+          "scored": 85,
+          "unscored": 20,
+          "hits": 74,
+          "misses": 11,
+          "hit_rate": 0.8705882352941177,
+          "mean_probability": 0.8387570847946804,
+          "offer_coverage": 0.006894287590282338,
+          "match_coverage": 0.030860144451739988,
+          "unique_matches": 94,
+          "days": 64,
+          "wilson95": [
+            0.7829519105661322,
+            0.9261764720187473
+          ]
+        }
+      },
+      "scored_unique_matches": 209,
+      "match_cluster_bootstrap95": [
+        0.8085106382978723,
+        0.9008937087307409
+      ],
+      "historical_90_evidence": false,
+      "independent_90_confirmed": false
+    },
+    {
+      "rule": {
+        "id": "p85",
+        "top": null,
+        "threshold": 0.85
+      },
+      "selected": 88,
+      "scored": 81,
+      "unscored": 7,
+      "hits": 69,
+      "misses": 12,
+      "hit_rate": 0.8518518518518519,
+      "mean_probability": 0.8763823902234454,
+      "offer_coverage": 0.0028191574563511132,
+      "match_coverage": 0.012974531475252283,
+      "unique_matches": 81,
+      "days": 66,
+      "wilson95": [
+        0.758668429387898,
+        0.9131729179004024
+      ],
+      "by_market": {
+        "home": {
+          "selected": 78,
+          "scored": 71,
+          "unscored": 7,
+          "hits": 62,
+          "misses": 9,
+          "hit_rate": 0.8732394366197183,
+          "mean_probability": 0.8780568611585072,
+          "offer_coverage": 0.012493993272465162,
+          "match_coverage": 0.012493993272465162,
+          "unique_matches": 78,
+          "days": 64,
+          "wilson95": [
+            0.7763089172134625,
+            0.9318547241043516
+          ]
+        },
+        "draw": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "away": {
+          "selected": 3,
+          "scored": 3,
+          "unscored": 0,
+          "hits": 1,
+          "misses": 2,
+          "hit_rate": 0.3333333333333333,
+          "mean_probability": 0.8661330223774986,
+          "offer_coverage": 0.0004805382027871216,
+          "match_coverage": 0.0004805382027871216,
+          "unique_matches": 3,
+          "days": 3,
+          "wilson95": [
+            0.06149194472039621,
+            0.7923403991979522
+          ]
+        },
+        "over2.5": {
+          "selected": 7,
+          "scored": 7,
+          "unscored": 0,
+          "hits": 6,
+          "misses": 1,
+          "hit_rate": 0.8571428571428571,
+          "mean_probability": 0.863791056958938,
+          "offer_coverage": 0.0011212558065032837,
+          "match_coverage": 0.0011212558065032837,
+          "unique_matches": 7,
+          "days": 7,
+          "wilson95": [
+            0.4868721707256811,
+            0.9743203756552565
+          ]
+        },
+        "under2.5": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        }
+      },
+      "by_season": {
+        "2024-25": {
+          "selected": 53,
+          "scored": 53,
+          "unscored": 0,
+          "hits": 46,
+          "misses": 7,
+          "hit_rate": 0.8679245283018868,
+          "mean_probability": 0.8778014904414633,
+          "offer_coverage": 0.00331560838285893,
+          "match_coverage": 0.015014075695964968,
+          "unique_matches": 48,
+          "days": 37,
+          "wilson95": [
+            0.7515974469109508,
+            0.9345214671553674
+          ]
+        },
+        "2025-26": {
+          "selected": 35,
+          "scored": 28,
+          "unscored": 7,
+          "hits": 23,
+          "misses": 5,
+          "hit_rate": 0.8214285714285714,
+          "mean_probability": 0.8736962362393401,
+          "offer_coverage": 0.002298095863427446,
+          "match_coverage": 0.010833880499015102,
+          "unique_matches": 33,
+          "days": 29,
+          "wilson95": [
+            0.6440857521065705,
+            0.9212149805439572
+          ]
+        }
+      },
+      "scored_unique_matches": 74,
+      "match_cluster_bootstrap95": [
+        0.7682926829268293,
+        0.9250231481481481
+      ],
+      "historical_90_evidence": false,
+      "independent_90_confirmed": false
+    },
+    {
+      "rule": {
+        "id": "p90",
+        "top": null,
+        "threshold": 0.9
+      },
+      "selected": 14,
+      "scored": 13,
+      "unscored": 1,
+      "hits": 12,
+      "misses": 1,
+      "hit_rate": 0.9230769230769231,
+      "mean_probability": 0.9210747102442272,
+      "offer_coverage": 0.0004485023226013135,
+      "match_coverage": 0.0020823322120775267,
+      "unique_matches": 13,
+      "days": 12,
+      "wilson95": [
+        0.6668604907890041,
+        0.9862895787574435
+      ],
+      "by_market": {
+        "home": {
+          "selected": 13,
+          "scored": 12,
+          "unscored": 1,
+          "hits": 11,
+          "misses": 1,
+          "hit_rate": 0.9166666666666666,
+          "mean_probability": 0.9228068241850796,
+          "offer_coverage": 0.0020823322120775267,
+          "match_coverage": 0.0020823322120775267,
+          "unique_matches": 13,
+          "days": 12,
+          "wilson95": [
+            0.646120088858883,
+            0.9851349055950829
+          ]
+        },
+        "draw": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "away": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "over2.5": {
+          "selected": 1,
+          "scored": 1,
+          "unscored": 0,
+          "hits": 1,
+          "misses": 0,
+          "hit_rate": 1.0,
+          "mean_probability": 0.9002893429539992,
+          "offer_coverage": 0.00016017940092904052,
+          "match_coverage": 0.00016017940092904052,
+          "unique_matches": 1,
+          "days": 1,
+          "wilson95": [
+            0.20654931437723745,
+            1
+          ]
+        },
+        "under2.5": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        }
+      },
+      "by_season": {
+        "2024-25": {
+          "selected": 10,
+          "scored": 10,
+          "unscored": 0,
+          "hits": 9,
+          "misses": 1,
+          "hit_rate": 0.9,
+          "mean_probability": 0.9223862832959435,
+          "offer_coverage": 0.0006255864873318737,
+          "match_coverage": 0.0028151391929934315,
+          "unique_matches": 9,
+          "days": 8,
+          "wilson95": [
+            0.5958499732047615,
+            0.9821237869049271
+          ]
+        },
+        "2025-26": {
+          "selected": 4,
+          "scored": 3,
+          "unscored": 1,
+          "hits": 3,
+          "misses": 0,
+          "hit_rate": 1.0,
+          "mean_probability": 0.9167028000718398,
+          "offer_coverage": 0.000262639527248851,
+          "match_coverage": 0.0013131976362442547,
+          "unique_matches": 4,
+          "days": 4,
+          "wilson95": [
+            0.4385029682449546,
+            1
+          ]
+        }
+      },
+      "scored_unique_matches": 12,
+      "match_cluster_bootstrap95": [
+        0.75,
+        1.0
+      ],
+      "historical_90_evidence": false,
+      "independent_90_confirmed": false
+    },
+    {
+      "rule": {
+        "id": "p95",
+        "top": null,
+        "threshold": 0.95
+      },
+      "selected": 0,
+      "scored": 0,
+      "unscored": 0,
+      "hits": 0,
+      "misses": 0,
+      "hit_rate": null,
+      "mean_probability": null,
+      "offer_coverage": 0.0,
+      "match_coverage": 0.0,
+      "unique_matches": 0,
+      "days": 0,
+      "wilson95": null,
+      "by_market": {
+        "home": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "draw": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "away": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "over2.5": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "under2.5": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        }
+      },
+      "by_season": {
+        "2024-25": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        },
+        "2025-26": {
+          "selected": 0,
+          "scored": 0,
+          "unscored": 0,
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": null,
+          "mean_probability": null,
+          "offer_coverage": 0.0,
+          "match_coverage": 0.0,
+          "unique_matches": 0,
+          "days": 0,
+          "wilson95": null
+        }
+      },
+      "scored_unique_matches": 0,
+      "match_cluster_bootstrap95": null,
+      "historical_90_evidence": false,
+      "independent_90_confirmed": false
+    }
+  ],
+  "eligible_fixtures": 6243,
+  "unscored_fixtures": 471,
+  "limitations": [
+    "League-local coefficients, local/global blend and shrinkage selected only on earlier development outcomes.",
+    "If local training <200 fixtures, local predictions fall back to pooled; if development <200, league selection stays pooled.",
+    "Viewed audit periods cannot certify future 90% accuracy, regardless of number of repeated trials.",
+    "Probability filters select subsets; report hits, misses, unscored, unique fixtures and coverage.",
+    "Coach and direct player-pair features still unavailable; not used or inferred from club results.",
+    "Lineups, odds, tactical events and injury data absent. Calendar-date schedule is a retrospective snapshot.",
+    "Match-cluster interval handles offers sharing a fixture, but not all temporal/league dependence or model-selection uncertainty.",
+    "720 new group-ablation comparisons plus 260 reused prior comparisons; not 980 new independent tests.",
+    "without_current_elo removes the current rating difference but retains opponent-history ratings in the context group.",
+    "Full context adds venue, previous-opponent strength, form and recorded league fixture gaps; it does not add actual tactics or personnel data."
+  ]
+}

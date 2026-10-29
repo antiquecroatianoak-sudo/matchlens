@@ -56,3 +56,17 @@ Skripta zahtijeva novu izlaznu mapu. Koristi scikit-learn 1.8.0, isključuje slu
     python -m analytics.specialist_filter_audit --output data/experiments/NOVI_CIKLUS
 
 Zadana pravila filtara primjenjuju se na ranije odabrani market-specialists-v1. Novu mapu ne prepisuje; puni skup uključuje i ponude bez poznatog ishoda. Kompaktan UI omogućuje poštenu usporedbu s ranijim Poisson + Elo izračunom. Nema novih kvota ni preporuka.
+
+## Ligaški koeficijenti, pooled i cilj 90%
+
+    OPENBLAS_NUM_THREADS=1 python -m analytics.league_specialists --output data/experiments/NOVI_LIGASKI_CIKLUS
+
+Za svaku ligu i obitelj tržišta odabire udio lokalnog modela i ridge na starijim razvojnim segmentima. Nedovoljna povijest automatski vraća pooled procjenu. Novi direktorij je obvezan; zaključavanje se piše prije audit mjerenja. Spremnik čuva sve razvojne pokušaje, tragove lokalnog treniranja, puni skup audit ponuda i zasebne pokazatelje. Učitava stari market-specialists lock, ne ponavlja cijelu mrežu od 1.701 konfiguracije.
+
+`historical_90_evidence` je samo unaprijed zadani opisni kriterij uz barem 200 različitih susreta i donju match-cluster bootstrap granicu >90%. `independent_90_confirmed` ostaje false za već pregledane sezone. Ciklus ne dodaje trenere, postave ili igrače bez stvarnih izvora i ne promovira kandidata prema već viđenim audit postocima.
+
+## Novi i uklonjeni kriteriji unutar liga
+
+    OPENBLAS_NUM_THREADS=1 python -m analytics.league_factor_search --output data/experiments/NOVI_LIGASKI_FAKTORI
+
+Novi ciklus dodaje 720 usporedbi skupina, a ranijih 260 učitava bez ponavljanja. Odbija reuse ako hash izvornog skupa nije isti. Potrebne su cijele arhive prethodnog ligaškog ciklusa i pooled specialist filtera za spajanje po identitetu susreta. Stari zaključani pokusi se ne prepisuju. Veći broj pokušaja nije neovisni dokaz; ni postotak >90% na nekolicini ponuda ne prolazi zadani kriterij.

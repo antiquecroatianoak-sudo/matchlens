@@ -1,0 +1,511 @@
+{
+  "name": "league-factor-search-v1",
+  "created_at": "2026-10-29T07:45:23.328557+00:00",
+  "selection": {
+    "outcome": {
+      "en.1": {
+        "config": {
+          "id": 19,
+          "alpha": 0.75,
+          "ridge": 0.01,
+          "group": "full_context"
+        },
+        "development_matches": 750,
+        "reason": "development_log_loss",
+        "development_score": 0.9588944773943713,
+        "reused_prior_candidate": false
+      },
+      "it.1": {
+        "config": {
+          "id": 38,
+          "alpha": 0.5,
+          "ridge": 0.001,
+          "group": "attack_defence_only"
+        },
+        "development_matches": 745,
+        "reason": "development_log_loss",
+        "development_score": 0.9877805789988786,
+        "reused_prior_candidate": false
+      },
+      "es.1": {
+        "config": {
+          "id": 0,
+          "alpha": 0.0,
+          "ridge": null,
+          "group": "pooled"
+        },
+        "development_matches": 745,
+        "reason": "development_log_loss",
+        "development_score": 0.9800235728245581,
+        "reused_prior_candidate": true
+      },
+      "de.1": {
+        "config": {
+          "id": 34,
+          "alpha": 0.5,
+          "ridge": 0.1,
+          "group": "without_current_elo"
+        },
+        "development_matches": 602,
+        "reason": "development_log_loss",
+        "development_score": 0.988141394371693,
+        "reused_prior_candidate": false
+      },
+      "fr.1": {
+        "config": {
+          "id": 38,
+          "alpha": 0.5,
+          "ridge": 0.001,
+          "group": "attack_defence_only"
+        },
+        "development_matches": 646,
+        "reason": "development_log_loss",
+        "development_score": 1.0082358650281134,
+        "reused_prior_candidate": false
+      },
+      "pt.1": {
+        "config": {
+          "id": 0,
+          "alpha": 0.0,
+          "ridge": null,
+          "group": "pooled"
+        },
+        "development_matches": 574,
+        "reason": "development_log_loss",
+        "development_score": 0.9212957227304424,
+        "reused_prior_candidate": true
+      },
+      "be.1": {
+        "config": {
+          "id": 26,
+          "alpha": 0.5,
+          "ridge": 0.001,
+          "group": "without_current_elo"
+        },
+        "development_matches": 209,
+        "reason": "development_log_loss",
+        "development_score": 0.9837083999778902,
+        "reused_prior_candidate": false
+      },
+      "nl.1": {
+        "config": {
+          "id": 39,
+          "alpha": 0.75,
+          "ridge": 0.001,
+          "group": "attack_defence_only"
+        },
+        "development_matches": 568,
+        "reason": "development_log_loss",
+        "development_score": 0.9283850758927752,
+        "reused_prior_candidate": false
+      },
+      "tr.1": {
+        "config": {
+          "id": 3,
+          "alpha": 0.75,
+          "ridge": 0.001,
+          "group": "snaga"
+        },
+        "development_matches": 273,
+        "reason": "development_log_loss",
+        "development_score": 0.9673363515192245,
+        "reused_prior_candidate": true
+      },
+      "gr.1": {
+        "config": {
+          "id": 0,
+          "alpha": 0.0,
+          "ridge": null,
+          "group": "pooled"
+        },
+        "development_matches": 135,
+        "reason": "insufficient_development_matches",
+        "development_score": 0.9413697436092074,
+        "reused_prior_candidate": true
+      }
+    },
+    "goals": {
+      "en.1": {
+        "config": {
+          "id": 23,
+          "alpha": 0.75,
+          "ridge": 0.1,
+          "group": "full_context"
+        },
+        "development_matches": 750,
+        "reason": "development_log_loss",
+        "development_score": 0.664428626858123,
+        "reused_prior_candidate": false
+      },
+      "it.1": {
+        "config": {
+          "id": 34,
+          "alpha": 0.5,
+          "ridge": 0.1,
+          "group": "without_current_elo"
+        },
+        "development_matches": 745,
+        "reason": "development_log_loss",
+        "development_score": 0.6873092231874921,
+        "reused_prior_candidate": false
+      },
+      "es.1": {
+        "config": {
+          "id": 27,
+          "alpha": 0.75,
+          "ridge": 0.001,
+          "group": "without_current_elo"
+        },
+        "development_matches": 745,
+        "reason": "development_log_loss",
+        "development_score": 0.6755077980376767,
+        "reused_prior_candidate": false
+      },
+      "de.1": {
+        "config": {
+          "id": 46,
+          "alpha": 0.5,
+          "ridge": 0.1,
+          "group": "attack_defence_only"
+        },
+        "development_matches": 602,
+        "reason": "development_log_loss",
+        "development_score": 0.6657272438277316,
+        "reused_prior_candidate": false
+      },
+      "fr.1": {
+        "config": {
+          "id": 23,
+          "alpha": 0.75,
+          "ridge": 0.1,
+          "group": "full_context"
+        },
+        "development_matches": 646,
+        "reason": "development_log_loss",
+        "development_score": 0.6853262805301535,
+        "reused_prior_candidate": false
+      },
+      "pt.1": {
+        "config": {
+          "id": 11,
+          "alpha": 0.75,
+          "ridge": 0.1,
+          "group": "snaga"
+        },
+        "development_matches": 574,
+        "reason": "development_log_loss",
+        "development_score": 0.677983014663202,
+        "reused_prior_candidate": true
+      },
+      "be.1": {
+        "config": {
+          "id": 0,
+          "alpha": 0.0,
+          "ridge": null,
+          "group": "pooled"
+        },
+        "development_matches": 209,
+        "reason": "development_log_loss",
+        "development_score": 0.6779945228470253,
+        "reused_prior_candidate": true
+      },
+      "nl.1": {
+        "config": {
+          "id": 0,
+          "alpha": 0.0,
+          "ridge": null,
+          "group": "pooled"
+        },
+        "development_matches": 568,
+        "reason": "development_log_loss",
+        "development_score": 0.6639827380072241,
+        "reused_prior_candidate": true
+      },
+      "tr.1": {
+        "config": {
+          "id": 16,
+          "alpha": 1.0,
+          "ridge": 0.001,
+          "group": "full_context"
+        },
+        "development_matches": 273,
+        "reason": "development_log_loss",
+        "development_score": 0.6758434923304047,
+        "reused_prior_candidate": false
+      },
+      "gr.1": {
+        "config": {
+          "id": 0,
+          "alpha": 0.0,
+          "ridge": null,
+          "group": "pooled"
+        },
+        "development_matches": 135,
+        "reason": "insufficient_development_matches",
+        "development_score": 0.674123069921109,
+        "reused_prior_candidate": true
+      }
+    }
+  },
+  "new_groups": {
+    "full_context": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "without_current_elo": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8
+    ],
+    "attack_defence_only": [
+      0,
+      1
+    ]
+  },
+  "new_candidates": [
+    {
+      "id": 13,
+      "alpha": 0.25,
+      "ridge": 0.001,
+      "group": "full_context"
+    },
+    {
+      "id": 14,
+      "alpha": 0.5,
+      "ridge": 0.001,
+      "group": "full_context"
+    },
+    {
+      "id": 15,
+      "alpha": 0.75,
+      "ridge": 0.001,
+      "group": "full_context"
+    },
+    {
+      "id": 16,
+      "alpha": 1.0,
+      "ridge": 0.001,
+      "group": "full_context"
+    },
+    {
+      "id": 17,
+      "alpha": 0.25,
+      "ridge": 0.01,
+      "group": "full_context"
+    },
+    {
+      "id": 18,
+      "alpha": 0.5,
+      "ridge": 0.01,
+      "group": "full_context"
+    },
+    {
+      "id": 19,
+      "alpha": 0.75,
+      "ridge": 0.01,
+      "group": "full_context"
+    },
+    {
+      "id": 20,
+      "alpha": 1.0,
+      "ridge": 0.01,
+      "group": "full_context"
+    },
+    {
+      "id": 21,
+      "alpha": 0.25,
+      "ridge": 0.1,
+      "group": "full_context"
+    },
+    {
+      "id": 22,
+      "alpha": 0.5,
+      "ridge": 0.1,
+      "group": "full_context"
+    },
+    {
+      "id": 23,
+      "alpha": 0.75,
+      "ridge": 0.1,
+      "group": "full_context"
+    },
+    {
+      "id": 24,
+      "alpha": 1.0,
+      "ridge": 0.1,
+      "group": "full_context"
+    },
+    {
+      "id": 25,
+      "alpha": 0.25,
+      "ridge": 0.001,
+      "group": "without_current_elo"
+    },
+    {
+      "id": 26,
+      "alpha": 0.5,
+      "ridge": 0.001,
+      "group": "without_current_elo"
+    },
+    {
+      "id": 27,
+      "alpha": 0.75,
+      "ridge": 0.001,
+      "group": "without_current_elo"
+    },
+    {
+      "id": 28,
+      "alpha": 1.0,
+      "ridge": 0.001,
+      "group": "without_current_elo"
+    },
+    {
+      "id": 29,
+      "alpha": 0.25,
+      "ridge": 0.01,
+      "group": "without_current_elo"
+    },
+    {
+      "id": 30,
+      "alpha": 0.5,
+      "ridge": 0.01,
+      "group": "without_current_elo"
+    },
+    {
+      "id": 31,
+      "alpha": 0.75,
+      "ridge": 0.01,
+      "group": "without_current_elo"
+    },
+    {
+      "id": 32,
+      "alpha": 1.0,
+      "ridge": 0.01,
+      "group": "without_current_elo"
+    },
+    {
+      "id": 33,
+      "alpha": 0.25,
+      "ridge": 0.1,
+      "group": "without_current_elo"
+    },
+    {
+      "id": 34,
+      "alpha": 0.5,
+      "ridge": 0.1,
+      "group": "without_current_elo"
+    },
+    {
+      "id": 35,
+      "alpha": 0.75,
+      "ridge": 0.1,
+      "group": "without_current_elo"
+    },
+    {
+      "id": 36,
+      "alpha": 1.0,
+      "ridge": 0.1,
+      "group": "without_current_elo"
+    },
+    {
+      "id": 37,
+      "alpha": 0.25,
+      "ridge": 0.001,
+      "group": "attack_defence_only"
+    },
+    {
+      "id": 38,
+      "alpha": 0.5,
+      "ridge": 0.001,
+      "group": "attack_defence_only"
+    },
+    {
+      "id": 39,
+      "alpha": 0.75,
+      "ridge": 0.001,
+      "group": "attack_defence_only"
+    },
+    {
+      "id": 40,
+      "alpha": 1.0,
+      "ridge": 0.001,
+      "group": "attack_defence_only"
+    },
+    {
+      "id": 41,
+      "alpha": 0.25,
+      "ridge": 0.01,
+      "group": "attack_defence_only"
+    },
+    {
+      "id": 42,
+      "alpha": 0.5,
+      "ridge": 0.01,
+      "group": "attack_defence_only"
+    },
+    {
+      "id": 43,
+      "alpha": 0.75,
+      "ridge": 0.01,
+      "group": "attack_defence_only"
+    },
+    {
+      "id": 44,
+      "alpha": 1.0,
+      "ridge": 0.01,
+      "group": "attack_defence_only"
+    },
+    {
+      "id": 45,
+      "alpha": 0.25,
+      "ridge": 0.1,
+      "group": "attack_defence_only"
+    },
+    {
+      "id": 46,
+      "alpha": 0.5,
+      "ridge": 0.1,
+      "group": "attack_defence_only"
+    },
+    {
+      "id": 47,
+      "alpha": 0.75,
+      "ridge": 0.1,
+      "group": "attack_defence_only"
+    },
+    {
+      "id": 48,
+      "alpha": 1.0,
+      "ridge": 0.1,
+      "group": "attack_defence_only"
+    }
+  ],
+  "source_sha256": "33a2fec26c965d297a3c911ffd74637f21b826409d1e3c6d288232d3d266d842",
+  "previous_report_sha256": "7a1493e7347d61f814c2b2224eb7c6ef1fb4346cd137aadd4b2f984d02948a17",
+  "code_sha256": "d797a561effce4b5f96c38eb9fd1e2933bc4922402a5a4dd3e94a0dc272f80ff",
+  "development_seasons": [
+    "2022-23",
+    "2023-24"
+  ],
+  "audit_seasons": [
+    "2024-25",
+    "2025-26"
+  ],
+  "minimum_local_training": 200,
+  "minimum_development": 200,
+  "audit_status": "Already viewed seasons; descriptive reanalysis only",
+  "external_person_data_included": false,
+  "goal90": "Target only. At least 200 scored distinct fixtures and match-cluster bootstrap lower bound above 90% for descriptive evidence; no independent claim on viewed data."
+}
