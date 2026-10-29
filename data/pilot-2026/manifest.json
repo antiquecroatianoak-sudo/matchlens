@@ -1,0 +1,132 @@
+{
+  "results": [
+    {
+      "file": "de.1.json",
+      "path": "2026-27/de.1.json",
+      "git_blob": "c8696353819299a131f8041513f8c50ee28522a2",
+      "url": "https://github.com/openfootball/football.json/blob/master/2026-27/de.1.json",
+      "license": "CC0 / public domain",
+      "sha256": "07fab65d4a1de8ce4c8472da9ccf4d1d2b145ecd5abdc5b6d4250a5c119d7681"
+    },
+    {
+      "file": "en.1.json",
+      "path": "2026-27/en.1.json",
+      "git_blob": "60e281f0fcc51cfca1a901353666a688cf62a8ba",
+      "url": "https://github.com/openfootball/football.json/blob/master/2026-27/en.1.json",
+      "license": "CC0 / public domain",
+      "sha256": "bb91f0ab3e8359df163bb9ec98549bfed85e200dd4c32f3bd606b5890d932dd2"
+    },
+    {
+      "file": "es.1.json",
+      "path": "2026-27/es.1.json",
+      "git_blob": "daf0d8a5ff04578b06ca32927bfcb6609e50797c",
+      "url": "https://github.com/openfootball/football.json/blob/master/2026-27/es.1.json",
+      "license": "CC0 / public domain",
+      "sha256": "4b1a9906e3f2b279a1f25497a38f2f58e21ec19ea726b882fa646da7c07bc0e0"
+    },
+    {
+      "file": "fr.1.json",
+      "path": "2026-27/fr.1.json",
+      "git_blob": "ac75f05d04f914b95d2e70d7e267fd43c32e5d4f",
+      "url": "https://github.com/openfootball/football.json/blob/master/2026-27/fr.1.json",
+      "license": "CC0 / public domain",
+      "sha256": "f875275f835e378fc8c4e7d48c7a2f327e7d426237bd057fe652fd47f30b5a4f"
+    },
+    {
+      "file": "it.1.json",
+      "path": "2026-27/it.1.json",
+      "git_blob": "6b8e10596db7df51f98cd81bb4ea03304e784a1f",
+      "url": "https://github.com/openfootball/football.json/blob/master/2026-27/it.1.json",
+      "license": "CC0 / public domain",
+      "sha256": "721a6c220fecb8208287e41401fa2fce652cd23765ce58a39bf98cdaa3d528ad"
+    },
+    {
+      "file": "nl.1.json",
+      "path": "2026-27/nl.1.json",
+      "git_blob": "6968fd62fc9c539c3b9d9bb31d4e7789dee7e79d",
+      "url": "https://github.com/openfootball/football.json/blob/master/2026-27/nl.1.json",
+      "license": "CC0 / public domain",
+      "sha256": "970507a228aa4ccd2968d52a9862b0d2844148bc548bc7ffe5e83d1c0d8f0517"
+    },
+    {
+      "file": "pt.1.json",
+      "path": "2026-27/pt.1.json",
+      "git_blob": "90cb28d92b189b9d11d725a72b961757375682c4",
+      "url": "https://github.com/openfootball/football.json/blob/master/2026-27/pt.1.json",
+      "license": "CC0 / public domain",
+      "sha256": "57cac2d6caab5a303d0b846ce523462b4571da10766a128ac0a5102bd0182e7e"
+    }
+  ],
+  "results_license": "Public domain / CC0",
+  "checkpoints": [
+    {
+      "file": "checkpoint-2026-08-07.json",
+      "source_path": "data/track-2026-08-07T04-40-01Z.json",
+      "source_git_blob": "e48ad00806fb3ff0fb9b0f0489d916136f3d890b",
+      "generated_at": "2026-08-07T04:40:03+00:00",
+      "subset_rows": 17,
+      "subset_sha256": "1ddd044149c68077715a3d3e90d963b35f66cd3dca6ea356a17dd4feaa3b5236"
+    },
+    {
+      "file": "checkpoint-2026-08-14.json",
+      "source_path": "data/track-2026-08-14T04-40-01Z.json",
+      "source_git_blob": "e93c161a8717801b4a3553c9af83c25882ea9de6",
+      "generated_at": "2026-08-14T04:40:04+00:00",
+      "subset_rows": 23,
+      "subset_sha256": "71df322225746d9142de1400bfae369439a0deb9cda3bc18f07f7dd0c2a9ecce"
+    },
+    {
+      "file": "checkpoint-2026-08-21.json",
+      "source_path": "data/track-2026-08-21T04-40-01Z.json",
+      "source_git_blob": "b8ba7984aef7a99cb66ff6ebcbde9581582032b3",
+      "generated_at": "2026-08-21T04:40:04+00:00",
+      "subset_rows": 32,
+      "subset_sha256": "70413db2f58125788fd039385f6eaaede992ee15b9f78cb0715f009af09307db"
+    },
+    {
+      "file": "checkpoint-2026-08-28.json",
+      "source_path": "data/track-2026-08-28T04-40-01Z.json",
+      "source_git_blob": "6515a2a86dec98218e0f146c90301881a0ffc2b7",
+      "generated_at": "2026-08-28T04:40:04+00:00",
+      "subset_rows": 9,
+      "subset_sha256": "41bccc66d268cd6241d26a7f31990fc6e475b53b93145014766bc6117b6bf715"
+    },
+    {
+      "file": "checkpoint-2026-09-04.json",
+      "source_path": "data/track-2026-09-04T04-40-01Z.json",
+      "source_git_blob": "80e6fe7a58e7b7b97ed9e32fab1782ef1f70e373",
+      "generated_at": "2026-09-04T04:40:05+00:00",
+      "subset_rows": 64,
+      "subset_sha256": "bd401b40fed0abeab54c40793ea217e9692db8461979a919e78f31e2e1da61f2"
+    },
+    {
+      "file": "checkpoint-2026-09-11.json",
+      "source_path": "data/track-2026-09-11T04-40-01Z.json",
+      "source_git_blob": "567a826f4b1d91b1453b0f8253cf1c244863efbd",
+      "generated_at": "2026-09-11T04:40:05+00:00",
+      "subset_rows": 73,
+      "subset_sha256": "d51b45c365b902a814a217da20149ffaa379ca1f86dea5a9e4959a2af99be2ac"
+    },
+    {
+      "file": "checkpoint-2026-09-18.json",
+      "source_path": "data/track-2026-09-18T04-40-01Z.json",
+      "source_git_blob": "746bf5dd70e879adfdcf94655c138d143223814e",
+      "generated_at": "2026-09-18T04:40:06+00:00",
+      "subset_rows": 65,
+      "subset_sha256": "f98d6854470bb39285af0c670d055ca143d03725c0bc142a99f557883b39ace3"
+    },
+    {
+      "file": "checkpoint-2026-09-25.json",
+      "source_path": "data/track-2026-09-25T04-40-01Z.json",
+      "source_git_blob": "1c258727b112aa8a37e418bd9fbde287f7937441",
+      "generated_at": "2026-09-25T04:40:06+00:00",
+      "subset_rows": 0,
+      "subset_sha256": "4fc885e77bb805b9e50a101a242861d48c6bd6c93b6429df946decfa7c4162b3"
+    }
+  ],
+  "checkpoint_license": "CC BY4.0",
+  "attribution": "TipsAudit — https://tipsaudit.com",
+  "transformation": "Extract only seven existing leagues and records still upcoming at each checkpoint; CSV association by source ID, unchanged provider hash and exact normalized fixture identity. Provider hash coverage of raw component prices is an explicit assumption.",
+  "independent_timestamp_verification": false,
+  "retrieved_at": "2026-10-29T13:14:18.143151+00:00"
+}

@@ -40,7 +40,8 @@ export function createRoundQuarter<T extends {id:string;kind:string;[key:string]
  if(!schedule.league||!schedule.season||!schedule.round||!schedule.source||!Number.isFinite(published)||published>now||!/(Z|[+-]\d{2}:\d{2})$/.test(schedule.publishedAt))throw Error('Invalid pre-round schedule');
  const fixtures=schedule.fixtures,ids=fixtures.map(f=>f.matchId),kickoffs=fixtures.map(f=>Date.parse(f.kickoff));
  if(!fixtures.length||ids.some(id=>!id)||new Set(ids).size!==ids.length||fixtures.some(f=>!/(Z|[+-]\d{2}:\d{2})$/.test(f.kickoff))||kickoffs.some(t=>!Number.isFinite(t))||now>=Math.min(...kickoffs))throw Error('Round must be frozen before its first kickoff');
- const ranked=rankPredictions(rows,{now,modelVersion}).filter(r=>ids.includes(r.matchId)&&Date.parse(r.kickoff)===kickoffs[ids.indexOf(r.matchId)]);
+ const supported=rows.filter(r=>['1X2','Golovi','Dvostruka šansa'].includes(r.market)&&(r.market!=='Golovi'||r.line===undefined||r.line===2.5));
+ const ranked=rankPredictions(supported,{now,modelVersion}).filter(r=>ids.includes(r.matchId)&&Date.parse(r.kickoff)===kickoffs[ids.indexOf(r.matchId)]);
  const seen=new Set<string>();const primary=ranked.filter(r=>{if(seen.has(r.matchId))return false;seen.add(r.matchId);return true;});
  function margin(r:T):number|null{
   if(typeof r.selectionMargin==='number'&&Number.isFinite(r.selectionMargin)&&r.selectionMargin>=0&&r.selectionMargin<=1)return r.selectionMargin;
