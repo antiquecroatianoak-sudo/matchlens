@@ -1,0 +1,30 @@
+{
+  "name": "joint-seven-quarter-pilot-v2",
+  "period": [
+    "2026-08-07",
+    "2026-09-25"
+  ],
+  "markets": [
+    "home",
+    "draw",
+    "away",
+    "over2.5",
+    "under2.5",
+    "1X",
+    "X2"
+  ],
+  "policy": "One best permitted offer per fixture, then floor(whole round size/4) fixtures by probability.",
+  "double_chance": "Only user-approved synthetic same-Pinnacle raw-1X2 odds >=2; no odds inferred from model.",
+  "no_price_policy": "1X/X2 unavailable; original five markets remain valid. Missing games remain in quota denominator.",
+  "model": "Existing market-specialists coefficients/policies; no tuning on pilot outcomes.",
+  "history": "All results strictly before earliest round date minus2days.",
+  "checkpoint_rule": "Latest source checkpoint strictly before conservative first-kickoff lower bound; unchanged provider record_hash against CSV.",
+  "assumptions": [
+    "Provider says record_hash covers component pin_open prices; raw components are not exposed in old JSON. This coverage claim is relied upon, not independently recomputed.",
+    "Provider-generated checkpoint timestamps are not independently verified publication/Bitcoin attestation times.",
+    "Fixtures/rounds are retrospective OpenFootball snapshot. Local time +03 lower bound, not exact verified kickoff."
+  ],
+  "source_sha256": "cebbd37ce1f88e2d66256793b3d0a8a7b246d524195a0054ede1050a709d0ff4",
+  "code_sha256": "c34f62a7b843e2f2d55700323680e2bede14ffe7c7e6f4f70380ca40e4c24b51",
+  "promote": false
+}

@@ -135,12 +135,12 @@
       "name": "TipsAudit · stvarne 1X2 kvote",
       "url": "https://github.com/tipsaudit/track-record-public",
       "category": "Kvotni izvor · sintetička dvostruka šansa",
-      "status": "Uvezen · provjera kvotnog filtra, nije modelski backtest",
+      "status": "Ulaz za zajednički pilot · sva tržišta / četvrtina kola",
       "active": true,
-      "purpose": "Osnovne Pinnacle 1/X/2 kvote za dogovorenu sintetičku 1X/X2 cijenu. Bez stranih modelskih prognoza.",
+      "purpose": "Stvarne osnovne Pinnacle kvote i arhivski hash zapisi za prihvaćenu sintetičku dvostruku šansu, kao dio zajedničkog izbora sedam ponuda.",
       "coverage": "7390 izvornih redaka,648 u postojećih deset prvih liga;11.6.–27.10.2026. Ne poklapa se s auditom2024/25–2025/26.",
       "access": "CC BY4.0 uz atribuciju TipsAudit. Preuzet jedan javni CSV; manifest s hashom. Ostale lige nisu uključene u aktivni opseg.",
-      "timing": "CSV nema vrijeme dostupnosti quotea ili roundID. pin_open može biti prvo opažanje nakon logiranja, uneseno poslije utakmice. Ne dokazuje dostupnost prije prvog susreta kola.",
+      "timing": "CSV sam nema quote timestamps; dodatni datirani ledger snapshotovi, nepromijenjeni provider hash i konzervativna pre-round granica koriste se u pilotu uz izričite pretpostavke o hash pokrivenosti i vremenu objave.",
       "evidence": [
         "https://github.com/tipsaudit/track-record-public/blob/main/datasets/README.md",
         "https://tipsaudit.com/data"
