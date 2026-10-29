@@ -1,0 +1,162 @@
+{
+  "name": "market-specialists-v1",
+  "created_at": "2026-10-29T06:45:03.994663+00:00",
+  "seed_configs": {
+    "outcome": {
+      "window": 50,
+      "half_life": 15,
+      "ridge": 0.001,
+      "group": "snaga",
+      "rho": -0.1,
+      "temperature": 1.0
+    },
+    "goals": {
+      "window": 50,
+      "half_life": 30,
+      "ridge": 0.1,
+      "group": "snaga",
+      "rho": -0.1,
+      "temperature": 1.0
+    }
+  },
+  "chosen": {
+    "outcome": {
+      "id": 1,
+      "policy": {
+        "half_life_days": null,
+        "refit": "quarter"
+      },
+      "development": {
+        "2022-23": {
+          "matches": 2383,
+          "family_brier": 0.2182977210329303,
+          "outcome_log_loss": 0.9705939924815657,
+          "goals_log_loss": 0.682024158147165,
+          "outcome_hit_rate": 0.5455308434746118,
+          "goals_hit_rate": 0.5623164078892152,
+          "top_pick_hit_rate": 0.6005035669324381,
+          "top_pick_mean_probability": 0.609542230128061
+        },
+        "2023-24": {
+          "matches": 2864,
+          "family_brier": 0.2156456647538,
+          "outcome_log_loss": 0.9686104561876618,
+          "goals_log_loss": 0.6710737895776845,
+          "outcome_hit_rate": 0.5377094972067039,
+          "goals_hit_rate": 0.5754189944134078,
+          "top_pick_hit_rate": 0.6054469273743017,
+          "top_pick_mean_probability": 0.5980307632929035
+        }
+      },
+      "training_trace": {
+        "2022-23": [
+          {
+            "cutoff": "2022-08-05",
+            "training_matches": 7558,
+            "training_last_date": "2022-05-22",
+            "predictions": 416
+          },
+          {
+            "cutoff": "2022-10-01",
+            "training_matches": 7969,
+            "training_last_date": "2022-09-18",
+            "predictions": 539
+          },
+          {
+            "cutoff": "2023-01-01",
+            "training_matches": 8495,
+            "training_last_date": "2022-12-29",
+            "predictions": 756
+          },
+          {
+            "cutoff": "2023-04-01",
+            "training_matches": 9265,
+            "training_last_date": "2023-03-19",
+            "predictions": 672
+          }
+        ],
+        "2023-24": [
+          {
+            "cutoff": "2023-08-11",
+            "training_matches": 9941,
+            "training_last_date": "2023-06-04",
+            "predictions": 312
+          },
+          {
+            "cutoff": "2023-10-01",
+            "training_matches": 10219,
+            "training_last_date": "2023-09-28",
+            "predictions": 821
+          },
+          {
+            "cutoff": "2024-01-01",
+            "training_matches": 11056,
+            "training_last_date": "2023-12-29",
+            "predictions": 1029
+          },
+          {
+            "cutoff": "2024-04-01",
+            "training_matches": 12039,
+            "training_last_date": "2024-03-29",
+            "predictions": 702
+          }
+        ]
+      }
+    },
+    "goals": {
+      "id": 0,
+      "policy": {
+        "half_life_days": null,
+        "refit": "season"
+      },
+      "development": {
+        "2022-23": {
+          "matches": 2383,
+          "family_brier": 0.21811897637008218,
+          "outcome_log_loss": 0.9709834939542923,
+          "goals_log_loss": 0.681078600143089,
+          "outcome_hit_rate": 0.5446915652538816,
+          "goals_hit_rate": 0.5631556861099455,
+          "top_pick_hit_rate": 0.6009232060428031,
+          "top_pick_mean_probability": 0.6063954398091466
+        },
+        "2023-24": {
+          "matches": 2864,
+          "family_brier": 0.2158834556566338,
+          "outcome_log_loss": 0.9702369887615064,
+          "goals_log_loss": 0.6713468042284414,
+          "outcome_hit_rate": 0.5366620111731844,
+          "goals_hit_rate": 0.5806564245810056,
+          "top_pick_hit_rate": 0.6075418994413407,
+          "top_pick_mean_probability": 0.5941066199911768
+        }
+      },
+      "training_trace": {
+        "2022-23": [
+          {
+            "cutoff": "2022-08-05",
+            "training_matches": 7558,
+            "training_last_date": "2022-05-22",
+            "predictions": 2383
+          }
+        ],
+        "2023-24": [
+          {
+            "cutoff": "2023-08-11",
+            "training_matches": 9941,
+            "training_last_date": "2023-06-04",
+            "predictions": 2864
+          }
+        ]
+      }
+    }
+  },
+  "development_seasons": [
+    "2022-23",
+    "2023-24"
+  ],
+  "archive_sha256": "f821c2f12a972567f0f395bc6ac6bacda85f0b48f262c6a101257da5f46cd0ce",
+  "source_sha256": "33a2fec26c965d297a3c911ffd74637f21b826409d1e3c6d288232d3d266d842",
+  "audit_status": "Previously viewed seasons; descriptive only. No independent accuracy claim.",
+  "scope": "Ten existing leagues, 1X2 and over/under 2.5 only; no external factors added."
+}

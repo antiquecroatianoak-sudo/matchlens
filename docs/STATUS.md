@@ -52,3 +52,16 @@ Korisnik je 28.10.2026. izričito odabrao nastavak bez Bugarske i Rumunjske. Obj
 - Arhive: data/experiments/20261028-daily-filters-v1/ i data/experiments/20261028-direct-v1/. Stare arhive su sačuvane. Panel app/filter-panel.tsx dodaje interaktivni prikaz svih filtera i rezultata po tržištu/sezoni te usporedbu novog modela.
 - 19 Python testova prošlo; TypeScript provjera prošla. Vizualni QA nije potvrđen: preview preglednik ranije je odbijao vezu; bez dokaza oporavka nije ponavljano. Produkcijski build i objavu potvrditi po uspješnom završetku.
 - Produkcijska izgradnja ovog nastavka uspješna; nova objava čeka završetak Sites operacije. Za sljedeći rad prvo provjeriti novije odgovore na PR #2 i issue #1 kako se ne bi paralelno prepisivali eksperimenti.
+
+
+## Nastavak 29.10.2026. — algoritam po tržištu
+- Provjeren GitHub main 9a74b7c6a4e5b60e5132020801cc1cc3ad16967c i PR #2 head 5b9a9f216489173efa9bd37188713ecf528bed93. Claudeov PR nije dobio nove dorade.
+- Vlasnik je pojasnio prioritet: prvo povijesno podešavanje algoritma; prikaz aktualnih prognoza može pričekati.
+- Implementiran market-specialists-v1: 12 novih varijanti težine primjera pri učenju i ritma ponovnog učenja, odvojeni odabir za 1X2 i golove prema razvojnom log lossu 2022/23 i 2023/24. Ne ponavlja cijelu mrežu 1.701 konfiguracije. Izabrano tromjesečno za ishod, sezonsko za golove, bez dodatnog kalendarskog smanjivanja težine primjera.
+- Ponovna opisna analiza istih 5.772 utakmice: 52,10% 1X2, 56,77% golovi, 59,86% jedna najvjerojatnija ponuda (3.455 pogodaka, 2.317 promašaja). Brier 0,21852459 prema 0,21869063 reference. Referenca: 59,55% najvjerojatnija ponuda. Pomak malen, bez tvrdnje statističke potvrde ili visoke buduće točnosti. Ne mijenja zaključani expanded-v1 niti ranije prospektivne prognoze.
+- Arhiva data/experiments/20261029-market-specialists-v1/: zaključavanje prije audit mjerenja, svi kandidati, tragovi treniranja, rezultati po ligi/sezoni, kalibracija i prognoze. app/specialists-panel.tsx jasno odvaja ovaj ciklus od postojećih dnevnih filtara.
+- Dodana popravljena analytics/prospective.py iz Claudeova PR-a u zasebni nastavak: odbija promjenu koda nakon locka i retroaktivni/futuristički as_of; ocjenjivanje isključuje prognoze generirane na datum ili nakon izvornog/stvarnog susreta te nevaljane vremenske oznake. Stari zapisi se ne prepisuju. Stari lock poslije promjene koda ne smije generirati nove prognoze; treba novi eksperiment. Prospektivno pokretanje nije aktivirano.
+- Izmjena Claude GitHub workflowa automatski odbijena zbog širokih prava pisanja; izostavljena iz ovog nastavka. Nema aktivacije automatizacije ni plaćenog izvršavanja. PR #2 ostaje odvojen i nespojen.
+- Sljedeće: tražiti dopuštene vremenski označene dodatne faktore iz plana i testirati doprinos na razvojnim segmentima; zadržati sve slabije varijante. Nova neovisna provjera tek na zaključanom modelu i neviđenim ishodima.
+
+- Provjere ovog nastavka: svih 26 Python testova prošlo; TypeScript provjera prošla. Izgradnju i objavu potvrditi tek nakon uspješnog odgovora.

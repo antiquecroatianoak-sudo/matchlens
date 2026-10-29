@@ -31,3 +31,12 @@ GitHub izdanje treba kanonske JSON snapshotove na putanjama iz izvornog manifest
     OPENBLAS_NUM_THREADS=1 python -m analytics.direct_model --output data/experiments/novi-izravni-model
 
 Obje skripte odbijaju prepisati završen eksperiment. Dnevni filtri uključuju neocijenjene ponude u poredak, arhiviraju cijeli skup ponuda i izvještaj, te ne optimiziraju prag prema najvišem audit postotku. direct-v1 ima 12 konfiguracija, odvojeno učenje/tuning 2022/23 i kalibraciju 2023/24, pa opisni audit na već viđenim sezonama. Lošiji kandidati i temperature ostaju sačuvani. Ne mijenjaju ranije zaključani model niti predstavljaju novi neovisni dokaz.
+
+
+## Zasebno učenje po tržištu — 29.10.2026.
+
+    OPENBLAS_NUM_THREADS=1 python -m analytics.market_specialists --output data/experiments/novi-market-specialists --ui app/specialists-summary.json
+
+Novi izlaz mora biti nepostojeća mapa. Uspoređuje 12 kandidata kalendarske težine primjera i sezonskog/tromjesečnog refita. Izbor 1X2 i golova je zaseban, samo prema razvoju; zaključavanje se zapisuje prije opisnog audita. Nisu dodani vanjski faktori. U javnoj arhivi prognoze mogu biti pohranjene kao specialists-predictions.jsonl.gz (gzip bez vremenske oznake); skripta izvorno piše JSONL.
+
+Prospektivna provjera sada odbija promijenjeni hash koda i as_of različit od stvarnog UTC datuma. Pri ocjenjivanju generated_at mora prethoditi i izvornom i stvarnom datumu utakmice; bez potvrđene vremenske zone početka koristi se konzervativni datum. Nevaljani zapisi isključeni su s razlogom, ne izbrisani. Stari lockovi ostaju nepromijenjeni i za novo generiranje trebaju novi eksperiment.

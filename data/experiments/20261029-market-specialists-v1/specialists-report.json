@@ -1,0 +1,1509 @@
+{
+  "protocol": {
+    "name": "market-specialists-v1",
+    "created_at": "2026-10-29T06:45:03.994663+00:00",
+    "seed_configs": {
+      "outcome": {
+        "window": 50,
+        "half_life": 15,
+        "ridge": 0.001,
+        "group": "snaga",
+        "rho": -0.1,
+        "temperature": 1.0
+      },
+      "goals": {
+        "window": 50,
+        "half_life": 30,
+        "ridge": 0.1,
+        "group": "snaga",
+        "rho": -0.1,
+        "temperature": 1.0
+      }
+    },
+    "chosen": {
+      "outcome": {
+        "id": 1,
+        "policy": {
+          "half_life_days": null,
+          "refit": "quarter"
+        },
+        "development": {
+          "2022-23": {
+            "matches": 2383,
+            "family_brier": 0.2182977210329303,
+            "outcome_log_loss": 0.9705939924815657,
+            "goals_log_loss": 0.682024158147165,
+            "outcome_hit_rate": 0.5455308434746118,
+            "goals_hit_rate": 0.5623164078892152,
+            "top_pick_hit_rate": 0.6005035669324381,
+            "top_pick_mean_probability": 0.609542230128061
+          },
+          "2023-24": {
+            "matches": 2864,
+            "family_brier": 0.2156456647538,
+            "outcome_log_loss": 0.9686104561876618,
+            "goals_log_loss": 0.6710737895776845,
+            "outcome_hit_rate": 0.5377094972067039,
+            "goals_hit_rate": 0.5754189944134078,
+            "top_pick_hit_rate": 0.6054469273743017,
+            "top_pick_mean_probability": 0.5980307632929035
+          }
+        },
+        "training_trace": {
+          "2022-23": [
+            {
+              "cutoff": "2022-08-05",
+              "training_matches": 7558,
+              "training_last_date": "2022-05-22",
+              "predictions": 416
+            },
+            {
+              "cutoff": "2022-10-01",
+              "training_matches": 7969,
+              "training_last_date": "2022-09-18",
+              "predictions": 539
+            },
+            {
+              "cutoff": "2023-01-01",
+              "training_matches": 8495,
+              "training_last_date": "2022-12-29",
+              "predictions": 756
+            },
+            {
+              "cutoff": "2023-04-01",
+              "training_matches": 9265,
+              "training_last_date": "2023-03-19",
+              "predictions": 672
+            }
+          ],
+          "2023-24": [
+            {
+              "cutoff": "2023-08-11",
+              "training_matches": 9941,
+              "training_last_date": "2023-06-04",
+              "predictions": 312
+            },
+            {
+              "cutoff": "2023-10-01",
+              "training_matches": 10219,
+              "training_last_date": "2023-09-28",
+              "predictions": 821
+            },
+            {
+              "cutoff": "2024-01-01",
+              "training_matches": 11056,
+              "training_last_date": "2023-12-29",
+              "predictions": 1029
+            },
+            {
+              "cutoff": "2024-04-01",
+              "training_matches": 12039,
+              "training_last_date": "2024-03-29",
+              "predictions": 702
+            }
+          ]
+        }
+      },
+      "goals": {
+        "id": 0,
+        "policy": {
+          "half_life_days": null,
+          "refit": "season"
+        },
+        "development": {
+          "2022-23": {
+            "matches": 2383,
+            "family_brier": 0.21811897637008218,
+            "outcome_log_loss": 0.9709834939542923,
+            "goals_log_loss": 0.681078600143089,
+            "outcome_hit_rate": 0.5446915652538816,
+            "goals_hit_rate": 0.5631556861099455,
+            "top_pick_hit_rate": 0.6009232060428031,
+            "top_pick_mean_probability": 0.6063954398091466
+          },
+          "2023-24": {
+            "matches": 2864,
+            "family_brier": 0.2158834556566338,
+            "outcome_log_loss": 0.9702369887615064,
+            "goals_log_loss": 0.6713468042284414,
+            "outcome_hit_rate": 0.5366620111731844,
+            "goals_hit_rate": 0.5806564245810056,
+            "top_pick_hit_rate": 0.6075418994413407,
+            "top_pick_mean_probability": 0.5941066199911768
+          }
+        },
+        "training_trace": {
+          "2022-23": [
+            {
+              "cutoff": "2022-08-05",
+              "training_matches": 7558,
+              "training_last_date": "2022-05-22",
+              "predictions": 2383
+            }
+          ],
+          "2023-24": [
+            {
+              "cutoff": "2023-08-11",
+              "training_matches": 9941,
+              "training_last_date": "2023-06-04",
+              "predictions": 2864
+            }
+          ]
+        }
+      }
+    },
+    "development_seasons": [
+      "2022-23",
+      "2023-24"
+    ],
+    "archive_sha256": "f821c2f12a972567f0f395bc6ac6bacda85f0b48f262c6a101257da5f46cd0ce",
+    "source_sha256": "33a2fec26c965d297a3c911ffd74637f21b826409d1e3c6d288232d3d266d842",
+    "audit_status": "Previously viewed seasons; descriptive only. No independent accuracy claim.",
+    "scope": "Ten existing leagues, 1X2 and over/under 2.5 only; no external factors added."
+  },
+  "trials": {
+    "outcome": [
+      {
+        "id": 0,
+        "policy": {
+          "half_life_days": null,
+          "refit": "season"
+        },
+        "development": {
+          "2022-23": {
+            "matches": 2383,
+            "family_brier": 0.2182738620922032,
+            "outcome_log_loss": 0.9708383895615037,
+            "goals_log_loss": 0.681828269784153,
+            "outcome_hit_rate": 0.5451112043642468,
+            "goals_hit_rate": 0.5627360469995804,
+            "top_pick_hit_rate": 0.5992446496013428,
+            "top_pick_mean_probability": 0.6109722041410041
+          },
+          "2023-24": {
+            "matches": 2864,
+            "family_brier": 0.21563483661404761,
+            "outcome_log_loss": 0.9686518287477649,
+            "goals_log_loss": 0.6710183076447854,
+            "outcome_hit_rate": 0.5377094972067039,
+            "goals_hit_rate": 0.577513966480447,
+            "top_pick_hit_rate": 0.6061452513966481,
+            "top_pick_mean_probability": 0.5976517786347381
+          }
+        },
+        "training_trace": {
+          "2022-23": [
+            {
+              "cutoff": "2022-08-05",
+              "training_matches": 7558,
+              "training_last_date": "2022-05-22",
+              "predictions": 2383
+            }
+          ],
+          "2023-24": [
+            {
+              "cutoff": "2023-08-11",
+              "training_matches": 9941,
+              "training_last_date": "2023-06-04",
+              "predictions": 2864
+            }
+          ]
+        }
+      },
+      {
+        "id": 1,
+        "policy": {
+          "half_life_days": null,
+          "refit": "quarter"
+        },
+        "development": {
+          "2022-23": {
+            "matches": 2383,
+            "family_brier": 0.2182977210329303,
+            "outcome_log_loss": 0.9705939924815657,
+            "goals_log_loss": 0.682024158147165,
+            "outcome_hit_rate": 0.5455308434746118,
+            "goals_hit_rate": 0.5623164078892152,
+            "top_pick_hit_rate": 0.6005035669324381,
+            "top_pick_mean_probability": 0.609542230128061
+          },
+          "2023-24": {
+            "matches": 2864,
+            "family_brier": 0.2156456647538,
+            "outcome_log_loss": 0.9686104561876618,
+            "goals_log_loss": 0.6710737895776845,
+            "outcome_hit_rate": 0.5377094972067039,
+            "goals_hit_rate": 0.5754189944134078,
+            "top_pick_hit_rate": 0.6054469273743017,
+            "top_pick_mean_probability": 0.5980307632929035
+          }
+        },
+        "training_trace": {
+          "2022-23": [
+            {
+              "cutoff": "2022-08-05",
+              "training_matches": 7558,
+              "training_last_date": "2022-05-22",
+              "predictions": 416
+            },
+            {
+              "cutoff": "2022-10-01",
+              "training_matches": 7969,
+              "training_last_date": "2022-09-18",
+              "predictions": 539
+            },
+            {
+              "cutoff": "2023-01-01",
+              "training_matches": 8495,
+              "training_last_date": "2022-12-29",
+              "predictions": 756
+            },
+            {
+              "cutoff": "2023-04-01",
+              "training_matches": 9265,
+              "training_last_date": "2023-03-19",
+              "predictions": 672
+            }
+          ],
+          "2023-24": [
+            {
+              "cutoff": "2023-08-11",
+              "training_matches": 9941,
+              "training_last_date": "2023-06-04",
+              "predictions": 312
+            },
+            {
+              "cutoff": "2023-10-01",
+              "training_matches": 10219,
+              "training_last_date": "2023-09-28",
+              "predictions": 821
+            },
+            {
+              "cutoff": "2024-01-01",
+              "training_matches": 11056,
+              "training_last_date": "2023-12-29",
+              "predictions": 1029
+            },
+            {
+              "cutoff": "2024-04-01",
+              "training_matches": 12039,
+              "training_last_date": "2024-03-29",
+              "predictions": 702
+            }
+          ]
+        }
+      },
+      {
+        "id": 2,
+        "policy": {
+          "half_life_days": 730,
+          "refit": "season"
+        },
+        "development": {
+          "2022-23": {
+            "matches": 2383,
+            "family_brier": 0.2182572798536101,
+            "outcome_log_loss": 0.9706585750831951,
+            "goals_log_loss": 0.6818017257253258,
+            "outcome_hit_rate": 0.5451112043642468,
+            "goals_hit_rate": 0.5639949643306756,
+            "top_pick_hit_rate": 0.6013428451531683,
+            "top_pick_mean_probability": 0.6093608993283316
+          },
+          "2023-24": {
+            "matches": 2864,
+            "family_brier": 0.215760710531814,
+            "outcome_log_loss": 0.9694532478374307,
+            "goals_log_loss": 0.6712027454683553,
+            "outcome_hit_rate": 0.5373603351955307,
+            "goals_hit_rate": 0.5792597765363129,
+            "top_pick_hit_rate": 0.6082402234636871,
+            "top_pick_mean_probability": 0.5942100879433961
+          }
+        },
+        "training_trace": {
+          "2022-23": [
+            {
+              "cutoff": "2022-08-05",
+              "training_matches": 7558,
+              "training_last_date": "2022-05-22",
+              "predictions": 2383
+            }
+          ],
+          "2023-24": [
+            {
+              "cutoff": "2023-08-11",
+              "training_matches": 9941,
+              "training_last_date": "2023-06-04",
+              "predictions": 2864
+            }
+          ]
+        }
+      },
+      {
+        "id": 3,
+        "policy": {
+          "half_life_days": 730,
+          "refit": "quarter"
+        },
+        "development": {
+          "2022-23": {
+            "matches": 2383,
+            "family_brier": 0.21831202260501192,
+            "outcome_log_loss": 0.9703843152646512,
+            "goals_log_loss": 0.6821423440551141,
+            "outcome_hit_rate": 0.546370121695342,
+            "goals_hit_rate": 0.5623164078892152,
+            "top_pick_hit_rate": 0.6005035669324381,
+            "top_pick_mean_probability": 0.6075051952332639
+          },
+          "2023-24": {
+            "matches": 2864,
+            "family_brier": 0.2157562231822726,
+            "outcome_log_loss": 0.9692366397013621,
+            "goals_log_loss": 0.6712569450399933,
+            "outcome_hit_rate": 0.5384078212290503,
+            "goals_hit_rate": 0.5743715083798883,
+            "top_pick_hit_rate": 0.6054469273743017,
+            "top_pick_mean_probability": 0.5957019562907533
+          }
+        },
+        "training_trace": {
+          "2022-23": [
+            {
+              "cutoff": "2022-08-05",
+              "training_matches": 7558,
+              "training_last_date": "2022-05-22",
+              "predictions": 416
+            },
+            {
+              "cutoff": "2022-10-01",
+              "training_matches": 7969,
+              "training_last_date": "2022-09-18",
+              "predictions": 539
+            },
+            {
+              "cutoff": "2023-01-01",
+              "training_matches": 8495,
+              "training_last_date": "2022-12-29",
+              "predictions": 756
+            },
+            {
+              "cutoff": "2023-04-01",
+              "training_matches": 9265,
+              "training_last_date": "2023-03-19",
+              "predictions": 672
+            }
+          ],
+          "2023-24": [
+            {
+              "cutoff": "2023-08-11",
+              "training_matches": 9941,
+              "training_last_date": "2023-06-04",
+              "predictions": 312
+            },
+            {
+              "cutoff": "2023-10-01",
+              "training_matches": 10219,
+              "training_last_date": "2023-09-28",
+              "predictions": 821
+            },
+            {
+              "cutoff": "2024-01-01",
+              "training_matches": 11056,
+              "training_last_date": "2023-12-29",
+              "predictions": 1029
+            },
+            {
+              "cutoff": "2024-04-01",
+              "training_matches": 12039,
+              "training_last_date": "2024-03-29",
+              "predictions": 702
+            }
+          ]
+        }
+      },
+      {
+        "id": 4,
+        "policy": {
+          "half_life_days": 365,
+          "refit": "season"
+        },
+        "development": {
+          "2022-23": {
+            "matches": 2383,
+            "family_brier": 0.21825076258031414,
+            "outcome_log_loss": 0.9705546220917806,
+            "goals_log_loss": 0.6817950826946633,
+            "outcome_hit_rate": 0.5451112043642468,
+            "goals_hit_rate": 0.5644146034410407,
+            "top_pick_hit_rate": 0.6017624842635334,
+            "top_pick_mean_probability": 0.6081042199160999
+          },
+          "2023-24": {
+            "matches": 2864,
+            "family_brier": 0.21590057611792465,
+            "outcome_log_loss": 0.9703497354177789,
+            "goals_log_loss": 0.6714015886372902,
+            "outcome_hit_rate": 0.5394553072625698,
+            "goals_hit_rate": 0.5778631284916201,
+            "top_pick_hit_rate": 0.6078910614525139,
+            "top_pick_mean_probability": 0.5909401525498614
+          }
+        },
+        "training_trace": {
+          "2022-23": [
+            {
+              "cutoff": "2022-08-05",
+              "training_matches": 7558,
+              "training_last_date": "2022-05-22",
+              "predictions": 2383
+            }
+          ],
+          "2023-24": [
+            {
+              "cutoff": "2023-08-11",
+              "training_matches": 9941,
+              "training_last_date": "2023-06-04",
+              "predictions": 2864
+            }
+          ]
+        }
+      },
+      {
+        "id": 5,
+        "policy": {
+          "half_life_days": 365,
+          "refit": "quarter"
+        },
+        "development": {
+          "2022-23": {
+            "matches": 2383,
+            "family_brier": 0.218347348934007,
+            "outcome_log_loss": 0.970248022829188,
+            "goals_log_loss": 0.6823270493451459,
+            "outcome_hit_rate": 0.546370121695342,
+            "goals_hit_rate": 0.5618967687788502,
+            "top_pick_hit_rate": 0.5975660931598825,
+            "top_pick_mean_probability": 0.6058041548367432
+          },
+          "2023-24": {
+            "matches": 2864,
+            "family_brier": 0.21586349397661095,
+            "outcome_log_loss": 0.9697802388746599,
+            "goals_log_loss": 0.6714532143434093,
+            "outcome_hit_rate": 0.5394553072625698,
+            "goals_hit_rate": 0.5715782122905028,
+            "top_pick_hit_rate": 0.6043994413407822,
+            "top_pick_mean_probability": 0.5942538379676625
+          }
+        },
+        "training_trace": {
+          "2022-23": [
+            {
+              "cutoff": "2022-08-05",
+              "training_matches": 7558,
+              "training_last_date": "2022-05-22",
+              "predictions": 416
+            },
+            {
+              "cutoff": "2022-10-01",
+              "training_matches": 7969,
+              "training_last_date": "2022-09-18",
+              "predictions": 539
+            },
+            {
+              "cutoff": "2023-01-01",
+              "training_matches": 8495,
+              "training_last_date": "2022-12-29",
+              "predictions": 756
+            },
+            {
+              "cutoff": "2023-04-01",
+              "training_matches": 9265,
+              "training_last_date": "2023-03-19",
+              "predictions": 672
+            }
+          ],
+          "2023-24": [
+            {
+              "cutoff": "2023-08-11",
+              "training_matches": 9941,
+              "training_last_date": "2023-06-04",
+              "predictions": 312
+            },
+            {
+              "cutoff": "2023-10-01",
+              "training_matches": 10219,
+              "training_last_date": "2023-09-28",
+              "predictions": 821
+            },
+            {
+              "cutoff": "2024-01-01",
+              "training_matches": 11056,
+              "training_last_date": "2023-12-29",
+              "predictions": 1029
+            },
+            {
+              "cutoff": "2024-04-01",
+              "training_matches": 12039,
+              "training_last_date": "2024-03-29",
+              "predictions": 702
+            }
+          ]
+        }
+      }
+    ],
+    "goals": [
+      {
+        "id": 0,
+        "policy": {
+          "half_life_days": null,
+          "refit": "season"
+        },
+        "development": {
+          "2022-23": {
+            "matches": 2383,
+            "family_brier": 0.21811897637008218,
+            "outcome_log_loss": 0.9709834939542923,
+            "goals_log_loss": 0.681078600143089,
+            "outcome_hit_rate": 0.5446915652538816,
+            "goals_hit_rate": 0.5631556861099455,
+            "top_pick_hit_rate": 0.6009232060428031,
+            "top_pick_mean_probability": 0.6063954398091466
+          },
+          "2023-24": {
+            "matches": 2864,
+            "family_brier": 0.2158834556566338,
+            "outcome_log_loss": 0.9702369887615064,
+            "goals_log_loss": 0.6713468042284414,
+            "outcome_hit_rate": 0.5366620111731844,
+            "goals_hit_rate": 0.5806564245810056,
+            "top_pick_hit_rate": 0.6075418994413407,
+            "top_pick_mean_probability": 0.5941066199911768
+          }
+        },
+        "training_trace": {
+          "2022-23": [
+            {
+              "cutoff": "2022-08-05",
+              "training_matches": 7558,
+              "training_last_date": "2022-05-22",
+              "predictions": 2383
+            }
+          ],
+          "2023-24": [
+            {
+              "cutoff": "2023-08-11",
+              "training_matches": 9941,
+              "training_last_date": "2023-06-04",
+              "predictions": 2864
+            }
+          ]
+        }
+      },
+      {
+        "id": 1,
+        "policy": {
+          "half_life_days": null,
+          "refit": "quarter"
+        },
+        "development": {
+          "2022-23": {
+            "matches": 2383,
+            "family_brier": 0.21816508278849803,
+            "outcome_log_loss": 0.9707868868587127,
+            "goals_log_loss": 0.681343844076203,
+            "outcome_hit_rate": 0.5446915652538816,
+            "goals_hit_rate": 0.5644146034410407,
+            "top_pick_hit_rate": 0.600083927822073,
+            "top_pick_mean_probability": 0.6050690458673215
+          },
+          "2023-24": {
+            "matches": 2864,
+            "family_brier": 0.21587933873412393,
+            "outcome_log_loss": 0.9702741307557695,
+            "goals_log_loss": 0.6713090305838963,
+            "outcome_hit_rate": 0.5377094972067039,
+            "goals_hit_rate": 0.5799581005586593,
+            "top_pick_hit_rate": 0.6054469273743017,
+            "top_pick_mean_probability": 0.5942716723536502
+          }
+        },
+        "training_trace": {
+          "2022-23": [
+            {
+              "cutoff": "2022-08-05",
+              "training_matches": 7558,
+              "training_last_date": "2022-05-22",
+              "predictions": 416
+            },
+            {
+              "cutoff": "2022-10-01",
+              "training_matches": 7969,
+              "training_last_date": "2022-09-18",
+              "predictions": 539
+            },
+            {
+              "cutoff": "2023-01-01",
+              "training_matches": 8495,
+              "training_last_date": "2022-12-29",
+              "predictions": 756
+            },
+            {
+              "cutoff": "2023-04-01",
+              "training_matches": 9265,
+              "training_last_date": "2023-03-19",
+              "predictions": 672
+            }
+          ],
+          "2023-24": [
+            {
+              "cutoff": "2023-08-11",
+              "training_matches": 9941,
+              "training_last_date": "2023-06-04",
+              "predictions": 312
+            },
+            {
+              "cutoff": "2023-10-01",
+              "training_matches": 10219,
+              "training_last_date": "2023-09-28",
+              "predictions": 821
+            },
+            {
+              "cutoff": "2024-01-01",
+              "training_matches": 11056,
+              "training_last_date": "2023-12-29",
+              "predictions": 1029
+            },
+            {
+              "cutoff": "2024-04-01",
+              "training_matches": 12039,
+              "training_last_date": "2024-03-29",
+              "predictions": 702
+            }
+          ]
+        }
+      },
+      {
+        "id": 2,
+        "policy": {
+          "half_life_days": 730,
+          "refit": "season"
+        },
+        "development": {
+          "2022-23": {
+            "matches": 2383,
+            "family_brier": 0.21811854231996325,
+            "outcome_log_loss": 0.9709288130649132,
+            "goals_log_loss": 0.6810803725445671,
+            "outcome_hit_rate": 0.5438522870331515,
+            "goals_hit_rate": 0.5639949643306756,
+            "top_pick_hit_rate": 0.599664288711708,
+            "top_pick_mean_probability": 0.6052029955104955
+          },
+          "2023-24": {
+            "matches": 2864,
+            "family_brier": 0.216008792260327,
+            "outcome_log_loss": 0.971025348644341,
+            "goals_log_loss": 0.6715350379293046,
+            "outcome_hit_rate": 0.5391061452513967,
+            "goals_hit_rate": 0.5806564245810056,
+            "top_pick_hit_rate": 0.6054469273743017,
+            "top_pick_mean_probability": 0.591188219845598
+          }
+        },
+        "training_trace": {
+          "2022-23": [
+            {
+              "cutoff": "2022-08-05",
+              "training_matches": 7558,
+              "training_last_date": "2022-05-22",
+              "predictions": 2383
+            }
+          ],
+          "2023-24": [
+            {
+              "cutoff": "2023-08-11",
+              "training_matches": 9941,
+              "training_last_date": "2023-06-04",
+              "predictions": 2864
+            }
+          ]
+        }
+      },
+      {
+        "id": 3,
+        "policy": {
+          "half_life_days": 730,
+          "refit": "quarter"
+        },
+        "development": {
+          "2022-23": {
+            "matches": 2383,
+            "family_brier": 0.218205155664088,
+            "outcome_log_loss": 0.9706998389961646,
+            "goals_log_loss": 0.6815280516523236,
+            "outcome_hit_rate": 0.5438522870331515,
+            "goals_hit_rate": 0.5627360469995804,
+            "top_pick_hit_rate": 0.5984053713806127,
+            "top_pick_mean_probability": 0.603553504999218
+          },
+          "2023-24": {
+            "matches": 2864,
+            "family_brier": 0.21597859662857324,
+            "outcome_log_loss": 0.9709407567154933,
+            "goals_log_loss": 0.6714322093419665,
+            "outcome_hit_rate": 0.5384078212290503,
+            "goals_hit_rate": 0.5789106145251397,
+            "top_pick_hit_rate": 0.6016061452513967,
+            "top_pick_mean_probability": 0.5921396791773629
+          }
+        },
+        "training_trace": {
+          "2022-23": [
+            {
+              "cutoff": "2022-08-05",
+              "training_matches": 7558,
+              "training_last_date": "2022-05-22",
+              "predictions": 416
+            },
+            {
+              "cutoff": "2022-10-01",
+              "training_matches": 7969,
+              "training_last_date": "2022-09-18",
+              "predictions": 539
+            },
+            {
+              "cutoff": "2023-01-01",
+              "training_matches": 8495,
+              "training_last_date": "2022-12-29",
+              "predictions": 756
+            },
+            {
+              "cutoff": "2023-04-01",
+              "training_matches": 9265,
+              "training_last_date": "2023-03-19",
+              "predictions": 672
+            }
+          ],
+          "2023-24": [
+            {
+              "cutoff": "2023-08-11",
+              "training_matches": 9941,
+              "training_last_date": "2023-06-04",
+              "predictions": 312
+            },
+            {
+              "cutoff": "2023-10-01",
+              "training_matches": 10219,
+              "training_last_date": "2023-09-28",
+              "predictions": 821
+            },
+            {
+              "cutoff": "2024-01-01",
+              "training_matches": 11056,
+              "training_last_date": "2023-12-29",
+              "predictions": 1029
+            },
+            {
+              "cutoff": "2024-04-01",
+              "training_matches": 12039,
+              "training_last_date": "2024-03-29",
+              "predictions": 702
+            }
+          ]
+        }
+      },
+      {
+        "id": 4,
+        "policy": {
+          "half_life_days": 365,
+          "refit": "season"
+        },
+        "development": {
+          "2022-23": {
+            "matches": 2383,
+            "family_brier": 0.218123586443038,
+            "outcome_log_loss": 0.970911762353872,
+            "goals_log_loss": 0.6810945479387971,
+            "outcome_hit_rate": 0.5438522870331515,
+            "goals_hit_rate": 0.5644146034410407,
+            "top_pick_hit_rate": 0.5984053713806127,
+            "top_pick_mean_probability": 0.60429176186603
+          },
+          "2023-24": {
+            "matches": 2864,
+            "family_brier": 0.2161419127634686,
+            "outcome_log_loss": 0.9718809856559847,
+            "goals_log_loss": 0.67172402206614,
+            "outcome_hit_rate": 0.5380586592178771,
+            "goals_hit_rate": 0.5817039106145251,
+            "top_pick_hit_rate": 0.6050977653631285,
+            "top_pick_mean_probability": 0.588357163188855
+          }
+        },
+        "training_trace": {
+          "2022-23": [
+            {
+              "cutoff": "2022-08-05",
+              "training_matches": 7558,
+              "training_last_date": "2022-05-22",
+              "predictions": 2383
+            }
+          ],
+          "2023-24": [
+            {
+              "cutoff": "2023-08-11",
+              "training_matches": 9941,
+              "training_last_date": "2023-06-04",
+              "predictions": 2864
+            }
+          ]
+        }
+      },
+      {
+        "id": 5,
+        "policy": {
+          "half_life_days": 365,
+          "refit": "quarter"
+        },
+        "development": {
+          "2022-23": {
+            "matches": 2383,
+            "family_brier": 0.21826219967695398,
+            "outcome_log_loss": 0.9706431531815923,
+            "goals_log_loss": 0.6817745207374971,
+            "outcome_hit_rate": 0.5434326479227864,
+            "goals_hit_rate": 0.5606378514477549,
+            "top_pick_hit_rate": 0.5963071758287872,
+            "top_pick_mean_probability": 0.6022779894304119
+          },
+          "2023-24": {
+            "matches": 2864,
+            "family_brier": 0.2160697831786402,
+            "outcome_log_loss": 0.9715204299653053,
+            "goals_log_loss": 0.6715531495079843,
+            "outcome_hit_rate": 0.5373603351955307,
+            "goals_hit_rate": 0.577513966480447,
+            "top_pick_hit_rate": 0.6009078212290503,
+            "top_pick_mean_probability": 0.5906953300910058
+          }
+        },
+        "training_trace": {
+          "2022-23": [
+            {
+              "cutoff": "2022-08-05",
+              "training_matches": 7558,
+              "training_last_date": "2022-05-22",
+              "predictions": 416
+            },
+            {
+              "cutoff": "2022-10-01",
+              "training_matches": 7969,
+              "training_last_date": "2022-09-18",
+              "predictions": 539
+            },
+            {
+              "cutoff": "2023-01-01",
+              "training_matches": 8495,
+              "training_last_date": "2022-12-29",
+              "predictions": 756
+            },
+            {
+              "cutoff": "2023-04-01",
+              "training_matches": 9265,
+              "training_last_date": "2023-03-19",
+              "predictions": 672
+            }
+          ],
+          "2023-24": [
+            {
+              "cutoff": "2023-08-11",
+              "training_matches": 9941,
+              "training_last_date": "2023-06-04",
+              "predictions": 312
+            },
+            {
+              "cutoff": "2023-10-01",
+              "training_matches": 10219,
+              "training_last_date": "2023-09-28",
+              "predictions": 821
+            },
+            {
+              "cutoff": "2024-01-01",
+              "training_matches": 11056,
+              "training_last_date": "2023-12-29",
+              "predictions": 1029
+            },
+            {
+              "cutoff": "2024-04-01",
+              "training_matches": 12039,
+              "training_last_date": "2024-03-29",
+              "predictions": 702
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "audit": {
+    "matches": 5772,
+    "family_brier": 0.21852458845488126,
+    "outcome_log_loss": 0.979807177260864,
+    "goals_log_loss": 0.6777101227430821,
+    "outcome_hit_rate": 0.520963270963271,
+    "goals_hit_rate": 0.5677408177408177,
+    "top_pick_hit_rate": 0.5985793485793486,
+    "top_pick_mean_probability": 0.6030999611751324
+  },
+  "reference": {
+    "matches": 5772,
+    "family_brier": 0.21869063325973037,
+    "outcome_log_loss": 0.9798270062322789,
+    "goals_log_loss": 0.6784159789522103,
+    "outcome_hit_rate": 0.520963270963271,
+    "goals_hit_rate": 0.5663548163548163,
+    "top_pick_hit_rate": 0.5954608454608454,
+    "top_pick_mean_probability": 0.6051370876682194
+  },
+  "calibration": {
+    "home": [
+      {
+        "n": 124,
+        "prob": 0.07615541148167336,
+        "rate": 0.08870967741935484
+      },
+      {
+        "n": 557,
+        "prob": 0.1562994600158493,
+        "rate": 0.16337522441651706
+      },
+      {
+        "n": 802,
+        "prob": 0.25346946026506,
+        "rate": 0.24937655860349128
+      },
+      {
+        "n": 1138,
+        "prob": 0.35171761306201543,
+        "rate": 0.36906854130052724
+      },
+      {
+        "n": 1170,
+        "prob": 0.44846213580236743,
+        "rate": 0.43846153846153846
+      },
+      {
+        "n": 850,
+        "prob": 0.5476036227627642,
+        "rate": 0.5270588235294118
+      },
+      {
+        "n": 575,
+        "prob": 0.6474362226922398,
+        "rate": 0.6539130434782608
+      },
+      {
+        "n": 358,
+        "prob": 0.7474072243225083,
+        "rate": 0.7597765363128491
+      },
+      {
+        "n": 179,
+        "prob": 0.8407724674446948,
+        "rate": 0.888268156424581
+      },
+      {
+        "n": 19,
+        "prob": 0.9179029047920949,
+        "rate": 0.7368421052631579
+      }
+    ],
+    "draw": [
+      {
+        "n": 63,
+        "prob": 0.08124849756142573,
+        "rate": 0.1111111111111111
+      },
+      {
+        "n": 820,
+        "prob": 0.16303707344980184,
+        "rate": 0.15
+      },
+      {
+        "n": 4368,
+        "prob": 0.25992726953365103,
+        "rate": 0.2690018315018315
+      },
+      {
+        "n": 521,
+        "prob": 0.31064323822891116,
+        "rate": 0.30134357005758156
+      }
+    ],
+    "away": [
+      {
+        "n": 495,
+        "prob": 0.06605562936829726,
+        "rate": 0.050505050505050504
+      },
+      {
+        "n": 1079,
+        "prob": 0.1535188122916478,
+        "rate": 0.14828544949026876
+      },
+      {
+        "n": 1388,
+        "prob": 0.25066129311677776,
+        "rate": 0.2543227665706052
+      },
+      {
+        "n": 1162,
+        "prob": 0.34610411501806787,
+        "rate": 0.33648881239242684
+      },
+      {
+        "n": 718,
+        "prob": 0.4454584891928767,
+        "rate": 0.42618384401114207
+      },
+      {
+        "n": 477,
+        "prob": 0.545932403108589,
+        "rate": 0.5576519916142557
+      },
+      {
+        "n": 301,
+        "prob": 0.6439151801776405,
+        "rate": 0.6212624584717608
+      },
+      {
+        "n": 117,
+        "prob": 0.7405955586167644,
+        "rate": 0.7863247863247863
+      },
+      {
+        "n": 35,
+        "prob": 0.8240620247593927,
+        "rate": 0.7428571428571429
+      }
+    ],
+    "over2.5": [
+      {
+        "n": 267,
+        "prob": 0.3758829130244996,
+        "rate": 0.43820224719101125
+      },
+      {
+        "n": 1706,
+        "prob": 0.45760629855815504,
+        "rate": 0.4490035169988277
+      },
+      {
+        "n": 2395,
+        "prob": 0.5484271743910619,
+        "rate": 0.5436325678496868
+      },
+      {
+        "n": 1163,
+        "prob": 0.639623375058308,
+        "rate": 0.6036113499570077
+      },
+      {
+        "n": 220,
+        "prob": 0.7372481228655783,
+        "rate": 0.7454545454545455
+      },
+      {
+        "n": 21,
+        "prob": 0.8288068750900838,
+        "rate": 0.9047619047619048
+      }
+    ],
+    "under2.5": [
+      {
+        "n": 21,
+        "prob": 0.17119312490991628,
+        "rate": 0.09523809523809523
+      },
+      {
+        "n": 220,
+        "prob": 0.2627518771344218,
+        "rate": 0.2545454545454545
+      },
+      {
+        "n": 1163,
+        "prob": 0.360376624941692,
+        "rate": 0.3963886500429923
+      },
+      {
+        "n": 2395,
+        "prob": 0.451572825608938,
+        "rate": 0.45636743215031317
+      },
+      {
+        "n": 1706,
+        "prob": 0.542393701441845,
+        "rate": 0.5509964830011723
+      },
+      {
+        "n": 267,
+        "prob": 0.6241170869755005,
+        "rate": 0.5617977528089888
+      }
+    ]
+  },
+  "audit_training_trace": {
+    "outcome": [
+      {
+        "cutoff": "2024-07-26",
+        "training_matches": 12805,
+        "training_last_date": "2024-06-02",
+        "predictions": 542
+      },
+      {
+        "cutoff": "2024-10-04",
+        "training_matches": 13347,
+        "training_last_date": "2024-09-30",
+        "predictions": 939
+      },
+      {
+        "cutoff": "2025-01-01",
+        "training_matches": 14280,
+        "training_last_date": "2024-12-29",
+        "predictions": 1005
+      },
+      {
+        "cutoff": "2025-04-01",
+        "training_matches": 15256,
+        "training_last_date": "2025-03-29",
+        "predictions": 687
+      },
+      {
+        "cutoff": "2025-07-25",
+        "training_matches": 15978,
+        "training_last_date": "2025-05-31",
+        "predictions": 527
+      },
+      {
+        "cutoff": "2025-10-03",
+        "training_matches": 16505,
+        "training_last_date": "2025-09-30",
+        "predictions": 806
+      },
+      {
+        "cutoff": "2026-01-01",
+        "training_matches": 17305,
+        "training_last_date": "2025-12-29",
+        "predictions": 781
+      },
+      {
+        "cutoff": "2026-04-03",
+        "training_matches": 18092,
+        "training_last_date": "2026-03-22",
+        "predictions": 485
+      }
+    ],
+    "goals": [
+      {
+        "cutoff": "2024-07-26",
+        "training_matches": 12805,
+        "training_last_date": "2024-06-02",
+        "predictions": 3173
+      },
+      {
+        "cutoff": "2025-07-25",
+        "training_matches": 15978,
+        "training_last_date": "2025-05-31",
+        "predictions": 2599
+      }
+    ]
+  },
+  "by_season": {
+    "2024-25": {
+      "candidate": {
+        "matches": 3173,
+        "family_brier": 0.21792784071279972,
+        "outcome_log_loss": 0.977035928064156,
+        "goals_log_loss": 0.6766958715438663,
+        "outcome_hit_rate": 0.5250551528521904,
+        "goals_hit_rate": 0.5713835486920895,
+        "top_pick_hit_rate": 0.6010085092971951,
+        "top_pick_mean_probability": 0.6060154706908645
+      },
+      "reference": {
+        "matches": 3173,
+        "family_brier": 0.2180838901063871,
+        "outcome_log_loss": 0.9769649834500935,
+        "goals_log_loss": 0.67746711094638,
+        "outcome_hit_rate": 0.5256854711629373,
+        "goals_hit_rate": 0.5726441853135834,
+        "top_pick_hit_rate": 0.6028994642294359,
+        "top_pick_mean_probability": 0.6070426307581069
+      }
+    },
+    "2025-26": {
+      "candidate": {
+        "matches": 2599,
+        "family_brier": 0.2192531304270338,
+        "outcome_log_loss": 0.9831904684117512,
+        "goals_log_loss": 0.6789483755538211,
+        "outcome_hit_rate": 0.5159676798768758,
+        "goals_hit_rate": 0.5632935744517122,
+        "top_pick_hit_rate": 0.5956136975759908,
+        "top_pick_mean_probability": 0.5995405492115243
+      },
+      "reference": {
+        "matches": 2599,
+        "family_brier": 0.21943137817144967,
+        "outcome_log_loss": 0.9833211186939464,
+        "goals_log_loss": 0.6795744084183506,
+        "outcome_hit_rate": 0.5151981531358215,
+        "goals_hit_rate": 0.5586764140053867,
+        "top_pick_hit_rate": 0.5863793766833397,
+        "top_pick_mean_probability": 0.6028106974318928
+      }
+    }
+  },
+  "by_league": {
+    "en.1": {
+      "name": "Engleska",
+      "candidate": {
+        "matches": 750,
+        "family_brier": 0.2238072788588854,
+        "outcome_log_loss": 1.002521623603326,
+        "goals_log_loss": 0.6879575124262319,
+        "outcome_hit_rate": 0.5013333333333333,
+        "goals_hit_rate": 0.5613333333333334,
+        "top_pick_hit_rate": 0.5706666666666667,
+        "top_pick_mean_probability": 0.6022909076070261
+      },
+      "reference": {
+        "matches": 750,
+        "family_brier": 0.2243034624512693,
+        "outcome_log_loss": 1.002571189537437,
+        "goals_log_loss": 0.6900542333334808,
+        "outcome_hit_rate": 0.5053333333333333,
+        "goals_hit_rate": 0.5573333333333333,
+        "top_pick_hit_rate": 0.564,
+        "top_pick_mean_probability": 0.601945674753537
+      }
+    },
+    "it.1": {
+      "name": "Italija",
+      "candidate": {
+        "matches": 740,
+        "family_brier": 0.22274904587546196,
+        "outcome_log_loss": 0.9808440462769427,
+        "goals_log_loss": 0.6931974926022294,
+        "outcome_hit_rate": 0.5148648648648648,
+        "goals_hit_rate": 0.5256756756756756,
+        "top_pick_hit_rate": 0.5702702702702702,
+        "top_pick_mean_probability": 0.5971972510951103
+      },
+      "reference": {
+        "matches": 740,
+        "family_brier": 0.22292674095156362,
+        "outcome_log_loss": 0.9810381192284028,
+        "goals_log_loss": 0.6939452591143012,
+        "outcome_hit_rate": 0.5135135135135135,
+        "goals_hit_rate": 0.5351351351351351,
+        "top_pick_hit_rate": 0.572972972972973,
+        "top_pick_mean_probability": 0.6004439937281768
+      }
+    },
+    "es.1": {
+      "name": "\u0160panjolska",
+      "candidate": {
+        "matches": 745,
+        "family_brier": 0.21745196546177897,
+        "outcome_log_loss": 0.978837068163667,
+        "goals_log_loss": 0.6753411757611195,
+        "outcome_hit_rate": 0.5302013422818792,
+        "goals_hit_rate": 0.5610738255033557,
+        "top_pick_hit_rate": 0.6013422818791946,
+        "top_pick_mean_probability": 0.6047488850163765
+      },
+      "reference": {
+        "matches": 745,
+        "family_brier": 0.21736170704380045,
+        "outcome_log_loss": 0.9788759004292906,
+        "goals_log_loss": 0.6749465270060943,
+        "outcome_hit_rate": 0.5302013422818792,
+        "goals_hit_rate": 0.5570469798657718,
+        "top_pick_hit_rate": 0.5973154362416108,
+        "top_pick_mean_probability": 0.6061180836648163
+      }
+    },
+    "de.1": {
+      "name": "Njema\u010dka",
+      "candidate": {
+        "matches": 597,
+        "family_brier": 0.21393150554857596,
+        "outcome_log_loss": 0.9994346447875421,
+        "goals_log_loss": 0.6499261999009548,
+        "outcome_hit_rate": 0.5192629815745393,
+        "goals_hit_rate": 0.6331658291457286,
+        "top_pick_hit_rate": 0.6398659966499163,
+        "top_pick_mean_probability": 0.6266895494342732
+      },
+      "reference": {
+        "matches": 597,
+        "family_brier": 0.21420677124947138,
+        "outcome_log_loss": 0.9996194508348317,
+        "goals_log_loss": 0.6509792894655835,
+        "outcome_hit_rate": 0.5175879396984925,
+        "goals_hit_rate": 0.6231155778894473,
+        "top_pick_hit_rate": 0.6298157453936348,
+        "top_pick_mean_probability": 0.6283783235282887
+      }
+    },
+    "fr.1": {
+      "name": "Francuska",
+      "candidate": {
+        "matches": 606,
+        "family_brier": 0.22015030472724847,
+        "outcome_log_loss": 0.984992786213713,
+        "goals_log_loss": 0.6825633381992924,
+        "outcome_hit_rate": 0.528052805280528,
+        "goals_hit_rate": 0.566006600660066,
+        "top_pick_hit_rate": 0.6089108910891089,
+        "top_pick_mean_probability": 0.5854679380148374
+      },
+      "reference": {
+        "matches": 606,
+        "family_brier": 0.2204192800568528,
+        "outcome_log_loss": 0.9853222302492133,
+        "goals_log_loss": 0.6835558722863878,
+        "outcome_hit_rate": 0.528052805280528,
+        "goals_hit_rate": 0.5676567656765676,
+        "top_pick_hit_rate": 0.6105610561056105,
+        "top_pick_mean_probability": 0.5883733902852472
+      }
+    },
+    "pt.1": {
+      "name": "Portugal",
+      "candidate": {
+        "matches": 602,
+        "family_brier": 0.21139504332939021,
+        "outcome_log_loss": 0.9351032031761438,
+        "goals_log_loss": 0.6694679339208318,
+        "outcome_hit_rate": 0.5431893687707641,
+        "goals_hit_rate": 0.5996677740863787,
+        "top_pick_hit_rate": 0.6395348837209303,
+        "top_pick_mean_probability": 0.6159983376674741
+      },
+      "reference": {
+        "matches": 602,
+        "family_brier": 0.21132435811182423,
+        "outcome_log_loss": 0.9348960826999114,
+        "goals_log_loss": 0.6693662214046074,
+        "outcome_hit_rate": 0.5415282392026578,
+        "goals_hit_rate": 0.6029900332225914,
+        "top_pick_hit_rate": 0.6345514950166113,
+        "top_pick_mean_probability": 0.6188474672262307
+      }
+    },
+    "be.1": {
+      "name": "Belgija",
+      "candidate": {
+        "matches": 424,
+        "family_brier": 0.22492267649015119,
+        "outcome_log_loss": 1.0114840124345035,
+        "goals_log_loss": 0.6895290546878761,
+        "outcome_hit_rate": 0.5070754716981132,
+        "goals_hit_rate": 0.5235849056603774,
+        "top_pick_hit_rate": 0.5448113207547169,
+        "top_pick_mean_probability": 0.5753307183847062
+      },
+      "reference": {
+        "matches": 424,
+        "family_brier": 0.22518345071232862,
+        "outcome_log_loss": 1.01137328623044,
+        "goals_log_loss": 0.6907425842109138,
+        "outcome_hit_rate": 0.5023584905660378,
+        "goals_hit_rate": 0.5188679245283019,
+        "top_pick_hit_rate": 0.5400943396226415,
+        "top_pick_mean_probability": 0.5769437986088091
+      }
+    },
+    "nl.1": {
+      "name": "Nizozemska",
+      "candidate": {
+        "matches": 596,
+        "family_brier": 0.21483767380372068,
+        "outcome_log_loss": 0.9699025742551285,
+        "goals_log_loss": 0.6658239833028287,
+        "outcome_hit_rate": 0.5100671140939598,
+        "goals_hit_rate": 0.5989932885906041,
+        "top_pick_hit_rate": 0.6157718120805369,
+        "top_pick_mean_probability": 0.6250807597909364
+      },
+      "reference": {
+        "matches": 596,
+        "family_brier": 0.21495385719827573,
+        "outcome_log_loss": 0.9702766395078294,
+        "goals_log_loss": 0.6660743027833924,
+        "outcome_hit_rate": 0.511744966442953,
+        "goals_hit_rate": 0.5956375838926175,
+        "top_pick_hit_rate": 0.6023489932885906,
+        "top_pick_mean_probability": 0.6278158469801723
+      }
+    },
+    "tr.1": {
+      "name": "Turska",
+      "candidate": {
+        "matches": 423,
+        "family_brier": 0.213806899416074,
+        "outcome_log_loss": 0.9518298652462108,
+        "goals_log_loss": 0.6713382325000108,
+        "outcome_hit_rate": 0.541371158392435,
+        "goals_hit_rate": 0.5673758865248227,
+        "top_pick_hit_rate": 0.6052009456264775,
+        "top_pick_mean_probability": 0.5907150341706058
+      },
+      "reference": {
+        "matches": 423,
+        "family_brier": 0.21389327993450988,
+        "outcome_log_loss": 0.9513180136993624,
+        "goals_log_loss": 0.671817835866845,
+        "outcome_hit_rate": 0.5437352245862884,
+        "goals_hit_rate": 0.5531914893617021,
+        "top_pick_hit_rate": 0.6004728132387707,
+        "top_pick_mean_probability": 0.5926403668281413
+      }
+    },
+    "gr.1": {
+      "name": "Gr\u010dka",
+      "candidate": {
+        "matches": 289,
+        "family_brier": 0.22281543518061192,
+        "outcome_log_loss": 0.9773085508553616,
+        "goals_log_loss": 0.6984528290383388,
+        "outcome_hit_rate": 0.5190311418685121,
+        "goals_hit_rate": 0.5121107266435986,
+        "top_pick_hit_rate": 0.5778546712802768,
+        "top_pick_mean_probability": 0.5909753025614561
+      },
+      "reference": {
+        "matches": 289,
+        "family_brier": 0.22288771331045232,
+        "outcome_log_loss": 0.9764779861689572,
+        "goals_log_loss": 0.6991683623177877,
+        "outcome_hit_rate": 0.5190311418685121,
+        "goals_hit_rate": 0.5259515570934256,
+        "top_pick_hit_rate": 0.6055363321799307,
+        "top_pick_mean_probability": 0.5943733105834254
+      }
+    }
+  },
+  "limitations": [
+    "Seeds and policies selected using viewed development seasons; expanded research, not a fresh final test.",
+    "Audit 2024/25 and 2025/26 already viewed; neither independent proof nor permission for live recommendations.",
+    "Quarterly refits use only results strictly before each cutoff minus two days.",
+    "Weights apply to model training examples, separately from team feature recency.",
+    "No lineups, injuries, tactics, weather, odds or profit test; source coverage remains incomplete.",
+    "Historical source has no first-publication timestamps; two-day availability is a simulation assumption."
+  ]
+}
