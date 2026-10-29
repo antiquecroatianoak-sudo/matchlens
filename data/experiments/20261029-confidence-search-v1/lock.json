@@ -1,0 +1,185 @@
+{
+  "name": "confidence-search-v1",
+  "created_at": "2026-10-29T08:18:56.196118+00:00",
+  "calibration_fit": "2022-23",
+  "calibration_selection_and_gate": "2023-24",
+  "audit": [
+    "2024-25",
+    "2025-26"
+  ],
+  "inherited_development_warning": "Base seeds/policies previously selected on both development seasons; not a fresh independent development split.",
+  "selected": {
+    "outcome": "identity",
+    "goals": "identity"
+  },
+  "models": {
+    "outcome": {
+      "config": {
+        "id": "identity",
+        "local": false,
+        "ridge": null
+      },
+      "supported": [],
+      "scale": 1.0,
+      "bias": []
+    },
+    "goals": {
+      "config": {
+        "id": "identity",
+        "local": false,
+        "ridge": null
+      },
+      "supported": [],
+      "scale": 1.0,
+      "bias": []
+    }
+  },
+  "rules": [
+    {
+      "id": "all-p0",
+      "profile": "all",
+      "threshold": 0.0
+    },
+    {
+      "id": "all-p60",
+      "profile": "all",
+      "threshold": 0.6
+    },
+    {
+      "id": "all-p70",
+      "profile": "all",
+      "threshold": 0.7
+    },
+    {
+      "id": "all-p80",
+      "profile": "all",
+      "threshold": 0.8
+    },
+    {
+      "id": "all-p85",
+      "profile": "all",
+      "threshold": 0.85
+    },
+    {
+      "id": "all-p90",
+      "profile": "all",
+      "threshold": 0.9
+    },
+    {
+      "id": "all-p95",
+      "profile": "all",
+      "threshold": 0.95
+    },
+    {
+      "id": "agree-p0",
+      "profile": "agree",
+      "threshold": 0.0
+    },
+    {
+      "id": "agree-p60",
+      "profile": "agree",
+      "threshold": 0.6
+    },
+    {
+      "id": "agree-p70",
+      "profile": "agree",
+      "threshold": 0.7
+    },
+    {
+      "id": "agree-p80",
+      "profile": "agree",
+      "threshold": 0.8
+    },
+    {
+      "id": "agree-p85",
+      "profile": "agree",
+      "threshold": 0.85
+    },
+    {
+      "id": "agree-p90",
+      "profile": "agree",
+      "threshold": 0.9
+    },
+    {
+      "id": "agree-p95",
+      "profile": "agree",
+      "threshold": 0.95
+    },
+    {
+      "id": "history-p0",
+      "profile": "history",
+      "threshold": 0.0
+    },
+    {
+      "id": "history-p60",
+      "profile": "history",
+      "threshold": 0.6
+    },
+    {
+      "id": "history-p70",
+      "profile": "history",
+      "threshold": 0.7
+    },
+    {
+      "id": "history-p80",
+      "profile": "history",
+      "threshold": 0.8
+    },
+    {
+      "id": "history-p85",
+      "profile": "history",
+      "threshold": 0.85
+    },
+    {
+      "id": "history-p90",
+      "profile": "history",
+      "threshold": 0.9
+    },
+    {
+      "id": "history-p95",
+      "profile": "history",
+      "threshold": 0.95
+    },
+    {
+      "id": "history_agree-p0",
+      "profile": "history_agree",
+      "threshold": 0.0
+    },
+    {
+      "id": "history_agree-p60",
+      "profile": "history_agree",
+      "threshold": 0.6
+    },
+    {
+      "id": "history_agree-p70",
+      "profile": "history_agree",
+      "threshold": 0.7
+    },
+    {
+      "id": "history_agree-p80",
+      "profile": "history_agree",
+      "threshold": 0.8
+    },
+    {
+      "id": "history_agree-p85",
+      "profile": "history_agree",
+      "threshold": 0.85
+    },
+    {
+      "id": "history_agree-p90",
+      "profile": "history_agree",
+      "threshold": 0.9
+    },
+    {
+      "id": "history_agree-p95",
+      "profile": "history_agree",
+      "threshold": 0.95
+    }
+  ],
+  "selected_gate": null,
+  "gate_selection": ">=200 distinct scored fixtures and Bonferroni one-sided Wilson lower95 >.90; max coverage; else no gate.",
+  "code_sha256": "2a6564011d1b82e05fd6eebe25a05b9f4eef1678b642536f28bec74bf2fd427b",
+  "source_lock_sha256": "234927c27f32f2de3b00b1bd622338b9f7f3de660a091b822e3a947a2ef84bd8",
+  "source_sha256": "33a2fec26c965d297a3c911ffd74637f21b826409d1e3c6d288232d3d266d842",
+  "audit_status": "Previously viewed audit: descriptive reanalysis only. No independent 90% proof."
+}

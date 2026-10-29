@@ -1,0 +1,10 @@
+{
+  "active": "market-specialists-v1",
+  "season": "2025-26",
+  "fixtures": 3046,
+  "offers": 15230,
+  "maximum_probability_difference": 0.0,
+  "registry_sha256": "bebb30503dffc873e473f7e42c47f796ce1f40bc7f99c769829566d031e708e8",
+  "reference_archive": "20261029-specialist-filters-v1/filter-offers.jsonl",
+  "conclusion": "Active engine reproduces archived champion probabilities; no new accuracy claim."
+}

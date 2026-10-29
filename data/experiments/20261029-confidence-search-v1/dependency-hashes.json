@@ -1,0 +1,7 @@
+{
+  "analytics/confidence_search.py": "2a6564011d1b82e05fd6eebe25a05b9f4eef1678b642536f28bec74bf2fd427b",
+  "analytics/filter_audit.py": "7d31f37b61466f0d811d63fcfe74c1c19ba41e353a1c8babdbbad5d7d6d9b77c",
+  "analytics/expanded_search.py": "0756618453208596870f3d7b9387a7c198de45d74feed787b298cb6a4ff9335a",
+  "analytics/market_specialists.py": "735d039aeaacb7d52194d96cd081c600083cc9ac05438e015fbbddd353eb66e6",
+  "analytics/backtest.py": "856a1954fc904fd3eee00eded2f6c3d8d12c5b27515c50854f12b6fc22a4751c"
+}
