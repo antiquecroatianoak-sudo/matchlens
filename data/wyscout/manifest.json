@@ -1,0 +1,13 @@
+{
+  "source": "Pappalardo, Luca; Massucco, Emanuele (2019): Soccer match event dataset. figshare.",
+  "doi": "https://doi.org/10.6084/m9.figshare.c.4415000",
+  "paper": "https://www.nature.com/articles/s41597-019-0247-7",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "mirror": "https://github.com/koenvo/wyscout-soccer-match-event-dataset/blob/main/raw_data/matches.zip",
+  "retrieved_at": "2026-10-29T08:04:44.752612+00:00",
+  "sha256": "c8f92bb7533e5c127e043cee764c991b5c25b4f5e70a65be931baae0b1765ce9",
+  "transform": "Unzip; five domestic 2017/18 leagues only; whitelist canonical match/team/coach/player IDs, UTC date, starter IDs and final score. No currentTeamId. World Cup/Euros excluded.",
+  "publication_time": "Unknown before match. Dataset released 2019: ideal-information retrospective pilot only.",
+  "git_blob_sha": "6ce074e25fe04d8ae52e376729a1c3b7d2addc87"
+}

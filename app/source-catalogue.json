@@ -118,15 +118,16 @@
       "name": "Wyscout · Pappalardo i sur. · otvoreni skup",
       "url": "https://www.nature.com/articles/s41597-019-0247-7",
       "category": "Povijesni treneri, postave i događaji",
-      "status": "CC BY 4.0 · kandidat za odvojeni pilot",
-      "active": false,
-      "purpose": "Kandidat za stvarne identitete trenera i igrača te ranije učinke. Nema aktivnog dohvata niti treninga ovim skupom.",
+      "status": "Uvezen · odvojeni retrospektivni pilot",
+      "active": true,
+      "purpose": "Stvarno uvezenih 1.826 ligaških susreta s trenerima i početnim postavama; 24 razvojna podešavanja, četiri ablacijske skupine na istih 545 kasnijih susreta. Bez aktivnih preporuka i bez izravnih parova igrača.",
       "coverage": "Pet velikih liga 2017./18., SP 2018. i EURO 2016.; ne pokriva naše testne sezone 2024./25. i 2025./26. ili svih deset liga.",
       "access": "Autorski podatkovni članak navodi objavljeni skup pod CC BY 4.0 uz atribuciju. To se odnosi na objavljeni skup, ne na puni Wyscout API ili druge podatke pružatelja.",
-      "timing": "Raspoloživost izvornog podatka prije utakmice još nije rekonstruirana. Koristiti coachId iz konkretne utakmice, a ne današnji currentTeamId. Sama prisutnost playerId i duela ne dokazuje izravni par protivnika.",
+      "timing": "Arhivirano vrijeme objave postava i identiteta trenera prije susreta nije poznato. Samo retrospektivni pokus idealno poznatih sastava; nije vremenski potvrđena prognoza. Povijest rezultata ima dvodnevni embargo.",
       "evidence": [
         "https://www.nature.com/articles/s41597-019-0247-7",
-        "https://doi.org/10.6084/m9.figshare.c.4415000"
+        "https://doi.org/10.6084/m9.figshare.c.4415000",
+        "https://github.com/koenvo/wyscout-soccer-match-event-dataset"
       ]
     }
   ]

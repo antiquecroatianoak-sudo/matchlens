@@ -1,0 +1,247 @@
+{
+  "protocol": {
+    "name": "wyscout-person-pilot-v1",
+    "selected": {
+      "baseline": {
+        "0": 0.01,
+        "1": 0.01
+      },
+      "coach": {
+        "0": 0.01,
+        "1": 0.01
+      },
+      "players": {
+        "0": 0.01,
+        "1": 0.01
+      },
+      "both": {
+        "0": 0.01,
+        "1": 0.01
+      }
+    },
+    "split": {
+      "train_before": "2018-01-01",
+      "development_before": "2018-03-01",
+      "audit_from": "2018-03-01"
+    },
+    "availability": "Ideal-information retrospective only; archived pre-match coach/lineup publication unknown.",
+    "source_sha256": "c8f92bb7533e5c127e043cee764c991b5c25b4f5e70a65be931baae0b1765ce9",
+    "code_sha256": "c09f1415462649f7d00e3ab5c5f4532e9b131c480f5a7fa254a8bdadc144a8ba"
+  },
+  "raw_matches": 1826,
+  "feature_matches": 1580,
+  "train_matches": 645,
+  "development_matches": 372,
+  "audit_matches": 545,
+  "by_league": {
+    "England": 380,
+    "France": 380,
+    "Germany": 306,
+    "Italy": 380,
+    "Spain": 380
+  },
+  "trials": [
+    {
+      "group": "baseline",
+      "family": 0,
+      "c": 0.01,
+      "development_log_loss": 0.985233408381868
+    },
+    {
+      "group": "baseline",
+      "family": 0,
+      "c": 0.1,
+      "development_log_loss": 0.9898925864347039
+    },
+    {
+      "group": "baseline",
+      "family": 0,
+      "c": 1.0,
+      "development_log_loss": 0.9970632491683362
+    },
+    {
+      "group": "baseline",
+      "family": 1,
+      "c": 0.01,
+      "development_log_loss": 0.6942640232743952
+    },
+    {
+      "group": "baseline",
+      "family": 1,
+      "c": 0.1,
+      "development_log_loss": 0.7004517076952473
+    },
+    {
+      "group": "baseline",
+      "family": 1,
+      "c": 1.0,
+      "development_log_loss": 0.7071489536219684
+    },
+    {
+      "group": "coach",
+      "family": 0,
+      "c": 0.01,
+      "development_log_loss": 0.9819392797240288
+    },
+    {
+      "group": "coach",
+      "family": 0,
+      "c": 0.1,
+      "development_log_loss": 0.9871935418645068
+    },
+    {
+      "group": "coach",
+      "family": 0,
+      "c": 1.0,
+      "development_log_loss": 0.9981105583872846
+    },
+    {
+      "group": "coach",
+      "family": 1,
+      "c": 0.01,
+      "development_log_loss": 0.6933926075674534
+    },
+    {
+      "group": "coach",
+      "family": 1,
+      "c": 0.1,
+      "development_log_loss": 0.6973183226896212
+    },
+    {
+      "group": "coach",
+      "family": 1,
+      "c": 1.0,
+      "development_log_loss": 0.7035052779036927
+    },
+    {
+      "group": "players",
+      "family": 0,
+      "c": 0.01,
+      "development_log_loss": 0.9915034052455972
+    },
+    {
+      "group": "players",
+      "family": 0,
+      "c": 0.1,
+      "development_log_loss": 1.0050424781471676
+    },
+    {
+      "group": "players",
+      "family": 0,
+      "c": 1.0,
+      "development_log_loss": 1.0221333697782766
+    },
+    {
+      "group": "players",
+      "family": 1,
+      "c": 0.01,
+      "development_log_loss": 0.6904328578650727
+    },
+    {
+      "group": "players",
+      "family": 1,
+      "c": 0.1,
+      "development_log_loss": 0.6953941183243123
+    },
+    {
+      "group": "players",
+      "family": 1,
+      "c": 1.0,
+      "development_log_loss": 0.7014903796678972
+    },
+    {
+      "group": "both",
+      "family": 0,
+      "c": 0.01,
+      "development_log_loss": 0.9886545681695258
+    },
+    {
+      "group": "both",
+      "family": 0,
+      "c": 0.1,
+      "development_log_loss": 1.0027663143344774
+    },
+    {
+      "group": "both",
+      "family": 0,
+      "c": 1.0,
+      "development_log_loss": 1.0228416580054362
+    },
+    {
+      "group": "both",
+      "family": 1,
+      "c": 0.01,
+      "development_log_loss": 0.6893352811216825
+    },
+    {
+      "group": "both",
+      "family": 1,
+      "c": 0.1,
+      "development_log_loss": 0.6920186337945549
+    },
+    {
+      "group": "both",
+      "family": 1,
+      "c": 1.0,
+      "development_log_loss": 0.6973866301678199
+    }
+  ],
+  "results": {
+    "baseline": {
+      "matches": 545,
+      "outcome_accuracy": 0.5394495412844037,
+      "goals_accuracy": 0.5577981651376147,
+      "top_pick_hits": 313,
+      "top_pick_misses": 232,
+      "top_pick_accuracy": 0.5743119266055046,
+      "outcome_log_loss": 0.9852635977539979,
+      "goals_log_loss": 0.6848496819183045,
+      "brier": 0.2157224342188313
+    },
+    "coach": {
+      "matches": 545,
+      "outcome_accuracy": 0.5394495412844037,
+      "goals_accuracy": 0.5357798165137615,
+      "top_pick_hits": 307,
+      "top_pick_misses": 238,
+      "top_pick_accuracy": 0.563302752293578,
+      "outcome_log_loss": 0.9837622994132591,
+      "goals_log_loss": 0.6848134609439791,
+      "brier": 0.21557510471192232
+    },
+    "players": {
+      "matches": 545,
+      "outcome_accuracy": 0.5321100917431193,
+      "goals_accuracy": 0.5467889908256881,
+      "top_pick_hits": 306,
+      "top_pick_misses": 239,
+      "top_pick_accuracy": 0.5614678899082569,
+      "outcome_log_loss": 0.990094774333691,
+      "goals_log_loss": 0.6840003626251031,
+      "brier": 0.21624298575982254
+    },
+    "both": {
+      "matches": 545,
+      "outcome_accuracy": 0.5412844036697247,
+      "goals_accuracy": 0.5247706422018349,
+      "top_pick_hits": 298,
+      "top_pick_misses": 247,
+      "top_pick_accuracy": 0.5467889908256881,
+      "outcome_log_loss": 0.9889616344103089,
+      "goals_log_loss": 0.684075412603314,
+      "brier": 0.21615259926756558
+    }
+  },
+  "promoted": false,
+  "coach_opponent_supported_sides": 0,
+  "cross_club_coach_sides": 21,
+  "cross_club_player_sides": 403,
+  "direct_player_duel_rows": 0,
+  "limitations": [
+    "Different old cohort: do not compare accuracy to 2024/26 as improvement.",
+    "Coach/lineup publication times unknown; no certified as-of accuracy.",
+    "Player residuals are team outcome associations, not direct duels or causal quality.",
+    "One season gives weak repeated opponent and cross-club history.",
+    "Results are exploratory. No 90% guarantee, exact-score claim, odds or live recommendations."
+  ]
+}
