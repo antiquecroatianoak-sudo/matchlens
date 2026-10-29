@@ -75,3 +75,14 @@ Korisnik je 28.10.2026. izričito odabrao nastavak bez Bugarske i Rumunjske. Obj
 - Novi izvori nisu aktivni adapteri. Nisu preuzeti novi sirovi podaci, promijenjeni modeli ni objavljeni novi postoci točnosti. Sljedeće je izabrati izvor i ligu/sezonu s dovoljnim dopuštenjem i pokrivenošću, zatim adapter i vremenski siguran test dodatnog faktora.
 
 - Potvrđeno: PR #4 spojen (merge 1ac9650d2837091ec5619993bbbb6a98bcbd5759). Katalog izvora uspješno privatno objavljen, source 0b468030d0d6aca2b1420e9e56df39b22682b42d, deployment appgdep_6ae2ee10064481918571e8d5a3b803de succeeded: https://matchlens-luka.antique-croatian-oak.chatgpt.site . TypeScript i produkcijska izgradnja prošli; vizualni QA nije potvrđen zbog nedostupnog preview preglednika.
+
+
+## Novi faktori i uklanjanje skupina — 29.10.2026.
+- Vlasnik traži dodavati/izbacivati faktore prema doprinosu uz cilj znatno više točnosti od 59%; bez jamstva uspjeha. Deset liga i dva tržišta ostaju aktivni opseg.
+- Izveden factor-search-v1: 84 obilježja, od toga 46 novih vrijednosti iz iste povijesti rezultata. Identitet lige, 5/20/50 ranijih utakmica (golovi, bodovi, varijacija, više 2,5), ligaški trend 10/40 i faza sezone. Nema novih vanjskih izvora, xG, taktike, ozljeda ili postava.
+- 14 kandidata HistGradientBoostingClassifiera s dodavanjem/izostavljanjem skupina i dva stupnja složenosti; razvoj 2022/23, zasebna kalibracija 2023/24 (šest temperatura po tržištu), slučajni early stopping isključen. Izabrano bez dodatnih prozora 5/20/50 za oba tržišta; temperatura 1X2 1, golovi 0,85. Lock s hashom koda/izvora spremljen prije audita.
+- Opisna ponovna analiza 5.772 ranije pregledana susreta: 51,92% 1X2, 55,53% golovi, 58,26% najvjerojatnija ponuda (3.363 pogodaka / 2.409 promašaja), Brier 0,22074901. Dosadašnji market-specialists kandidat 59,86%, Brier 0,21852459. Novi kandidat je slabiji i NIJE promoviran. Visoki cilj nije postignut.
+- Arhiva data/experiments/20261029-factor-search-v1/: svi kandidati, temperature, lock prije audita, izvještaj, kalibracija, lige/sezone i pojedinačne prognoze. Raniji pokusi/lockovi nisu prepisani. Panel app/factor-search-panel.tsx prikazuje i negativan nalaz.
+- 31 Python test prošao: novi faktori ne ovise o ciljnim/budućim ishodima, pending utakmice ne ulaze u povijest, embargo i tržišni odabir provjereni. TypeScript prošao. Vizualna provjera nije potvrđena: preview preglednik ranije odbija vezu; nema dokaza oporavka.
+- Sljedeće: prava i vremenska pokrivenost konkretnih novih vanjskih faktora prije adaptera i nove usporedbe. Transformacije rezultata nisu zamjena za stvarne postave/izostanke/kvalitetu prilika. Novi dokaz tek na zaključanoj verziji i neviđenim ishodima. Nema aktualnih preporuka.
+

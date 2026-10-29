@@ -40,3 +40,11 @@ Obje skripte odbijaju prepisati završen eksperiment. Dnevni filtri uključuju n
 Novi izlaz mora biti nepostojeća mapa. Uspoređuje 12 kandidata kalendarske težine primjera i sezonskog/tromjesečnog refita. Izbor 1X2 i golova je zaseban, samo prema razvoju; zaključavanje se zapisuje prije opisnog audita. Nisu dodani vanjski faktori. U javnoj arhivi prognoze mogu biti pohranjene kao specialists-predictions.jsonl.gz (gzip bez vremenske oznake); skripta izvorno piše JSONL.
 
 Prospektivna provjera sada odbija promijenjeni hash koda i as_of različit od stvarnog UTC datuma. Pri ocjenjivanju generated_at mora prethoditi i izvornom i stvarnom datumu utakmice; bez potvrđene vremenske zone početka koristi se konzervativni datum. Nevaljani zapisi isključeni su s razlogom, ne izbrisani. Stari lockovi ostaju nepromijenjeni i za novo generiranje trebaju novi eksperiment.
+
+
+## Novi faktori i nelinearne ablacije
+
+    python -m pip install -r analytics/requirements-research.txt
+    OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python -m analytics.factor_search --output data/experiments/novi-factor-search --ui app/factor-summary.json
+
+Skripta zahtijeva novu izlaznu mapu. Koristi scikit-learn 1.8.0, isključuje slučajnu validacijsku podjelu/early stopping, podešava 2022/23 i kalibrira zasebno 2023/24. Svih 14 kandidata i temperature arhiviraju se. Pohranjeni hash koda i izvora, lock prije audita i pojedinačne prognoze. Javni arhiv može sadržavati gzip JSONL prognoza. Slabiji novi kandidat se ne promovira.

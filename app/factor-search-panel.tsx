@@ -1,0 +1,17 @@
+import report from './factor-summary.json';
+const pct=(v:number)=>new Intl.NumberFormat('hr-HR',{style:'percent',minimumFractionDigits:2,maximumFractionDigits:2}).format(v);
+const names:Record<string,string>={strength:'Samo osnovna snaga',existing_history:'Postojeća proširena povijest',all:'Svi faktori',without_league:'Bez identiteta lige',without_multiscale:'Bez dodatnih prozora 5/20/50',without_league_trend:'Bez trenda lige',without_calendar:'Bez faze sezone'};
+export default function FactorSearchPanel(){
+ const hits=Math.round(report.audit.matches*report.audit.top_pick_hit_rate);
+ return <section className="panel notes">
+  <div className="panel-heading"><h2>Dodavanje i uklanjanje faktora</h2><span className="tag">NOVI POKUS · 29.10.2026.</span></div>
+  <p>Testirano 84 numerička obilježja: postojeća povijest te 46 novih vrijednosti za ligu, prethodnih 5/20/50 utakmica, ritam golova, bodove, promjenjivost golova, trend lige i fazu sezone. To nisu novi vanjski izvori ni podaci o ozljedama, postavama ili taktici.</p>
+  <p>Četrnaest kandidata uspoređuje skupine faktora i njihovo uklanjanje uz dva stupnja složenosti novog nelinearnog modela. Trideset i jedan test koda je prošao, uključujući provjere da budući rezultati ne mijenjaju ranije faktore.</p>
+  <div className="alert">Novi kandidat nije bolji: {pct(report.audit.top_pick_hit_rate)} prema {pct(report.previous_specialists.top_pick_hit_rate)} dosadašnjeg istraživačkog kandidata. Ne zamjenjuje ga i ne aktivira preporuke. Slabiji pokušaj ostaje u povijesti eksperimenata.</div>
+  <div className="table-wrap"><table><thead><tr><th>Iste {report.audit.matches.toLocaleString('hr-HR')} utakmice</th><th>1X2</th><th>Golovi</th><th>Najvjerojatnija ponuda</th><th>Brier · niže bolje</th></tr></thead><tbody>{[['Dosadašnji kandidat',report.previous_specialists],['Prošireni nelinearni kandidat',report.audit]].map(([label,value])=>{const r=value as typeof report.audit;return <tr key={String(label)}><td>{String(label)}</td><td>{pct(r.outcome_hit_rate)}</td><td>{pct(r.goals_hit_rate)}</td><td>{pct(r.top_pick_hit_rate)}</td><td>{r.family_brier.toLocaleString('hr-HR',{maximumFractionDigits:5})}</td></tr>;})}</tbody></table></div>
+  <p>{hits.toLocaleString('hr-HR')} pogodaka i {(report.audit.matches-hits).toLocaleString('hr-HR')} promašaja za jednu najvjerojatniju ponudu novog kandidata. Dnevni Top 10/50 su zasebna mjera.</p>
+  <details><summary>Svi kandidati · doprinos i izostavljanje skupina</summary><div className="table-wrap"><table><thead><tr><th>Skupina</th><th>Složenost · listovi</th><th>Razvojni log loss · 1X2</th><th>Razvojni log loss · golovi</th></tr></thead><tbody>{report.trials.map(t=><tr key={t.id}><td>{names[t.config.group]}</td><td>{t.config.leaves}</td><td>{t.development.outcome_log_loss.toLocaleString('hr-HR',{maximumFractionDigits:5})}</td><td>{t.development.goals_log_loss.toLocaleString('hr-HR',{maximumFractionDigits:5})}</td></tr>)}</tbody></table></div></details>
+  <p>Odabir na 2022./23., zasebna kalibracija na 2023./24. Izabrane skupine: 1X2 — {names[report.protocol.chosen.outcome.config.group]}; golovi — {names[report.protocol.chosen.goals.config.group]}. Sve prognoze i slabije varijante su arhivirane.</p>
+  <p className="small muted">2024./25. i 2025./26. već su pregledane: rezultati su opisna ponovna analiza, ne novi neovisni dokaz. Izostavljanje faktora mjeri doprinos ovom modelu i uzorku; nije dokaz da taj faktor nikada ne utječe na nogomet. Sama količina faktora ili broj testova ne jamči veću točnost.</p>
+ </section>;
+}
