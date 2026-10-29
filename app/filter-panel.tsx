@@ -1,16 +1,17 @@
 'use client';
 import {useState} from 'react';
-import report from './filter-summary.json';
+import originalReport from './filter-summary.json';
+import specialistReport from './filter-specialists-summary.json';
 import direct from './direct-summary.json';
 const n=(v:number,d=0)=>v.toLocaleString('hr-HR',{minimumFractionDigits:d,maximumFractionDigits:d});
 const pct=(v:number|null)=>v===null?'—':n(v*100,2)+'%';
 const title=(id:string)=>id==='all'?'Sve ponude':id==='top10'?'Dnevni Top 10':id==='top50'?'Dnevni Top 50':'Vjerojatnost ≥ '+id.slice(1)+'%';
 const names:Record<string,string>={home:'1 · domaćin',draw:'X · remi',away:'2 · gost','over2.5':'Više od 2,5','under2.5':'Manje od 2,5'};
 export default function FilterPanel(){
- const [id,setId]=useState('top10');const selected=report.analysis.find(r=>r.rule.id===id)!;
+ const [id,setId]=useState('top10');const [model,setModel]=useState('specialists');const report=model==='specialists'?specialistReport:originalReport;const selected=report.analysis.find(r=>r.rule.id===id)!;
  return <section className="panel notes">
   <div className="panel-heading"><h2>Stvarna provjera naših filtara</h2><span className="tag">POVIJESNA PONOVNA ANALIZA</span></div>
-  <p>Za svaki povijesni dan rangiramo svih pet ponuda iz deset liga po procijenjenoj vjerojatnosti. Više ponuda iste utakmice je dopušteno. Top 10 i Top 50 biraju se zasebno za svaki dan.</p>
+  <label>Model za usporedbu <select value={model} onChange={e=>setModel(e.target.value)}><option value="specialists">Noviji model po tržištu · 29.10.</option><option value="original">Stariji Poisson + Elo · 28.10.</option></select></label><p className="small muted">Obje verzije koriste iste zadane filtre. Novija verzija zasebno uči ishod i golove; podaci o trenerima i duelima igrača još nisu uključeni.</p><p>Za svaki povijesni dan rangiramo svih pet ponuda iz deset liga po procijenjenoj vjerojatnosti. Više ponuda iste utakmice je dopušteno. Top 10 i Top 50 biraju se zasebno za svaki dan.</p>
   <div className="alert">Stroži odabir može podići postotak uz mnogo manje ponuda. To je učinak filtra na postojećem modelu. Sezone 2024./25. i 2025./26. već su pregledane; ove brojke ne dokazuju buduću točnost.</div>
   <div className="table-wrap"><table><thead><tr><th>Filter</th><th>Odabrano</th><th>Pogoci</th><th>Promašaji</th><th>Bez ishoda</th><th>Točnost ocijenjenih</th><th>Obuhvat utakmica</th></tr></thead><tbody>{report.analysis.filter(r=>r.rule.id!=='all').map(r=><tr key={r.rule.id}><td><button type="button" className="text-button" onClick={()=>setId(r.rule.id)} aria-pressed={id===r.rule.id}>{title(r.rule.id)}</button></td><td>{n(r.selected)}</td><td>{n(r.hits)}</td><td>{n(r.misses)}</td><td>{n(r.unscored)}</td><td><strong>{pct(r.hit_rate)}</strong></td><td>{pct(r.match_coverage)}</td></tr>)}</tbody></table></div>
   <p className="small muted">Odabrano = pogoci + promašaji + nepoznati ishodi. Točnost koristi samo ocijenjene ponude. Obuhvat je udio jedinstvenih utakmica s barem jednom odabranom ponudom među utakmicama koje model može obraditi.</p>
