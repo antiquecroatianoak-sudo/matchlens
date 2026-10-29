@@ -109,3 +109,9 @@ Privatna objava već je potvrđena: source b44d437e2dcb6a0751567f634a87a9748b438
 - GitHub potvrđuje otvoren PR, mergeable=true, merged=false. Glavna grana nije promijenjena: izravni update main automatski je odbijen jer reviewer traži zasebno odobrenje za tu konkretnu promjenu glavne grane. Nije pokušano zaobilaženje kroz drugi način spajanja.
 - Claude zadatak #1 dopunjen je javnim komentarom https://github.com/antiquecroatianoak-sudo/matchlens/issues/1#issuecomment-6490638435 . Novo preuzimanje nije potvrđeno; sam komentar ne jamči izvršavanje.
 - Privatna aplikacija i dalje ima uspješnu objavu person-history ciklusa. Preostala radnja javne predaje: izričita potvrda spajanja PR #6 u main; zatim provjeriti aktualni head i stanje prije spajanja. Stvarni podaci trenera/duela i dalje nisu uvezeni, bez novog postotka pripisanog njima.
+
+
+## Dovršeno spajanje PR #6 — 29.10.2026.
+Vlasnik je na izričito pitanje o spajanju PR #6 u glavnu granu main odgovorio: „Odobravam odradi to do kraja.” PR #6 uspješno je spojen GitHub merge operacijom uz expected head 2466c7e6efedd2e55969b5e8cfe8c0347061bf7a. Potvrđeni merge commit 05d6002971b8ff6c34a25f72e473bca7f259818e; GitHub potvrđuje merged=true i main na tom commitu. Prethodne bilješke o čekanju odobrenja više nisu aktivna prepreka.
+Provjere odobrenog koda: 41 lokalni Python test, TypeScript i produkcijska izgradnja ranije su prošli; za PR head nije bilo registriranih GitHub CI statusa ni check runova, pa nije tvrdnja o zelenom CI-ju. Aplikacija ostaje owner-private (potvrđeno Sites get_site, verzija 10), s prethodno uspješno objavljenom istom funkcionalnom nadogradnjom. Nisu mijenjani model, koeficijenti, podaci ili pravila u ovom koraku spajanja.
+Preostali razvojni posao: stvarni dopušteni podaci trenera i izravnih parova igrača, vremensko povezivanje i ablacijska usporedba. Predaja i spajanje ne predstavljaju novu potvrdu nogometne točnosti niti dokaz da je Claude pokrenuo rad.
