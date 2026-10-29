@@ -62,5 +62,7 @@
       "action": "activate_existing_champion",
       "reason": "New league, person and confidence candidates have not demonstrated better comparable full-cohort accuracy."
     }
-  ]
+  ],
+  "recommendation_policy": "round-quarter-v1",
+  "recommendation_scope": "Only immutable pre-round selected quarter; full pool is training/reference."
 }
