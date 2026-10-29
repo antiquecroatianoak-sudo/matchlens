@@ -74,3 +74,9 @@ Novi market-specialists-v1 zasebno bira konfiguraciju za 1X2 i golove, polazeći
 Korisnik izričito traži dodati Transfermarkt i po potrebi proširiti izvore točnih informacija i statistike. Implementiran ugrađeni katalog sa statusom stvarne integracije, pokrivenošću, namjenom, uvjetima, vremenskim ograničenjima i izvornim poveznicama. Transfermarkt je referenca koja zahtijeva posebno dopuštenje: točka 11.1 zabranjuje automatizirano kopiranje i uporabu za razvoj AI/ML. Ne tretirati korisnikovo imenovanje izvora kao dopuštenje pružatelja podataka.
 
 U katalogu i StatsBomb Open Data, football-data.org, Football-Data.co.uk, Open-Meteo Previous/Single Runs, službena UEFA statistika i postojeći OpenFootball. Nijedan novi zapis sam ne aktivira uvoz ili trening. Za ozljede, trenere i postave dodatno tražiti datirane službene objave klubova/liga, ali ne tvrditi potpunu pokrivenost bez provjere. Svaki novi faktor treba izvor, vrijeme objave/dohvata, identitete, dostupnost prije ciljanog susreta i usporedbu doprinosa. Bez plaćenih usluga.
+
+
+## Doprinos faktora — 29.10.2026.
+Vlasnik traži sustavno dodavati/izbacivati faktore prema stvarnom doprinosu, s ciljem znatno veće točnosti od 59%. Cilj nije jamstvo niti dopuštenje za podešavanje ili skrivanje rezultata. Novi factor-search-v1 uspoređuje 14 skupova/složenosti modela stabala, 84 obilježja (46 novih vrijednosti iz iste ranije povijesti). Novi blokovi: identitet lige, svaki tim na 5/20/50 ranijih utakmica (postignuti/primljeni golovi, bodovi, varijacija, više 2,5), trend lige kroz zadnjih 10/40 i kalendarska faza sezone.
+
+Uklanjanje skupina mjeri se na razvoju 2022/23; tržišta birati zasebno. Šest temperatura po tržištu kalibrira se samo na zasebnoj 2023/24, bez slučajne podjele i automatskog random early-stoppinga. Audit 2024/25-2025/26 ostaje opisni. Slabiji novi kandidat ne zamjenjuje dosadašnji i ne aktivira preporuke. Ne koristi podatke Transfermarkta niti neprovjerene vanjske faktore.
