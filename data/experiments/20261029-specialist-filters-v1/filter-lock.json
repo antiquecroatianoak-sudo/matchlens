@@ -1,0 +1,68 @@
+{
+  "version": "specialist-daily-filters-v1",
+  "generated_at": "2026-10-29T07:11:34.483035+00:00",
+  "source_model": "market-specialists-v1",
+  "source_lock_sha256": "234927c27f32f2de3b00b1bd622338b9f7f3de660a091b822e3a947a2ef84bd8",
+  "rules": [
+    {
+      "id": "all",
+      "top": null,
+      "threshold": 0.0
+    },
+    {
+      "id": "top10",
+      "top": 10,
+      "threshold": 0.0
+    },
+    {
+      "id": "top50",
+      "top": 50,
+      "threshold": 0.0
+    },
+    {
+      "id": "p60",
+      "top": null,
+      "threshold": 0.6
+    },
+    {
+      "id": "p65",
+      "top": null,
+      "threshold": 0.65
+    },
+    {
+      "id": "p70",
+      "top": null,
+      "threshold": 0.7
+    },
+    {
+      "id": "p75",
+      "top": null,
+      "threshold": 0.75
+    },
+    {
+      "id": "p80",
+      "top": null,
+      "threshold": 0.8
+    },
+    {
+      "id": "p85",
+      "top": null,
+      "threshold": 0.85
+    },
+    {
+      "id": "p90",
+      "top": null,
+      "threshold": 0.9
+    },
+    {
+      "id": "p95",
+      "top": null,
+      "threshold": 0.95
+    }
+  ],
+  "day_timezone": "Source calendar date; no kickoff times",
+  "audit_status": "Previously viewed 2024/25 and 2025/26; descriptive comparison only",
+  "top_k_scope": "All five markets, all ten leagues, multiple offers per fixture",
+  "odds_2_plus": "Not evaluated: no historical timestamped odds",
+  "source_sha256": "33a2fec26c965d297a3c911ffd74637f21b826409d1e3c6d288232d3d266d842"
+}

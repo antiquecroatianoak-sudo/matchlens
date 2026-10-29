@@ -48,3 +48,11 @@ Prospektivna provjera sada odbija promijenjeni hash koda i as_of različit od st
     OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python -m analytics.factor_search --output data/experiments/novi-factor-search --ui app/factor-summary.json
 
 Skripta zahtijeva novu izlaznu mapu. Koristi scikit-learn 1.8.0, isključuje slučajnu validacijsku podjelu/early stopping, podešava 2022/23 i kalibrira zasebno 2023/24. Svih 14 kandidata i temperature arhiviraju se. Pohranjeni hash koda i izvora, lock prije audita i pojedinačne prognoze. Javni arhiv može sadržavati gzip JSONL prognoza. Slabiji novi kandidat se ne promovira.
+
+## Povijest osoba i filtri novijeg modela
+
+`person_matchups.py` priprema kandidatna obilježja trenera i igrača kroz promjene klubova iz provjerenih JSONL činjenica. Podatkovni ugovor i status su u `docs/POVIJEST_TRENERA_I_IGRACA.md`. Ne preuzima podatke, ne spaja osobe po imenu i ne pretvara nedostatak podataka u modelski bonus. Trenutačni nogometni skup nema stvarne osobne zapise; novi testovi su sintetičke provjere koda.
+
+    python -m analytics.specialist_filter_audit --output data/experiments/NOVI_CIKLUS
+
+Zadana pravila filtara primjenjuju se na ranije odabrani market-specialists-v1. Novu mapu ne prepisuje; puni skup uključuje i ponude bez poznatog ishoda. Kompaktan UI omogućuje poštenu usporedbu s ranijim Poisson + Elo izračunom. Nema novih kvota ni preporuka.
