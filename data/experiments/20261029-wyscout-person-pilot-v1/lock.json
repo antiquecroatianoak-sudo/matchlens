@@ -1,0 +1,29 @@
+{
+  "name": "wyscout-person-pilot-v1",
+  "selected": {
+    "baseline": {
+      "0": 0.01,
+      "1": 0.01
+    },
+    "coach": {
+      "0": 0.01,
+      "1": 0.01
+    },
+    "players": {
+      "0": 0.01,
+      "1": 0.01
+    },
+    "both": {
+      "0": 0.01,
+      "1": 0.01
+    }
+  },
+  "split": {
+    "train_before": "2018-01-01",
+    "development_before": "2018-03-01",
+    "audit_from": "2018-03-01"
+  },
+  "availability": "Ideal-information retrospective only; archived pre-match coach/lineup publication unknown.",
+  "source_sha256": "c8f92bb7533e5c127e043cee764c991b5c25b4f5e70a65be931baae0b1765ce9",
+  "code_sha256": "c09f1415462649f7d00e3ab5c5f4532e9b131c480f5a7fa254a8bdadc144a8ba"
+}
