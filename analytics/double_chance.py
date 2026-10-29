@@ -33,6 +33,8 @@ def offers(match_id,outcome,quotes,generated_at,kickoff):
         raise ValueError('Generation must have a timezone and precede kickoff')
     pp=probabilities(outcome);valid={}
     for q in quotes:
+        from analytics.synthetic_odds import validate_quote
+        if not validate_quote(q):continue
         selection=q.get('selection');odds=q.get('odds');quoted=timestamp(q.get('timestamp'))
         if q.get('match_id')!=match_id or q.get('market')!=MARKET or selection not in pp:continue
         if isinstance(odds,bool) or not isinstance(odds,(int,float)) or not math.isfinite(odds) or odds<=1:continue
@@ -41,7 +43,8 @@ def offers(match_id,outcome,quotes,generated_at,kickoff):
         if key in valid and valid[key][0]>=quoted:continue
         valid[key]=(quoted,dict(matchId=match_id,market=MARKET,selection=selection,prob=100*pp[selection],
             odds=odds,oddsMatchId=match_id,oddsMarket=MARKET,oddsSelection=selection,
-            oddsTimestamp=q['timestamp'],oddsSource=q['source'],generatedAt=generated_at,kickoff=kickoff))
+            oddsTimestamp=q['timestamp'],oddsSource=q['source'],generatedAt=generated_at,kickoff=kickoff,
+            **{k:q[k] for k in ('oddsBasis','underlyingOdds','underlyingSnapshotId','underlyingBookmaker','stakeFractions') if k in q}))
     result=[]
     for selection in ('1X','X2'):
         candidates=[v for (s,source),v in valid.items() if s==selection and v[1]['odds']>=2]

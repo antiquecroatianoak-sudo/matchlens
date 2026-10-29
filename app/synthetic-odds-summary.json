@@ -1,0 +1,55 @@
+{
+  "protocol": {
+    "name": "synthetic-odds-coverage-v1",
+    "scope": "Existing ten top leagues only",
+    "assumption": "Synthetic odds treated as exact test payoff; same-book prices; zero fees.",
+    "formula": "1 / (1/a + 1/b)",
+    "minimum_odds": 2.0,
+    "source_sha256": "c7964f06b9aa02800381c50aca4637ef8c1ad7e940855d3f9c3b5f1bd40e53c5",
+    "code_sha256": "d0a6b94484c9ab5c11bd01a9038a17ab03440e7eb522bc0b566edcd213a189d1",
+    "benchmark": "Every qualifying 1X/X2 offer; NO MatchLens selection, NO 25% round policy.",
+    "model_accuracy": null,
+    "quarter_policy_accuracy": null
+  },
+  "source_rows": 7390,
+  "scope_rows": 648,
+  "valid_price_matches": 648,
+  "invalid_price_matches": 0,
+  "date_min": "2026-06-11",
+  "date_max": "2026-10-27",
+  "overlapping_dates_with_existing_audit": 0,
+  "price_filter_benchmark": {
+    "selected": 284,
+    "scored": 282,
+    "unscored": 2,
+    "hits": 92,
+    "misses": 190,
+    "hit_rate": 0.3262411347517731
+  },
+  "by_selection": {
+    "1X": {
+      "selected": 88,
+      "scored": 87,
+      "unscored": 1,
+      "hits": 34,
+      "misses": 53,
+      "hit_rate": 0.39080459770114945
+    },
+    "X2": {
+      "selected": 196,
+      "scored": 195,
+      "unscored": 1,
+      "hits": 58,
+      "misses": 137,
+      "hit_rate": 0.29743589743589743
+    }
+  },
+  "model_accuracy_status": "Not measurable from this file: no MatchLens forecast join or verified pre-round price times.",
+  "promoted": false,
+  "limitations": [
+    "Different 2026 source-selected population; not the old 2024/26 audit.",
+    "CSV has no round IDs or quote-availability timestamps; some prices entered after match according to source.",
+    "Raw qualifying-offer hit rate is not the app algorithm hit rate or a 25% strategy.",
+    "No closing prices, best-soft cross-book prices or foreign model probabilities used."
+  ]
+}

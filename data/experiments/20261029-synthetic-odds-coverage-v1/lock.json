@@ -1,0 +1,12 @@
+{
+  "name": "synthetic-odds-coverage-v1",
+  "scope": "Existing ten top leagues only",
+  "assumption": "Synthetic odds treated as exact test payoff; same-book prices; zero fees.",
+  "formula": "1 / (1/a + 1/b)",
+  "minimum_odds": 2.0,
+  "source_sha256": "c7964f06b9aa02800381c50aca4637ef8c1ad7e940855d3f9c3b5f1bd40e53c5",
+  "code_sha256": "d0a6b94484c9ab5c11bd01a9038a17ab03440e7eb522bc0b566edcd213a189d1",
+  "benchmark": "Every qualifying 1X/X2 offer; NO MatchLens selection, NO 25% round policy.",
+  "model_accuracy": null,
+  "quarter_policy_accuracy": null
+}

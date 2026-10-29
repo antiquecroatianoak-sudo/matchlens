@@ -1,0 +1,13 @@
+{
+  "source": "TipsAudit",
+  "url": "https://github.com/tipsaudit/track-record-public/blob/main/datasets/tipsaudit-predictions-all.csv",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "TipsAudit \u2014 https://tipsaudit.com",
+  "sha256": "c7964f06b9aa02800381c50aca4637ef8c1ad7e940855d3f9c3b5f1bd40e53c5",
+  "git_blob": "e09b7cb2195ebc55d1dad2b748456cecd87b0032",
+  "retrieved_at": "2026-10-29T12:46:56.973949+00:00",
+  "scope": "Only existing ten top leagues; other source rows excluded from benchmark.",
+  "availability": "No per-row quote timestamp or round ID in CSV. Some Pinnacle prices can be filled after match; source claims first quote before kickoff. No pre-round guarantee.",
+  "transform": "Synthetic odds from raw same-Pinnacle pin_open legs; zero fees assumption; threshold>=2. No foreign model probabilities or closing/best-soft prices."
+}
