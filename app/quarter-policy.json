@@ -1,0 +1,8 @@
+{
+  "policy": "round-quarter-v1",
+  "ratio": 0.25,
+  "weight": 0,
+  "freeze": "before_first_kickoff",
+  "rounding": "floor",
+  "recommendations": "frozen_selected_fixtures_only"
+}
