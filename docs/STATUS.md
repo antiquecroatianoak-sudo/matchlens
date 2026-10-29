@@ -86,3 +86,5 @@ Korisnik je 28.10.2026. izričito odabrao nastavak bez Bugarske i Rumunjske. Obj
 - 31 Python test prošao: novi faktori ne ovise o ciljnim/budućim ishodima, pending utakmice ne ulaze u povijest, embargo i tržišni odabir provjereni. TypeScript prošao. Vizualna provjera nije potvrđena: preview preglednik ranije odbija vezu; nema dokaza oporavka.
 - Sljedeće: prava i vremenska pokrivenost konkretnih novih vanjskih faktora prije adaptera i nove usporedbe. Transformacije rezultata nisu zamjena za stvarne postave/izostanke/kvalitetu prilika. Novi dokaz tek na zaključanoj verziji i neviđenim ishodima. Nema aktualnih preporuka.
 
+
+- Objava factor-search-v1 potvrđena: PR #5 spojen, merge f7877e657233361ea2b912e5281ee3d58ceb5d65; Sites source 20941893f8ff58d77e1d7e2beb1ff845b2d4c46b, deployment appgdep_6ae2f0ddbc6481919b32aae71fd732db succeeded: https://matchlens-luka.antique-croatian-oak.chatgpt.site . Objavljen je istraživački nalaz, bez promocije slabijeg modela ili aktualnih preporuka.
