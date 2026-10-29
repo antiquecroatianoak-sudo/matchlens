@@ -1,0 +1,102 @@
+{
+  "name": "criteria-audit-v1",
+  "rules": [
+    {
+      "id": "all-0",
+      "profile": "all",
+      "threshold": 0.0
+    },
+    {
+      "id": "all-70",
+      "profile": "all",
+      "threshold": 0.7
+    },
+    {
+      "id": "all-80",
+      "profile": "all",
+      "threshold": 0.8
+    },
+    {
+      "id": "form5-0",
+      "profile": "form5",
+      "threshold": 0.0
+    },
+    {
+      "id": "form5-70",
+      "profile": "form5",
+      "threshold": 0.7
+    },
+    {
+      "id": "form5-80",
+      "profile": "form5",
+      "threshold": 0.8
+    },
+    {
+      "id": "form10-0",
+      "profile": "form10",
+      "threshold": 0.0
+    },
+    {
+      "id": "form10-70",
+      "profile": "form10",
+      "threshold": 0.7
+    },
+    {
+      "id": "form10-80",
+      "profile": "form10",
+      "threshold": 0.8
+    },
+    {
+      "id": "venue10-0",
+      "profile": "venue10",
+      "threshold": 0.0
+    },
+    {
+      "id": "venue10-70",
+      "profile": "venue10",
+      "threshold": 0.7
+    },
+    {
+      "id": "venue10-80",
+      "profile": "venue10",
+      "threshold": 0.8
+    },
+    {
+      "id": "streak2-0",
+      "profile": "streak2",
+      "threshold": 0.0
+    },
+    {
+      "id": "streak2-70",
+      "profile": "streak2",
+      "threshold": 0.7
+    },
+    {
+      "id": "streak2-80",
+      "profile": "streak2",
+      "threshold": 0.8
+    },
+    {
+      "id": "h2h3-0",
+      "profile": "h2h3",
+      "threshold": 0.0
+    },
+    {
+      "id": "h2h3-70",
+      "profile": "h2h3",
+      "threshold": 0.7
+    },
+    {
+      "id": "h2h3-80",
+      "profile": "h2h3",
+      "threshold": 0.8
+    }
+  ],
+  "source_sha256": "33a2fec26c965d297a3c911ffd74637f21b826409d1e3c6d288232d3d266d842",
+  "code_sha256": "4fb3049a916d0cb8930e5d21d67b88867c37cc4e332a11d9e71978244beb3292",
+  "league_exclusion_rule": "At most one league: >=100 scored fixtures in EACH development season and >=5 percentage points below all other leagues in EACH season; choose largest mean deficit.",
+  "excluded_league": null,
+  "selection": "No automatic 90% strategy; report every predeclared rule. Active champion unchanged.",
+  "missing_inputs": "Injuries, absences, expected bench, motivation, complete schedule, weather/pitch, confirmed derbies, roles and tactical styles unknown.",
+  "historical_status": "Viewed seasons and previously tuned champion; exploratory reanalysis only."
+}

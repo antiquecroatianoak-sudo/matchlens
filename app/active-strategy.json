@@ -1,0 +1,66 @@
+{
+  "id": "market-specialists-v1",
+  "name": "Odvojeni modeli za ishod i golove",
+  "status": "active_research",
+  "activated_at": "2026-10-29",
+  "live_recommendations_enabled": false,
+  "selection_basis": "Highest observed top-pick accuracy among comparable existing full-cohort candidates; viewed audit, not independent future evidence.",
+  "source_lock": "data/experiments/20261029-market-specialists-v1/specialists-lock.json",
+  "seed_configs": {
+    "outcome": {
+      "window": 50,
+      "half_life": 15,
+      "ridge": 0.001,
+      "group": "snaga",
+      "rho": -0.1,
+      "temperature": 1.0
+    },
+    "goals": {
+      "window": 50,
+      "half_life": 30,
+      "ridge": 0.1,
+      "group": "snaga",
+      "rho": -0.1,
+      "temperature": 1.0
+    }
+  },
+  "policies": {
+    "outcome": {
+      "half_life_days": null,
+      "refit": "quarter"
+    },
+    "goals": {
+      "half_life_days": null,
+      "refit": "season"
+    }
+  },
+  "reference": {
+    "matches": 5772,
+    "hits": 3455,
+    "misses": 2317,
+    "top_pick_accuracy": 0.5985793485793486,
+    "family_brier": 0.21852458845488126
+  },
+  "coverage_policy": "All eligible fixtures; highest-probability offer per fixture; five supported offers",
+  "replacement_policy": {
+    "metric": "top_pick_accuracy",
+    "minimum_distinct_fixtures": 200,
+    "require_identical_fixture_ids": true,
+    "require_same_coverage_policy": true,
+    "require_unused_chronological_validation": true,
+    "keep_previous_version": true
+  },
+  "previously_viewed_audit_seasons": [
+    "2017-18",
+    "2024-25",
+    "2025-26"
+  ],
+  "filtered_90_strategy": null,
+  "history": [
+    {
+      "date": "2026-10-29",
+      "action": "activate_existing_champion",
+      "reason": "New league, person and confidence candidates have not demonstrated better comparable full-cohort accuracy."
+    }
+  ]
+}

@@ -1,0 +1,1028 @@
+{
+  "protocol": {
+    "name": "confidence-search-v1",
+    "created_at": "2026-10-29T08:18:56.196118+00:00",
+    "calibration_fit": "2022-23",
+    "calibration_selection_and_gate": "2023-24",
+    "audit": [
+      "2024-25",
+      "2025-26"
+    ],
+    "inherited_development_warning": "Base seeds/policies previously selected on both development seasons; not a fresh independent development split.",
+    "selected": {
+      "outcome": "identity",
+      "goals": "identity"
+    },
+    "models": {
+      "outcome": {
+        "config": {
+          "id": "identity",
+          "local": false,
+          "ridge": null
+        },
+        "supported": [],
+        "scale": 1.0,
+        "bias": []
+      },
+      "goals": {
+        "config": {
+          "id": "identity",
+          "local": false,
+          "ridge": null
+        },
+        "supported": [],
+        "scale": 1.0,
+        "bias": []
+      }
+    },
+    "rules": [
+      {
+        "id": "all-p0",
+        "profile": "all",
+        "threshold": 0.0
+      },
+      {
+        "id": "all-p60",
+        "profile": "all",
+        "threshold": 0.6
+      },
+      {
+        "id": "all-p70",
+        "profile": "all",
+        "threshold": 0.7
+      },
+      {
+        "id": "all-p80",
+        "profile": "all",
+        "threshold": 0.8
+      },
+      {
+        "id": "all-p85",
+        "profile": "all",
+        "threshold": 0.85
+      },
+      {
+        "id": "all-p90",
+        "profile": "all",
+        "threshold": 0.9
+      },
+      {
+        "id": "all-p95",
+        "profile": "all",
+        "threshold": 0.95
+      },
+      {
+        "id": "agree-p0",
+        "profile": "agree",
+        "threshold": 0.0
+      },
+      {
+        "id": "agree-p60",
+        "profile": "agree",
+        "threshold": 0.6
+      },
+      {
+        "id": "agree-p70",
+        "profile": "agree",
+        "threshold": 0.7
+      },
+      {
+        "id": "agree-p80",
+        "profile": "agree",
+        "threshold": 0.8
+      },
+      {
+        "id": "agree-p85",
+        "profile": "agree",
+        "threshold": 0.85
+      },
+      {
+        "id": "agree-p90",
+        "profile": "agree",
+        "threshold": 0.9
+      },
+      {
+        "id": "agree-p95",
+        "profile": "agree",
+        "threshold": 0.95
+      },
+      {
+        "id": "history-p0",
+        "profile": "history",
+        "threshold": 0.0
+      },
+      {
+        "id": "history-p60",
+        "profile": "history",
+        "threshold": 0.6
+      },
+      {
+        "id": "history-p70",
+        "profile": "history",
+        "threshold": 0.7
+      },
+      {
+        "id": "history-p80",
+        "profile": "history",
+        "threshold": 0.8
+      },
+      {
+        "id": "history-p85",
+        "profile": "history",
+        "threshold": 0.85
+      },
+      {
+        "id": "history-p90",
+        "profile": "history",
+        "threshold": 0.9
+      },
+      {
+        "id": "history-p95",
+        "profile": "history",
+        "threshold": 0.95
+      },
+      {
+        "id": "history_agree-p0",
+        "profile": "history_agree",
+        "threshold": 0.0
+      },
+      {
+        "id": "history_agree-p60",
+        "profile": "history_agree",
+        "threshold": 0.6
+      },
+      {
+        "id": "history_agree-p70",
+        "profile": "history_agree",
+        "threshold": 0.7
+      },
+      {
+        "id": "history_agree-p80",
+        "profile": "history_agree",
+        "threshold": 0.8
+      },
+      {
+        "id": "history_agree-p85",
+        "profile": "history_agree",
+        "threshold": 0.85
+      },
+      {
+        "id": "history_agree-p90",
+        "profile": "history_agree",
+        "threshold": 0.9
+      },
+      {
+        "id": "history_agree-p95",
+        "profile": "history_agree",
+        "threshold": 0.95
+      }
+    ],
+    "selected_gate": null,
+    "gate_selection": ">=200 distinct scored fixtures and Bonferroni one-sided Wilson lower95 >.90; max coverage; else no gate.",
+    "code_sha256": "2a6564011d1b82e05fd6eebe25a05b9f4eef1678b642536f28bec74bf2fd427b",
+    "source_lock_sha256": "234927c27f32f2de3b00b1bd622338b9f7f3de660a091b822e3a947a2ef84bd8",
+    "source_sha256": "33a2fec26c965d297a3c911ffd74637f21b826409d1e3c6d288232d3d266d842",
+    "audit_status": "Previously viewed audit: descriptive reanalysis only. No independent 90% proof."
+  },
+  "calibration_candidates": {
+    "outcome": [
+      {
+        "config": {
+          "id": "identity",
+          "local": false,
+          "ridge": null
+        },
+        "development_log_loss": 0.9686104561876618
+      },
+      {
+        "config": {
+          "id": "pooled-0.01",
+          "local": false,
+          "ridge": 0.01
+        },
+        "development_log_loss": 0.9743915286719699
+      },
+      {
+        "config": {
+          "id": "pooled-0.1",
+          "local": false,
+          "ridge": 0.1
+        },
+        "development_log_loss": 0.9719684629356012
+      },
+      {
+        "config": {
+          "id": "pooled-1.0",
+          "local": false,
+          "ridge": 1.0
+        },
+        "development_log_loss": 0.9691027370197237
+      },
+      {
+        "config": {
+          "id": "league-0.01",
+          "local": true,
+          "ridge": 0.01
+        },
+        "development_log_loss": 0.9749235715852923
+      },
+      {
+        "config": {
+          "id": "league-0.1",
+          "local": true,
+          "ridge": 0.1
+        },
+        "development_log_loss": 0.9718655350135538
+      },
+      {
+        "config": {
+          "id": "league-1.0",
+          "local": true,
+          "ridge": 1.0
+        },
+        "development_log_loss": 0.9691107696419476
+      }
+    ],
+    "goals": [
+      {
+        "config": {
+          "id": "identity",
+          "local": false,
+          "ridge": null
+        },
+        "development_log_loss": 0.6713468042284414
+      },
+      {
+        "config": {
+          "id": "pooled-0.01",
+          "local": false,
+          "ridge": 0.01
+        },
+        "development_log_loss": 0.6720679538654613
+      },
+      {
+        "config": {
+          "id": "pooled-0.1",
+          "local": false,
+          "ridge": 0.1
+        },
+        "development_log_loss": 0.6715497394819254
+      },
+      {
+        "config": {
+          "id": "pooled-1.0",
+          "local": false,
+          "ridge": 1.0
+        },
+        "development_log_loss": 0.6713836669842189
+      },
+      {
+        "config": {
+          "id": "league-0.01",
+          "local": true,
+          "ridge": 0.01
+        },
+        "development_log_loss": 0.672912533352599
+      },
+      {
+        "config": {
+          "id": "league-0.1",
+          "local": true,
+          "ridge": 0.1
+        },
+        "development_log_loss": 0.6717423228152584
+      },
+      {
+        "config": {
+          "id": "league-1.0",
+          "local": true,
+          "ridge": 1.0
+        },
+        "development_log_loss": 0.6713828983636734
+      }
+    ]
+  },
+  "audit_gates": [
+    {
+      "selected": 6243,
+      "scored": 5772,
+      "unscored": 471,
+      "hits": 3455,
+      "misses": 2317,
+      "hit_rate": 0.5985793485793486,
+      "mean_probability": 0.6030999611751324,
+      "offer_coverage": 1.0,
+      "match_coverage": 1.0,
+      "unique_matches": 6243,
+      "days": 399,
+      "wilson95": [
+        0.5858720395233735,
+        0.611155529206388
+      ],
+      "rule": {
+        "id": "all-p0",
+        "profile": "all",
+        "threshold": 0.0
+      },
+      "simultaneous_lower95": 0.5796483169774339,
+      "scored_unique_matches": 5772,
+      "development_90_screen": false
+    },
+    {
+      "selected": 2449,
+      "scored": 2316,
+      "unscored": 133,
+      "hits": 1555,
+      "misses": 761,
+      "hit_rate": 0.6714162348877375,
+      "mean_probability": 0.6829611321057378,
+      "offer_coverage": 0.39227935287522026,
+      "match_coverage": 0.39227935287522026,
+      "unique_matches": 2449,
+      "days": 365,
+      "wilson95": [
+        0.6520168784631502,
+        0.6902478900972131
+      ],
+      "rule": {
+        "id": "all-p60",
+        "profile": "all",
+        "threshold": 0.6
+      },
+      "simultaneous_lower95": 0.6423972823593126,
+      "scored_unique_matches": 2316,
+      "development_90_screen": false
+    },
+    {
+      "selected": 789,
+      "scored": 730,
+      "unscored": 59,
+      "hits": 578,
+      "misses": 152,
+      "hit_rate": 0.7917808219178082,
+      "mean_probability": 0.7768406168001998,
+      "offer_coverage": 0.12638154733301296,
+      "match_coverage": 0.12638154733301296,
+      "unique_matches": 789,
+      "days": 249,
+      "wilson95": [
+        0.7608365887069297,
+        0.8196702699333482
+      ],
+      "rule": {
+        "id": "all-p70",
+        "profile": "all",
+        "threshold": 0.7
+      },
+      "simultaneous_lower95": 0.744762345207799,
+      "scored_unique_matches": 730,
+      "development_90_screen": false
+    },
+    {
+      "selected": 250,
+      "scored": 233,
+      "unscored": 17,
+      "hits": 199,
+      "misses": 34,
+      "hit_rate": 0.8540772532188842,
+      "mean_probability": 0.8445519215889652,
+      "offer_coverage": 0.040044850232260135,
+      "match_coverage": 0.040044850232260135,
+      "unique_matches": 250,
+      "days": 150,
+      "wilson95": [
+        0.8030086707367547,
+        0.893659897433638
+      ],
+      "rule": {
+        "id": "all-p80",
+        "profile": "all",
+        "threshold": 0.8
+      },
+      "simultaneous_lower95": 0.7742764511324544,
+      "scored_unique_matches": 233,
+      "development_90_screen": false
+    },
+    {
+      "selected": 95,
+      "scored": 89,
+      "unscored": 6,
+      "hits": 75,
+      "misses": 14,
+      "hit_rate": 0.8426966292134831,
+      "mean_probability": 0.8792865860754929,
+      "offer_coverage": 0.01521704308825885,
+      "match_coverage": 0.01521704308825885,
+      "unique_matches": 95,
+      "days": 74,
+      "wilson95": [
+        0.7531121499312459,
+        0.9039219033337944
+      ],
+      "rule": {
+        "id": "all-p85",
+        "profile": "all",
+        "threshold": 0.85
+      },
+      "simultaneous_lower95": 0.7013436129707503,
+      "scored_unique_matches": 89,
+      "development_90_screen": false
+    },
+    {
+      "selected": 20,
+      "scored": 19,
+      "unscored": 1,
+      "hits": 14,
+      "misses": 5,
+      "hit_rate": 0.7368421052631579,
+      "mean_probability": 0.9179029047920949,
+      "offer_coverage": 0.0032035880185808103,
+      "match_coverage": 0.0032035880185808103,
+      "unique_matches": 20,
+      "days": 17,
+      "wilson95": [
+        0.5120844910218489,
+        0.8819358765321748
+      ],
+      "rule": {
+        "id": "all-p90",
+        "profile": "all",
+        "threshold": 0.9
+      },
+      "simultaneous_lower95": 0.40828560908182815,
+      "scored_unique_matches": 19,
+      "development_90_screen": false
+    },
+    {
+      "selected": 0,
+      "scored": 0,
+      "unscored": 0,
+      "hits": 0,
+      "misses": 0,
+      "hit_rate": null,
+      "mean_probability": null,
+      "offer_coverage": 0.0,
+      "match_coverage": 0.0,
+      "unique_matches": 0,
+      "days": 0,
+      "wilson95": null,
+      "rule": {
+        "id": "all-p95",
+        "profile": "all",
+        "threshold": 0.95
+      },
+      "simultaneous_lower95": null,
+      "scored_unique_matches": 0,
+      "development_90_screen": false
+    },
+    {
+      "selected": 6243,
+      "scored": 5772,
+      "unscored": 471,
+      "hits": 3455,
+      "misses": 2317,
+      "hit_rate": 0.5985793485793486,
+      "mean_probability": 0.6030999611751324,
+      "offer_coverage": 1.0,
+      "match_coverage": 1.0,
+      "unique_matches": 6243,
+      "days": 399,
+      "wilson95": [
+        0.5858720395233735,
+        0.611155529206388
+      ],
+      "rule": {
+        "id": "agree-p0",
+        "profile": "agree",
+        "threshold": 0.0
+      },
+      "simultaneous_lower95": 0.5796483169774339,
+      "scored_unique_matches": 5772,
+      "development_90_screen": false
+    },
+    {
+      "selected": 2449,
+      "scored": 2316,
+      "unscored": 133,
+      "hits": 1555,
+      "misses": 761,
+      "hit_rate": 0.6714162348877375,
+      "mean_probability": 0.6829611321057378,
+      "offer_coverage": 0.39227935287522026,
+      "match_coverage": 0.39227935287522026,
+      "unique_matches": 2449,
+      "days": 365,
+      "wilson95": [
+        0.6520168784631502,
+        0.6902478900972131
+      ],
+      "rule": {
+        "id": "agree-p60",
+        "profile": "agree",
+        "threshold": 0.6
+      },
+      "simultaneous_lower95": 0.6423972823593126,
+      "scored_unique_matches": 2316,
+      "development_90_screen": false
+    },
+    {
+      "selected": 789,
+      "scored": 730,
+      "unscored": 59,
+      "hits": 578,
+      "misses": 152,
+      "hit_rate": 0.7917808219178082,
+      "mean_probability": 0.7768406168001998,
+      "offer_coverage": 0.12638154733301296,
+      "match_coverage": 0.12638154733301296,
+      "unique_matches": 789,
+      "days": 249,
+      "wilson95": [
+        0.7608365887069297,
+        0.8196702699333482
+      ],
+      "rule": {
+        "id": "agree-p70",
+        "profile": "agree",
+        "threshold": 0.7
+      },
+      "simultaneous_lower95": 0.744762345207799,
+      "scored_unique_matches": 730,
+      "development_90_screen": false
+    },
+    {
+      "selected": 250,
+      "scored": 233,
+      "unscored": 17,
+      "hits": 199,
+      "misses": 34,
+      "hit_rate": 0.8540772532188842,
+      "mean_probability": 0.8445519215889652,
+      "offer_coverage": 0.040044850232260135,
+      "match_coverage": 0.040044850232260135,
+      "unique_matches": 250,
+      "days": 150,
+      "wilson95": [
+        0.8030086707367547,
+        0.893659897433638
+      ],
+      "rule": {
+        "id": "agree-p80",
+        "profile": "agree",
+        "threshold": 0.8
+      },
+      "simultaneous_lower95": 0.7742764511324544,
+      "scored_unique_matches": 233,
+      "development_90_screen": false
+    },
+    {
+      "selected": 95,
+      "scored": 89,
+      "unscored": 6,
+      "hits": 75,
+      "misses": 14,
+      "hit_rate": 0.8426966292134831,
+      "mean_probability": 0.8792865860754929,
+      "offer_coverage": 0.01521704308825885,
+      "match_coverage": 0.01521704308825885,
+      "unique_matches": 95,
+      "days": 74,
+      "wilson95": [
+        0.7531121499312459,
+        0.9039219033337944
+      ],
+      "rule": {
+        "id": "agree-p85",
+        "profile": "agree",
+        "threshold": 0.85
+      },
+      "simultaneous_lower95": 0.7013436129707503,
+      "scored_unique_matches": 89,
+      "development_90_screen": false
+    },
+    {
+      "selected": 20,
+      "scored": 19,
+      "unscored": 1,
+      "hits": 14,
+      "misses": 5,
+      "hit_rate": 0.7368421052631579,
+      "mean_probability": 0.9179029047920949,
+      "offer_coverage": 0.0032035880185808103,
+      "match_coverage": 0.0032035880185808103,
+      "unique_matches": 20,
+      "days": 17,
+      "wilson95": [
+        0.5120844910218489,
+        0.8819358765321748
+      ],
+      "rule": {
+        "id": "agree-p90",
+        "profile": "agree",
+        "threshold": 0.9
+      },
+      "simultaneous_lower95": 0.40828560908182815,
+      "scored_unique_matches": 19,
+      "development_90_screen": false
+    },
+    {
+      "selected": 0,
+      "scored": 0,
+      "unscored": 0,
+      "hits": 0,
+      "misses": 0,
+      "hit_rate": null,
+      "mean_probability": null,
+      "offer_coverage": 0.0,
+      "match_coverage": 0.0,
+      "unique_matches": 0,
+      "days": 0,
+      "wilson95": null,
+      "rule": {
+        "id": "agree-p95",
+        "profile": "agree",
+        "threshold": 0.95
+      },
+      "simultaneous_lower95": null,
+      "scored_unique_matches": 0,
+      "development_90_screen": false
+    },
+    {
+      "selected": 5309,
+      "scored": 5244,
+      "unscored": 65,
+      "hits": 3148,
+      "misses": 2096,
+      "hit_rate": 0.6003051106025934,
+      "mean_probability": 0.6036093528985947,
+      "offer_coverage": 0.8503924395322762,
+      "match_coverage": 0.8503924395322762,
+      "unique_matches": 5309,
+      "days": 387,
+      "wilson95": [
+        0.5869786705568821,
+        0.6134847024803832
+      ],
+      "rule": {
+        "id": "history-p0",
+        "profile": "history",
+        "threshold": 0.0
+      },
+      "simultaneous_lower95": 0.5804491083392952,
+      "scored_unique_matches": 5244,
+      "development_90_screen": false
+    },
+    {
+      "selected": 2148,
+      "scored": 2125,
+      "unscored": 23,
+      "hits": 1428,
+      "misses": 697,
+      "hit_rate": 0.672,
+      "mean_probability": 0.6826408610223487,
+      "offer_coverage": 0.34406535319557907,
+      "match_coverage": 0.34406535319557907,
+      "unique_matches": 2148,
+      "days": 347,
+      "wilson95": [
+        0.6517438694983625,
+        0.6916353882529166
+      ],
+      "rule": {
+        "id": "history-p60",
+        "profile": "history",
+        "threshold": 0.6
+      },
+      "simultaneous_lower95": 0.6416917456995995,
+      "scored_unique_matches": 2125,
+      "development_90_screen": false
+    },
+    {
+      "selected": 677,
+      "scored": 668,
+      "unscored": 9,
+      "hits": 528,
+      "misses": 140,
+      "hit_rate": 0.7904191616766467,
+      "mean_probability": 0.7765597362460613,
+      "offer_coverage": 0.10844145442896043,
+      "match_coverage": 0.10844145442896043,
+      "unique_matches": 677,
+      "days": 234,
+      "wilson95": [
+        0.7579373373099325,
+        0.8195798654555375
+      ],
+      "rule": {
+        "id": "history-p70",
+        "profile": "history",
+        "threshold": 0.7
+      },
+      "simultaneous_lower95": 0.741033455983991,
+      "scored_unique_matches": 668,
+      "development_90_screen": false
+    },
+    {
+      "selected": 214,
+      "scored": 212,
+      "unscored": 2,
+      "hits": 180,
+      "misses": 32,
+      "hit_rate": 0.8490566037735849,
+      "mean_probability": 0.8445698599384481,
+      "offer_coverage": 0.03427839179881467,
+      "match_coverage": 0.03427839179881467,
+      "unique_matches": 214,
+      "days": 135,
+      "wilson95": [
+        0.7946827974833165,
+        0.8910056740857529
+      ],
+      "rule": {
+        "id": "history-p80",
+        "profile": "history",
+        "threshold": 0.8
+      },
+      "simultaneous_lower95": 0.7640949159022263,
+      "scored_unique_matches": 212,
+      "development_90_screen": false
+    },
+    {
+      "selected": 81,
+      "scored": 80,
+      "unscored": 1,
+      "hits": 67,
+      "misses": 13,
+      "hit_rate": 0.8375,
+      "mean_probability": 0.8805318368412227,
+      "offer_coverage": 0.012974531475252283,
+      "match_coverage": 0.012974531475252283,
+      "unique_matches": 81,
+      "days": 64,
+      "wilson95": [
+        0.7415709565930229,
+        0.9025018059704963
+      ],
+      "rule": {
+        "id": "history-p85",
+        "profile": "history",
+        "threshold": 0.85
+      },
+      "simultaneous_lower95": 0.6863535731032058,
+      "scored_unique_matches": 80,
+      "development_90_screen": false
+    },
+    {
+      "selected": 20,
+      "scored": 19,
+      "unscored": 1,
+      "hits": 14,
+      "misses": 5,
+      "hit_rate": 0.7368421052631579,
+      "mean_probability": 0.9179029047920949,
+      "offer_coverage": 0.0032035880185808103,
+      "match_coverage": 0.0032035880185808103,
+      "unique_matches": 20,
+      "days": 17,
+      "wilson95": [
+        0.5120844910218489,
+        0.8819358765321748
+      ],
+      "rule": {
+        "id": "history-p90",
+        "profile": "history",
+        "threshold": 0.9
+      },
+      "simultaneous_lower95": 0.40828560908182815,
+      "scored_unique_matches": 19,
+      "development_90_screen": false
+    },
+    {
+      "selected": 0,
+      "scored": 0,
+      "unscored": 0,
+      "hits": 0,
+      "misses": 0,
+      "hit_rate": null,
+      "mean_probability": null,
+      "offer_coverage": 0.0,
+      "match_coverage": 0.0,
+      "unique_matches": 0,
+      "days": 0,
+      "wilson95": null,
+      "rule": {
+        "id": "history-p95",
+        "profile": "history",
+        "threshold": 0.95
+      },
+      "simultaneous_lower95": null,
+      "scored_unique_matches": 0,
+      "development_90_screen": false
+    },
+    {
+      "selected": 5309,
+      "scored": 5244,
+      "unscored": 65,
+      "hits": 3148,
+      "misses": 2096,
+      "hit_rate": 0.6003051106025934,
+      "mean_probability": 0.6036093528985947,
+      "offer_coverage": 0.8503924395322762,
+      "match_coverage": 0.8503924395322762,
+      "unique_matches": 5309,
+      "days": 387,
+      "wilson95": [
+        0.5869786705568821,
+        0.6134847024803832
+      ],
+      "rule": {
+        "id": "history_agree-p0",
+        "profile": "history_agree",
+        "threshold": 0.0
+      },
+      "simultaneous_lower95": 0.5804491083392952,
+      "scored_unique_matches": 5244,
+      "development_90_screen": false
+    },
+    {
+      "selected": 2148,
+      "scored": 2125,
+      "unscored": 23,
+      "hits": 1428,
+      "misses": 697,
+      "hit_rate": 0.672,
+      "mean_probability": 0.6826408610223487,
+      "offer_coverage": 0.34406535319557907,
+      "match_coverage": 0.34406535319557907,
+      "unique_matches": 2148,
+      "days": 347,
+      "wilson95": [
+        0.6517438694983625,
+        0.6916353882529166
+      ],
+      "rule": {
+        "id": "history_agree-p60",
+        "profile": "history_agree",
+        "threshold": 0.6
+      },
+      "simultaneous_lower95": 0.6416917456995995,
+      "scored_unique_matches": 2125,
+      "development_90_screen": false
+    },
+    {
+      "selected": 677,
+      "scored": 668,
+      "unscored": 9,
+      "hits": 528,
+      "misses": 140,
+      "hit_rate": 0.7904191616766467,
+      "mean_probability": 0.7765597362460613,
+      "offer_coverage": 0.10844145442896043,
+      "match_coverage": 0.10844145442896043,
+      "unique_matches": 677,
+      "days": 234,
+      "wilson95": [
+        0.7579373373099325,
+        0.8195798654555375
+      ],
+      "rule": {
+        "id": "history_agree-p70",
+        "profile": "history_agree",
+        "threshold": 0.7
+      },
+      "simultaneous_lower95": 0.741033455983991,
+      "scored_unique_matches": 668,
+      "development_90_screen": false
+    },
+    {
+      "selected": 214,
+      "scored": 212,
+      "unscored": 2,
+      "hits": 180,
+      "misses": 32,
+      "hit_rate": 0.8490566037735849,
+      "mean_probability": 0.8445698599384481,
+      "offer_coverage": 0.03427839179881467,
+      "match_coverage": 0.03427839179881467,
+      "unique_matches": 214,
+      "days": 135,
+      "wilson95": [
+        0.7946827974833165,
+        0.8910056740857529
+      ],
+      "rule": {
+        "id": "history_agree-p80",
+        "profile": "history_agree",
+        "threshold": 0.8
+      },
+      "simultaneous_lower95": 0.7640949159022263,
+      "scored_unique_matches": 212,
+      "development_90_screen": false
+    },
+    {
+      "selected": 81,
+      "scored": 80,
+      "unscored": 1,
+      "hits": 67,
+      "misses": 13,
+      "hit_rate": 0.8375,
+      "mean_probability": 0.8805318368412227,
+      "offer_coverage": 0.012974531475252283,
+      "match_coverage": 0.012974531475252283,
+      "unique_matches": 81,
+      "days": 64,
+      "wilson95": [
+        0.7415709565930229,
+        0.9025018059704963
+      ],
+      "rule": {
+        "id": "history_agree-p85",
+        "profile": "history_agree",
+        "threshold": 0.85
+      },
+      "simultaneous_lower95": 0.6863535731032058,
+      "scored_unique_matches": 80,
+      "development_90_screen": false
+    },
+    {
+      "selected": 20,
+      "scored": 19,
+      "unscored": 1,
+      "hits": 14,
+      "misses": 5,
+      "hit_rate": 0.7368421052631579,
+      "mean_probability": 0.9179029047920949,
+      "offer_coverage": 0.0032035880185808103,
+      "match_coverage": 0.0032035880185808103,
+      "unique_matches": 20,
+      "days": 17,
+      "wilson95": [
+        0.5120844910218489,
+        0.8819358765321748
+      ],
+      "rule": {
+        "id": "history_agree-p90",
+        "profile": "history_agree",
+        "threshold": 0.9
+      },
+      "simultaneous_lower95": 0.40828560908182815,
+      "scored_unique_matches": 19,
+      "development_90_screen": false
+    },
+    {
+      "selected": 0,
+      "scored": 0,
+      "unscored": 0,
+      "hits": 0,
+      "misses": 0,
+      "hit_rate": null,
+      "mean_probability": null,
+      "offer_coverage": 0.0,
+      "match_coverage": 0.0,
+      "unique_matches": 0,
+      "days": 0,
+      "wilson95": null,
+      "rule": {
+        "id": "history_agree-p95",
+        "profile": "history_agree",
+        "threshold": 0.95
+      },
+      "simultaneous_lower95": null,
+      "scored_unique_matches": 0,
+      "development_90_screen": false
+    }
+  ],
+  "eligible_fixtures": 6243,
+  "unscored_fixtures": 471,
+  "reference": {
+    "matches": 5772,
+    "family_brier": 0.21852458845488126,
+    "outcome_log_loss": 0.979807177260864,
+    "goals_log_loss": 0.6777101227430821,
+    "outcome_hit_rate": 0.520963270963271,
+    "goals_hit_rate": 0.5677408177408177,
+    "top_pick_hit_rate": 0.5985793485793486,
+    "top_pick_mean_probability": 0.6030999611751324
+  },
+  "candidate": {
+    "matches": 5772,
+    "family_brier": 0.21852458845488126,
+    "outcome_log_loss": 0.979807177260864,
+    "goals_log_loss": 0.6777101227430821,
+    "outcome_hit_rate": 0.520963270963271,
+    "goals_hit_rate": 0.5677408177408177,
+    "top_pick_hit_rate": 0.5985793485793486,
+    "top_pick_mean_probability": 0.6030999611751324
+  },
+  "selected_gate_audit": null,
+  "independent_90_confirmed": false,
+  "promoted": false,
+  "limitations": [
+    "No new external facts; correction of existing result-derived model probabilities.",
+    "One offer per fixture in new gate analysis; existing daily Top10/50 still allow multiple offers.",
+    "Unknown outcomes retained in all selection pools; no hidden losses.",
+    "Recorded league-result gap is not complete rest; missing cups/Europe and source gaps.",
+    "Multiplicity bound is an exploratory screen, not independence or prospective proof.",
+    "Previously viewed seasons, inherited development tuning and no archived result-publication timestamps."
+  ]
+}
