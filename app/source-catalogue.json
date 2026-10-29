@@ -1,0 +1,117 @@
+{
+  "checkedAt": "2026-10-29",
+  "sources": [
+    {
+      "id": "transfermarkt",
+      "name": "Transfermarkt",
+      "url": "https://www.transfermarkt.com/",
+      "category": "Igrači, transferi i izostanci",
+      "status": "Referenca · potrebno posebno dopuštenje",
+      "active": false,
+      "purpose": "Kandidatski izvor za promjene kadra, povijest igrača, trenera i izostanaka. Tržišna vrijednost je procjena, ne mjera sigurnosti prognoze.",
+      "coverage": "Pokrivenost konkretnih liga, sezona i polja za naš test nije potvrđena.",
+      "access": "Uvjeti 11.1 zabranjuju automatizirano kopiranje i korištenje sadržaja za AI/ML razvoj. Nema aktivnog uvoza niti treninga iz ovog izvora bez posebnog dopuštenja.",
+      "timing": "Povijesna promjena mora imati dokaz objave prije prognoze; kasnija ispravljena stranica nije as-of arhiva.",
+      "evidence": [
+        "https://www.transfermarkt.com/intern/anb",
+        "https://www.transfermarkt.com/intern/"
+      ]
+    },
+    {
+      "id": "statsbomb",
+      "name": "StatsBomb Open Data · Hudl",
+      "url": "https://github.com/hudl/open-data",
+      "category": "Događaji, sastavi i kvaliteta prilika",
+      "status": "Istraživački kandidat · provjera licence i pokrivenosti",
+      "active": false,
+      "purpose": "Događaji, sastavi i odabrani 360 podaci za dodatne nogometne faktore; mogući pilot kvalitete prilika i stila igre.",
+      "coverage": "Samo odabrana natjecanja i sezone; nije potpuna pokrivenost svih deset naših liga.",
+      "access": "Javni JSON za istraživanje prema uvjetima pružatelja. README traži navođenje StatsBomba i logo pri objavi; LICENSE.pdf treba potpuno provjeriti prije uvoza, treninga i distribucije.",
+      "timing": "Statistike ciljane utakmice nikada nisu ulaz za prognozu iste utakmice. Povijesni događaji i postave trebaju dokaz dostupnosti u trenutku prognoze.",
+      "evidence": [
+        "https://github.com/hudl/open-data/blob/master/README.md",
+        "https://github.com/hudl/open-data/blob/master/LICENSE.pdf"
+      ]
+    },
+    {
+      "id": "football-data-org",
+      "name": "football-data.org",
+      "url": "https://www.football-data.org/",
+      "category": "Rezultati, raspored i identiteti",
+      "status": "Dokumentiran API · nije povezan",
+      "active": false,
+      "purpose": "Dodatna provjera rasporeda, rezultata, tablica i identiteta momčadi.",
+      "coverage": "Besplatno 12 natjecanja; među našima EN, IT, ES, DE, FR, PT i NL. Potpuna povijest i svih deset liga nisu potvrđeni u besplatnom planu.",
+      "access": "Besplatan plan ima odgođene rezultate i raspored, 10 poziva/min; treba registraciju i vlastiti API ključ. Sastavi, duboka povijest i dodatna statistika nisu potvrđeni besplatnim planom. Plaćeni plan nije uključen.",
+      "timing": "Sačuvati vrijeme dohvata i promjene rasporeda; odgođeni feed nije izvor trenutnih potvrđenih sastava.",
+      "evidence": [
+        "https://www.football-data.org/coverage",
+        "https://www.football-data.org/pricing",
+        "https://www.football-data.org/about"
+      ]
+    },
+    {
+      "id": "football-data-co-uk",
+      "name": "Football-Data.co.uk",
+      "url": "https://football-data.co.uk/data",
+      "category": "Povijesni rezultati, statistika i kvote",
+      "status": "Ograničena uporaba · automatski trening nije odobren",
+      "active": false,
+      "purpose": "Kandidat za neovisnu provjeru rezultata, statistike susreta i povijesnih kvota.",
+      "coverage": "Na stranicama navedene sve naše zemlje; konkretna polja i potpuna pokrivenost moraju se provjeriti po sezoni.",
+      "access": "Pravila su namijenjena privatnoj/akademskoj uporabi; najviše dva lagana automatska preuzimanja tjedno. Ne smatrati to dozvolom za naš automatski AI/trening proizvod ili javnu redistribuciju.",
+      "timing": "Razlikovati početne i završne kvote. Završna kvota ne ulazi u raniju prognozu. Za svako polje potvrditi vrijeme dostupnosti.",
+      "evidence": [
+        "https://football-data.co.uk/contact.php",
+        "https://football-data.co.uk/downloadm.php"
+      ]
+    },
+    {
+      "id": "open-meteo",
+      "name": "Open-Meteo · Previous / Single Runs",
+      "url": "https://open-meteo.com/en/docs/previous-runs-api",
+      "category": "Vrijeme prije utakmice",
+      "status": "Dokumentiran povijesni API · nije povezan",
+      "active": false,
+      "purpose": "Temperatura, oborine, vjetar i vlaga iz tada izdanih prognoza za lokaciju stadiona.",
+      "coverage": "Većina modela Previous Runs od siječnja 2024.; iznimke i Single Runs imaju druga razdoblja. Ne pokriva automatski sve starije razvojne sezone.",
+      "access": "Besplatni API je za nekomercijalnu uporabu uz CC BY 4.0 i ograničenja poziva. Prije komercijalnog rada ponovno provjeriti plan; plaćeno nije uključeno.",
+      "timing": "Koristiti odgovarajući prethodni run/lead time prije susreta. Reanaliza i spojeni Historical Forecast nisu dokaz što je bilo poznato 24 sata prije susreta.",
+      "evidence": [
+        "https://open-meteo.com/en/docs/previous-runs-api",
+        "https://open-meteo.com/en/docs/historical-forecast-api",
+        "https://open-meteo.com/en/terms"
+      ]
+    },
+    {
+      "id": "uefa",
+      "name": "UEFA · službene statistike",
+      "url": "https://www.uefa.com/uefachampionsleague/statistics/",
+      "category": "Službena provjera europskih natjecanja",
+      "status": "Referentna provjera · automatizacija nije povezana",
+      "active": false,
+      "purpose": "Provjera europskog rasporeda, učinka igrača i momčadi; dopuna konteksta opterećenja između ligaških utakmica.",
+      "coverage": "Europska natjecanja; nije zamjena za deset domaćih liga niti cjelovit dnevnik ozljeda.",
+      "access": "Javno dostupna službena statistika. Uvjeti za automatizirano preuzimanje, arhiviranje i trening nisu potvrđeni; nema aktivnog adaptera.",
+      "timing": "Trenutačni sezonski zbrojevi nisu povijesni ulazi prije svake utakmice. Potrebne datirane objave i snapshotovi.",
+      "evidence": [
+        "https://www.uefa.com/uefachampionsleague/statistics/"
+      ]
+    },
+    {
+      "id": "openfootball",
+      "name": "OpenFootball",
+      "url": "https://github.com/openfootball/football.json",
+      "category": "Povijesni rezultati · postojeća baza",
+      "status": "Koristi se u povijesnim eksperimentima",
+      "active": true,
+      "purpose": "Postojeća osnova rezultata za učenje i usporedbu modela.",
+      "coverage": "Deset liga u postojećem skupu, uz nepotpune sezone i različitu svježinu. Ne tvrditi potpunu pokrivenost.",
+      "access": "CC0 prema spremljenim izvornim manifestima; dohvaćeni snapshotovi i hashovi. Nema novog automatskog uvoza kroz ovaj katalog.",
+      "timing": "Nedostaju povijesne oznake prve objave; test pretpostavlja dvodnevni odmak dostupnosti rezultata.",
+      "evidence": [
+        "https://github.com/openfootball/football.json"
+      ]
+    }
+  ]
+}

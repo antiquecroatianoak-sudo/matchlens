@@ -65,3 +65,11 @@ Korisnik je 28.10.2026. izričito odabrao nastavak bez Bugarske i Rumunjske. Obj
 - Sljedeće: tražiti dopuštene vremenski označene dodatne faktore iz plana i testirati doprinos na razvojnim segmentima; zadržati sve slabije varijante. Nova neovisna provjera tek na zaključanom modelu i neviđenim ishodima.
 
 - Provjere ovog nastavka: svih 26 Python testova prošlo; TypeScript provjera prošla. Izgradnju i objavu potvrditi tek nakon uspješnog odgovora.
+
+- Potvrda objave ciklusa market-specialists-v1: deployment appgdep_6ae2eca0f28c8191a1016f3e1dac328d succeeded, https://matchlens-luka.antique-croatian-oak.chatgpt.site . GitHub PR #3 spojen, merge 5b8e43e54adaaad15ab2d4d78cc82cbf7f4d6b5d. Issue #1 dopunjen komentarom 6490040003; novo Claude preuzimanje nije potvrđeno.
+
+## Katalog izvora — 29.10.2026.
+- Na zahtjev vlasnika dodan Transfermarkt kao referentni kandidat s jasnim statusom: potrebno posebno dopuštenje za AI/automatizaciju prema uvjetima 11.1. Nema scrapera ni treninga njegovim podacima.
+- Dodan ugrađeni katalog sedam izvora: Transfermarkt, StatsBomb/Hudl Open Data, football-data.org, Football-Data.co.uk, Open-Meteo Previous/Single Runs, UEFA i postojeći OpenFootball. Pretraživ je i odvojen od korisničkih bilješki; broj izvora uključuje katalog.
+- Provjereni službeni uvjeti/dokumentacija i poveznice, uz konkretne blokade. StatsBomb README nije zamjena za punu LICENSE.pdf provjeru; football-data.org besplatan plan ne uključuje potvrđenu duboku statistiku svih deset liga; Football-Data.co.uk ograničava korištenje i ne daje opće dopuštenje za AI/trening proizvode; Open-Meteo traži nekomercijalnu free uporabu i stvarne ranije runove. UEFA referentni pregled nije dozvola automatiziranog treninga.
+- Novi izvori nisu aktivni adapteri. Nisu preuzeti novi sirovi podaci, promijenjeni modeli ni objavljeni novi postoci točnosti. Sljedeće je izabrati izvor i ligu/sezonu s dovoljnim dopuštenjem i pokrivenošću, zatim adapter i vremenski siguran test dodatnog faktora.

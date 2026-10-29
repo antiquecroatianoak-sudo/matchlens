@@ -68,3 +68,9 @@ Novi zasebni razvojni ciklus direct-v1 uspoređuje izravnu multinomnu klasifikac
 Vlasnik je pojasnio da trenutačni prikaz rezultata i aktualnih prognoza nije prioritet. Povijesne utakmice služe ponavljanom učenju faktora i težina; aktualni ulazi slijede nakon pouzdane provjere algoritma. Visoku buduću točnost nije dopušteno obećati niti zaključiti samo iz podešavanja na već poznatim sezonama.
 
 Novi market-specialists-v1 zasebno bira konfiguraciju za 1X2 i golove, polazeći od arhiviranih razvojnih rezultata. Uspoređuje jednaku težinu primjera i kalendarsko prepolovljavanje 730/365 dana te sezonsko/tromjesečno ponovno učenje. Svaki refit koristi rezultate strogo prije početka bloka minus dva dana. Svih 12 kandidata i tragovi treniranja ostaju arhivirani; audit je ponovno opisno pregledavanje 2024/25 i 2025/26. Nema automatskih preporuka.
+
+
+## Proširenje izvora — 29.10.2026.
+Korisnik izričito traži dodati Transfermarkt i po potrebi proširiti izvore točnih informacija i statistike. Implementiran ugrađeni katalog sa statusom stvarne integracije, pokrivenošću, namjenom, uvjetima, vremenskim ograničenjima i izvornim poveznicama. Transfermarkt je referenca koja zahtijeva posebno dopuštenje: točka 11.1 zabranjuje automatizirano kopiranje i uporabu za razvoj AI/ML. Ne tretirati korisnikovo imenovanje izvora kao dopuštenje pružatelja podataka.
+
+U katalogu i StatsBomb Open Data, football-data.org, Football-Data.co.uk, Open-Meteo Previous/Single Runs, službena UEFA statistika i postojeći OpenFootball. Nijedan novi zapis sam ne aktivira uvoz ili trening. Za ozljede, trenere i postave dodatno tražiti datirane službene objave klubova/liga, ali ne tvrditi potpunu pokrivenost bez provjere. Svaki novi faktor treba izvor, vrijeme objave/dohvata, identitete, dostupnost prije ciljanog susreta i usporedbu doprinosa. Bez plaćenih usluga.
