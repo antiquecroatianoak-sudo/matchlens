@@ -1,9 +1,22 @@
 // Only upcoming, calibrated model outputs qualify. Manual trials stay separate.
+export function calculateSyntheticOdds(a:number,b:number):number|null{
+ return Number.isFinite(a)&&Number.isFinite(b)&&a>1&&b>1?1/(1/a+1/b):null;
+}
+export function syntheticQuoteValid(row:{[key:string]:any}):boolean{
+ if(row.oddsBasis===undefined||row.oddsBasis==='quoted')return true;
+ if(row.oddsBasis!=='synthetic_1x2')return false;
+ const legs=row.selection==='1X'?['1','X']:row.selection==='X2'?['X','2']:null;
+ if(!legs||!row.underlyingOdds)return false;
+ const a=row.underlyingOdds[legs[0]],b=row.underlyingOdds[legs[1]];
+ const expected=calculateSyntheticOdds(a,b);
+ return expected!==null&&typeof row.odds==='number'&&Math.abs(expected-row.odds)<=1e-10*Math.max(1,expected)&&typeof row.underlyingSnapshotId==='string'&&!!row.underlyingSnapshotId.trim()&&typeof row.underlyingBookmaker==='string'&&!!row.underlyingBookmaker.trim();
+}
 export function doubleChanceAllowed(row:{[key:string]:any},requireQuote=true):boolean{
  const symbol=typeof row.selection==='string'?row.selection.replace(/\s/g,'').toUpperCase():'';
  const isDouble=row.market==='Dvostruka šansa'||symbol==='1X'||symbol==='X2';
  if(!isDouble)return true;
  if(row.market!=='Dvostruka šansa'||!['1X','X2'].includes(row.selection))return false;
+ if(!syntheticQuoteValid(row))return false;
  const odds=typeof row.odds==='number'||typeof row.odds==='string'?Number(row.odds):NaN;
  if(!Number.isFinite(odds)||odds<2)return false;
  if(!requireQuote)return true; // Manual diary has no verified status.

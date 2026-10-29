@@ -129,6 +129,22 @@
         "https://doi.org/10.6084/m9.figshare.c.4415000",
         "https://github.com/koenvo/wyscout-soccer-match-event-dataset"
       ]
+    },
+    {
+      "id": "tipsaudit",
+      "name": "TipsAudit · stvarne 1X2 kvote",
+      "url": "https://github.com/tipsaudit/track-record-public",
+      "category": "Kvotni izvor · sintetička dvostruka šansa",
+      "status": "Uvezen · provjera kvotnog filtra, nije modelski backtest",
+      "active": true,
+      "purpose": "Osnovne Pinnacle 1/X/2 kvote za dogovorenu sintetičku 1X/X2 cijenu. Bez stranih modelskih prognoza.",
+      "coverage": "7390 izvornih redaka,648 u postojećih deset prvih liga;11.6.–27.10.2026. Ne poklapa se s auditom2024/25–2025/26.",
+      "access": "CC BY4.0 uz atribuciju TipsAudit. Preuzet jedan javni CSV; manifest s hashom. Ostale lige nisu uključene u aktivni opseg.",
+      "timing": "CSV nema vrijeme dostupnosti quotea ili roundID. pin_open može biti prvo opažanje nakon logiranja, uneseno poslije utakmice. Ne dokazuje dostupnost prije prvog susreta kola.",
+      "evidence": [
+        "https://github.com/tipsaudit/track-record-public/blob/main/datasets/README.md",
+        "https://tipsaudit.com/data"
+      ]
     }
   ]
 }
