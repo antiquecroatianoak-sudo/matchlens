@@ -26,6 +26,7 @@ jobs:
           print('Historical rows:',len(rows))
           print('Coverage:',source['coverage'])
           assert len(rows)>=10000, 'Historical archive is insufficient for large testing'
+          print('Historical seasons available:', sorted({r['season'] for r in rows}))
           PY
       - name: Run 84-feature large historical test
         run: python -m analytics.factor_search --data data/openfootball --output out/large-factor-backtest
