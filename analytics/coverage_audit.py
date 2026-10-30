@@ -1,34 +1,45 @@
-"""Audit whether a dataset can support the requested all-factor, seven-market test.
+"""Preflight data coverage for the agreed five-market, full-factor historical test.
 
-Never invent historical odds or fill unavailable factors with zero.
+This module does not run a backtest. Missing historical features stay missing.
+Odds and double-chance markets are deliberately excluded.
 """
-from analytics.full_market_evaluation import MARKETS
-BOOKMAKER_MARKETS = tuple(m for m in MARKETS if m not in ("1X", "X2"))
+from collections import Counter
 
 REQUIRED = (
     "attack_defense", "home_away", "elo", "form", "rest_travel",
     "coach", "player_matchups", "lineups", "injuries_suspensions",
     "tactics", "weather", "pitch", "motivation", "referee"
 )
+MARKETS = ("1", "X", "2", "over_2_5", "under_2_5")
+
 
 def audit(rows, required=REQUIRED):
+    """Count usable factors, without mistaking missing data for zeros.
+
+    Both flattened historical factors and timestamped assembled feature
+    records are accepted. A feature_records entry is only usable after
+    separate prematch assembly has verified its source and timestamps.
+    """
+    rows = list(rows)
     missing = {key: 0 for key in required}
-    missing_odds = {market: 0 for market in BOOKMAKER_MARKETS}
-    eligible = 0
+    leagues = Counter()
+    complete = 0
     for row in rows:
+        leagues[str(row.get("league") or "UNKNOWN")] += 1
         factors = row.get("factors") or {}
-        odds = row.get("odds") or {}
-        complete_factors = True
-        complete_odds = True
+        ok = True
         for key in required:
             if factors.get(key) is None:
                 missing[key] += 1
-                complete_factors = False
-        for market in BOOKMAKER_MARKETS:
-            if odds.get(market) is None:
-                missing_odds[market] += 1
-                complete_odds = False
-        if complete_factors and complete_odds:
-            eligible += 1
-    return {"matches": len(rows), "full_cohort": eligible,
-            "missing_factors": missing, "missing_odds": missing_odds}
+                ok = False
+        complete += int(ok)
+    return {
+        "matches": len(rows),
+        "leagues": len(leagues) - int("UNKNOWN" in leagues),
+        "by_league": dict(sorted(leagues.items())),
+        "full_cohort": complete,
+        "missing_factors": missing,
+        "ready_for_full_factor_test": bool(rows) and len(leagues - {"UNKNOWN"}) >= 10 and complete == len(rows),
+        "markets": MARKETS,
+        "odds_required": False,
+    }
