@@ -26,7 +26,7 @@ def run(rows,years=5,min_training=500):
     ordered=sorted(groups.values(),key=lambda rs:(max(r['date'] for r in rs),min(r['date'] for r in rs)))
     report=[]
     # A round becomes available for learning only after its final match date.
-    completed_rounds=sorted((max(r['date'] for r in group),group) for group in groups.values())
+    completed_rounds=sorted(((max(r['date'] for r in group),group) for group in groups.values()), key=lambda item:item[0])
     # Only complete rounds strictly before the target round can train the model.
     for fixtures in ordered:
         kickoff=min(r['date'] for r in fixtures)
