@@ -24,9 +24,25 @@ jobs:
               if p.returncode: raise RuntimeError(p.stderr)
               return json.loads(p.stdout)
           runs=gh(f'/repos/{repo}/actions/workflows/five-year-round-test.yml/runs?per_page=15')['workflow_runs']
-          lines=['Automated diagnosis of latest MatchLens five-year workflow runs.']
+          lines=['Automated diagnosis and numerical analysis of latest MatchLens five-year workflow runs.']
           for run in runs[:8]:
               lines.append(f"\nRun {run['run_number']} | {run['conclusion']} | {run['head_sha']} | {run['html_url']}")
+              if run.get('conclusion')=='success':
+                  arts=gh(f"/repos/{repo}/actions/runs/{run['id']}/artifacts")['artifacts']
+                  for art in arts:
+                      lines.append(f"ARTIFACT {art['name']} | id={art['id']} | size={art['size_in_bytes']} | expired={art['expired']}")
+                      import tempfile,zipfile,io
+                      with tempfile.NamedTemporaryFile(suffix='.zip') as f:
+                          dl=subprocess.run(['gh','api',f"/repos/{repo}/actions/artifacts/{art['id']}/zip",'--output',f.name],capture_output=True,text=True)
+                          if dl.returncode: lines.append('ARTIFACT DOWNLOAD ERROR: '+dl.stderr[:600])
+                          else:
+                              with zipfile.ZipFile(f.name) as z:
+                                  for name in z.namelist():
+                                      if name.endswith(('five-year-round-learning.json','top25-single-pick.json','second-stage-walkforward.json')) or 'walkforward-threshold-0.json' in name:
+                                          data=json.loads(z.read(name))
+                                          lines.append('RESULT '+name+' '+json.dumps({k:v for k,v in data.items() if k in ('summary','years','comparison','baseline','challenger','period','protocol')},ensure_ascii=False)[:9000])
+                                          if name.endswith('five-year-round-learning.json'):
+                                              lines.append('ROUND COUNT '+str(len(data.get('rounds',[]))))
               jobs=gh(f"/repos/{repo}/actions/runs/{run['id']}/jobs")['jobs']
               for job in jobs:
                   lines.append(f"Job {job['name']} | {job['conclusion']} | job_id={job['id']}")
