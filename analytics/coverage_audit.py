@@ -11,6 +11,8 @@ REQUIRED = (
     "tactics", "weather", "pitch", "motivation", "referee"
 )
 MARKETS = ("1", "X", "2", "over_2_5", "under_2_5")
+# Compatibility with legacy audit clients: bookmaker odds are no longer required.
+BOOKMAKER_MARKETS = ()
 
 
 def audit(rows, required=REQUIRED):
@@ -39,6 +41,7 @@ def audit(rows, required=REQUIRED):
         "by_league": dict(sorted(leagues.items())),
         "full_cohort": complete,
         "missing_factors": missing,
+        "missing_odds": {},
         "ready_for_full_factor_test": bool(rows) and len(leagues - {"UNKNOWN"}) >= 10 and complete == len(rows),
         "markets": MARKETS,
         "odds_required": False,
