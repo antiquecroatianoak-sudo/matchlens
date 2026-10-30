@@ -33,8 +33,8 @@ jobs:
                       lines.append(f"ARTIFACT {art['name']} | id={art['id']} | size={art['size_in_bytes']} | expired={art['expired']}")
                       import tempfile,zipfile,io
                       with tempfile.NamedTemporaryFile(suffix='.zip') as f:
-                          dl=subprocess.run(['gh','api',f"/repos/{repo}/actions/artifacts/{art['id']}/zip",'--output',f.name],capture_output=True,text=True)
-                          if dl.returncode: lines.append('ARTIFACT DOWNLOAD ERROR: '+dl.stderr[:600])
+                          dl=subprocess.run(['gh','api',f"/repos/{repo}/actions/artifacts/{art['id']}/zip"],stdout=f,stderr=subprocess.PIPE)
+                          if dl.returncode: lines.append('ARTIFACT DOWNLOAD ERROR: '+dl.stderr.decode(errors='replace')[:600])
                           else:
                               with zipfile.ZipFile(f.name) as z:
                                   for name in z.namelist():
