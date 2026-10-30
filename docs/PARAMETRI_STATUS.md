@@ -29,3 +29,8 @@ Ažurirano: 2026-10-30. Izvor istine za napredak: ovaj dokument u GitHubu. Statu
 - Dodano deset jediničnih testnih slučajeva i GitHub Actions workflow `factor-tests.yml`.
 - Za commit `50835761d96f3e920f599627f1d315c4030a8f24` upit za workflow runs vratio je prazan popis; nema potvrde prolaska testova.
 - Blokada: provjeriti uvjete korištenja i dobiti stvarne arhivirane podatke s dokazom vremena dostupnosti; bez toga nije moguće pošteno izmjeriti učinak ovih faktora na prognozu.
+
+## Stvarni povijesni uvoz i prvi kontrolni izračun — 2026-10-30
+- Uvezeno 380 EPL rezultata 2023/24 i 380 EPL rezultata 2024/25 iz `openfootball/football.json`, uz izvorne blob SHA vrijednosti u metapodacima i 0 nedostajućih rezultata u ta dva snapshotova.
+- Usporedni jednostavni Poissonov kontrolni izračun na 380 utakmica 2024/25 (trening isključivo prethodni rezultati s dvodnevnim odmakom, datum bez potvrđenog vremena početka): 1X2 155/380 = 40,79%, više/manje 2,5 215/380 = 56,58%, Brier 1X2 = 0,65493. Izračun je izveden u JavaScriptu po istoj matematičkoj logici kao Python modul; izvršavanje Python CI još nije potvrđeno.
+- OVO NIJE dokaz povećanja točnosti: kontrolni model je jednostavniji od već postojećih MatchLens algoritama, bez vremena/terena/postava; sezona 2024/25 već je ranije pregledana. Potreban neovisni test novih faktora i usporedba na istim utakmicama.
