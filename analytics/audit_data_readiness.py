@@ -59,6 +59,7 @@ def audit():
                     and all(isinstance(x, str) and x.strip() for x in configured)
                     and len(set(configured)) == 14 and set(REQUIRED).issubset(configured))
     required_groups = configured if groups_valid else REQUIRED
+    missing_group_definitions = max(0, 14 - len(configured)) if isinstance(configured, list) else 14
     for factor in required_groups:
         path = factor_dir / (factor + ".jsonl")
         valid_ids = set()
@@ -80,14 +81,19 @@ def audit():
                     rejected += 1
         coverage[factor] = {"verified_matches": len(valid_ids), "rejected_records": rejected,
                             "complete": len(valid_ids) == len(ids) and len(ids) > 0}
-    ready = (groups_valid and all(kickoffs.values()) and len(leagues) >= 10 and duplicate_ids == 0 and invalid == 0
+    ready = (bool(ids) and groups_valid and all(kickoffs.values()) and len(leagues) >= 10 and duplicate_ids == 0 and invalid == 0
              and all(v["complete"] for v in coverage.values()))
     return {"historical_backtest_executed": False, "ready_for_full_backtest": ready,
             "leagues": {k: {"matches": v["matches"], "seasons": sorted(v["seasons"])}
                         for k, v in sorted(leagues.items())},
             "total_matches": sum(v["matches"] for v in leagues.values()),
             "duplicate_ids": duplicate_ids, "invalid_rows": invalid,
-            "required_groups_manifest_valid": groups_valid, "required_groups_count": len(configured),
+            "required_groups_manifest_valid": groups_valid,
+            "required_groups_count": len(configured) if isinstance(configured, list) else 0,
+            "missing_group_definitions": missing_group_definitions,
+            "missing_kickoff_timestamps": sum(value is None for value in kickoffs.values()),
+            "missing_factor_matches": {factor: len(ids) - item["verified_matches"]
+                                       for factor, item in coverage.items()},
             "required_factor_coverage": coverage,
             "warning": "Counts are structural only; actual temporal validity, licenses and team mapping still require validation."}
 
