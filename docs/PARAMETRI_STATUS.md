@@ -64,3 +64,10 @@ Ažurirano: 2026-10-30. Izvor istine za napredak: ovaj dokument u GitHubu. Statu
 - `backtest(rounds)` izračunava **jedinstvenu** točnost svih konačnih tipova; ne optimizira sedam odvojenih rezultata. Zaokruživanje 25%: polovice naviše, najmanje 1 za neprazno kolo; ako nema dopuštenih tipova, vraća manje.
 - Dodano pet jediničnih testova. Njihovo izvršavanje u CI još nije potvrđeno. Trenutačno ne postoji potvrđen backtest kompletnog modela na svim stvarnim povijesnim faktorima.
 - Važna metodološka napomena: najviša predviđena vjerojatnost među heterogenim tržištima favorizira široke ishode; potrebno kalibrirati i evaluirati selekciju na stvarnim povijesnim kolima.
+
+## Obvezujuća odluka korisnika — 2026-10-30: nema ponavljanja parcijalnih testova
+- **NE pokretati novi povijesni backtest** dok nisu povezani svi dogovoreni parametri i za njih pribavljeni stvarni povijesni podaci, dostupni prije svake prognoze.
+- Prije toga raditi isključivo inventuru postojeće baze, oporavak ranije uvezenih liga, uvoz i vremensku validaciju nedostajućih parametara, implementaciju zajedničkog modela te provjere integriteta podataka i koda. Jedinični testovi koda nisu povijesni backtest.
+- Konačni test je **jedan**, na svim dostupnim ligama (najmanje deset), s pet tipova (1, X, 2, over 2.5, under 2.5), bez kvota i bez 1X/X2, uz **globalni** odabir najboljih 25% iz cijele baze, ne po ligi.
+- Prije testa objaviti pokrivenost svakog parametra i svake lige. Nedostajući povijesni ulazi nisu nula niti se smiju izmišljati; ako je obvezni faktor nepokriven, prvo riješiti izvor ili izričito prijaviti blokadu.
+- Ranije dodana skripta za osnovni pet-tržišni test nije odobreni završni test i ne treba je pokretati kao zamjenu za puni test.
