@@ -17,6 +17,6 @@ export async function GET(){
   if(!res.ok)throw Error("fixture fetch failed");
   const rows=await res.json();
   if(!Array.isArray(rows))throw Error("unexpected fixture response");
-  return Response.json({fixtures:rows,count:rows.length,source:"configured Supabase fixtures",retrievedAt:new Date().toISOString(),verifiedPredictions:false},{headers:{"Cache-Control":"no-store"}});
+  return Response.json({fixtures:rows,count:rows.length,source:"configured Supabase historical fixtures",retrievedAt:new Date().toISOString(),kickoffTimesVerified:false,verifiedPredictions:false,warning:"Datumi utakmica nisu potvrda točnog vremena početka ni da je susret neodigran."},{headers:{"Cache-Control":"no-store"}});
  }catch{return Response.json({error:"Nije moguće dohvatiti raspored utakmica."},{status:503});}
 }
