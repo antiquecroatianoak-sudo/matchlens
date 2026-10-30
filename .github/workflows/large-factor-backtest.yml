@@ -67,6 +67,20 @@ jobs:
               print('Exploratory confidence threshold:',path.stem,summary)
           print('WARNING: Threshold outcomes on previously viewed audit are descriptive, not an independent test or proof of 90% accuracy.')
           PY
+      - name: Retrospective multi-season expanding-window test
+        run: |
+          python -m scripts.multiseason_walkforward --data data/openfootball --lock out/large-factor-backtest/factor-lock.json --output out/large-factor-backtest/walkforward-predictions.jsonl
+          python -m scripts.join_round_predictions --data data/openfootball --predictions out/large-factor-backtest/walkforward-predictions.jsonl --output out/large-factor-backtest/walkforward-rounds.jsonl
+          for threshold in 0 0.75 0.80 0.85 0.90; do
+            python scripts/top25_single_pick.py --input out/large-factor-backtest/walkforward-rounds.jsonl --min-confidence "$threshold" --output "out/large-factor-backtest/walkforward-threshold-$threshold.json"
+          done
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for path in sorted(Path('out/large-factor-backtest').glob('walkforward-threshold-*.json')):
+              print('RETROSPECTIVE multi-season:',path.stem,json.loads(path.read_text())['summary'])
+          print('CAUTION: Historical model selection used some of these seasons; this is NOT a pristine independent holdout.')
+          PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:
