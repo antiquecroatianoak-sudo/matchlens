@@ -1,6 +1,8 @@
 name: MatchLens historical model backtest
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '47 4 * * *'
   push:
     branches: [main]
     paths:
