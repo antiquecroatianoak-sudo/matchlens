@@ -1,0 +1,44 @@
+name: Historical fixture metadata ingestion
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 4 * * 1'
+permissions:
+  contents: read
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Import public historical match metadata in batches
+        run: |
+          python scripts/import_statsbomb_open_matches.py --output out/source-import/statsbomb-matches.jsonl --report out/source-import/statsbomb-coverage.jsonl
+      - name: Import football-data.org if credential configured
+        env:
+          FOOTBALL_DATA_ORG_TOKEN: ${{ secrets.FOOTBALL_DATA_ORG_TOKEN }}
+        run: |
+          if [ -n "$FOOTBALL_DATA_ORG_TOKEN" ]; then
+            python scripts/import_football_data_org.py --output out/source-import/football-data-matches.jsonl --report out/source-import/football-data-coverage.jsonl
+          else
+            echo 'football-data.org skipped: token unavailable'
+          fi
+      - name: Summarize actual imported coverage
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for p in sorted(Path('out/source-import').glob('*.jsonl')):
+              rows=[json.loads(s) for s in p.read_text().splitlines() if s.strip()]
+              print(f'{p.name}: {len(rows)} records')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: historical-fixture-metadata
+          path: out/source-import/
+          retention-days: 30
