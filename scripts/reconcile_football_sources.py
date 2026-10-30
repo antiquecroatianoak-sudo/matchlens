@@ -14,6 +14,22 @@ def normalize(value):
     value=''.join(c for c in value if not unicodedata.combining(c))
     return ' '.join(re.findall(r'[a-z0-9]+',value))
 
+ALIASES = {'man united':'manchester united','man city':'manchester city',
+ 'wolves':'wolverhampton wanderers','spurs':'tottenham hotspur',
+ 'newcastle':'newcastle united','west ham':'west ham united',
+ 'brighton':'brighton and hove albion','leicester':'leicester city',
+ 'inter':'internazionale','ac milan':'milan','juventus':'juventus',
+ 'psg':'paris saint germain','paris sg':'paris saint germain',
+ 'bayern munich':'bayern munchen','bayern munchen':'bayern munchen',
+ 'gladbach':'borussia monchengladbach','m gladbach':'borussia monchengladbach',
+ 'atletico madrid':'atletico de madrid','ath madrid':'atletico de madrid',
+ 'ath bilbao':'athletic club','athletic bilbao':'athletic club',
+ 'real sociedad':'real sociedad','sporting lisbon':'sporting cp',
+ 'porto':'fc porto','benfica':'sl benfica'}
+def canonical_team(name):
+    key=normalize(name)
+    return ALIASES.get(key,key)
+
 def main():
     root=Path('out/external-source-audit')
     root.mkdir(parents=True,exist_ok=True)
@@ -29,14 +45,14 @@ def main():
         # A normalized exact name is permitted only when unambiguous in that league-season.
         aliases=defaultdict(set)
         for r in candidates:
-            for name in (r['home'],r['away']):aliases[normalize(name)].add(name)
+            for name in (r['home'],r['away']):aliases[canonical_team(name)].add(name)
         counts=Counter()
         with file.open(encoding='utf-8-sig',errors='replace',newline='') as f:
             for row in csv.DictReader(f):
                 if not row.get('HomeTeam') or not row.get('AwayTeam'):continue
                 counts['external_rows']+=1
-                h=aliases.get(normalize(row['HomeTeam']),set())
-                a=aliases.get(normalize(row['AwayTeam']),set())
+                h=aliases.get(canonical_team(row['HomeTeam']),set())
+                a=aliases.get(canonical_team(row['AwayTeam']),set())
                 if len(h)!=1 or len(a)!=1:
                     counts['unresolved_team_alias']+=1;continue
                 try:
