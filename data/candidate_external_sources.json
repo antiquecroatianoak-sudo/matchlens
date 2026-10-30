@@ -87,7 +87,10 @@
       "scope": "player_shots_fouls_tackles_cards",
       "automated_access_approved": false,
       "verified_prematch_records": 0,
-      "original_publication_timestamp_verified": false
+      "original_publication_timestamp_verified": false,
+      "access_status": "explicit_permission_required",
+      "access_evidence": "https://playerstats.football/terms-of-service",
+      "notes": "Terms prohibit scraping and copying without explicit permission."
     },
     {
       "name": "Opta Stats Hub",
@@ -95,7 +98,10 @@
       "scope": "set_pieces_xg_shots_for_against",
       "automated_access_approved": false,
       "verified_prematch_records": 0,
-      "original_publication_timestamp_verified": false
+      "original_publication_timestamp_verified": false,
+      "access_status": "commercial_license_required_for_dataset",
+      "access_evidence": "https://www.statsperform.com/faqs/stats-perform-faqs-pricing-licensing/",
+      "notes": "Public showcase does not grant rights to bulk import or redistribution."
     }
   ],
   "policy": "Use documented permitted access only. For retrospective player/team statistics use strictly prior completed matches. Never infer original availability from current page dates."
