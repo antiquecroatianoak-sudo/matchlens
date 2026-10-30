@@ -23,6 +23,23 @@ jobs:
         run: python -m pip install numpy scipy scikit-learn
       - name: Validate Python syntax before expensive historical test
         run: python -m compileall -q scripts analytics
+      - name: Fast chronological round-learning smoke test
+        run: |
+          python - <<'PY'
+          from scripts.round_by_round_retraining import run
+          rows=[]
+          for league in ('A','B'):
+              for i in range(4):
+                  rows.append({'id':f'{league}-{i}','league':league,'season':'2024',
+                      'round':'1','date':'2024-04-01',
+                      'prob':{'home':0.55,'draw':0.20,'away':0.25,'over2.5':0.51,'under2.5':0.49},
+                      'actual':{'home':i%2==0,'draw':False,'away':i%2!=0,
+                                'over2.5':True,'under2.5':False}})
+          result=run(rows,years=5,min_training=500)
+          assert len(result['rounds'])==2
+          assert all(x['baseline']['selected']<=x['baseline']['fixtures']//4 for x in result['rounds'])
+          print('Round-learning smoke test passed')
+          PY
       - name: Restore historical football archive
         run: python scripts/restore_openfootball_history.py
       - name: Batch import and audit multiple public football sources
