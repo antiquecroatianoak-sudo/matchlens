@@ -65,4 +65,6 @@ def main():
     (root/'fixture-links.jsonl').write_text(''.join(json.dumps(x)+'\n' for x in linked))
     (root/'reconciliation.json').write_text(json.dumps(summary,indent=2))
     print('SOURCE RECONCILIATION',json.dumps({k:v for k,v in summary.items() if k!='by_file'}),flush=True)
+    if list(root.glob('*.csv')) and not linked:
+        raise SystemExit('External CSV files exist but no fixtures reconciled; inspect alias/date diagnostics')
 if __name__=='__main__':main()
