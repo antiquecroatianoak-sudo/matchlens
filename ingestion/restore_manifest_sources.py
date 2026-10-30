@@ -41,7 +41,7 @@ def restore(limit=None):
             if len(payload) > 4_000_000:
                 raise ValueError("source file too large")
             if hashlib.sha256(payload).hexdigest() != item["sha256"]:
-                raise ValueError("SHA256 does not match source manifest")
+                raise ValueError(f"SHA256 mismatch: expected={item['sha256']} actual={hashlib.sha256(payload).hexdigest()} url={raw_url}")
             parsed = json.loads(payload)
             if not isinstance(parsed, dict) or not isinstance(parsed.get("matches"), list):
                 raise ValueError("unexpected source format")
