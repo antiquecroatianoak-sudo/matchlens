@@ -85,6 +85,9 @@ jobs:
               print('RETROSPECTIVE multi-season:',path.stem,json.loads(path.read_text())['summary'])
           print('CAUTION: Historical model selection used some of these seasons; this is NOT a pristine independent holdout.')
           PY
+      - name: Research-only second-stage chronological reranking
+        run: |
+          python -m scripts.second_stage_walkforward --input out/large-factor-backtest/walkforward-rounds.jsonl --output out/large-factor-backtest/second-stage-walkforward.json
       - name: Audit top-quarter selection and compare fixed ranking alternatives
         run: |
           python -m scripts.selection_diagnostics --input out/large-factor-backtest/walkforward-rounds.jsonl --output out/large-factor-backtest/selection-diagnostics.json
