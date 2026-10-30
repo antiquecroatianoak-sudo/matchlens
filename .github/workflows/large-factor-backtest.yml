@@ -91,7 +91,22 @@ jobs:
       - name: Research-only second-stage chronological reranking
         run: |
           python -m scripts.second_stage_walkforward --input out/large-factor-backtest/walkforward-rounds.jsonl --output out/large-factor-backtest/second-stage-walkforward.json
-      - name: Five-year chronological round-by-round learning test\n        run: |\n          python -m scripts.round_by_round_retraining --input out/large-factor-backtest/walkforward-rounds.jsonl --years 5 --output out/large-factor-backtest/five-year-round-learning.json\n          python - <<'PY'\n          import json\n          r=json.load(open('out/large-factor-backtest/five-year-round-learning.json'))\n          assert r['rounds'], 'No historical rounds evaluated'\n          evaluated=[x for x in r['rounds'] if 'challenger' in x]\n          assert evaluated, 'No challenger rounds evaluated'\n          for row in evaluated:\n              assert row['challenger']['selected']<=row['baseline']['fixtures']//4\n          print('Five-year evaluated rounds:',len(evaluated))\n          print('Baseline hits:',sum(x['baseline']['hits'] for x in evaluated))\n          print('Challenger hits:',sum(x['challenger']['hits'] for x in evaluated))\n          PY\n      - name: Audit top-quarter selection and compare fixed ranking alternatives
+      - name: Five-year chronological round-by-round learning test
+        run: |
+          python -m scripts.round_by_round_retraining --input out/large-factor-backtest/walkforward-rounds.jsonl --years 5 --output out/large-factor-backtest/five-year-round-learning.json
+          python - <<'PY'
+          import json
+          r=json.load(open('out/large-factor-backtest/five-year-round-learning.json'))
+          assert r['rounds'], 'No historical rounds evaluated'
+          evaluated=[x for x in r['rounds'] if 'challenger' in x]
+          assert evaluated, 'No challenger rounds evaluated'
+          for row in evaluated:
+              assert row['challenger']['selected']<=row['baseline']['fixtures']//4
+          print('Five-year evaluated rounds:',len(evaluated))
+          print('Baseline hits:',sum(x['baseline']['hits'] for x in evaluated))
+          print('Challenger hits:',sum(x['challenger']['hits'] for x in evaluated))
+          PY
+      - name: Audit top-quarter selection and compare fixed ranking alternatives
         run: |
           python -m scripts.selection_diagnostics --input out/large-factor-backtest/walkforward-rounds.jsonl --output out/large-factor-backtest/selection-diagnostics.json
       - uses: actions/upload-artifact@v4
