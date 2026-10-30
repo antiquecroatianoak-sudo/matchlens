@@ -26,3 +26,5 @@ jobs:
         with:
           name: five-market-comparison
           path: out/large-factor-backtest/five-market-comparison.json
+
+# Trigger a fresh branch-push CI comparison run.
