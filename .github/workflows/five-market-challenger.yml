@@ -1,5 +1,7 @@
 name: Five-market challenger comparison
 on:
+  pull_request:
+    types: [opened, reopened, synchronize]
   push:
     branches: [feature/five-market-chronological-20261030]
   workflow_dispatch:
@@ -27,4 +29,3 @@ jobs:
           name: five-market-comparison
           path: out/large-factor-backtest/five-market-comparison.json
 
-# Trigger a fresh branch-push CI comparison run.
