@@ -9,6 +9,7 @@ on:
       - 'scripts/sync_openfootball_oidc.py'
       - 'scripts/sync_openfootball_supabase.py'
       - 'scripts/restore_openfootball_history.py'
+      - 'scripts/backtest_baseline.py'
   schedule:
     - cron: '23 3 * * *'
 permissions:
@@ -47,3 +48,12 @@ jobs:
           PY
       - name: Sync fixture batches using GitHub OIDC
         run: python scripts/sync_openfootball_oidc.py
+      - name: Backtest historical 1X2 predictions
+        run: python scripts/backtest_baseline.py
+      - name: Save backtest metrics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: matchlens-historical-backtest
+          path: out/backtest_baseline.json
+          if-no-files-found: ignore
