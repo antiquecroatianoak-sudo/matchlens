@@ -1,4 +1,5 @@
 name: MatchLens bulk fixture sync
+# OIDC receiver accepts scheduled, manual, and main-branch push runs.
 on:
   workflow_dispatch:
   push:
