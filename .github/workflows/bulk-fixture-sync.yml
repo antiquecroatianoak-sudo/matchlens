@@ -1,5 +1,5 @@
 name: MatchLens bulk fixture sync
-# OIDC receiver accepts scheduled, manual, and main-branch push runs.
+# Retry OIDC fixture sync after Edge Function v5 verification update.
 on:
   workflow_dispatch:
   push:
