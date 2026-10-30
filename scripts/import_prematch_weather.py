@@ -11,7 +11,7 @@ import json
 import math
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime, timezone
+from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import urlopen
@@ -82,6 +82,8 @@ def main():
     parser.add_argument("--workers", type=int, default=4, choices=range(1, 9))
     args = parser.parse_args()
     output = Path(args.output)
+    if args.workers < 1 or args.workers > 8:
+        parser.error("--workers must be between 1 and 8")
     output.parent.mkdir(parents=True, exist_ok=True)
     groups = defaultdict(list)
     skipped = 0
@@ -113,7 +115,7 @@ def main():
                 print(json.dumps({"group_skipped": len(futures[future]), "reason": str(error)}), flush=True)
                 continue
             for result in results:
-                out.write(json.dumps(result) + "\\n")
+                out.write(json.dumps(result) + "\n")
                 ok += 1
     print(json.dumps({"weather_rows": ok, "skipped": skipped, "api_groups": len(groups), "output": str(output)}))
 
