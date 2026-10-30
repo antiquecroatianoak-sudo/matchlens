@@ -58,3 +58,9 @@ Ažurirano: 2026-10-30. Izvor istine za napredak: ovaj dokument u GitHubu. Statu
 - Dodan `analytics/factor_assembly.py`: zajednički ulaz za sve faktore; za svaki odabire samo zapis s dokazanim `source_id` i `available_at` (te `issued_at` gdje postoji) prije cutoffa. Nedostajuće podatke označava kao nedostajuće, ne izmišlja vrijednosti.
 - Dodana tri testa za buduće podatke, odabir zadnjeg dopuštenog zapisa i zabranu prognoze nakon početka.
 - Ovo je priprema za spajanje stvarnih vanjskih izvora; nije dokaz da su vrijeme, ozljede, postave, kvote ili ostali faktori već prikupljeni. Nema novog potvrđenog modelskog backtesta.
+
+## Implementiran zajednički odabir kola (2026-10-30)
+- `analytics/round_selector.py`: odabire jedan dopušteni tip po utakmici, potom gornjih 25% utakmica **unutar svakog kola**, strogo primjenjuje >1,30 za 1/X/2 i O/U 2,5 uz datiranu stvarnu kvotu te >2,00 za sintetičke 1X/X2.
+- `backtest(rounds)` izračunava **jedinstvenu** točnost svih konačnih tipova; ne optimizira sedam odvojenih rezultata. Zaokruživanje 25%: polovice naviše, najmanje 1 za neprazno kolo; ako nema dopuštenih tipova, vraća manje.
+- Dodano pet jediničnih testova. Njihovo izvršavanje u CI još nije potvrđeno. Trenutačno ne postoji potvrđen backtest kompletnog modela na svim stvarnim povijesnim faktorima.
+- Važna metodološka napomena: najviša predviđena vjerojatnost među heterogenim tržištima favorizira široke ishode; potrebno kalibrirati i evaluirati selekciju na stvarnim povijesnim kolima.
