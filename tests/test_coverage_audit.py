@@ -1,5 +1,5 @@
 import unittest
-from analytics.coverage_audit import audit, REQUIRED
+from analytics.coverage_audit import audit, REQUIRED, BOOKMAKER_MARKETS
 from analytics.full_market_evaluation import MARKETS
 
 class CoverageAuditTests(unittest.TestCase):
@@ -7,7 +7,7 @@ class CoverageAuditTests(unittest.TestCase):
         result = audit([{"home_goals":1,"away_goals":0}])
         self.assertEqual(result["full_cohort"],0)
         self.assertEqual(set(result["missing_factors"]),set(REQUIRED))
-        self.assertTrue(all(result["missing_odds"][m]==1 for m in MARKETS))
+        self.assertTrue(all(result["missing_odds"][m]==1 for m in BOOKMAKER_MARKETS))
     def test_complete(self):
         row = {"factors":{k:1 for k in REQUIRED},"odds":{m:{"price":2.5} for m in MARKETS}}
         self.assertEqual(audit([row])["full_cohort"],1)
