@@ -80,6 +80,22 @@
       "automated_access_approved": false,
       "verified_prematch_records": 0,
       "original_publication_timestamp_verified": false
+    },
+    {
+      "name": "PlayerStats",
+      "url": "https://playerstats.football/",
+      "scope": "player_shots_fouls_tackles_cards",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false
+    },
+    {
+      "name": "Opta Stats Hub",
+      "url": "https://theanalyst.com/eu/2023/08/2023-24-football-stats-opta-data/",
+      "scope": "set_pieces_xg_shots_for_against",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false
     }
   ],
   "policy": "Use documented permitted access only. For retrospective player/team statistics use strictly prior completed matches. Never infer original availability from current page dates."
