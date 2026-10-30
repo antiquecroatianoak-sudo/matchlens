@@ -31,6 +31,14 @@ class PriorXgTests(unittest.TestCase):
         self.assertEqual(len(result["factors"]), 0)
         self.assertEqual(len(result["missing"]), 1)
 
+    def test_nonfinite_xg_rejected(self):
+        result = prior_xg_features([prior("bad", float("nan"), "10"), prior("inf", float("inf"), "11")], [], min_history=1)
+        self.assertEqual(len(result["rejected_history"]), 2)
+
+    def test_duplicate_team_match_rejected(self):
+        result = prior_xg_features([prior("old", 1, "10"), prior("old", 5, "10")], [], min_history=1)
+        self.assertEqual(len(result["rejected_history"]), 1)
+
     def test_invalid_postmatch_publication_rejected(self):
         row = dict(prior("old", 1, "10"), published_at="2026-10-10T16:00:00Z")
         result = prior_xg_features([row], [], min_history=1)
