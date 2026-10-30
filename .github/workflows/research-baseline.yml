@@ -1,6 +1,13 @@
 name: MatchLens research import and baseline
 on:
   pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
+    paths:
+      - 'scripts/research_sqlite_backtest.py'
+      - 'data/research/statsbomb_bundesliga_2023_24_sample.json'
+      - '.github/workflows/research-baseline.yml'
+  push:
+    branches: [main]
     paths:
       - 'scripts/research_sqlite_backtest.py'
       - 'data/research/statsbomb_bundesliga_2023_24_sample.json'
