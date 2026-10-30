@@ -102,7 +102,7 @@ def run(data, output, ui):
     labels=dict(outcome=y[:,:3].argmax(axis=1),goals=y[:,3].astype(int))
     trials=[]
     for group,cols in GROUPS.items():
-        for leaves,l2 in ((7,10.),(15,1.)):
+        for leaves,l2 in ((5,20.),(7,10.),(11,5.),(15,1.),(23,2.)):
             config=dict(group=group,leaves=leaves,l2=l2);pred={}
             for family in ('outcome','goals'):
                 model=learner(config).fit(x[train][:,cols],labels[family][train])
