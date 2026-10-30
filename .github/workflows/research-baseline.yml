@@ -1,0 +1,38 @@
+name: MatchLens research import and baseline
+on:
+  pull_request:
+    paths:
+      - 'scripts/research_sqlite_backtest.py'
+      - 'data/research/statsbomb_bundesliga_2023_24_sample.json'
+      - '.github/workflows/research-baseline.yml'
+  workflow_dispatch:
+jobs:
+  research-baseline:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Import to isolated SQLite and run chronological baseline
+        run: python scripts/research_sqlite_backtest.py
+      - name: Check import integrity and report
+        run: |
+          python - <<'PY'
+          import json, sqlite3
+          r=json.load(open('out/research_backtest.json'))
+          db=sqlite3.connect('out/matchlens_research.sqlite')
+          assert db.execute('select count(*) from research_matches').fetchone()[0]==34
+          assert r['source_rows']==34 and r['test_predictions']==24
+          assert r['status']=='exploratory_only'
+          print('Research DB and test verified:',r['correct'],'/',r['test_predictions'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: matchlens-research-db-and-report
+          path: |
+            out/matchlens_research.sqlite
+            out/research_backtest.json
+          retention-days: 14
