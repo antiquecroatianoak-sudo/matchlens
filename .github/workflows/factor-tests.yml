@@ -1,0 +1,25 @@
+name: MatchLens Python factor tests
+on:
+  pull_request:
+    paths:
+      - 'analytics/**'
+      - 'tests/**'
+      - '.github/workflows/factor-tests.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'analytics/**'
+      - 'tests/**'
+      - '.github/workflows/factor-tests.yml'
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate Python source
+        run: python -m compileall -q analytics tests
+      - name: Run historical factor unit tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
