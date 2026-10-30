@@ -9,6 +9,8 @@ on:
       - 'analytics/factor_snapshot_import.py'
       - 'analytics/factor_coverage.py'
       - 'tests/test_factor_coverage.py'
+      - 'analytics/prior_xg.py'
+      - 'tests/test_prior_xg.py'
       - '.github/workflows/factor-intake-validation.yml'
   pull_request:
     paths:
@@ -18,6 +20,8 @@ on:
       - 'analytics/factor_snapshot_import.py'
       - 'analytics/factor_coverage.py'
       - 'tests/test_factor_coverage.py'
+      - 'analytics/prior_xg.py'
+      - 'tests/test_prior_xg.py'
       - '.github/workflows/factor-intake-validation.yml'
   workflow_dispatch:
 permissions:
@@ -36,3 +40,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_factor_intake.py' -v
           python -m unittest discover -s tests -p 'test_factor_snapshot_import.py' -v
           python -m unittest discover -s tests -p 'test_factor_coverage.py' -v
+          python -m unittest discover -s tests -p 'test_prior_xg.py' -v
