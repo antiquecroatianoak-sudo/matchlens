@@ -13,9 +13,9 @@ def fetch(url):
     req=urllib.request.Request(url,headers={"User-Agent":"MatchLens-research/1.0"})
     with urllib.request.urlopen(req,timeout=35) as response:
         return json.load(response)
-def run(max_seasons=12):
+def run(max_seasons=150):
     catalog=fetch(BASE+"competitions.json")
-    catalog=sorted(catalog,key=lambda c:(str(c.get("season_name","")),str(c.get("competition_name",""))),reverse=True)
+    catalog=sorted(catalog,key=lambda c:(str(c.get("competition_name","")),str(c.get("season_name",""))),reverse=True)
     results=[]
     failures=[]
     for comp in catalog[:max_seasons]:
