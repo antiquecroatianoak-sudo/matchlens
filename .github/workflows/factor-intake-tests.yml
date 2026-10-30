@@ -1,0 +1,20 @@
+name: MatchLens external factor intake tests
+on:
+  pull_request:
+    paths:
+      - 'analytics/factor_intake.py'
+      - 'tests/test_factor_intake.py'
+      - '.github/workflows/factor-intake-tests.yml'
+  workflow_dispatch:
+jobs:
+  factor-intake:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run external factor temporal validation tests
+        run: python -m unittest discover -s tests -p 'test_factor_intake.py' -v
