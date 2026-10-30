@@ -6,6 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python -m analytics.build_result_features
+      - run: python -m analytics.create_factor_database /tmp/matchlens_factors.sqlite
       - run: python -m analytics.connect_external_factors
       - run: python -m analytics.audit_normalized_readiness
       - run: python -m analytics.test_normalized_archive
