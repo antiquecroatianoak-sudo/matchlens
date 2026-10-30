@@ -156,6 +156,28 @@ def main():
         'by_market':breakdown(chronological_report['selected'],'market'),
         'note':'Previously viewed historical seasons; not an untouched holdout. No production deployment approval.'
     }
+    # Counterfactual audit: one prematch top-probability tip for EVERY fixture,
+    # including those not selected. Outcomes are read only after ranking.
+    chosen_ids={item['id'] for item in selected}
+    counterfactual={'selected':collections.defaultdict(lambda:[0,0]),
+                    'rejected':collections.defaultdict(lambda:[0,0])}
+    for row in rows:
+        probs=row['prob']
+        if not all(m in probs and isinstance(probs[m],(int,float))
+                   and math.isfinite(probs[m]) and 0<=probs[m]<=1 for m in MARKETS):
+            continue
+        market=max(MARKETS,key=lambda m:(probs[m],-MARKETS.index(m)))
+        if 'actual' not in row or market not in row['actual']:
+            continue
+        group='selected' if row['id'] in chosen_ids else 'rejected'
+        bucket=f"{min(9,int(probs[market]*10))/10:.1f}"
+        counterfactual[group][bucket][0]+=1
+        counterfactual[group][bucket][1]+=int(bool(row['actual'][market]))
+    diagnostics['rejected_fixture_counterfactual']={
+        group:{bucket:{'fixtures':n,'hits':h,'hit_rate':h/n if n else None}
+               for bucket,(n,h) in sorted(bins.items())}
+        for group,bins in counterfactual.items()}
+    diagnostics['counterfactual_warning']='Descriptive audit only: outcomes of rejected fixtures MUST NOT be used to rank those fixtures or fit a model on the same evaluation season.'
     diagnostics['threshold_policy']='80% fixed for chronological research comparison only; no deployment until genuinely unseen future fixtures are evaluated.'
     diagnostics['eligible_for_further_validation']=eligible
     diagnostics['recommendation']='Keep original until independent future-season confirmation; retrospective eligibility is not deployment approval.'
