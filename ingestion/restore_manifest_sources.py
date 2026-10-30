@@ -55,7 +55,7 @@ def restore(limit=None, reconcile=False):
         except (OSError, ValueError, KeyError) as exc:
             results["failed"].append({"file": name, "reason": str(exc)})
     if changed:
-        MANIFEST.write_text(json.dumps({"source_files": sources}, indent=2, ensure_ascii=False) + "\\n", encoding="utf-8")
+        MANIFEST.write_text(json.dumps({"source_files": sources}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     return results
 
 
