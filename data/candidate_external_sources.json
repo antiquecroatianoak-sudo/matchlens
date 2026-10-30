@@ -1,0 +1,86 @@
+{
+  "purpose": "Candidate external sources for historical pre-match research; listing is not permission to scrape or proof of historical timestamp",
+  "sources": [
+    {
+      "name": "MyFootballFacts",
+      "url": "https://www.myfootballfacts.com/",
+      "scope": "historical_results",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false
+    },
+    {
+      "name": "FBref",
+      "url": "https://fbref.com/",
+      "scope": "team_player_statistics",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false
+    },
+    {
+      "name": "SofaScore",
+      "url": "https://www.sofascore.com/",
+      "scope": "lineups_form",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false
+    },
+    {
+      "name": "FotMob",
+      "url": "https://www.fotmob.com/",
+      "scope": "lineups_injuries",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false
+    },
+    {
+      "name": "WhoScored",
+      "url": "https://www.whoscored.com/",
+      "scope": "tactics_player_statistics",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false
+    },
+    {
+      "name": "Transfermarkt",
+      "url": "https://www.transfermarkt.com/",
+      "scope": "injuries_transfers_coaches",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false
+    },
+    {
+      "name": "StatBunker",
+      "url": "https://www.statbunker.com/",
+      "scope": "referee_team_statistics",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false
+    },
+    {
+      "name": "Understat",
+      "url": "https://understat.com/",
+      "scope": "historical_xg",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false
+    },
+    {
+      "name": "Soccerway",
+      "url": "https://int.soccerway.com/",
+      "scope": "fixtures_lineups",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false
+    },
+    {
+      "name": "WorldFootball.net",
+      "url": "https://www.worldfootball.net/",
+      "scope": "historical_results",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false
+    }
+  ],
+  "policy": "Use documented permitted access only. For retrospective player/team statistics use strictly prior completed matches. Never infer original availability from current page dates."
+}
