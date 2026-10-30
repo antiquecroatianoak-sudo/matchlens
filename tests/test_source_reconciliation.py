@@ -37,6 +37,20 @@ class SinglePickSelectionTests(unittest.TestCase):
                          {'match-0':'home','match-1':'under2.5'})
         self.assertEqual(report['summary']['hits'],2)
 
+    def test_abstain_below_confidence_threshold(self):
+        rows=[]
+        for i in range(8):
+            p={'home':0.55,'draw':0.20,'away':0.25,
+               'over2.5':0.40,'under2.5':0.60}
+            if i==0:p={'home':0.82,'draw':0.08,'away':0.10,
+                       'over2.5':0.52,'under2.5':0.48}
+            rows.append(self.fixture(8,i,p))
+        report=select(rows,min_confidence=0.80)
+        self.assertEqual(report['summary']['selected'],1)
+        self.assertEqual(report['selected'][0]['market'],'home')
+        self.assertEqual(report['selected'][0]['id'],'match-0')
+        self.assertLessEqual(report['summary']['selected'],len(rows)//4)
+
     def test_at_most_quarter_and_no_double_counting(self):
         rows=[self.fixture(10,i,{'home':0.6,'draw':0.1,'away':0.3,
                     'over2.5':0.4,'under2.5':0.6}) for i in range(10)]
