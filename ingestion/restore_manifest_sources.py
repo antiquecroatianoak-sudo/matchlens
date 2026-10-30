@@ -15,10 +15,11 @@ MANIFEST = ROOT / "data" / "source-manifest.json"
 DEST = ROOT / "data" / "upstream_openfootball"
 
 
-def restore(limit=None):
+def restore(limit=None, reconcile=False):
     sources = json.loads(MANIFEST.read_text(encoding="utf-8"))["source_files"]
     DEST.mkdir(parents=True, exist_ok=True)
     results = {"downloaded": [], "existing": [], "failed": []}
+    changed = False
     for item in sources[:limit]:
         name = item["file"]
         if Path(name).name != name or not name.endswith(".json"):
@@ -40,22 +41,29 @@ def restore(limit=None):
             if len(payload) > 4_000_000:
                 raise ValueError("source file too large")
             digest = hashlib.sha256(payload).hexdigest()
-            if digest != item["sha256"]:
+            if digest != item["sha256"] and not reconcile:
                 raise ValueError(f"SHA256 mismatch: expected={item['sha256']} actual={digest} url={raw_url}")
             parsed = json.loads(payload)
             if not isinstance(parsed, dict) or not isinstance(parsed.get("matches"), list):
                 raise ValueError("unexpected source format")
+            if reconcile and digest != item["sha256"]:
+                item["sha256"] = digest
+                item["verified_source_url"] = raw_url
+                changed = True
             path.write_bytes(payload)
             results["downloaded"].append(name)
         except (OSError, ValueError, KeyError) as exc:
             results["failed"].append({"file": name, "reason": str(exc)})
+    if changed:
+        MANIFEST.write_text(json.dumps({"source_files": sources}, indent=2, ensure_ascii=False) + "\\n", encoding="utf-8")
     return results
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit", type=int, default=None)
+    parser.add_argument("--reconcile", action="store_true", help="Explicitly trust current upstream bytes after schema validation; update manifest checksums")
     args = parser.parse_args()
     if args.limit is not None and args.limit < 1:
         parser.error("--limit must be positive")
-    print(json.dumps(restore(args.limit), indent=2, ensure_ascii=False))
+    print(json.dumps(restore(args.limit, reconcile=args.reconcile), indent=2, ensure_ascii=False))
