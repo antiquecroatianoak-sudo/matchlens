@@ -27,7 +27,7 @@ def alternative(rows,rule):
             market=home if p[home]-1/3 >= p[total]-1/2 else total
             score=p[market]-(1/3 if market in MARKETS[:3] else 1/2)
         else:score=confidence
-        clone=dict(r,prob={m:(score if m==market else -1) for m in MARKETS})
+        clone=dict(r,prob={m:(min(1.,max(0.,score)) if m==market else 0.) for m in MARKETS})
         clone['_market']=market
         changed.append(clone)
     return changed
@@ -37,9 +37,10 @@ def evaluate(rows,rule):
     altered=alternative(rows,rule)
     report=select(altered)
     lookup={r['id']:r for r in rows}
+    market_lookup={r['id']:r['_market'] for r in altered}
     for item in report['selected']:
         actual=lookup[item['id']]
-        item['market']=next(r['_market'] for r in altered if r['id']==item['id'])
+        item['market']=market_lookup[item['id']]
         item['correct']=bool(actual['actual'][item['market']])
         item['probability']=actual['prob'][item['market']]
     hits=sum(int(x['correct']) for x in report['selected'])
