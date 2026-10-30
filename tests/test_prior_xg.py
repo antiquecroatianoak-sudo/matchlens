@@ -44,6 +44,21 @@ class PriorXgTests(unittest.TestCase):
         result = prior_xg_features([row], [], min_history=1)
         self.assertEqual(len(result["rejected_history"]), 1)
 
+    def test_numeric_and_string_ids_reconcile(self):
+        rows = [dict(prior(101, 1.5, "10"), team_id=7)]
+        fixture = [{"match_id": 102, "team_id": "7", "prediction_at": "2026-10-12T12:00:00Z"}]
+        result = prior_xg_features(rows, fixture, min_history=1)
+        self.assertEqual(len(result["factors"]), 1)
+        self.assertEqual(result["factors"][0]["value"], 1.5)
+
+    def test_latest_match_end_not_latest_publication(self):
+        rows = [prior("older", 1, "10"), prior("newer", 3, "11")]
+        rows[0]["published_at"] = "2026-10-14T18:00:00Z"
+        rows[1]["published_at"] = "2026-10-12T18:00:00Z"
+        fixture = [{"match_id": "target", "team_id": "club-a", "prediction_at": "2026-10-15T12:00:00Z"}]
+        result = prior_xg_features(rows, fixture, min_history=1, max_history=1)
+        self.assertEqual(result["factors"][0]["value"], 3)
+
 
 if __name__ == "__main__":
     unittest.main()
