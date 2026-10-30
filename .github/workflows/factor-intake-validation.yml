@@ -1,0 +1,27 @@
+name: MatchLens factor intake validation
+on:
+  push:
+    branches: [feature/verified-factor-intake-v1]
+    paths:
+      - 'analytics/factor_intake.py'
+      - 'tests/test_factor_intake.py'
+      - '.github/workflows/factor-intake-validation.yml'
+  pull_request:
+    paths:
+      - 'analytics/factor_intake.py'
+      - 'tests/test_factor_intake.py'
+      - '.github/workflows/factor-intake-validation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify historical factor intake rules
+        run: python -m unittest discover -s tests -p test_factor_intake.py -v
