@@ -14,6 +14,6 @@ jobs:
         with:
           python-version: '3.11'
       - name: Verify source importer and reconciliation syntax
-        run: python -m compileall -q scripts/import_sources_batch.py scripts/import_football_data_research.py scripts/reconcile_football_sources.py
+        run: python -m compileall -q scripts/import_sources_batch.py scripts/import_football_data_research.py scripts/reconcile_football_sources.py scripts/top25_single_pick.py scripts/selection_diagnostics.py
       - name: Run offline team-name matching regression tests
         run: python -m unittest discover -s tests -p test_source_reconciliation.py -v
