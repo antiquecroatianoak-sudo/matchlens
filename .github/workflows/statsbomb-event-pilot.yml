@@ -26,7 +26,7 @@ jobs:
           python-version: '3.11'
       - name: Extract real StatsBomb event features (research only)
         run: |
-          python -m scripts.run_statsbomb_event_pilot --output-dir "$RUNNER_TEMP/statsbomb-pilot-$GITHUB_RUN_ID" --max-matches "${{ inputs.max_matches }}"
+          python -m scripts.run_statsbomb_event_pilot --output-dir "$RUNNER_TEMP/statsbomb-pilot-$GITHUB_RUN_ID" --max-matches "${{ inputs.max_matches || '34' }}"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
