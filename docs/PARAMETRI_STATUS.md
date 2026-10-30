@@ -23,3 +23,9 @@ Ažurirano: 2026-10-30. Izvor istine za napredak: ovaj dokument u GitHubu. Statu
 - Novi model usporediti s baznim na istim utakmicama; Brier, log loss, kalibracija, pogodci, pokrivenost.
 - 2024/25 i 2025/26 već su korištene u razvoju i ne mogu se ponovno predstavljati kao neviđeni završni test.
 - Svaki završeni eksperiment ima nepromjenjiv ID, postavke i izvještaj; bez prepisivanja prethodnih rezultata.
+
+## Provjera 2026-10-30
+- Dodani adapteri za vremenske prognoze, stanje terena i potvrđene postave; samo validacija zapisa, bez stvarnog API uvoza.
+- Dodano deset jediničnih testnih slučajeva i GitHub Actions workflow `factor-tests.yml`.
+- Za commit `50835761d96f3e920f599627f1d315c4030a8f24` upit za workflow runs vratio je prazan popis; nema potvrde prolaska testova.
+- Blokada: provjeriti uvjete korištenja i dobiti stvarne arhivirane podatke s dokazom vremena dostupnosti; bez toga nije moguće pošteno izmjeriti učinak ovih faktora na prognozu.
