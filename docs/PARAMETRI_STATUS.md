@@ -8,7 +8,7 @@ Ažurirano: 2026-10-30. Izvor istine za napredak: ovaj dokument u GitHubu. Statu
 | Odmor, putovanja, kupovi i Europa | Djelomično | Samo razmak ligaških susreta | Uvoz cjelovitog rasporeda |
 | Treneri kroz klubove | Kod pripremljen, bez ulaza u trenirani model | Nedostaju vremenski označeni zapisi | Uvoz i ablacijski test |
 | Igrači, uloge i izravni dueli | Kod pripremljen, bez ulaza u trenirani model | Nedostaju dokazani događaji | Uvoz i ablacijski test |
-| Postave, ozljede, suspenzije, zamjene | Čeka podatke | Povijesne datirane objave | Uvoz i as-of provjera |
+| Postave, ozljede, suspenzije, zamjene | Adapter potvrđenih postava dodan; ostalo čeka podatke | Povijesne datirane objave i kanonski ID-jevi | Provjeriti izvore i uvoz, potom testirati model |
 | Formacije, presing, tranzicija, prekidi, xG | Čeka podatke | Licencirani događajni/taktički izvori | Provjera pokrivenosti |
 | Vremenska prognoza prije susreta | Ugovor obilježja dodan; bez uvoza | Arhivirane prognoze s vremenom izdavanja | Priključiti provjeren izvor |
 | Stanje terena, podloga, dimenzije | Ugovor obilježja dodan; bez uvoza | Datirana izvješća o stanju terena | Priključiti provjeren izvor |
