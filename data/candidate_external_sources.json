@@ -102,6 +102,33 @@
       "access_status": "commercial_license_required_for_dataset",
       "access_evidence": "https://www.statsperform.com/faqs/stats-perform-faqs-pricing-licensing/",
       "notes": "Public showcase does not grant rights to bulk import or redistribution."
+    },
+    {
+      "name": "Football-Data.co.uk",
+      "url": "https://www.football-data.co.uk/",
+      "scope": "historical_csv_results_shots_cards",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false,
+      "notes": "Verify license and permission before automated bulk download; odds excluded from model."
+    },
+    {
+      "name": "StatsBomb Open Data",
+      "url": "https://github.com/statsbomb/open-data",
+      "scope": "open_match_events_lineups",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false,
+      "notes": "Existing importer; archived metadata is not proof of prematch publication."
+    },
+    {
+      "name": "Sports Data Campus",
+      "url": "https://www.sportsdatacampus.com/",
+      "scope": "football_data_training_or_provider_candidate",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false,
+      "notes": "Name only partly visible in screenshot; verify whether actual licensed historical datasets are offered."
     }
   ],
   "policy": "Use documented permitted access only. For retrospective player/team statistics use strictly prior completed matches. Never infer original availability from current page dates."
