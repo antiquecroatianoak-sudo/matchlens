@@ -41,3 +41,9 @@ Ažurirano: 2026-10-30. Izvor istine za napredak: ovaj dokument u GitHubu. Statu
 - Dodan `analytics/full_market_evaluation.py` za zajedničko vrednovanje sedam tržišta s vremenski valjanim kvotama i provjerom potpunosti traženih faktora; testni slučajevi dodani. Nije trenirani model.
 - Izvorni OpenFootball rezultati **nemaju povijesne kvote ni većinu traženih faktora**. Puni test trenutačno nema dovoljno verificiranih ulaza; ne imputirati izmišljene kvote, sastave ili vremenske prognoze.
 - Mjeriti pogodak, Brier i rezultat po jedinici uloga, uz broj pokrivenih utakmica i usporedbu s prethodnim modelom na identičnom skupu.
+
+## Prikupljanje dodatnih povijesnih rezultata — 2026-10-30
+- Preuzeti iz OpenFootball (CC0) i spremljeni snapshotovi 2024/25: Bundesliga 306/306, La Liga 370/380 (10 bez valjanog FT), Serie A 370/380 (10 bez valjanog FT), Ligue 1 306/306. Izvorni SHA svake datoteke u manifestu.
+- Novo dodano 1.352 valjana rezultata; ukupno s prethodnih 760 sada 2.112 rezultata. Izostavljenih 20 zapisa nisu tretirani kao 0:0.
+- Ovo su **samo rezultati**. Povijesne kvote, izdane vremenske prognoze, potvrđene postave i ostali vanjski faktori nisu dostupni u OpenFootball izvoru; njihovo stvarno prikupljanje ostaje otvoreno, uz provjeru uvjeta uporabe i povijesnog vremena objave.
+- Ne prikazivati nove zajedničke rezultate točnosti dok svi traženi ulazi i cijene nisu stvarno dostupni.
