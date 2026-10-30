@@ -1,0 +1,35 @@
+name: StatsBomb real-event research pilot
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/statsbomb-event-pilot.yml'
+  workflow_dispatch:
+    inputs:
+      max_matches:
+        description: "Maximum sample matches (0 means all 34)"
+        required: false
+        default: "34"
+
+permissions:
+  contents: read
+
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Extract real StatsBomb event features (research only)
+        run: |
+          python -m scripts.run_statsbomb_event_pilot --output-dir "$RUNNER_TEMP/statsbomb-pilot-$GITHUB_RUN_ID" --max-matches "${{ inputs.max_matches }}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: statsbomb-event-pilot-${{ github.run_id }}
+          path: ${{ runner.temp }}/statsbomb-pilot-${{ github.run_id }}
+          retention-days: 30
