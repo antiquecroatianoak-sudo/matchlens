@@ -21,7 +21,7 @@ def load():
 def main():
     data=load()
     result=walk_forward(data,min_history=10,delay_days=2)
-    evaluated=[r for r in result["predictions"] if r["kickoff"].startswith("2024-") or r["kickoff"].startswith("2025-")]
+    evaluated=result["predictions"]
     # Explicit season membership from source manifest, not calendar-year matching.
     ids={r["match_id"] for r in json.loads((ROOT/"data"/"openfootball"/FILES[1]).read_text())["matches"]}
     test=[r for r in evaluated if r["match_id"] in ids and r["outcome"] is not None]
