@@ -27,7 +27,7 @@ jobs:
           import json
           from pathlib import Path
           from ingestion.restore_manifest_sources import restore
-          result = restore()
+          result = restore(reconcile=True)
           Path("historical-import-report.json").write_text(json.dumps(result, indent=2, ensure_ascii=False))
           print(json.dumps({key:len(value) for key,value in result.items()}))
           PY
@@ -41,7 +41,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/upstream_openfootball/
+          git add data/upstream_openfootball/ data/source-manifest.json
           if ! git diff --cached --quiet; then
             git commit -m "Import verified historical source files"
             git push
