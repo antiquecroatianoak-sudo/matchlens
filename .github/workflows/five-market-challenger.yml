@@ -1,0 +1,28 @@
+name: Five-market challenger comparison
+on:
+  push:
+    branches: [feature/five-market-chronological-20261030]
+  workflow_dispatch:
+jobs:
+  paired-comparison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install numpy scipy scikit-learn
+      - run: python -m compileall -q scripts analytics
+      - run: python scripts/restore_openfootball_history.py
+      - run: python -m scripts.import_sources_batch
+      - run: python -m scripts.reconcile_football_sources
+      - run: python -m analytics.factor_search --data data/openfootball --output out/large-factor-backtest
+      - run: python -m scripts.multiseason_walkforward --data data/openfootball --lock out/large-factor-backtest/factor-lock.json --output out/large-factor-backtest/walkforward-predictions.jsonl
+      - run: python -m scripts.join_round_predictions --data data/openfootball --predictions out/large-factor-backtest/walkforward-predictions.jsonl --output out/large-factor-backtest/walkforward-rounds.jsonl
+      - run: python -m scripts.five_market_challenger --input out/large-factor-backtest/walkforward-rounds.jsonl --output out/large-factor-backtest/five-market-comparison.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: five-market-comparison
+          path: out/large-factor-backtest/five-market-comparison.json
