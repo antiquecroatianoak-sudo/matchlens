@@ -274,10 +274,11 @@
     },
     {
       "file": "2023-24-be.1.json",
-      "sha256": "fc90c1557ac878f8219b194d7d49502f2e5c2fea41104958acebb1333940f901",
+      "sha256": "b25fd6f6025042a0ec7f4e5daf133a8a5f18ba94358e4b7ffadaeb6a4c7eef66",
       "url": "https://github.com/openfootball/football.json/blob/master/2023-24/be.1.json",
       "supplemental_source": "https://github.com/openfootball/belgium/blob/master/2023-24/be1.txt",
-      "transformed": true
+      "transformed": true,
+      "verified_source_url": "https://raw.githubusercontent.com/openfootball/belgium/master/2023-24/be1.txt"
     },
     {
       "file": "2023-24-de.1.json",
@@ -313,10 +314,11 @@
     },
     {
       "file": "2023-24-gr.1.json",
-      "sha256": "b217d04927a8b48eb52e5abcbfae57820de5b88a67039f560fee93744944f766",
+      "sha256": "205f51d6d1458918b0b56e100cd8d2d21a178365af24125df1578984c3772d19",
       "url": "https://github.com/openfootball/football.json/blob/master/2023-24/gr.1.json",
       "supplemental_source": "https://github.com/openfootball/europe/blob/master/greece/2023-24_gr1.txt",
-      "transformed": true
+      "transformed": true,
+      "verified_source_url": "https://raw.githubusercontent.com/openfootball/europe/master/greece/2023-24_gr1.txt"
     },
     {
       "file": "2023-24-it.1.json",
@@ -344,10 +346,11 @@
     },
     {
       "file": "2023-24-tr.1.json",
-      "sha256": "b0af2d9806b8796009c067156a0db8ec1344569a735556c12ebc790822d3fe1c",
+      "sha256": "43457f506de8b978f1a440d161e5dc81903385ff0eded0a2a6dff4ab13ef22e2",
       "url": "https://github.com/openfootball/football.json/blob/master/2023-24/tr.1.json",
       "supplemental_source": "https://github.com/openfootball/europe/blob/master/turkey/2023-24_tr1.txt",
-      "transformed": true
+      "transformed": true,
+      "verified_source_url": "https://raw.githubusercontent.com/openfootball/europe/master/turkey/2023-24_tr1.txt"
     },
     {
       "file": "2024-25-be.1.json",
