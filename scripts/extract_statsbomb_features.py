@@ -2,6 +2,7 @@
 import argparse
 import csv
 import json
+import math
 from pathlib import Path
 from urllib.request import Request, urlopen
 
@@ -23,7 +24,10 @@ def extract(match_id, events):
             row["shots"] += 1
             xg = (e.get("shot") or {}).get("statsbomb_xg")
             if xg is not None:
-                row["xg_sum"] += float(xg)
+                value = float(xg)
+                if not math.isfinite(value) or value < 0 or value > 1:
+                    raise ValueError(f"invalid shot xG in match {match_id}, team {tid}: {xg!r}")
+                row["xg_sum"] += value
         elif kind == "Pass":
             row["passes"] += 1
             if not (e.get("pass") or {}).get("outcome"):
