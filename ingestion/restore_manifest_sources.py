@@ -8,7 +8,6 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
-from urllib.parse import urlparse
 from urllib.request import urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,8 +39,9 @@ def restore(limit=None):
                 payload = response.read(4_000_001)
             if len(payload) > 4_000_000:
                 raise ValueError("source file too large")
-            if hashlib.sha256(payload).hexdigest() != item["sha256"]:
-                raise ValueError(f"SHA256 mismatch: expected={item['sha256']} actual={hashlib.sha256(payload).hexdigest()} url={raw_url}")
+            digest = hashlib.sha256(payload).hexdigest()
+            if digest != item["sha256"]:
+                raise ValueError(f"SHA256 mismatch: expected={item['sha256']} actual={digest} url={raw_url}")
             parsed = json.loads(payload)
             if not isinstance(parsed, dict) or not isinstance(parsed.get("matches"), list):
                 raise ValueError("unexpected source format")
