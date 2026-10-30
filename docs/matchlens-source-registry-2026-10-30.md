@@ -25,3 +25,14 @@ Dodatni ranije razmatrani izvori: OpenFootball (osnovni rezultati), Open-Meteo (
 - Usporediti baseline i nove faktore na istim kolima; zadnji dio razdoblja držati netaknutim holdoutom.
 - Nedostajuće povijesne snimke faktora ne nadomještati današnjim vrijednostima.
 - Ne označavati izvor integriranim ili test pokrenutim bez stvarnog izvršavanja i zapisnika.
+
+## Dodatni izvori sa screenshota Sports Data Campus (30.10.2026.)
+Na fotografiji je popis 14 servisa. Već zabilježeni: FBref, Sofascore, FotMob, StatsBomb Open Data, Football-Data.co.uk, Transfermarkt i Understat. **Novi kandidati**:
+- FootyStats.org — timske statistike, golovi, trendovi; provjeriti API, povijesni opseg i licenciju.
+- Futbolme.com — rezultati, rasporedi i natjecanja; provjeriti dostupnost arhive i uvjete.
+- API-Football — API za utakmice, statistike, sastave i ozljede; provjeriti cijene, povijesnu dubinu i plan.
+- 5DollarFootballAPI — provjeriti aktualnu dostupnost, dokumentaciju, povijesne podatke i uvjete.
+- PlayeRank (Wyscout) — napredni podaci igrača; provjeriti komercijalno licenciranje i povijesni pristup.
+- WhoScored — statistika igrača i utakmica; provjeriti dozvoljeni pristup i povijesne snimke.
+- Opta Analyst — analize i napredne statistike; provjeriti postoji li dozvoljen strukturirani izvoz.
+Fotografija je korisnikov referentni popis, a ne dokaz da su podaci preuzeti. Bez potvrđenih prava i vremenskih oznaka ne uvoziti u backtest.
