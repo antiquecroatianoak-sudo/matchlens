@@ -1,0 +1,19 @@
+name: MatchLens source reconciliation checks
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+  workflow_dispatch:
+jobs:
+  source-unit-tests:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify source importer and reconciliation syntax
+        run: python -m compileall -q scripts/import_sources_batch.py scripts/import_football_data_research.py scripts/reconcile_football_sources.py
+      - name: Run offline team-name matching regression tests
+        run: python -m unittest discover -s tests -p test_source_reconciliation.py -v
