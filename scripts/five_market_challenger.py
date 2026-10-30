@@ -13,8 +13,21 @@ def valid(row):
 def features(row, market):
     p=row["prob"]
     peers=MARKETS[:3] if market in MARKETS[:3] else MARKETS[3:]
-    return [p[market], p[market]-max(p[m] for m in peers if m!=market),
-            max(p[m] for m in MARKETS[:3]),max(p[m] for m in MARKETS[3:])] + [int(m==market) for m in MARKETS]
+    # All additional factors use only pre-match model probabilities, never outcomes.
+    outcome=[p[m] for m in MARKETS[:3]]
+    goals=[p[m] for m in MARKETS[3:]]
+    eps=1e-9
+    entropy=-sum(v*math.log(max(v,eps)) for v in outcome)
+    sorted_outcome=sorted(outcome,reverse=True)
+    margin=sorted_outcome[0]-sorted_outcome[1]
+    goal_balance=abs(goals[0]-goals[1])
+    chosen=p[market]
+    return [chosen, chosen-max(p[m] for m in peers if m!=market),
+            max(outcome),max(goals),entropy,margin,goal_balance,
+            outcome[0]-outcome[2],outcome[1],
+            sum(v*v for v in outcome),
+            -math.log(max(1-chosen,eps)),
+            chosen*(1-chosen)] + [int(m==market) for m in MARKETS]
 
 def run(rows, min_training=500):
     groups=collections.defaultdict(list)
