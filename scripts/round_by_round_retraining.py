@@ -65,7 +65,6 @@ def main():
     rows=[json.loads(line) for line in Path(a.input).read_text().splitlines() if line.strip()]
     result=run(rows,a.years)
     out=Path(a.output);out.parent.mkdir(parents=True,exist_ok=True)
-    out.write_text(json.dumps(result,indent=2)+'
-')
+    out.write_text(json.dumps(result,indent=2)+'\n')
     print('ROUNDS',len(result['rounds']),'CHALLENGER',sum('challenger' in r for r in result['rounds']))
 if __name__=='__main__':main()
