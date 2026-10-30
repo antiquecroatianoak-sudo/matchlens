@@ -11,4 +11,6 @@ jobs:
       - run: python -m analytics.create_factor_database /tmp/matchlens_factors.sqlite
       - run: python -m analytics.connect_external_factors
       - run: python -m analytics.audit_normalized_readiness
+      - name: Final test eligibility (diagnostic)
+        run: python -m analytics.final_test_gate || true
       - run: python -m analytics.test_normalized_archive
