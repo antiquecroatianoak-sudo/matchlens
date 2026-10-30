@@ -127,6 +127,21 @@ def main():
         latest=sorted(original_seasons)[-2:]
         if any(info['by_season'][season]['hit_rate']<original_seasons[season]['hit_rate']-0.03 for season in latest):continue
         eligible.append(rule)
+    # Prematch confidence threshold is a separate abstention policy. Audit it
+    # without selecting more than the permitted quarter in any round.
+    diagnostics['confidence_thresholds']={}
+    for threshold in (0.70,0.75,0.80,0.85,0.90):
+        subset=select(rows,min_confidence=threshold)
+        chosen=subset['selected']
+        if len({x['id'] for x in chosen})!=len(chosen):
+            raise ValueError('Duplicate selected fixture at threshold')
+        diagnostics['confidence_thresholds'][str(threshold)]={
+            'summary':subset['summary'],
+            'selection_share':len(chosen)/len(rows) if rows else 0,
+            'by_market':breakdown(chosen,'market') if chosen else {},
+            'by_season':breakdown(chosen,'season') if chosen else {},
+            'rounds_without_pick':sum(x['selected']==0 for x in subset['rounds'])}
+    diagnostics['threshold_policy']='Exploratory only; no threshold deployment until tested on later untouched matches.'
     diagnostics['eligible_for_further_validation']=eligible
     diagnostics['recommendation']='Keep original until independent future-season confirmation; retrospective eligibility is not deployment approval.'
     diagnostics['warning']='All alternatives are exploratory on viewed data. No claim of out-of-sample improvement.'
