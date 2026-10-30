@@ -1,6 +1,13 @@
 name: MatchLens bulk fixture sync
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/bulk-fixture-sync.yml'
+      - 'scripts/sync_openfootball_oidc.py'
+      - 'scripts/sync_openfootball_supabase.py'
+      - 'scripts/restore_openfootball_history.py'
   schedule:
     - cron: '23 3 * * *'
 permissions:
