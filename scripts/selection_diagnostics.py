@@ -79,6 +79,20 @@ def main():
         result=evaluate(rows,rule)
         diagnostics['alternatives'][rule]={'summary':result['summary'],
              'by_season':breakdown(result['selected'],'season')}
+    baseline=diagnostics['baseline']
+    # Require the same number of selections, a material aggregate gain and no
+    # severe deterioration in the latest two seasons before recommending a rule.
+    eligible=[]
+    for rule,info in diagnostics['alternatives'].items():
+        summary=info['summary']
+        if summary['selected']!=baseline['selected']:continue
+        if summary['hit_rate'] is None or summary['hit_rate']<baseline['hit_rate']+0.015:continue
+        original_seasons=breakdown(selected,'season')
+        latest=sorted(original_seasons)[-2:]
+        if any(info['by_season'][season]['hit_rate']<original_seasons[season]['hit_rate']-0.03 for season in latest):continue
+        eligible.append(rule)
+    diagnostics['eligible_for_further_validation']=eligible
+    diagnostics['recommendation']='Keep original until independent future-season confirmation; retrospective eligibility is not deployment approval.'
     diagnostics['warning']='All alternatives are exploratory on viewed data. No claim of out-of-sample improvement.'
     path=Path(args.output);path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text(json.dumps(diagnostics,indent=2)+'\n')
