@@ -1,0 +1,45 @@
+name: MatchLens failure diagnosis
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/matchlens-failure-diagnosis.yml']
+  workflow_dispatch:
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      issues: write
+    steps:
+      - name: Inspect latest five-year test and publish failed step
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          python - <<'PY'
+          import json,os,subprocess
+          repo=os.environ['GH_REPO']
+          def gh(path):
+              p=subprocess.run(['gh','api',path],capture_output=True,text=True)
+              if p.returncode: raise RuntimeError(p.stderr)
+              return json.loads(p.stdout)
+          runs=gh(f'/repos/{repo}/actions/workflows/five-year-round-test.yml/runs?per_page=15')['workflow_runs']
+          lines=['Automated diagnosis of latest MatchLens five-year workflow runs.']
+          for run in runs[:8]:
+              lines.append(f"\nRun {run['run_number']} | {run['conclusion']} | {run['head_sha']} | {run['html_url']}")
+              jobs=gh(f"/repos/{repo}/actions/runs/{run['id']}/jobs")['jobs']
+              for job in jobs:
+                  lines.append(f"Job {job['name']} | {job['conclusion']} | job_id={job['id']}")
+                  for step in job.get('steps',[]):
+                      if step.get('conclusion')=='failure':
+                          lines.append(f"FAILED STEP: {step['name']} (number {step['number']})")
+                          # Job logs provide the actual Python/GitHub error if accessible.
+                          p=subprocess.run(['gh','api',f"/repos/{repo}/actions/jobs/{job['id']}/logs"],capture_output=True,text=True)
+                          if p.returncode==0:
+                              lines.append('LOG TAIL:\n'+p.stdout[-12000:])
+                          else:
+                              lines.append('LOG FETCH ERROR: '+p.stderr[:1000])
+          body='\n'.join(lines)[:60000]
+          subprocess.run(['gh','issue','create','--repo',repo,'--title','MatchLens five-year test: automated failed-step diagnosis','--body',body],check=True)
+          print(body[:2500])
+          PY
