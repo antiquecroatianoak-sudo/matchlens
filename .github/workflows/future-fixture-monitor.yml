@@ -15,9 +15,9 @@ jobs:
           python-version: '3.11'
       - name: Retrieve upcoming fixtures
         run: python -m scripts.fetch_future_fixtures
-      - name: Publish fixture snapshot
+      - name: Restore scored historical matches\n        run: python -m scripts.restore_openfootball_history\n      - name: Score upcoming fixtures using past-only baseline\n        run: python -m scripts.score_future_baseline\n      - name: Publish fixture snapshot
         uses: actions/upload-artifact@v4
         with:
           name: matchlens-future-fixtures
-          path: out/future-fixtures.json
+          path: |\n            out/future-fixtures.json\n            out/upcoming-probabilities.jsonl\n            out/upcoming-coverage.json
           retention-days: 30
