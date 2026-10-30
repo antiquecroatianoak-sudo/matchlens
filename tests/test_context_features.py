@@ -24,7 +24,7 @@ class ContextFeatureTests(unittest.TestCase):
 
     def test_invalid_cutoff(self):
         with self.assertRaises(ValueError):
-            context_features(None, KICKOFF, KICKOFF)
+            context_features({}, KICKOFF, KICKOFF)
 
     def test_invalid_humidity(self):
         row = dict(kind="weather_forecast", source_id="weather-1", issued_at="2025-10-01T09:00:00Z", available_at="2025-10-01T10:00:00Z", humidity_pct=130)
