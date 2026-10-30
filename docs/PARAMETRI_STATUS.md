@@ -77,3 +77,8 @@ Ažurirano: 2026-10-30. Izvor istine za napredak: ovaj dokument u GitHubu. Statu
 - To su izvorni rezultati, ne dokaz potpunosti 14 skupina vremenski provjerenih predutakmičnih faktora.
 - `data/historical_factors/required_groups.json` nije prisutan na ovoj grani; strogi readiness gate zato nije zadovoljen.
 - Zabranjeno prikazati rezultat-only baseline kao završni test punog modela. Završni backtest čeka stvarne izvore i vremena dostupnosti faktora.
+
+## Normalizacija arhive — potvrđeno 2026-10-30
+- GitHub Actions run `41023474884` završio je uspješno: 64 izvora, 20.348 normaliziranih rezultata.
+- Normalizirani rezultati ne znače da su dostupni provjereni predutakmični faktori ili točna vremena početka utakmica.
+- Readiness run `41023346628` odbio je završni test; nedostaju dokazani vremenski označeni faktori. Bez izmišljanja tih podataka test punog modela ostaje blokiran.
