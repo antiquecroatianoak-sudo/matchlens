@@ -53,3 +53,8 @@ Ažurirano: 2026-10-30. Izvor istine za napredak: ovaj dokument u GitHubu. Statu
 - `full_market_evaluation.py` izračunava te dvije cijene iz prognoze, ne traži povijesni bookmaker quote i ne prikazuje ROI/profit za sintetičke kvote.
 - `coverage_audit.py` za stvarne kvote provjerava samo ostalih pet tržišta. Sintetičke kvote ne predstavljaju dokaz tržišne ponude ili zarade.
 - Potrebno izvršiti CI i pravi zajednički test na potpunim, prije utakmice dostupnim faktorima.
+
+## Povezivanje svih povijesnih faktora (2026-10-30)
+- Dodan `analytics/factor_assembly.py`: zajednički ulaz za sve faktore; za svaki odabire samo zapis s dokazanim `source_id` i `available_at` (te `issued_at` gdje postoji) prije cutoffa. Nedostajuće podatke označava kao nedostajuće, ne izmišlja vrijednosti.
+- Dodana tri testa za buduće podatke, odabir zadnjeg dopuštenog zapisa i zabranu prognoze nakon početka.
+- Ovo je priprema za spajanje stvarnih vanjskih izvora; nije dokaz da su vrijeme, ozljede, postave, kvote ili ostali faktori već prikupljeni. Nema novog potvrđenog modelskog backtesta.
