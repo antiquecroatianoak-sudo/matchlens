@@ -1,0 +1,155 @@
+{
+  "purpose": "Candidate external sources for historical pre-match research; listing is not permission to scrape or proof of historical timestamp",
+  "sources": [
+    {
+      "name": "MyFootballFacts",
+      "url": "https://www.myfootballfacts.com/",
+      "scope": "historical_results",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false
+    },
+    {
+      "name": "FBref",
+      "url": "https://fbref.com/",
+      "scope": "team_player_statistics",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false
+    },
+    {
+      "name": "SofaScore",
+      "url": "https://www.sofascore.com/",
+      "scope": "lineups_form",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false
+    },
+    {
+      "name": "FotMob",
+      "url": "https://www.fotmob.com/",
+      "scope": "lineups_injuries",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false
+    },
+    {
+      "name": "WhoScored",
+      "url": "https://www.whoscored.com/",
+      "scope": "tactics_player_statistics",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false
+    },
+    {
+      "name": "Transfermarkt",
+      "url": "https://www.transfermarkt.com/",
+      "scope": "injuries_transfers_coaches",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false
+    },
+    {
+      "name": "StatBunker",
+      "url": "https://www.statbunker.com/",
+      "scope": "referee_team_statistics",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false
+    },
+    {
+      "name": "Understat",
+      "url": "https://understat.com/",
+      "scope": "historical_xg",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false
+    },
+    {
+      "name": "Soccerway",
+      "url": "https://int.soccerway.com/",
+      "scope": "fixtures_lineups",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false
+    },
+    {
+      "name": "WorldFootball.net",
+      "url": "https://www.worldfootball.net/",
+      "scope": "historical_results",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false
+    },
+    {
+      "name": "PlayerStats",
+      "url": "https://playerstats.football/",
+      "scope": "player_shots_fouls_tackles_cards",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false,
+      "access_status": "explicit_permission_required",
+      "access_evidence": "https://playerstats.football/terms-of-service",
+      "notes": "Terms prohibit scraping and copying without explicit permission."
+    },
+    {
+      "name": "Opta Stats Hub",
+      "url": "https://theanalyst.com/eu/2023/08/2023-24-football-stats-opta-data/",
+      "scope": "set_pieces_xg_shots_for_against",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false,
+      "access_status": "commercial_license_required_for_dataset",
+      "access_evidence": "https://www.statsperform.com/faqs/stats-perform-faqs-pricing-licensing/",
+      "notes": "Public showcase does not grant rights to bulk import or redistribution."
+    },
+    {
+      "name": "Football-Data.co.uk",
+      "url": "https://www.football-data.co.uk/",
+      "scope": "historical_csv_results_shots_cards",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false,
+      "notes": "Verify license and permission before automated bulk download; odds excluded from model."
+    },
+    {
+      "name": "StatsBomb Open Data",
+      "url": "https://github.com/statsbomb/open-data",
+      "scope": "open_match_events_lineups",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false,
+      "notes": "Existing importer; archived metadata is not proof of prematch publication."
+    },
+    {
+      "name": "Sports Data Campus",
+      "url": "https://www.sportsdatacampus.com/",
+      "scope": "football_data_training_or_provider_candidate",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false,
+      "notes": "Name only partly visible in screenshot; verify whether actual licensed historical datasets are offered."
+    },
+    {
+      "name": "API-FOOTBALL (API-Sports)",
+      "url": "https://www.api-football.com/",
+      "scope": "fixtures_lineups_injuries_statistics_odds_excluded",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false,
+      "access_status": "api_key_and_plan_required",
+      "notes": "Use official API with key and plan; verify historical endpoint coverage and publication timing; never commit credentials."
+    },
+    {
+      "name": "Club Football Match Data 2000-2025",
+      "url": "https://github.com/xgabora/Club-Football-Match-Data-2000-2025",
+      "scope": "historical_matches_elo_form_shots_cards_corners_fouls",
+      "automated_access_approved": true,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false,
+      "access_status": "public_github_repository_with_upstream_provenance_review",
+      "notes": "Repository declares MIT; underlying matches credited to Football-Data.co.uk and Elo to ClubElo. Review upstream reuse rights. Strictly lag postmatch columns; exclude odds and clusters potentially derived from final match."
+    }
+  ],
+  "policy": "Use documented permitted access only. For retrospective player/team statistics use strictly prior completed matches. Never infer original availability from current page dates."
+}

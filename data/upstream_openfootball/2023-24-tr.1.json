@@ -1,0 +1,4821 @@
+{
+  "name": "2023-24-tr.1.json",
+  "matches": [
+    {
+      "round": "Matchday 1",
+      "date": "2023-08-11",
+      "team1": "Trabzonspor",
+      "team2": "Antalyaspor",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "21:00"
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2023-08-12",
+      "team1": "Kasımpaşa SK",
+      "team2": "MKE Ankaragücü",
+      "score": {
+        "ft": [
+          3,
+          2
+        ]
+      },
+      "time": "19:15"
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2023-08-12",
+      "team1": "Konyaspor",
+      "team2": "İstanbulspor AŞ",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2023-08-12",
+      "team1": "Kayserispor",
+      "team2": "Galatasaray",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "21:45"
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2023-08-12",
+      "team1": "Pendikspor",
+      "team2": "Hatayspor",
+      "score": {
+        "ft": [
+          1,
+          5
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2023-08-13",
+      "team1": "Sivasspor",
+      "team2": "Samsunspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "19:15"
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2023-08-13",
+      "team1": "Adana Demirspor",
+      "team2": "Çaykur Rizespor",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "21:45"
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2023-08-13",
+      "team1": "Fenerbahçe",
+      "team2": "Gaziantep FK",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2023-08-14",
+      "team1": "Alanyaspor",
+      "team2": "İstanbul Başakşehir",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "21:00"
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2023-08-14",
+      "team1": "Fatih Karagümrük",
+      "team2": "Beşiktaş",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2023-08-18",
+      "team1": "İstanbulspor AŞ",
+      "team2": "Kayserispor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "21:00"
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2023-08-18",
+      "team1": "Antalyaspor",
+      "team2": "Konyaspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2023-08-19",
+      "team1": "Çaykur Rizespor",
+      "team2": "Alanyaspor",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "19:15"
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2023-08-19",
+      "team1": "Hatayspor",
+      "team2": "Kasımpaşa SK",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "21:45"
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2023-08-19",
+      "team1": "Galatasaray",
+      "team2": "Trabzonspor",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2023-08-20",
+      "team1": "İstanbul Başakşehir",
+      "team2": "Fatih Karagümrük",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "time": "19:15"
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2023-08-20",
+      "team1": "Gaziantep FK",
+      "team2": "Sivasspor",
+      "score": {
+        "ft": [
+          1,
+          3
+        ]
+      },
+      "time": "21:45"
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2023-08-20",
+      "team1": "Beşiktaş",
+      "team2": "Pendikspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2023-08-21",
+      "team1": "Samsunspor",
+      "team2": "Fenerbahçe",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "time": "21:00"
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2023-08-21",
+      "team1": "MKE Ankaragücü",
+      "team2": "Adana Demirspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2023-08-25",
+      "team1": "Konyaspor",
+      "team2": "Gaziantep FK",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "21:00"
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2023-08-26",
+      "team1": "Kasımpaşa SK",
+      "team2": "Pendikspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "19:15"
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2023-08-26",
+      "team1": "Trabzonspor",
+      "team2": "Çaykur Rizespor",
+      "score": {
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2023-08-26",
+      "team1": "Sivasspor",
+      "team2": "Antalyaspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "21:45"
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2023-08-27",
+      "team1": "Kayserispor",
+      "team2": "Samsunspor",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "19:15"
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2023-08-27",
+      "team1": "Fatih Karagümrük",
+      "team2": "MKE Ankaragücü",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2023-08-27",
+      "team1": "Alanyaspor",
+      "team2": "Hatayspor",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "21:45"
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2023-09-26",
+      "team1": "İstanbulspor AŞ",
+      "team2": "Galatasaray",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2023-09-27",
+      "team1": "Adana Demirspor",
+      "team2": "Beşiktaş",
+      "score": {
+        "ft": [
+          4,
+          2
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2023-09-28",
+      "team1": "Fenerbahçe",
+      "team2": "İstanbul Başakşehir",
+      "score": {
+        "ft": [
+          4,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2023-09-01",
+      "team1": "Kasımpaşa SK",
+      "team2": "Trabzonspor",
+      "score": {
+        "ft": [
+          1,
+          5
+        ]
+      },
+      "time": "21:00"
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2023-09-01",
+      "team1": "Çaykur Rizespor",
+      "team2": "Fatih Karagümrük",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2023-09-02",
+      "team1": "Pendikspor",
+      "team2": "Alanyaspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "19:15"
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2023-09-02",
+      "team1": "İstanbul Başakşehir",
+      "team2": "Konyaspor",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2023-09-02",
+      "team1": "Gaziantep FK",
+      "team2": "Galatasaray",
+      "score": {
+        "ft": [
+          0,
+          3
+        ]
+      },
+      "time": "21:45"
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2023-09-02",
+      "team1": "Antalyaspor",
+      "team2": "Kayserispor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2023-09-03",
+      "team1": "Beşiktaş",
+      "team2": "Sivasspor",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "19:15"
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2023-09-03",
+      "team1": "Hatayspor",
+      "team2": "Adana Demirspor",
+      "score": {
+        "ft": [
+          3,
+          3
+        ]
+      },
+      "time": "21:45"
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2023-09-03",
+      "team1": "MKE Ankaragücü",
+      "team2": "Fenerbahçe",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2023-11-08",
+      "team1": "Samsunspor",
+      "team2": "İstanbulspor AŞ",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2023-09-16",
+      "team1": "Kayserispor",
+      "team2": "Gaziantep FK",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2023-09-16",
+      "team1": "Konyaspor",
+      "team2": "Çaykur Rizespor",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2023-09-16",
+      "team1": "Galatasaray",
+      "team2": "Samsunspor",
+      "score": {
+        "ft": [
+          4,
+          2
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2023-09-16",
+      "team1": "Adana Demirspor",
+      "team2": "Pendikspor",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2023-09-17",
+      "team1": "İstanbulspor AŞ",
+      "team2": "İstanbul Başakşehir",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2023-09-17",
+      "team1": "Fenerbahçe",
+      "team2": "Antalyaspor",
+      "score": {
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2023-09-17",
+      "team1": "Alanyaspor",
+      "team2": "Kasımpaşa SK",
+      "score": {
+        "ft": [
+          3,
+          3
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2023-09-17",
+      "team1": "Trabzonspor",
+      "team2": "Beşiktaş",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2023-09-18",
+      "team1": "Fatih Karagümrük",
+      "team2": "Hatayspor",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2023-09-18",
+      "team1": "Sivasspor",
+      "team2": "MKE Ankaragücü",
+      "score": {
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2023-09-22",
+      "team1": "Gaziantep FK",
+      "team2": "İstanbulspor AŞ",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2023-09-23",
+      "team1": "Pendikspor",
+      "team2": "Fatih Karagümrük",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2023-09-23",
+      "team1": "Çaykur Rizespor",
+      "team2": "Sivasspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2023-09-23",
+      "team1": "İstanbul Başakşehir",
+      "team2": "Galatasaray",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2023-09-23",
+      "team1": "Antalyaspor",
+      "team2": "Samsunspor",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2023-09-24",
+      "team1": "Beşiktaş",
+      "team2": "Kayserispor",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2023-09-24",
+      "team1": "MKE Ankaragücü",
+      "team2": "Konyaspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2023-09-24",
+      "team1": "Kasımpaşa SK",
+      "team2": "Adana Demirspor",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2023-09-24",
+      "team1": "Alanyaspor",
+      "team2": "Fenerbahçe",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2023-09-25",
+      "team1": "Hatayspor",
+      "team2": "Trabzonspor",
+      "score": {
+        "ft": [
+          3,
+          2
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2023-09-29",
+      "team1": "Samsunspor",
+      "team2": "Gaziantep FK",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2023-09-30",
+      "team1": "Sivasspor",
+      "team2": "Hatayspor",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2023-09-30",
+      "team1": "İstanbulspor AŞ",
+      "team2": "Antalyaspor",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2023-09-30",
+      "team1": "Trabzonspor",
+      "team2": "Pendikspor",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2023-09-30",
+      "team1": "Galatasaray",
+      "team2": "MKE Ankaragücü",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2023-10-01",
+      "team1": "Fatih Karagümrük",
+      "team2": "Kasımpaşa SK",
+      "score": {
+        "ft": [
+          2,
+          3
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2023-10-01",
+      "team1": "Fenerbahçe",
+      "team2": "Çaykur Rizespor",
+      "score": {
+        "ft": [
+          5,
+          0
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2023-10-01",
+      "team1": "Adana Demirspor",
+      "team2": "Alanyaspor",
+      "score": {
+        "ft": [
+          4,
+          0
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2023-10-01",
+      "team1": "Konyaspor",
+      "team2": "Beşiktaş",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2023-10-02",
+      "team1": "Kayserispor",
+      "team2": "İstanbul Başakşehir",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2023-10-06",
+      "team1": "Alanyaspor",
+      "team2": "Fatih Karagümrük",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2023-10-06",
+      "team1": "Adana Demirspor",
+      "team2": "Trabzonspor",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2023-10-07",
+      "team1": "Pendikspor",
+      "team2": "Sivasspor",
+      "score": {
+        "ft": [
+          2,
+          3
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2023-10-07",
+      "team1": "MKE Ankaragücü",
+      "team2": "Kayserispor",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2023-10-07",
+      "team1": "İstanbul Başakşehir",
+      "team2": "Gaziantep FK",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2023-10-07",
+      "team1": "Antalyaspor",
+      "team2": "Galatasaray",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2023-10-08",
+      "team1": "Çaykur Rizespor",
+      "team2": "Samsunspor",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2023-10-08",
+      "team1": "Beşiktaş",
+      "team2": "İstanbulspor AŞ",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2023-10-08",
+      "team1": "Hatayspor",
+      "team2": "Konyaspor",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2023-10-08",
+      "team1": "Kasımpaşa SK",
+      "team2": "Fenerbahçe",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2023-10-21",
+      "team1": "Kayserispor",
+      "team2": "Çaykur Rizespor",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2023-10-21",
+      "team1": "Gaziantep FK",
+      "team2": "Antalyaspor",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2023-10-21",
+      "team1": "Konyaspor",
+      "team2": "Pendikspor",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2023-10-21",
+      "team1": "Galatasaray",
+      "team2": "Beşiktaş",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2023-10-22",
+      "team1": "Sivasspor",
+      "team2": "Kasımpaşa SK",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2023-10-22",
+      "team1": "İstanbulspor AŞ",
+      "team2": "MKE Ankaragücü",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2023-10-22",
+      "team1": "Samsunspor",
+      "team2": "İstanbul Başakşehir",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2023-10-22",
+      "team1": "Fenerbahçe",
+      "team2": "Hatayspor",
+      "score": {
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2023-10-23",
+      "team1": "Fatih Karagümrük",
+      "team2": "Adana Demirspor",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2023-10-23",
+      "team1": "Trabzonspor",
+      "team2": "Alanyaspor",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2023-10-27",
+      "team1": "Hatayspor",
+      "team2": "Kayserispor",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2023-10-27",
+      "team1": "Kasımpaşa SK",
+      "team2": "İstanbulspor AŞ",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2023-10-28",
+      "team1": "Alanyaspor",
+      "team2": "Sivasspor",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2023-10-28",
+      "team1": "Adana Demirspor",
+      "team2": "Konyaspor",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2023-10-28",
+      "team1": "Çaykur Rizespor",
+      "team2": "Galatasaray",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2023-10-29",
+      "team1": "Fatih Karagümrük",
+      "team2": "Trabzonspor",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2023-10-29",
+      "team1": "Pendikspor",
+      "team2": "Fenerbahçe",
+      "score": {
+        "ft": [
+          0,
+          5
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2023-10-29",
+      "team1": "Antalyaspor",
+      "team2": "İstanbul Başakşehir",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2023-10-29",
+      "team1": "MKE Ankaragücü",
+      "team2": "Samsunspor",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2023-10-30",
+      "team1": "Beşiktaş",
+      "team2": "Gaziantep FK",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2023-11-03",
+      "team1": "Galatasaray",
+      "team2": "Kasımpaşa SK",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2023-11-04",
+      "team1": "İstanbulspor AŞ",
+      "team2": "Pendikspor",
+      "score": {
+        "ft": [
+          2,
+          4
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2023-11-04",
+      "team1": "Samsunspor",
+      "team2": "Hatayspor",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2023-11-04",
+      "team1": "Fenerbahçe",
+      "team2": "Trabzonspor",
+      "score": {
+        "ft": [
+          2,
+          3
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2023-11-05",
+      "team1": "Sivasspor",
+      "team2": "Adana Demirspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2023-11-05",
+      "team1": "İstanbul Başakşehir",
+      "team2": "MKE Ankaragücü",
+      "score": {
+        "ft": [
+          3,
+          3
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2023-11-05",
+      "team1": "Konyaspor",
+      "team2": "Fatih Karagümrük",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2023-11-05",
+      "team1": "Antalyaspor",
+      "team2": "Beşiktaş",
+      "score": {
+        "ft": [
+          3,
+          2
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2023-11-06",
+      "team1": "Kayserispor",
+      "team2": "Alanyaspor",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2023-11-06",
+      "team1": "Gaziantep FK",
+      "team2": "Çaykur Rizespor",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2023-11-10",
+      "team1": "Trabzonspor",
+      "team2": "Konyaspor",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2023-11-10",
+      "team1": "MKE Ankaragücü",
+      "team2": "Antalyaspor",
+      "score": {
+        "ft": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2023-11-11",
+      "team1": "Kasımpaşa SK",
+      "team2": "Kayserispor",
+      "score": {
+        "ft": [
+          3,
+          4
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2023-11-11",
+      "team1": "Alanyaspor",
+      "team2": "Gaziantep FK",
+      "score": {
+        "ft": [
+          0,
+          3
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2023-11-11",
+      "team1": "Fatih Karagümrük",
+      "team2": "Sivasspor",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2023-11-11",
+      "team1": "Hatayspor",
+      "team2": "Galatasaray",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2023-11-12",
+      "team1": "Pendikspor",
+      "team2": "Samsunspor",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2023-11-12",
+      "team1": "Beşiktaş",
+      "team2": "İstanbul Başakşehir",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2023-11-12",
+      "team1": "Çaykur Rizespor",
+      "team2": "İstanbulspor AŞ",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2023-11-12",
+      "team1": "Adana Demirspor",
+      "team2": "Fenerbahçe",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2023-11-25",
+      "team1": "İstanbulspor AŞ",
+      "team2": "Hatayspor",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2023-11-25",
+      "team1": "Gaziantep FK",
+      "team2": "MKE Ankaragücü",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2023-11-25",
+      "team1": "Konyaspor",
+      "team2": "Kasımpaşa SK",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2023-11-25",
+      "team1": "Galatasaray",
+      "team2": "Alanyaspor",
+      "score": {
+        "ft": [
+          4,
+          0
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2023-11-26",
+      "team1": "Kayserispor",
+      "team2": "Adana Demirspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2023-11-26",
+      "team1": "Samsunspor",
+      "team2": "Beşiktaş",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2023-11-26",
+      "team1": "Antalyaspor",
+      "team2": "Çaykur Rizespor",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2023-11-26",
+      "team1": "Fenerbahçe",
+      "team2": "Fatih Karagümrük",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2023-11-27",
+      "team1": "İstanbul Başakşehir",
+      "team2": "Pendikspor",
+      "score": {
+        "ft": [
+          4,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2023-11-27",
+      "team1": "Sivasspor",
+      "team2": "Trabzonspor",
+      "score": {
+        "ft": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2023-12-01",
+      "team1": "Hatayspor",
+      "team2": "Antalyaspor",
+      "score": {
+        "ft": [
+          3,
+          3
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2023-12-01",
+      "team1": "Fatih Karagümrük",
+      "team2": "İstanbulspor AŞ",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2023-12-02",
+      "team1": "Alanyaspor",
+      "team2": "Konyaspor",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2023-12-02",
+      "team1": "Çaykur Rizespor",
+      "team2": "İstanbul Başakşehir",
+      "score": {
+        "ft": [
+          3,
+          2
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2023-12-02",
+      "team1": "Pendikspor",
+      "team2": "Galatasaray",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2023-12-02",
+      "team1": "Adana Demirspor",
+      "team2": "Samsunspor",
+      "score": {
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2023-12-03",
+      "team1": "Kasımpaşa SK",
+      "team2": "Gaziantep FK",
+      "score": {
+        "ft": [
+          4,
+          2
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2023-12-03",
+      "team1": "Trabzonspor",
+      "team2": "Kayserispor",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2023-12-03",
+      "team1": "MKE Ankaragücü",
+      "team2": "Beşiktaş",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2023-12-04",
+      "team1": "Fenerbahçe",
+      "team2": "Sivasspor",
+      "score": {
+        "ft": [
+          4,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2023-12-08",
+      "team1": "Galatasaray",
+      "team2": "Adana Demirspor",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2023-12-09",
+      "team1": "Antalyaspor",
+      "team2": "Fatih Karagümrük",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2023-12-09",
+      "team1": "Samsunspor",
+      "team2": "Kasımpaşa SK",
+      "score": {
+        "ft": [
+          4,
+          2
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2023-12-09",
+      "team1": "Beşiktaş",
+      "team2": "Fenerbahçe",
+      "score": {
+        "ft": [
+          1,
+          3
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2023-12-10",
+      "team1": "İstanbulspor AŞ",
+      "team2": "Alanyaspor",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2023-12-10",
+      "team1": "Kayserispor",
+      "team2": "Pendikspor",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2023-12-10",
+      "team1": "İstanbul Başakşehir",
+      "team2": "Hatayspor",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2023-12-10",
+      "team1": "Gaziantep FK",
+      "team2": "Trabzonspor",
+      "score": {
+        "ft": [
+          1,
+          3
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2023-12-11",
+      "team1": "MKE Ankaragücü",
+      "team2": "Çaykur Rizespor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2023-12-11",
+      "team1": "Konyaspor",
+      "team2": "Sivasspor",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2024-01-09",
+      "team1": "Pendikspor",
+      "team2": "Antalyaspor",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2024-01-09",
+      "team1": "Alanyaspor",
+      "team2": "MKE Ankaragücü",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2024-01-09",
+      "team1": "Kasımpaşa SK",
+      "team2": "İstanbul Başakşehir",
+      "score": {
+        "ft": [
+          0,
+          3
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2024-01-09",
+      "team1": "Çaykur Rizespor",
+      "team2": "Beşiktaş",
+      "score": {
+        "ft": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2024-01-10",
+      "team1": "Hatayspor",
+      "team2": "Gaziantep FK",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2024-01-10",
+      "team1": "Fatih Karagümrük",
+      "team2": "Kayserispor",
+      "score": {
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2024-01-10",
+      "team1": "Adana Demirspor",
+      "team2": "İstanbulspor AŞ",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2024-01-10",
+      "team1": "Fenerbahçe",
+      "team2": "Konyaspor",
+      "score": {
+        "ft": [
+          7,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2024-01-11",
+      "team1": "Sivasspor",
+      "team2": "Galatasaray",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2024-01-11",
+      "team1": "Trabzonspor",
+      "team2": "Samsunspor",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2023-12-19",
+      "team1": "İstanbul Başakşehir",
+      "team2": "Sivasspor",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2023-12-19",
+      "team1": "İstanbulspor AŞ",
+      "team2": "Trabzonspor",
+      "score": {
+        "ft": [
+          0,
+          3
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2023-12-19",
+      "team1": "Gaziantep FK",
+      "team2": "Adana Demirspor",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2023-12-20",
+      "team1": "Kayserispor",
+      "team2": "Fenerbahçe",
+      "score": {
+        "ft": [
+          3,
+          4
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2023-12-20",
+      "team1": "Galatasaray",
+      "team2": "Fatih Karagümrük",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2023-12-20",
+      "team1": "Antalyaspor",
+      "team2": "Kasımpaşa SK",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2023-12-21",
+      "team1": "Samsunspor",
+      "team2": "Konyaspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2023-12-21",
+      "team1": "Çaykur Rizespor",
+      "team2": "Pendikspor",
+      "score": {
+        "ft": [
+          5,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2023-12-21",
+      "team1": "Beşiktaş",
+      "team2": "Alanyaspor",
+      "score": {
+        "ft": [
+          1,
+          3
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2023-12-21",
+      "team1": "MKE Ankaragücü",
+      "team2": "Hatayspor",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2023-12-23",
+      "team1": "Sivasspor",
+      "team2": "İstanbulspor AŞ",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2023-12-23",
+      "team1": "Fatih Karagümrük",
+      "team2": "Gaziantep FK",
+      "score": {
+        "ft": [
+          0,
+          3
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2023-12-23",
+      "team1": "Trabzonspor",
+      "team2": "İstanbul Başakşehir",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2023-12-24",
+      "team1": "Konyaspor",
+      "team2": "Kayserispor",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2023-12-24",
+      "team1": "Adana Demirspor",
+      "team2": "Antalyaspor",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2023-12-24",
+      "team1": "Fenerbahçe",
+      "team2": "Galatasaray",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2023-12-25",
+      "team1": "Kasımpaşa SK",
+      "team2": "Çaykur Rizespor",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2023-12-25",
+      "team1": "Alanyaspor",
+      "team2": "Samsunspor",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2023-12-25",
+      "team1": "Hatayspor",
+      "team2": "Beşiktaş",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2023-12-25",
+      "team1": "Pendikspor",
+      "team2": "MKE Ankaragücü",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2024-01-05",
+      "team1": "Gaziantep FK",
+      "team2": "Pendikspor",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2024-01-05",
+      "team1": "Antalyaspor",
+      "team2": "Alanyaspor",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2024-01-05",
+      "team1": "Beşiktaş",
+      "team2": "Kasımpaşa SK",
+      "score": {
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2024-01-06",
+      "team1": "Çaykur Rizespor",
+      "team2": "Hatayspor",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2024-01-06",
+      "team1": "İstanbul Başakşehir",
+      "team2": "Adana Demirspor",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2024-01-06",
+      "team1": "Samsunspor",
+      "team2": "Fatih Karagümrük",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2024-01-06",
+      "team1": "MKE Ankaragücü",
+      "team2": "Trabzonspor",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2024-01-07",
+      "team1": "Kayserispor",
+      "team2": "Sivasspor",
+      "score": {
+        "ft": [
+          1,
+          3
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2024-01-07",
+      "team1": "İstanbulspor AŞ",
+      "team2": "Fenerbahçe",
+      "score": {
+        "ft": [
+          1,
+          5
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2024-01-07",
+      "team1": "Galatasaray",
+      "team2": "Konyaspor",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2024-01-13",
+      "team1": "Hatayspor",
+      "team2": "Pendikspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2024-01-13",
+      "team1": "MKE Ankaragücü",
+      "team2": "Kasımpaşa SK",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2024-01-13",
+      "team1": "İstanbul Başakşehir",
+      "team2": "Alanyaspor",
+      "score": {
+        "ft": [
+          3,
+          2
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2024-01-13",
+      "team1": "Çaykur Rizespor",
+      "team2": "Adana Demirspor",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2024-01-13",
+      "team1": "Beşiktaş",
+      "team2": "Fatih Karagümrük",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2024-01-14",
+      "team1": "İstanbulspor AŞ",
+      "team2": "Konyaspor",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2024-01-14",
+      "team1": "Antalyaspor",
+      "team2": "Trabzonspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2024-01-14",
+      "team1": "Samsunspor",
+      "team2": "Sivasspor",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2024-01-14",
+      "team1": "Gaziantep FK",
+      "team2": "Fenerbahçe",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2024-01-15",
+      "team1": "Galatasaray",
+      "team2": "Kayserispor",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2024-01-20",
+      "team1": "Kasımpaşa SK",
+      "team2": "Hatayspor",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2024-01-20",
+      "team1": "Fatih Karagümrük",
+      "team2": "İstanbul Başakşehir",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2024-01-20",
+      "team1": "Alanyaspor",
+      "team2": "Çaykur Rizespor",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2024-01-20",
+      "team1": "Pendikspor",
+      "team2": "Beşiktaş",
+      "score": {
+        "ft": [
+          4,
+          0
+        ]
+      },
+      "time": "18:55"
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2024-01-20",
+      "team1": "Adana Demirspor",
+      "team2": "MKE Ankaragücü",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2024-01-21",
+      "team1": "Sivasspor",
+      "team2": "Gaziantep FK",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2024-01-21",
+      "team1": "Fenerbahçe",
+      "team2": "Samsunspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2024-01-21",
+      "team1": "Konyaspor",
+      "team2": "Antalyaspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2024-01-21",
+      "team1": "Trabzonspor",
+      "team2": "Galatasaray",
+      "score": {
+        "ft": [
+          1,
+          5
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2024-01-22",
+      "team1": "Kayserispor",
+      "team2": "İstanbulspor AŞ",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2024-01-23",
+      "team1": "Hatayspor",
+      "team2": "Alanyaspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2024-01-23",
+      "team1": "Pendikspor",
+      "team2": "Kasımpaşa SK",
+      "score": {
+        "ft": [
+          3,
+          2
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2024-01-23",
+      "team1": "Beşiktaş",
+      "team2": "Adana Demirspor",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2024-01-24",
+      "team1": "MKE Ankaragücü",
+      "team2": "Fatih Karagümrük",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2024-01-24",
+      "team1": "Gaziantep FK",
+      "team2": "Konyaspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2024-01-24",
+      "team1": "İstanbul Başakşehir",
+      "team2": "Fenerbahçe",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2024-01-24",
+      "team1": "Antalyaspor",
+      "team2": "Sivasspor",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2024-01-25",
+      "team1": "Samsunspor",
+      "team2": "Kayserispor",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2024-01-25",
+      "team1": "Galatasaray",
+      "team2": "İstanbulspor AŞ",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2024-01-25",
+      "team1": "Çaykur Rizespor",
+      "team2": "Trabzonspor",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2024-01-27",
+      "team1": "Alanyaspor",
+      "team2": "Pendikspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2024-01-27",
+      "team1": "Adana Demirspor",
+      "team2": "Hatayspor",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2024-01-28",
+      "team1": "Konyaspor",
+      "team2": "İstanbul Başakşehir",
+      "score": {
+        "ft": [
+          2,
+          3
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2024-01-28",
+      "team1": "Sivasspor",
+      "team2": "Beşiktaş",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2024-01-28",
+      "team1": "Fatih Karagümrük",
+      "team2": "Çaykur Rizespor",
+      "score": {
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2024-01-28",
+      "team1": "Fenerbahçe",
+      "team2": "MKE Ankaragücü",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2024-01-29",
+      "team1": "İstanbulspor AŞ",
+      "team2": "Samsunspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2024-01-29",
+      "team1": "Kayserispor",
+      "team2": "Antalyaspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2024-01-29",
+      "team1": "Trabzonspor",
+      "team2": "Kasımpaşa SK",
+      "score": {
+        "ft": [
+          2,
+          3
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2024-01-29",
+      "team1": "Galatasaray",
+      "team2": "Gaziantep FK",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2024-02-02",
+      "team1": "Hatayspor",
+      "team2": "Fatih Karagümrük",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2024-02-02",
+      "team1": "MKE Ankaragücü",
+      "team2": "Sivasspor",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2024-02-02",
+      "team1": "Samsunspor",
+      "team2": "Galatasaray",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2024-02-03",
+      "team1": "Çaykur Rizespor",
+      "team2": "Konyaspor",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2024-02-03",
+      "team1": "İstanbul Başakşehir",
+      "team2": "İstanbulspor AŞ",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2024-02-03",
+      "team1": "Gaziantep FK",
+      "team2": "Kayserispor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2024-02-03",
+      "team1": "Antalyaspor",
+      "team2": "Fenerbahçe",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2024-02-04",
+      "team1": "Pendikspor",
+      "team2": "Adana Demirspor",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2024-02-04",
+      "team1": "Kasımpaşa SK",
+      "team2": "Alanyaspor",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2024-02-04",
+      "team1": "Beşiktaş",
+      "team2": "Trabzonspor",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2024-02-09",
+      "team1": "Adana Demirspor",
+      "team2": "Kasımpaşa SK",
+      "score": {
+        "ft": [
+          1,
+          3
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2024-02-10",
+      "team1": "Fatih Karagümrük",
+      "team2": "Pendikspor",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2024-02-10",
+      "team1": "Galatasaray",
+      "team2": "İstanbul Başakşehir",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2024-02-11",
+      "team1": "Sivasspor",
+      "team2": "Çaykur Rizespor",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2024-02-11",
+      "team1": "İstanbulspor AŞ",
+      "team2": "Gaziantep FK",
+      "score": {
+        "ft": [
+          1,
+          3
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2024-02-11",
+      "team1": "Konyaspor",
+      "team2": "MKE Ankaragücü",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2024-02-11",
+      "team1": "Fenerbahçe",
+      "team2": "Alanyaspor",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2024-02-12",
+      "team1": "Trabzonspor",
+      "team2": "Hatayspor",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2024-02-12",
+      "team1": "Samsunspor",
+      "team2": "Antalyaspor",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2024-02-12",
+      "team1": "Kayserispor",
+      "team2": "Beşiktaş",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2024-02-16",
+      "team1": "Kasımpaşa SK",
+      "team2": "Fatih Karagümrük",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2024-02-17",
+      "team1": "Antalyaspor",
+      "team2": "İstanbulspor AŞ",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2024-02-17",
+      "team1": "Hatayspor",
+      "team2": "Sivasspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2024-02-17",
+      "team1": "Çaykur Rizespor",
+      "team2": "Fenerbahçe",
+      "score": {
+        "ft": [
+          1,
+          3
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2024-02-18",
+      "team1": "Alanyaspor",
+      "team2": "Adana Demirspor",
+      "score": {
+        "ft": [
+          3,
+          3
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2024-02-18",
+      "team1": "Gaziantep FK",
+      "team2": "Samsunspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2024-02-18",
+      "team1": "Pendikspor",
+      "team2": "Trabzonspor",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2024-02-18",
+      "team1": "MKE Ankaragücü",
+      "team2": "Galatasaray",
+      "score": {
+        "ft": [
+          0,
+          3
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2024-02-19",
+      "team1": "İstanbul Başakşehir",
+      "team2": "Kayserispor",
+      "score": {
+        "ft": [
+          2,
+          3
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2024-02-19",
+      "team1": "Beşiktaş",
+      "team2": "Konyaspor",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2024-02-23",
+      "team1": "Samsunspor",
+      "team2": "Çaykur Rizespor",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2024-02-24",
+      "team1": "Kayserispor",
+      "team2": "MKE Ankaragücü",
+      "score": {
+        "ft": [
+          3,
+          2
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2024-02-24",
+      "team1": "Gaziantep FK",
+      "team2": "İstanbul Başakşehir",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2024-02-24",
+      "team1": "Konyaspor",
+      "team2": "Hatayspor",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2024-02-24",
+      "team1": "Fenerbahçe",
+      "team2": "Kasımpaşa SK",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2024-02-25",
+      "team1": "Sivasspor",
+      "team2": "Pendikspor",
+      "score": {
+        "ft": [
+          4,
+          1
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2024-02-25",
+      "team1": "Fatih Karagümrük",
+      "team2": "Alanyaspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2024-02-25",
+      "team1": "Trabzonspor",
+      "team2": "Adana Demirspor",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2024-02-25",
+      "team1": "İstanbulspor AŞ",
+      "team2": "Beşiktaş",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2024-02-26",
+      "team1": "Galatasaray",
+      "team2": "Antalyaspor",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2024-03-01",
+      "team1": "Kasımpaşa SK",
+      "team2": "Sivasspor",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2024-03-02",
+      "team1": "MKE Ankaragücü",
+      "team2": "İstanbulspor AŞ",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2024-03-02",
+      "team1": "Çaykur Rizespor",
+      "team2": "Kayserispor",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2024-03-02",
+      "team1": "Hatayspor",
+      "team2": "Fenerbahçe",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2024-03-03",
+      "team1": "İstanbul Başakşehir",
+      "team2": "Samsunspor",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2024-03-03",
+      "team1": "Pendikspor",
+      "team2": "Konyaspor",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2024-03-03",
+      "team1": "Beşiktaş",
+      "team2": "Galatasaray",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2024-03-04",
+      "team1": "Adana Demirspor",
+      "team2": "Fatih Karagümrük",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2024-03-04",
+      "team1": "Antalyaspor",
+      "team2": "Gaziantep FK",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2024-03-04",
+      "team1": "Alanyaspor",
+      "team2": "Trabzonspor",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2024-03-08",
+      "team1": "Galatasaray",
+      "team2": "Çaykur Rizespor",
+      "score": {
+        "ft": [
+          6,
+          2
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2024-03-09",
+      "team1": "Sivasspor",
+      "team2": "Alanyaspor",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2024-03-09",
+      "team1": "Konyaspor",
+      "team2": "Adana Demirspor",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2024-03-09",
+      "team1": "Trabzonspor",
+      "team2": "Fatih Karagümrük",
+      "score": {
+        "ft": [
+          5,
+          1
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2024-03-09",
+      "team1": "İstanbul Başakşehir",
+      "team2": "Antalyaspor",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2024-03-10",
+      "team1": "Kayserispor",
+      "team2": "Hatayspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2024-03-10",
+      "team1": "İstanbulspor AŞ",
+      "team2": "Kasımpaşa SK",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2024-03-10",
+      "team1": "Samsunspor",
+      "team2": "MKE Ankaragücü",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2024-03-10",
+      "team1": "Fenerbahçe",
+      "team2": "Pendikspor",
+      "score": {
+        "ft": [
+          4,
+          1
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2024-03-11",
+      "team1": "Gaziantep FK",
+      "team2": "Beşiktaş",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2024-03-15",
+      "team1": "Pendikspor",
+      "team2": "İstanbulspor AŞ",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2024-03-15",
+      "team1": "Fatih Karagümrük",
+      "team2": "Konyaspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2024-03-16",
+      "team1": "Alanyaspor",
+      "team2": "Kayserispor",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2024-03-16",
+      "team1": "MKE Ankaragücü",
+      "team2": "İstanbul Başakşehir",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2024-03-16",
+      "team1": "Beşiktaş",
+      "team2": "Antalyaspor",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2024-03-16",
+      "team1": "Adana Demirspor",
+      "team2": "Sivasspor",
+      "score": {
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2024-03-17",
+      "team1": "Çaykur Rizespor",
+      "team2": "Gaziantep FK",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2024-03-17",
+      "team1": "Kasımpaşa SK",
+      "team2": "Galatasaray",
+      "score": {
+        "ft": [
+          3,
+          4
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2024-03-17",
+      "team1": "Hatayspor",
+      "team2": "Samsunspor",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2024-03-17",
+      "team1": "Trabzonspor",
+      "team2": "Fenerbahçe",
+      "score": {
+        "ft": [
+          2,
+          3
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2024-04-02",
+      "team1": "İstanbulspor AŞ",
+      "team2": "Çaykur Rizespor",
+      "score": {
+        "ft": [
+          0,
+          4
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2024-04-02",
+      "team1": "Galatasaray",
+      "team2": "Hatayspor",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2024-04-02",
+      "team1": "Gaziantep FK",
+      "team2": "Alanyaspor",
+      "score": {
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2024-04-02",
+      "team1": "Antalyaspor",
+      "team2": "MKE Ankaragücü",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2024-04-03",
+      "team1": "Sivasspor",
+      "team2": "Fatih Karagümrük",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2024-04-03",
+      "team1": "Kayserispor",
+      "team2": "Kasımpaşa SK",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2024-04-03",
+      "team1": "Fenerbahçe",
+      "team2": "Adana Demirspor",
+      "score": {
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2024-04-03",
+      "team1": "Konyaspor",
+      "team2": "Trabzonspor",
+      "score": {
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2024-04-04",
+      "team1": "Samsunspor",
+      "team2": "Pendikspor",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "20:30"
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2024-04-04",
+      "team1": "İstanbul Başakşehir",
+      "team2": "Beşiktaş",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2024-04-12",
+      "team1": "Trabzonspor",
+      "team2": "Sivasspor",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2024-04-13",
+      "team1": "Kasımpaşa SK",
+      "team2": "Konyaspor",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2024-04-13",
+      "team1": "MKE Ankaragücü",
+      "team2": "Gaziantep FK",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2024-04-13",
+      "team1": "Adana Demirspor",
+      "team2": "Kayserispor",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2024-04-13",
+      "team1": "Beşiktaş",
+      "team2": "Samsunspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2024-04-14",
+      "team1": "Pendikspor",
+      "team2": "İstanbul Başakşehir",
+      "score": {
+        "ft": [
+          2,
+          3
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2024-04-14",
+      "team1": "Hatayspor",
+      "team2": "İstanbulspor AŞ",
+      "score": {
+        "ft": [
+          0,
+          3
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2024-04-14",
+      "team1": "Çaykur Rizespor",
+      "team2": "Antalyaspor",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2024-04-14",
+      "team1": "Fatih Karagümrük",
+      "team2": "Fenerbahçe",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2024-04-15",
+      "team1": "Alanyaspor",
+      "team2": "Galatasaray",
+      "score": {
+        "ft": [
+          0,
+          4
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2024-04-19",
+      "team1": "Beşiktaş",
+      "team2": "MKE Ankaragücü",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2024-04-20",
+      "team1": "İstanbulspor AŞ",
+      "team2": "Fatih Karagümrük",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2024-04-20",
+      "team1": "Konyaspor",
+      "team2": "Alanyaspor",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2024-04-20",
+      "team1": "Samsunspor",
+      "team2": "Adana Demirspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2024-04-20",
+      "team1": "Kayserispor",
+      "team2": "Trabzonspor",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2024-04-21",
+      "team1": "İstanbul Başakşehir",
+      "team2": "Çaykur Rizespor",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "time": "13:30"
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2024-04-21",
+      "team1": "Antalyaspor",
+      "team2": "Hatayspor",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2024-04-21",
+      "team1": "Galatasaray",
+      "team2": "Pendikspor",
+      "score": {
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2024-04-21",
+      "team1": "Gaziantep FK",
+      "team2": "Kasımpaşa SK",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2024-04-22",
+      "team1": "Sivasspor",
+      "team2": "Fenerbahçe",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2024-04-26",
+      "team1": "Adana Demirspor",
+      "team2": "Galatasaray",
+      "score": {
+        "ft": [
+          0,
+          3
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2024-04-27",
+      "team1": "Kasımpaşa SK",
+      "team2": "Samsunspor",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2024-04-27",
+      "team1": "Sivasspor",
+      "team2": "Konyaspor",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2024-04-27",
+      "team1": "Hatayspor",
+      "team2": "İstanbul Başakşehir",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2024-04-27",
+      "team1": "Fenerbahçe",
+      "team2": "Beşiktaş",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2024-04-28",
+      "team1": "Pendikspor",
+      "team2": "Kayserispor",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2024-04-28",
+      "team1": "Alanyaspor",
+      "team2": "İstanbulspor AŞ",
+      "score": {
+        "ft": [
+          6,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2024-04-28",
+      "team1": "Trabzonspor",
+      "team2": "Gaziantep FK",
+      "score": {
+        "ft": [
+          4,
+          2
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2024-04-28",
+      "team1": "Çaykur Rizespor",
+      "team2": "MKE Ankaragücü",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2024-04-29",
+      "team1": "Fatih Karagümrük",
+      "team2": "Antalyaspor",
+      "score": {
+        "ft": [
+          4,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2024-05-03",
+      "team1": "MKE Ankaragücü",
+      "team2": "Alanyaspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2024-05-03",
+      "team1": "Beşiktaş",
+      "team2": "Çaykur Rizespor",
+      "score": {
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2024-05-04",
+      "team1": "İstanbulspor AŞ",
+      "team2": "Adana Demirspor",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2024-05-04",
+      "team1": "Kayserispor",
+      "team2": "Fatih Karagümrük",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2024-05-04",
+      "team1": "Samsunspor",
+      "team2": "Trabzonspor",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2024-05-05",
+      "team1": "İstanbul Başakşehir",
+      "team2": "Kasımpaşa SK",
+      "score": {
+        "ft": [
+          4,
+          1
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2024-05-05",
+      "team1": "Gaziantep FK",
+      "team2": "Hatayspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2024-05-05",
+      "team1": "Galatasaray",
+      "team2": "Sivasspor",
+      "score": {
+        "ft": [
+          6,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2024-05-06",
+      "team1": "Antalyaspor",
+      "team2": "Pendikspor",
+      "score": {
+        "ft": [
+          1,
+          2
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2024-05-06",
+      "team1": "Konyaspor",
+      "team2": "Fenerbahçe",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2024-05-12",
+      "team1": "Fenerbahçe",
+      "team2": "Kayserispor",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2024-05-12",
+      "team1": "Trabzonspor",
+      "team2": "İstanbulspor AŞ",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2024-05-12",
+      "team1": "Fatih Karagümrük",
+      "team2": "Galatasaray",
+      "score": {
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2024-05-12",
+      "team1": "Konyaspor",
+      "team2": "Samsunspor",
+      "score": {
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2024-05-12",
+      "team1": "Adana Demirspor",
+      "team2": "Gaziantep FK",
+      "score": {
+        "ft": [
+          1,
+          6
+        ]
+      }
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2024-05-12",
+      "team1": "Sivasspor",
+      "team2": "İstanbul Başakşehir",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2024-05-12",
+      "team1": "Kasımpaşa SK",
+      "team2": "Antalyaspor",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2024-05-12",
+      "team1": "Alanyaspor",
+      "team2": "Beşiktaş",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2024-05-12",
+      "team1": "Hatayspor",
+      "team2": "MKE Ankaragücü",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2024-05-12",
+      "team1": "Pendikspor",
+      "team2": "Çaykur Rizespor",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2024-05-17",
+      "team1": "İstanbulspor AŞ",
+      "team2": "Sivasspor",
+      "score": {
+        "ft": [
+          1,
+          3
+        ]
+      },
+      "time": "17:00"
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2024-05-17",
+      "team1": "Antalyaspor",
+      "team2": "Adana Demirspor",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2024-05-18",
+      "team1": "Beşiktaş",
+      "team2": "Hatayspor",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2024-05-18",
+      "team1": "MKE Ankaragücü",
+      "team2": "Pendikspor",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2024-05-18",
+      "team1": "Çaykur Rizespor",
+      "team2": "Kasımpaşa SK",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2024-05-18",
+      "team1": "Samsunspor",
+      "team2": "Alanyaspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2024-05-18",
+      "team1": "Gaziantep FK",
+      "team2": "Fatih Karagümrük",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2024-05-18",
+      "team1": "İstanbul Başakşehir",
+      "team2": "Trabzonspor",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2024-05-18",
+      "team1": "Kayserispor",
+      "team2": "Konyaspor",
+      "score": {
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2024-05-19",
+      "team1": "Galatasaray",
+      "team2": "Fenerbahçe",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2024-05-24",
+      "team1": "Alanyaspor",
+      "team2": "Antalyaspor",
+      "score": {
+        "ft": [
+          1,
+          1
+        ]
+      },
+      "time": "20:00"
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2024-05-25",
+      "team1": "Fatih Karagümrük",
+      "team2": "Samsunspor",
+      "score": {
+        "ft": [
+          3,
+          1
+        ]
+      },
+      "time": "16:00"
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2024-05-25",
+      "team1": "Sivasspor",
+      "team2": "Kayserispor",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2024-05-26",
+      "team1": "Fenerbahçe",
+      "team2": "İstanbulspor AŞ",
+      "score": {
+        "ft": [
+          6,
+          0
+        ]
+      },
+      "time": "19:00"
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2024-05-26",
+      "team1": "Konyaspor",
+      "team2": "Galatasaray",
+      "score": {
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2024-05-26",
+      "team1": "Pendikspor",
+      "team2": "Gaziantep FK",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2024-05-26",
+      "team1": "Adana Demirspor",
+      "team2": "İstanbul Başakşehir",
+      "score": {
+        "ft": [
+          2,
+          6
+        ]
+      }
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2024-05-26",
+      "team1": "Kasımpaşa SK",
+      "team2": "Beşiktaş",
+      "score": {
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2024-05-26",
+      "team1": "Trabzonspor",
+      "team2": "MKE Ankaragücü",
+      "score": {
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2024-05-26",
+      "team1": "Hatayspor",
+      "team2": "Çaykur Rizespor",
+      "score": {
+        "ft": [
+          2,
+          0
+        ]
+      }
+    }
+  ],
+  "source": "https://raw.githubusercontent.com/openfootball/europe/master/turkey/2023-24_tr1.txt"
+}

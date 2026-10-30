@@ -1,0 +1,60 @@
+name: Restore historical source archive
+on:
+  push:
+    branches:
+      - feature/factor-tracker-context-v1
+    paths:
+      - .github/workflows/restore-historical-sources.yml
+      - ingestion/restore_manifest_sources.py
+      - data/source-manifest.json
+      - ingestion/recover_three_seasons.py
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Recover documented missing seasons
+        run: python -m ingestion.recover_three_seasons
+      - name: Restore once and record every rejection
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from ingestion.restore_manifest_sources import restore
+          result = restore(reconcile=True)
+          Path("historical-import-report.json").write_text(json.dumps(result, indent=2, ensure_ascii=False))
+          print(json.dumps({key:len(value) for key,value in result.items()}))
+          PY
+      - name: Upload diagnostic report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: historical-import-report
+          path: historical-import-report.json
+      - name: Save all verified files even if other sources failed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/upstream_openfootball/ data/source-manifest.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Import verified historical source files"
+            git push
+          fi
+      - name: Reject incomplete archive
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report=json.loads(Path("historical-import-report.json").read_text())
+          if report["failed"]:
+              raise SystemExit(f"Archive incomplete: {len(report['failed'])} rejected; see artifact")
+          PY

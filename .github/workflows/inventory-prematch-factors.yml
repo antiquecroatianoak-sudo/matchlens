@@ -1,0 +1,24 @@
+name: Inventory prematch factor sources
+on:
+  workflow_dispatch:
+  push:
+    branches: [feature/factor-tracker-context-v1]
+    paths:
+      - analytics/inventory_historical_factors.py
+      - .github/workflows/inventory-prematch-factors.yml
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Inventory source-backed factor records
+        run: python -m analytics.inventory_historical_factors > factor-inventory.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: factor-inventory
+          path: factor-inventory.json
+      - name: Print inventory
+        run: cat factor-inventory.json

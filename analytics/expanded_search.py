@@ -117,7 +117,10 @@ def metrics(p, y):
 
 def records_before(records, season):
     # Calendar split with embargo even at the boundary; no later-season training.
-    start=min(r['match']['date'] for r in records if r['match']['season']==season)
+    season_dates=[r['match']['date'] for r in records if r['match']['season']==season]
+    if not season_dates:
+        return []
+    start=min(season_dates)
     cutoff=(date.fromisoformat(start)-timedelta(days=2)).isoformat()
     return [r for r in records if r['match']['season']<season and r['match']['date']<cutoff]
 
@@ -125,7 +128,12 @@ def evaluate_dev(records, config):
     parts=[];ys=[];folds=[]
     for season in DEV:
         train=records_before(records,season);val=[r for r in records if r['match']['season']==season]
+        if not train or not val:
+            folds.append((season,0))
+            continue
         model=fit(train,config);parts.append(intensities(val,model));ys.append(actual_array(val));folds.append((season,len(val)))
+    if not parts:
+        return np.empty((0,2)),np.empty((0,5)),folds
     return np.concatenate(parts),np.concatenate(ys),folds
 
 def stripped(m):return {k:v for k,v in m.items() if k!='calibration'}

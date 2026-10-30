@@ -1,0 +1,39 @@
+name: MatchLens historical readiness audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [feature/factor-tracker-context-v1]
+    paths:
+      - '.github/workflows/historical-readiness.yml'
+      - 'analytics/audit_data_readiness.py'
+      - 'data/historical_factors/**'
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check historical factor coverage
+        run: |
+          python -m analytics.audit_data_readiness > readiness.json
+          python - <<'PY'
+          import json
+          data=json.load(open("readiness.json"))
+          print(json.dumps({key:data[key] for key in ("total_matches","required_groups_manifest_valid","missing_factor_matches","ready_for_full_backtest")},indent=2))
+          PY
+      - name: Save readiness evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: matchlens-readiness
+          path: readiness.json
+      - name: Block final test until complete
+        run: |
+          python - <<'PY'
+          import json
+          report=json.load(open("readiness.json"))
+          if not report["ready_for_full_backtest"]:
+              raise SystemExit("Full-factor historical test blocked: required time-verified factor coverage incomplete")
+          PY
