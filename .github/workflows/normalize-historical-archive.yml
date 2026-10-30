@@ -1,0 +1,44 @@
+name: Normalize historical archive
+on:
+  workflow_dispatch:
+  push:
+    branches: [feature/factor-tracker-context-v1]
+    paths:
+      - ingestion/normalize_archive.py
+      - .github/workflows/normalize-historical-archive.yml
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Normalize historical results
+        run: python -m ingestion.normalize_archive > normalization-report.json
+      - name: Save diagnostic report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: normalization-report
+          path: normalization-report.json
+      - name: Commit normalized results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/normalized_archive/
+          if ! git diff --cached --quiet; then
+            git commit -m "Normalize historical archive results"
+            git push
+          fi
+      - name: Validate all sources processed
+        run: |
+          python - <<'PY'
+          import json
+          report=json.load(open("normalization-report.json"))
+          print("Processed:",report["source_files"],"Matches:",report["matches"])
+          if report["source_files"] != 64 or report["rejected"]:
+              raise SystemExit("Historical normalization incomplete")
+          PY
