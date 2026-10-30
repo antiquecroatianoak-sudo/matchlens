@@ -53,6 +53,19 @@ jobs:
           assert len({x['id'] for x in r['selected']})==len(r['selected'])
           print('Top 25% single-pick hit rate:',r['summary']['hit_rate'])
           PY
+      - name: Research-only fixed confidence thresholds (not an independent holdout)
+        run: |
+          for threshold in 0.75 0.80 0.85 0.90 0.95; do
+            python scripts/top25_single_pick.py --input out/large-factor-backtest/round-predictions.jsonl --min-confidence "$threshold" --output "out/large-factor-backtest/threshold-${threshold}.json"
+          done
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for path in sorted(Path('out/large-factor-backtest').glob('threshold-*.json')):
+              summary=json.loads(path.read_text())['summary']
+              print('Exploratory confidence threshold:',path.stem,summary)
+          print('WARNING: Threshold outcomes on previously viewed audit are descriptive, not an independent test or proof of 90% accuracy.')
+          PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:
