@@ -1,4 +1,4 @@
-name: MatchLens five-year round test
+name: MatchLens five-year round test (triggered)
 on:
   pull_request:
     types: [opened, reopened, synchronize]
