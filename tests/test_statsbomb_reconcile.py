@@ -25,6 +25,12 @@ class StatsBombReconcileTests(unittest.TestCase):
         self.assertEqual(result["paired_count"], 0)
         self.assertEqual(result["quarantined"][0]["reason"], "ambiguous_or_missing_fixture")
 
+    def test_same_canonical_id_across_dates_is_quarantined(self):
+        other = {"id": "c1", "date": "2024-04-07", "home": "other", "away": "opponent"}
+        result = reconcile_statsbomb_matches([PROVIDER], CANONICAL + [other], MAPPING)
+        self.assertEqual(result["paired_count"], 0)
+        self.assertEqual(result["quarantined"][0]["reason"], "duplicate_canonical_identity")
+
 
 if __name__ == "__main__":
     unittest.main()
