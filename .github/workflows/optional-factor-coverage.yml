@@ -18,7 +18,28 @@ jobs:
         with:
           python-version: '3.11'
       - name: Restore canonical fixtures
-        run: python scripts/restore_openfootball_history.py
+        run: |
+          mkdir -p data/openfootball out/optional-coverage
+          python - <<'PY'
+          import json, urllib.request
+          from pathlib import Path
+          leagues=('en.1','it.1','es.1','de.1','fr.1','pt.1','be.1','nl.1','tr.1','gr.1')
+          seasons=('2024-25','2025-26','2026-27')
+          report=[]
+          for season in seasons:
+              for league in leagues:
+                  url=f'https://raw.githubusercontent.com/openfootball/football.json/master/{season}/{league}.json'
+                  try:
+                      with urllib.request.urlopen(url,timeout=15) as response: raw=response.read()
+                      obj=json.loads(raw)
+                      if not isinstance(obj.get('matches'),list): raise ValueError('missing matches')
+                      (Path('data/openfootball')/f'{season}.{league}.json').write_bytes(raw)
+                      report.append({'season':season,'league':league,'status':'ok','matches':len(obj['matches'])})
+                  except Exception as exc:
+                      report.append({'season':season,'league':league,'status':'unavailable','error':str(exc)[:120]})
+          Path('out/optional-coverage/source-report.json').write_text(json.dumps(report,indent=2))
+          print('Available season-league files:',sum(x['status']=='ok' for x in report),'/',len(report))
+          PY
       - name: Build canonical fixture manifest and audit optional coverage
         run: |
           mkdir -p out/optional-coverage
