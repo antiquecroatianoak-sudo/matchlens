@@ -2,6 +2,9 @@ name: MatchLens large historical factor backtest
 on:
   pull_request:
     types: [opened, reopened, synchronize]
+  push:
+    branches:
+      - test/five-year-round-learning-20261030
   workflow_dispatch:
 jobs:
   historical-factor-test:
