@@ -54,6 +54,8 @@ def main():
                         "home_team_id": (match.get("homeTeam") or {}).get("id"),
                         "away_team_id": (match.get("awayTeam") or {}).get("id"),
                         "status": match.get("status"),
+                        "venue_name": match.get("venue"),
+                        "venue_source": "match_record" if match.get("venue") else None,
                         "source_url": "https://api.football-data.org/v4/matches/" + str(match.get("id")),
                         "verified_venue": None,
                     })
