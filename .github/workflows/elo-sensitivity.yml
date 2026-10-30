@@ -1,0 +1,35 @@
+name: MatchLens Elo sensitivity research
+on:
+  pull_request:
+    paths:
+      - 'scripts/elo_sensitivity.py'
+      - 'data/research/statsbomb_bundesliga_2023_24_sample.json'
+      - '.github/workflows/elo-sensitivity.yml'
+  workflow_dispatch:
+jobs:
+  sensitivity:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run chronological sensitivity comparison
+        run: python scripts/elo_sensitivity.py
+      - name: Verify output
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('out/elo_sensitivity.json'))
+          assert len(x['combinations'])==12
+          assert all(r['n']==24 for r in x['combinations'])
+          assert len(x['baseline_predictions'])==24
+          print('All 12 Elo configurations completed.')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: matchlens-elo-sensitivity
+          path: out/elo_sensitivity.json
+          retention-days: 14
