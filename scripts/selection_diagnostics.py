@@ -141,7 +141,22 @@ def main():
             'by_market':breakdown(chosen,'market') if chosen else {},
             'by_season':breakdown(chosen,'season') if chosen else {},
             'rounds_without_pick':sum(x['selected']==0 for x in subset['rounds'])}
-    diagnostics['threshold_policy']='Exploratory only; no threshold deployment until tested on later untouched matches.'
+    # Fixed 80% policy chosen after inspecting earlier retrospective seasons.
+    # Later seasons are a chronological check, NOT a pristine independent holdout:
+    # their outcomes were already included in previous aggregate reports.
+    holdout_seasons=('2024-25','2025-26')
+    chronological=[r for r in rows if r['season'] in holdout_seasons]
+    chronological_report=select(chronological,min_confidence=0.80)
+    chronological_baseline=select(chronological)
+    diagnostics['chronological_80pct_check']={
+        'seasons':list(holdout_seasons),
+        'candidate':chronological_report['summary'],
+        'baseline':chronological_baseline['summary'],
+        'by_season':breakdown(chronological_report['selected'],'season'),
+        'by_market':breakdown(chronological_report['selected'],'market'),
+        'note':'Previously viewed historical seasons; not an untouched holdout. No production deployment approval.'
+    }
+    diagnostics['threshold_policy']='80% fixed for chronological research comparison only; no deployment until genuinely unseen future fixtures are evaluated.'
     diagnostics['eligible_for_further_validation']=eligible
     diagnostics['recommendation']='Keep original until independent future-season confirmation; retrospective eligibility is not deployment approval.'
     diagnostics['warning']='All alternatives are exploratory on viewed data. No claim of out-of-sample improvement.'
