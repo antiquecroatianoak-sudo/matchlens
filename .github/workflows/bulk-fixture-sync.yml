@@ -1,0 +1,28 @@
+name: MatchLens bulk fixture sync
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 3 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: matchlens-bulk-fixtures
+  cancel-in-progress: false
+jobs:
+  bulk-sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate import script
+        run: python -m py_compile scripts/sync_openfootball_supabase.py
+      - name: Restore complete historical seasons in batches
+        run: python scripts/restore_openfootball_history.py
+      - name: Sync fixture batches to Supabase
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: python scripts/sync_openfootball_supabase.py
