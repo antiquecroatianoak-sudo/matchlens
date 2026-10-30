@@ -1,5 +1,6 @@
 """Five-market chronological challenger. Research only; no outcome leakage."""
 import argparse, collections, json, math
+from datetime import date, timedelta
 from pathlib import Path
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import make_pipeline
@@ -29,10 +30,10 @@ def features(row, market):
             -math.log(max(1-chosen,eps)),
             chosen*(1-chosen)] + [int(m==market) for m in MARKETS]
 
-def run(rows, min_training=500):
+def run(rows, min_training=500, start_date='2024-10-30', end_date='2026-10-30'):
     groups=collections.defaultdict(list)
     for r in rows:
-        if r.get("date"):
+        if r.get("date") and start_date <= r["date"][:10] <= end_date:
             groups[(r["league"],str(r["season"]),str(r["round"]))].append(r)
     ordered=sorted(groups.values(),key=lambda g:(min(r["date"] for r in g),str(g[0]["league"]),str(g[0]["round"])))
     results=[]
@@ -64,7 +65,7 @@ def run(rows, min_training=500):
             entry["baseline_picks"]=baseline["selected"]
             entry["challenger_picks"]=challenger["selected"]
         results.append(entry)
-    return {"method":"five-market expanding chronological ranking","rounds":results,
+    return {"method":"five-market expanding chronological ranking","evaluation_window":{"start":start_date,"end":end_date},"rounds":results,
             "warning":"Retrospective archive; previously inspected seasons are not a pristine holdout."}
 
 def main():
@@ -72,9 +73,11 @@ def main():
     p.add_argument("--input",required=True)
     p.add_argument("--output",required=True)
     p.add_argument("--min-training",type=int,default=500)
+    p.add_argument("--start-date",default="2024-10-30")
+    p.add_argument("--end-date",default="2026-10-30")
     a=p.parse_args()
     rows=[json.loads(line) for line in Path(a.input).read_text().splitlines() if line.strip()]
-    result=run(rows,a.min_training)
+    result=run(rows,a.min_training,a.start_date,a.end_date)
     out=Path(a.output);out.parent.mkdir(parents=True,exist_ok=True)
     out.write_text(json.dumps(result,indent=2)+"\n")
     for name in ("baseline","challenger"):
