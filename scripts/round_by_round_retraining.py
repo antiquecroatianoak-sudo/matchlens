@@ -24,7 +24,7 @@ def run(rows,years=5,min_training=500):
     # Group by earliest date, but never reveal any match in the round until the
     # entire round is over. Same-day overlapping rounds are not trained on.
     ordered=sorted(groups.values(),key=lambda rs:(max(r['date'] for r in rs),min(r['date'] for r in rs)))
-    report=[];completed=[]
+    report=[]\n    # A round becomes available for learning only after its final match date.\n    completed_rounds=[(max(r['date'] for r in group),group) for group in groups.values()]
     for fixtures in ordered:
         kickoff=min(r['date'] for r in fixtures)
         # Strict date cutoff: no training on same-day or future outcomes.
