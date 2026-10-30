@@ -43,7 +43,7 @@ jobs:
           PY
       - name: Select one of five markets for top quarter of each round
         run: |
-          python scripts/join_round_predictions.py --data data/openfootball --predictions out/large-factor-backtest/factor-predictions.jsonl --output out/large-factor-backtest/round-predictions.jsonl
+          python -m scripts.join_round_predictions --data data/openfootball --predictions out/large-factor-backtest/factor-predictions.jsonl --output out/large-factor-backtest/round-predictions.jsonl
           python scripts/top25_single_pick.py --input out/large-factor-backtest/round-predictions.jsonl --output out/large-factor-backtest/top25-single-pick.json
           python - <<'PY'
           import json
