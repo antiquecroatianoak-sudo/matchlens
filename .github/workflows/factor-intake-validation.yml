@@ -5,11 +5,15 @@ on:
     paths:
       - 'analytics/factor_intake.py'
       - 'tests/test_factor_intake.py'
+      - 'tests/test_factor_snapshot_import.py'
+      - 'analytics/factor_snapshot_import.py'
       - '.github/workflows/factor-intake-validation.yml'
   pull_request:
     paths:
       - 'analytics/factor_intake.py'
       - 'tests/test_factor_intake.py'
+      - 'tests/test_factor_snapshot_import.py'
+      - 'analytics/factor_snapshot_import.py'
       - '.github/workflows/factor-intake-validation.yml'
   workflow_dispatch:
 permissions:
@@ -24,4 +28,4 @@ jobs:
         with:
           python-version: '3.11'
       - name: Verify historical factor intake rules
-        run: python -m unittest discover -s tests -p test_factor_intake.py -v
+        run: python -m unittest discover -s tests -p 'test_factor_*.py' -v
