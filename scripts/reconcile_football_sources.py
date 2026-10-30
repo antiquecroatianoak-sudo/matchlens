@@ -23,7 +23,7 @@ def main():
     report=[];linked=[]
     for file in sorted(root.glob('*.csv')):
         try:
-            season,league,_=file.name.split('.')
+            season,league=file.name.removesuffix('.csv').split('.',1)
         except ValueError:continue
         candidates=by_league[(league,season)]
         # A normalized exact name is permitted only when unambiguous in that league-season.
