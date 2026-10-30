@@ -47,3 +47,9 @@ Ažurirano: 2026-10-30. Izvor istine za napredak: ovaj dokument u GitHubu. Statu
 - Novo dodano 1.352 valjana rezultata; ukupno s prethodnih 760 sada 2.112 rezultata. Izostavljenih 20 zapisa nisu tretirani kao 0:0.
 - Ovo su **samo rezultati**. Povijesne kvote, izdane vremenske prognoze, potvrđene postave i ostali vanjski faktori nisu dostupni u OpenFootball izvoru; njihovo stvarno prikupljanje ostaje otvoreno, uz provjeru uvjeta uporabe i povijesnog vremena objave.
 - Ne prikazivati nove zajedničke rezultate točnosti dok svi traženi ulazi i cijene nisu stvarno dostupni.
+
+## Ispravak zahtjeva — sintetičke kvote 1X i X2 (2026-10-30)
+- Korisnik je potvrdio: 1X i X2 su **sintetičke kvote** iz vlastitih vjerojatnosti modela, ne kvote kladionica. 1X = 1/(P1+PX), X2 = 1/(PX+P2); samo strogo > 2,00.
+- `full_market_evaluation.py` izračunava te dvije cijene iz prognoze, ne traži povijesni bookmaker quote i ne prikazuje ROI/profit za sintetičke kvote.
+- `coverage_audit.py` za stvarne kvote provjerava samo ostalih pet tržišta. Sintetičke kvote ne predstavljaju dokaz tržišne ponude ili zarade.
+- Potrebno izvršiti CI i pravi zajednički test na potpunim, prije utakmice dostupnim faktorima.
