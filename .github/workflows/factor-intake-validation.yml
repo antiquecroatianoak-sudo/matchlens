@@ -28,4 +28,6 @@ jobs:
         with:
           python-version: '3.11'
       - name: Verify historical factor intake rules
-        run: python -m unittest discover -s tests -p 'test_factor_*.py' -v
+        run: |
+          python -m unittest discover -s tests -p 'test_factor_intake.py' -v
+          python -m unittest discover -s tests -p 'test_factor_snapshot_import.py' -v
