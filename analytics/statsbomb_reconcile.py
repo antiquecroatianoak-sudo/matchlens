@@ -15,8 +15,14 @@ def reconcile_statsbomb_matches(provider_matches, canonical_matches, team_map):
     away_team:{away_team_id}.
     """
     canonical = defaultdict(list)
+    canonical_ids = set()
+    duplicated_canonical_ids = set()
     for row in canonical_matches:
-        canonical[(row["date"], str(row["home"]), str(row["away"]))].append(row["id"])
+        identity = str(row["id"])
+        if identity in canonical_ids:
+            duplicated_canonical_ids.add(identity)
+        canonical_ids.add(identity)
+        canonical[(row["date"], str(row["home"]), str(row["away"]))].append(identity)
     paired, quarantined, seen_provider, seen_canonical = [], [], set(), set()
     for match in provider_matches:
         provider_id = match.get("match_id")
@@ -38,6 +44,9 @@ def reconcile_statsbomb_matches(provider_matches, canonical_matches, team_map):
         candidates = canonical.get(key, [])
         if len(candidates) != 1:
             quarantined.append({"provider_match_id": provider_id, "reason": "ambiguous_or_missing_fixture", "candidates": len(candidates)})
+            continue
+        if candidates[0] in duplicated_canonical_ids:
+            quarantined.append({"provider_match_id": provider_id, "reason": "duplicate_canonical_identity"})
             continue
         if candidates[0] in seen_canonical:
             quarantined.append({"provider_match_id": provider_id, "reason": "duplicate_canonical_match"})
