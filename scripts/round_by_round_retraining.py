@@ -26,12 +26,13 @@ def run(rows,years=5,min_training=500):
     ordered=sorted(groups.values(),key=lambda rs:(max(r['date'] for r in rs),min(r['date'] for r in rs)))
     report=[]
     # A round becomes available for learning only after its final match date.
-    completed_rounds=[(max(r['date'] for r in group),group) for group in groups.values()]
+    completed_rounds=sorted((max(r['date'] for r in group),group) for group in groups.values())
+    # Only complete rounds strictly before the target round can train the model.
     for fixtures in ordered:
         kickoff=min(r['date'] for r in fixtures)
         # Strict date cutoff: no training on same-day or future outcomes.
-        history=[r for r in rows if r.get('date','')<kickoff and r not in fixtures and
-                 r.get('actual') and r.get('date','')<kickoff]
+        history=[r for finished,group in completed_rounds if finished<kickoff
+                 for r in group if r.get('actual')]
         samples=[(candidate(r),r) for r in history]
         samples=[(c,r) for c,r in samples if c and c[0] in r['actual']]
         base=select(fixtures)
