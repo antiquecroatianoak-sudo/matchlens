@@ -5,6 +5,7 @@ on:
     - cron: '23 3 * * *'
 permissions:
   contents: read
+  id-token: write
 concurrency:
   group: matchlens-bulk-fixtures
   cancel-in-progress: false
@@ -36,8 +37,5 @@ jobs:
           print(f'Archive: {len(files)} files, {count} match records, {len(leagues)} leagues')
           assert count>=10000, 'Historical download incomplete: refusing partial bulk sync'
           PY
-      - name: Sync fixture batches to Supabase
-        env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-        run: python scripts/sync_openfootball_supabase.py
+      - name: Sync fixture batches using GitHub OIDC
+        run: python scripts/sync_openfootball_oidc.py
