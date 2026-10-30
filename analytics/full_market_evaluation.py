@@ -34,6 +34,10 @@ def evaluate(rows, required_factors=()):
         pred = {"1": p1, "X": px, "2": p2, "over_2_5": po, "under_2_5": 1-po, "1X": p1+px, "X2": px+p2}
         for market in MARKETS:
             quote = r.get("odds", {}).get(market)
+            synthetic = market in ("1X", "X2")
+            if synthetic:
+                fair_p = pred[market]
+                quote = {"price": 1 / fair_p, "available_at": r["prediction_at"]} if fair_p > 0 else None
             if not quote or not isinstance(quote.get("price"), (int,float)) or isinstance(quote.get("price"), bool) or not math.isfinite(quote["price"]) or quote["price"] <= 1 or instant(quote["available_at"]) > cutoff:
                 exclusions["missing_or_late_odds"] += 1
                 continue
@@ -42,11 +46,12 @@ def evaluate(rows, required_factors=()):
             x = results[market]
             x["eligible"] += 1
             x["correct"] += int(truth[market])
-            x["profit_units"] += (quote["price"]-1 if truth[market] else -1)
+            if market not in ("1X", "X2"):
+                x["profit_units"] += (quote["price"]-1 if truth[market] else -1)
             x["brier_sum"] += (pred[market] - int(truth[market]))**2
     for v in results.values():
         n = v["eligible"]
         v["accuracy"] = v["correct"]/n if n else None
         v["brier"] = v.pop("brier_sum")/n if n else None
-        v["profit_units"] = round(v["profit_units"], 6)
-    return {"markets": results, "exclusions": exclusions, "required_factors": list(required_factors)}
+        v["profit_units"] = None if v is results["1X"] or v is results["X2"] else round(v["profit_units"], 6)
+    return {"markets": results, "exclusions": exclusions, "required_factors": list(required_factors), "synthetic_double_chance": "fair implied 1/p, no bookmaker margin, no realizable ROI"}
