@@ -72,6 +72,10 @@ def main():
     key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
     if not url or not key:
         raise SystemExit("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY; no database write attempted")
+    from urllib.parse import urlparse
+    host = urlparse(url).hostname
+    if host != "jhsakrbcdjabxkgdalta.supabase.co":
+        raise SystemExit("Refusing fixture import: SUPABASE_URL is not the isolated MatchLens project")
     total = 0
     batch = []
     seen = set()
