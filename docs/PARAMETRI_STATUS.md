@@ -71,3 +71,9 @@ Ažurirano: 2026-10-30. Izvor istine za napredak: ovaj dokument u GitHubu. Statu
 - Konačni test je **jedan**, na svim dostupnim ligama (najmanje deset), s pet tipova (1, X, 2, over 2.5, under 2.5), bez kvota i bez 1X/X2, uz **globalni** odabir najboljih 25% iz cijele baze, ne po ligi.
 - Prije testa objaviti pokrivenost svakog parametra i svake lige. Nedostajući povijesni ulazi nisu nula niti se smiju izmišljati; ako je obvezni faktor nepokriven, prvo riješiti izvor ili izričito prijaviti blokadu.
 - Ranije dodana skripta za osnovni pet-tržišni test nije odobreni završni test i ne treba je pokretati kao zamjenu za puni test.
+
+## Provjera arhive nakon uvoza (2026-10-30)
+- GitHub Actions restore run 41023014766: uspješno završen; u `data/upstream_openfootball` potvrđene 64 datoteke.
+- To su izvorni rezultati, ne dokaz potpunosti 14 skupina vremenski provjerenih predutakmičnih faktora.
+- `data/historical_factors/required_groups.json` nije prisutan na ovoj grani; strogi readiness gate zato nije zadovoljen.
+- Zabranjeno prikazati rezultat-only baseline kao završni test punog modela. Završni backtest čeka stvarne izvore i vremena dostupnosti faktora.
