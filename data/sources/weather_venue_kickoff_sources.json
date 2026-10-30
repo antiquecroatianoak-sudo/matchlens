@@ -1,0 +1,71 @@
+{
+  "window": {
+    "start": "2024-10-30",
+    "end": "2026-10-30"
+  },
+  "sources": [
+    {
+      "id": "statsbomb_open",
+      "url": "https://github.com/hudl/open-data",
+      "role": [
+        "match_date",
+        "local_kickoff",
+        "stadium_name"
+      ],
+      "batch": "competition/season",
+      "requires_key": false,
+      "limitations": "selected competitions; local kickoff needs verified timezone; stadium coordinates not included"
+    },
+    {
+      "id": "football_data_org",
+      "url": "https://www.football-data.org/documentation/quickstart",
+      "role": [
+        "utc_kickoff",
+        "venue_name"
+      ],
+      "batch": "competition/season",
+      "requires_key": true,
+      "limitations": "historical coverage and stadium presence vary"
+    },
+    {
+      "id": "openstreetmap",
+      "url": "https://wiki.openstreetmap.org/wiki/Overpass_API",
+      "role": [
+        "stadium_latitude",
+        "stadium_longitude"
+      ],
+      "batch": "geographic query",
+      "requires_key": false,
+      "limitations": "venue identity must be verified; historic stadium changes require validation"
+    },
+    {
+      "id": "open_meteo_previous_runs",
+      "url": "https://open-meteo.com/en/docs/historical-forecast-api",
+      "role": [
+        "prematch_weather_forecast"
+      ],
+      "batch": "venue/day",
+      "requires_key": false,
+      "limitations": "forecast model grid estimate, not on-pitch observation; check license for commercial use"
+    },
+    {
+      "id": "open_meteo_archive",
+      "url": "https://open-meteo.com/en/docs/historical-weather-api",
+      "role": [
+        "historical_weather_reanalysis"
+      ],
+      "batch": "venue/date-range",
+      "requires_key": false,
+      "limitations": "retrospective weather cannot be used as prematch prediction input"
+    }
+  ],
+  "pipeline": [
+    "import fixture metadata",
+    "match canonical fixtures with provenance",
+    "verify stadium and coordinates",
+    "convert kickoff to UTC",
+    "batch fetch weather forecasts available before kickoff",
+    "audit missingness and chronological validation"
+  ],
+  "status": "source registry added; no claim of completed import"
+}

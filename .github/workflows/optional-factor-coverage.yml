@@ -1,0 +1,67 @@
+name: Optional factor coverage audit
+on:
+  push:
+    branches: [feature/five-market-chronological-20261030]
+    paths:
+      - 'scripts/audit_optional_factor_coverage.py'
+      - '.github/workflows/optional-factor-coverage.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Restore canonical fixtures
+        run: |
+          mkdir -p data/openfootball out/optional-coverage
+          python - <<'PY'
+          import json, urllib.request
+          from pathlib import Path
+          leagues=('en.1','it.1','es.1','de.1','fr.1','pt.1','be.1','nl.1','tr.1','gr.1')
+          seasons=('2024-25','2025-26','2026-27')
+          report=[]
+          for season in seasons:
+              for league in leagues:
+                  url=f'https://raw.githubusercontent.com/openfootball/football.json/master/{season}/{league}.json'
+                  try:
+                      with urllib.request.urlopen(url,timeout=15) as response: raw=response.read()
+                      obj=json.loads(raw)
+                      if not isinstance(obj.get('matches'),list): raise ValueError('missing matches')
+                      (Path('data/openfootball')/f'{season}.{league}.json').write_bytes(raw)
+                      report.append({'season':season,'league':league,'status':'ok','matches':len(obj['matches'])})
+                  except Exception as exc:
+                      report.append({'season':season,'league':league,'status':'unavailable','error':str(exc)[:120]})
+          Path('out/optional-coverage/source-report.json').write_text(json.dumps(report,indent=2))
+          print('Available season-league files:',sum(x['status']=='ok' for x in report),'/',len(report))
+          PY
+      - name: Build canonical fixture manifest and audit optional coverage
+        run: |
+          mkdir -p out/optional-coverage
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          rows=[]
+          for p in Path('data/openfootball').glob('*.json'):
+              try: obj=json.loads(p.read_text())
+              except (OSError, ValueError): continue
+              for m in obj.get('matches',[]):
+                  d=str(m.get('date',''))[:10]
+                  if '2024-10-30' <= d <= '2026-10-30':
+                      rows.append({'date':d,'home':m.get('team1'),'away':m.get('team2'),'source_file':p.name})
+          target=Path('out/optional-coverage/canonical-fixtures.jsonl')
+          target.write_text(''.join(json.dumps(r)+'\n' for r in rows))
+          print('Canonical fixtures:',len(rows))
+          PY
+          python scripts/audit_optional_factor_coverage.py --fixtures out/optional-coverage/canonical-fixtures.jsonl --output out/optional-coverage/coverage.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: optional-factor-coverage
+          path: out/optional-coverage/
+          retention-days: 30

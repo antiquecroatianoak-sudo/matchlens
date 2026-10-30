@@ -1,5 +1,6 @@
 """Retrospective expanding-window evaluation; model choices previously inspected, NOT unseen validation."""
 import argparse,json
+from datetime import date, timedelta
 from pathlib import Path
 import numpy as np
 from analytics.backtest import load_matches,MARKETS
@@ -11,9 +12,12 @@ def main():
     parser.add_argument('--data',default='data/openfootball')
     parser.add_argument('--lock',required=True)
     parser.add_argument('--output',required=True)
+    parser.add_argument('--start-date',default='2024-10-30')
+    parser.add_argument('--end-date',default='2026-10-30')
     args=parser.parse_args()
     lock=json.loads(Path(args.lock).read_text())
     rows,_=load_matches(args.data)
+    rows=[r for r in rows if args.start_date <= r['date'] <= args.end_date]
     records=features(rows,50,15)
     x=build_design(rows,records)
     y=actual_array(records)
@@ -23,10 +27,10 @@ def main():
     results=[]
     with output.open('w') as stream:
         for season in sorted(set(seasons)):
-            if season<'2017-18':continue
+            if not any(args.start_date <= r['match']['date'] <= args.end_date for r in records if r['match']['season']==season):continue
             test=seasons==season
             train=training_mask(records,season)
-            if train.sum()<1500 or test.sum()<100:continue
+            if train.sum()<100 or test.sum()<30:continue
             raw={}
             for family in ('outcome','goals'):
                 config=lock['chosen'][family]['config']
