@@ -27,6 +27,8 @@ def run(max_seasons=150):
                 results.append({
                     "external_match_id":match.get("match_id"),
                     "match_date":match.get("match_date"),
+                    "home_goals":match.get("home_score"),
+                    "away_goals":match.get("away_score"),
                     "kick_off_source_value":match.get("kick_off"),
                     "competition":comp.get("competition_name"),
                     "season":comp.get("season_name"),
