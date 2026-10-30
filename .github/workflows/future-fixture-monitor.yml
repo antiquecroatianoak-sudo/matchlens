@@ -1,0 +1,23 @@
+name: MatchLens future fixture monitoring (research)
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 7 * * *'
+jobs:
+  fetch-future-fixtures:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Retrieve upcoming fixtures
+        run: python -m scripts.fetch_future_fixtures
+      - name: Restore scored historical matches\n        run: python -m scripts.restore_openfootball_history\n      - name: Score upcoming fixtures using past-only baseline\n        run: python -m scripts.score_future_baseline\n      - name: Publish fixture snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: matchlens-future-fixtures
+          path: |\n            out/future-fixtures.json\n            out/upcoming-probabilities.jsonl\n            out/upcoming-coverage.json
+          retention-days: 30

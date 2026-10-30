@@ -102,7 +102,7 @@ def run(data, output, ui):
     labels=dict(outcome=y[:,:3].argmax(axis=1),goals=y[:,3].astype(int))
     trials=[]
     for group,cols in GROUPS.items():
-        for leaves,l2 in ((7,10.),(15,1.)):
+        for leaves,l2 in ((5,20.),(7,10.),(11,5.),(15,1.),(23,2.)):
             config=dict(group=group,leaves=leaves,l2=l2);pred={}
             for family in ('outcome','goals'):
                 model=learner(config).fit(x[train][:,cols],labels[family][train])
@@ -147,10 +147,14 @@ def run(data, output, ui):
         import gzip
         lines=gzip.decompress(previous_path.with_suffix('.jsonl.gz').read_bytes()).decode().splitlines()
     previous={r['id']:r for r in (json.loads(line) for line in lines)}
-    prior=np.array([[previous[r['match']['id']]['prob'][m] for m in MARKETS] for r in audit_records])
+    prior_indices=[i for i,r in enumerate(audit_records) if r['match']['id'] in previous]
+    prior=np.array([[previous[audit_records[i]['match']['id']]['prob'][m] for m in MARKETS] for i in prior_indices])
+    prior_truth=truth[prior_indices]
+    print(json.dumps({'previous_specialists_overlap':len(prior_indices),'audit_total':len(audit_records),'missing_previous':len(audit_records)-len(prior_indices)}),flush=True)
     report=dict(protocol=lock,trials=trials,calibration_trials=cal_trials,audit=stripped(metrics(p,truth)),
-                reference=stripped(metrics(reference,truth)),previous_specialists=stripped(metrics(prior,truth)),
+                reference=stripped(metrics(reference,truth)),previous_specialists=stripped(metrics(prior,prior_truth)) if prior_indices else None,
                 raw_audit=stripped(metrics(probabilities(raw['outcome'],raw['goals']),truth)),calibration=metrics(p,truth)['calibration'],
+                previous_specialists_coverage=dict(overlap=len(prior_indices),missing=len(audit_records)-len(prior_indices)),
                 by_league={},by_season={},limitations=[
                     'No new independent evidence: all development/calibration/audit seasons previously explored.',
                     'Feature ablations measured on development; they show predictive association, not causal influence.',
