@@ -1,0 +1,23 @@
+name: MatchLens future fixture monitoring (research)
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 7 * * *'
+jobs:
+  fetch-future-fixtures:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Retrieve upcoming fixtures
+        run: python -m scripts.fetch_future_fixtures
+      - name: Publish fixture snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: matchlens-future-fixtures
+          path: out/future-fixtures.json
+          retention-days: 30
