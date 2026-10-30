@@ -6,6 +6,7 @@ No network access, source rights assertions, or production writes.
 """
 from collections import defaultdict
 from datetime import datetime, timezone
+import math
 
 
 def _utc(value):
@@ -26,17 +27,22 @@ def prior_xg_features(history, fixtures, *, min_history=3, max_history=10):
         raise ValueError("invalid history window")
     by_team = defaultdict(list)
     rejected = []
+    seen = set()
     for index, row in enumerate(history):
         try:
             if not row.get("source") or not row.get("match_id") or not row.get("team_id"):
                 raise ValueError("missing provenance or identity")
             xg = float(row["xg"])
-            if not 0 <= xg < 100:
+            if not math.isfinite(xg) or not 0 <= xg < 100:
                 raise ValueError("invalid xg")
             ended = _utc(row["match_end_at"])
             published = _utc(row["published_at"])
             if published < ended:
                 raise ValueError("publication precedes match end")
+            identity = (str(row["match_id"]), str(row["team_id"]))
+            if identity in seen:
+                raise ValueError("duplicate team-match observation")
+            seen.add(identity)
             by_team[row["team_id"]].append((published, ended, row["match_id"], xg, row["source"]))
         except (KeyError, TypeError, ValueError, AttributeError) as exc:
             rejected.append({"index": index, "reason": str(exc)})
