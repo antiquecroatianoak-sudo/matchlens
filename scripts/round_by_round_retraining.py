@@ -24,7 +24,9 @@ def run(rows,years=5,min_training=500):
     # Group by earliest date, but never reveal any match in the round until the
     # entire round is over. Same-day overlapping rounds are not trained on.
     ordered=sorted(groups.values(),key=lambda rs:(max(r['date'] for r in rs),min(r['date'] for r in rs)))
-    report=[]\n    # A round becomes available for learning only after its final match date.\n    completed_rounds=[(max(r['date'] for r in group),group) for group in groups.values()]
+    report=[]
+    # A round becomes available for learning only after its final match date.
+    completed_rounds=[(max(r['date'] for r in group),group) for group in groups.values()]
     for fixtures in ordered:
         kickoff=min(r['date'] for r in fixtures)
         # Strict date cutoff: no training on same-day or future outcomes.
@@ -62,6 +64,7 @@ def main():
     rows=[json.loads(line) for line in Path(a.input).read_text().splitlines() if line.strip()]
     result=run(rows,a.years)
     out=Path(a.output);out.parent.mkdir(parents=True,exist_ok=True)
-    out.write_text(json.dumps(result,indent=2)+'\n')
+    out.write_text(json.dumps(result,indent=2)+'
+')
     print('ROUNDS',len(result['rounds']),'CHALLENGER',sum('challenger' in r for r in result['rounds']))
 if __name__=='__main__':main()
