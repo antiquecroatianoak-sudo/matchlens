@@ -1,0 +1,23 @@
+name: MatchLens feature coverage audit
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+  workflow_dispatch:
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Audit current research sample
+        run: |
+          python scripts/check_11_feature_gate.py --input data/research/statsbomb_bundesliga_2023_24_sample.json --min-matches 1000 || true
+          python -c "import json; r=json.load(open('out/feature_gate.json')); assert r['records']==34 and not r['pass']"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: matchlens-feature-coverage-audit
+          path: out/feature_gate.json
