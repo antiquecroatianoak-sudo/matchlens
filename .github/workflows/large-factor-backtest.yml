@@ -88,7 +88,10 @@ jobs:
       - name: Research-only second-stage chronological reranking
         run: |
           python -m scripts.second_stage_walkforward --input out/large-factor-backtest/walkforward-rounds.jsonl --output out/large-factor-backtest/second-stage-walkforward.json
-      - name: Five-year chronological round-by-round learning test\n        run: |\n          python -m scripts.round_by_round_retraining --input out/large-factor-backtest/walkforward-rounds.jsonl --years 5 --output out/large-factor-backtest/five-year-round-learning.json\n      - name: Audit top-quarter selection and compare fixed ranking alternatives
+      - name: Five-year chronological round-by-round learning test
+        run: |
+          python -m scripts.round_by_round_retraining --input out/large-factor-backtest/walkforward-rounds.jsonl --years 5 --output out/large-factor-backtest/five-year-round-learning.json
+      - name: Audit top-quarter selection and compare fixed ranking alternatives
         run: |
           python -m scripts.selection_diagnostics --input out/large-factor-backtest/walkforward-rounds.jsonl --output out/large-factor-backtest/selection-diagnostics.json
       - uses: actions/upload-artifact@v4
