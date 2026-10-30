@@ -3,6 +3,7 @@
 Never invent historical odds or fill unavailable factors with zero.
 """
 from analytics.full_market_evaluation import MARKETS
+BOOKMAKER_MARKETS = tuple(m for m in MARKETS if m not in ("1X", "X2"))
 
 REQUIRED = (
     "attack_defense", "home_away", "elo", "form", "rest_travel",
@@ -12,7 +13,7 @@ REQUIRED = (
 
 def audit(rows, required=REQUIRED):
     missing = {key: 0 for key in required}
-    missing_odds = {market: 0 for market in MARKETS}
+    missing_odds = {market: 0 for market in BOOKMAKER_MARKETS}
     eligible = 0
     for row in rows:
         factors = row.get("factors") or {}
@@ -23,7 +24,7 @@ def audit(rows, required=REQUIRED):
             if factors.get(key) is None:
                 missing[key] += 1
                 complete_factors = False
-        for market in MARKETS:
+        for market in BOOKMAKER_MARKETS:
             if odds.get(market) is None:
                 missing_odds[market] += 1
                 complete_odds = False
