@@ -1,5 +1,5 @@
 name: MatchLens bulk fixture sync
-# Retry after verified OIDC subject-claim fix in Edge Function v6.
+# Retry with OIDC authorization based on verified repository IDs, branch, and workflow.
 on:
   workflow_dispatch:
   push:
