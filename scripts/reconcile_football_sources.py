@@ -36,7 +36,7 @@ def main():
     canonical,_=load_matches('data/openfootball')
     by_league=defaultdict(list)
     for row in canonical:by_league[(row['league'],row['season'])].append(row)
-    report=[];linked=[];unresolved=Counter()
+    report=[];linked=[];unresolved=Counter();alias_ambiguities=Counter()
     for file in sorted(root.glob('*.csv')):
         try:
             season,league=file.name.removesuffix('.csv').split('.',1)
@@ -47,6 +47,8 @@ def main():
         for r in candidates:
             for name in (r['home'],r['away']):aliases[canonical_team(name)].add(name)
         counts=Counter()
+        for normalized,names in aliases.items():
+            if len(names)>1:alias_ambiguities[(league,season,normalized)]+=1
         with file.open(encoding='utf-8-sig',errors='replace',newline='') as f:
             for row in csv.DictReader(f):
                 if not row.get('HomeTeam') or not row.get('AwayTeam'):continue
@@ -80,11 +82,11 @@ def main():
     linked=[x for x in linked if duplicates[x['canonical_id']]==1]
     summary={'mode':'research_only_no_model_training','matched_unique':len(linked),
              'quarantined_duplicate_links':sum(v for v in duplicates.values() if v>1),
-             'by_file':report,'unresolved_teams':[{'league':league,'side':side,'name':name,'count':count} for (league,side,name),count in unresolved.most_common(100)],'warning':'Postmatch statistics are NOT pre-match features; odds require timestamp validation.'}
+             'by_file':report,'ambiguous_canonical_aliases':[{'league':league,'season':season,'normalized':name} for (league,season,name),_ in alias_ambiguities.most_common(50)],'unresolved_teams':[{'league':league,'side':side,'name':name,'count':count} for (league,side,name),count in unresolved.most_common(100)],'warning':'Postmatch statistics are NOT pre-match features; odds require timestamp validation.'}
     (root/'fixture-links.jsonl').write_text(''.join(json.dumps(x)+'\n' for x in linked))
     (root/'reconciliation.json').write_text(json.dumps(summary,indent=2))
     totals=dict(sum((Counter({k:v for k,v in row.items() if k!='file'}) for row in report),Counter()))
-    print('SOURCE RECONCILIATION',json.dumps({**{k:v for k,v in summary.items() if k!='by_file'},'totals':totals,'sample_files':report[:3],'top_unresolved_teams':summary['unresolved_teams'][:20]}),flush=True)
+    print('SOURCE RECONCILIATION',json.dumps({**{k:v for k,v in summary.items() if k!='by_file'},'totals':totals,'sample_files':report[:3],'top_unresolved_teams':summary['unresolved_teams'][:20],'ambiguous_aliases':len(alias_ambiguities)}),flush=True)
     if list(root.glob('*.csv')) and not linked:
         raise SystemExit('External CSV files exist but no fixtures reconciled; inspect alias/date diagnostics')
 if __name__=='__main__':main()
