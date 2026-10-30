@@ -98,6 +98,13 @@ def main():
       'selection_share':len(original['selected'])/len(rows)
     }
     selected=original['selected']
+    selected_ids=[r['id'] for r in selected]
+    if len(selected_ids)!=len(set(selected_ids)):
+        raise ValueError('Multiple selected tips for the same fixture')
+    if any(r['market'] not in MARKETS for r in selected):
+        raise ValueError('Unsupported single-pick market')
+    if any(r['selected']>r['limit'] for r in original['rounds']):
+        raise ValueError('Selection exceeded the per-round 25% cap')
     diagnostics={'fixtures':len(rows),'rounds':len(original['rounds']),'issues':issues,
        'baseline':original['summary'],'by_league':breakdown(selected,'league'),
        'by_season':breakdown(selected,'season'),'by_market':breakdown(selected,'market'),
