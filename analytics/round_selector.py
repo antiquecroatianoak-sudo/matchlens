@@ -2,7 +2,7 @@
 from math import ceil, floor, isfinite
 
 REGULAR=("1","X","2","over_2_5","under_2_5")
-SYNTHETIC=("1X","X2")
+SYNTHETIC=()
 
 def choose_round(matches):
     """Each match: id, probabilities (1,X,2,over_2_5), odds with price+available_at,
@@ -23,10 +23,6 @@ def choose_round(matches):
             quote=match.get("odds",{}).get(market)
             if quote and isinstance(quote.get("price"),(int,float)) and not isinstance(quote["price"],bool) and isfinite(quote["price"]) and quote["price"]>1.30 and quote.get("available_at") and quote["available_at"]<=match["prediction_at"]:
                 valid.append((market,probs[market],quote["price"]))
-        for market in SYNTHETIC:
-            probability=probs[market]
-            if probability>0 and 1/probability>2:
-                valid.append((market,probability,1/probability))
         if valid:
             market,probability,price=max(valid,key=lambda v:(v[1],v[0]))
             candidates.append({"match_id":match["match_id"],"market":market,"probability":probability,"odds":price,"synthetic":market in SYNTHETIC})
