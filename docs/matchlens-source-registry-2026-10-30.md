@@ -16,13 +16,13 @@ Popis izvora iz korisnikove fotografije / razgovora, trajni projektni zapis. Sta
 Dodatni ranije razmatrani izvori: OpenFootball (osnovni rezultati), Open-Meteo (vremenski podaci uz strogu provjeru vremenske dostupnosti), football-data.org (uvjeti API-ja).
 
 ## Protokol
-- Obuhvat: deset vodećih europskih liga, posljednje dvije završene sezone.
+- Obuhvat: najmanje deset dostupnih liga bilo kojeg ranga ili države; uključiti sve valjane dostupne povijesne sezone, bez dupliciranja.
 - Walk-forward po kolima: za svako kolo koristiti isključivo podatke dostupne prije početka utakmice; rezultat otkriti tek nakon predikcije.
 - Bez curenja informacija: bilježiti published_at, ingested_at, effective_at, source URL, ligu, sezonu, ID utakmice i dopuštenje za korištenje.
-- Najviše 25% utakmica kola, jedan najbolji dopušteni tip po utakmici.
-- Tipovi: 1, X, 2, over/under 2.5 uz kvotu >1.30; 1X i X2 samo uz dokumentirano izračunatu sintetsku kvotu >2.00.
-- Jedna agregirana uspješnost (pogodci / odabrani tipovi), uz broj pogodaka i uzorak. Posebno evidentirati ROI ako su kvote valjane.
-- Usporediti baseline i nove faktore na istim kolima; zadnji dio razdoblja držati netaknutim holdoutom.
+- Za svaku utakmicu izračunati najbolji dopušteni tip; zatim globalno rangirati sve prognoze iz svih liga i odabrati 25% najpouzdanijih, bez kvota po ligi ili kolu.
+- Tipovi za povijesni test: 1, X, 2, više od 2,5 i manje od 2,5 gola. Bez kladioničarskih kvota, bez 1X i X2.
+- Jedna agregirana uspješnost (pogodci / odabrani tipovi), uz broj pogodaka i uzorak. ROI se ne računa u ovom testu bez kvota.
+- Ne pokretati djelomične prediktivne testove. Prije jedinstvenog završnog walk-forward testa potvrditi svih 14 dogovorenih skupina parametara i njihove povijesne vrijednosti, dostupne prije početka utakmica. Zadnji dio razdoblja držati netaknutim holdoutom.
 - Nedostajuće povijesne snimke faktora ne nadomještati današnjim vrijednostima.
 - Ne označavati izvor integriranim ili test pokrenutim bez stvarnog izvršavanja i zapisnika.
 
