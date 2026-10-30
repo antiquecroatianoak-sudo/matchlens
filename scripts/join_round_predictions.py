@@ -19,7 +19,7 @@ def main():
             pred=json.loads(line);match=lookup.get(pred["id"])
             if match is None:missing+=1;continue
             target.write(json.dumps({"id":pred["id"],"league":match["league"],"season":match["season"],
-                "round":match["round"],"prob":pred["prob"],"actual":pred["actual"]})+"\n")
+                "round":match["round"],"date":match["date"],"prob":pred["prob"],"actual":pred["actual"]})+"\n")
             count+=1
     print(json.dumps({"joined":count,"missing":missing}))
     if not count or missing:raise SystemExit("Incomplete join")
