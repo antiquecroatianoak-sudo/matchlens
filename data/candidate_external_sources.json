@@ -129,6 +129,16 @@
       "verified_prematch_records": 0,
       "original_publication_timestamp_verified": false,
       "notes": "Name only partly visible in screenshot; verify whether actual licensed historical datasets are offered."
+    },
+    {
+      "name": "API-FOOTBALL (API-Sports)",
+      "url": "https://www.api-football.com/",
+      "scope": "fixtures_lineups_injuries_statistics_odds_excluded",
+      "automated_access_approved": false,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false,
+      "access_status": "api_key_and_plan_required",
+      "notes": "Use official API with key and plan; verify historical endpoint coverage and publication timing; never commit credentials."
     }
   ],
   "policy": "Use documented permitted access only. For retrospective player/team statistics use strictly prior completed matches. Never infer original availability from current page dates."
