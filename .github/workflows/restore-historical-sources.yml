@@ -21,6 +21,15 @@ jobs:
           python-version: '3.11'
       - name: Download all manifest sources with checksum verification
         run: python -m ingestion.restore_manifest_sources
+      - name: Fail if any historical source was rejected
+        run: |
+          python - <<'PY'
+          import json
+          from ingestion.restore_manifest_sources import restore
+          result = restore()
+          if result['failed']:
+              raise SystemExit(f"Historical source import incomplete: {len(result['failed'])} rejected")
+          PY
       - name: Save imported source files
         run: |
           git config user.name "github-actions[bot]"
