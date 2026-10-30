@@ -1,0 +1,30 @@
+name: MatchLens historical model backtest
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/backtest_baseline.py'
+      - '.github/workflows/historical-backtest.yml'
+permissions:
+  contents: read
+jobs:
+  baseline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Restore historical OpenFootball scores
+        run: python scripts/restore_openfootball_history.py
+      - name: Chronological baseline backtest
+        run: python scripts/backtest_baseline.py
+      - name: Publish metrics artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: matchlens-baseline-metrics
+          path: out/backtest_baseline.json
+          if-no-files-found: ignore
