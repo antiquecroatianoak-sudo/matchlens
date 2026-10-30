@@ -11,8 +11,8 @@ class FullMarketTests(unittest.TestCase):
     def test_all_markets(self):
         v=evaluate([row()],("weather","lineup"))["markets"]
         self.assertEqual(len(v),7)
-        self.assertEqual(v["1X"]["accuracy"],1)
-        self.assertEqual(v["X2"]["accuracy"],0)
+        self.assertEqual(v["1X"]["eligible"],0)
+        self.assertEqual(v["X2"]["eligible"],0)
     def test_late_quote_excluded(self):
         r=row();r["odds"]["1X"]["available_at"]="2025-01-01T12:00:00Z"
         self.assertEqual(evaluate([r])["markets"]["1X"]["eligible"],0)
@@ -23,3 +23,9 @@ class FullMarketTests(unittest.TestCase):
         self.assertEqual(evaluate([r])["markets"]["1X"]["eligible"],0)
 if __name__=="__main__":
     unittest.main()
+
+    def test_synthetic_1x_above_two(self):
+        r=row();r["probabilities"]={"1":.15,"X":.25,"2":.60,"over_2_5":.6}
+        x=evaluate([r])["markets"]["1X"]
+        self.assertEqual(x["eligible"],1)
+        self.assertIsNone(x["profit_units"])
