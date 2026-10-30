@@ -39,6 +39,18 @@ jobs:
           print('Development matches:',r['protocol']['chosen']['outcome']['development']['matches'])
           print('84-feature configurations:',r['protocol']['candidates'])
           PY
+      - name: Select one of five markets for top quarter of each round
+        run: |
+          python scripts/join_round_predictions.py --data data/openfootball --predictions out/large-factor-backtest/factor-predictions.jsonl --output out/large-factor-backtest/round-predictions.jsonl
+          python scripts/top25_single_pick.py --input out/large-factor-backtest/round-predictions.jsonl --output out/large-factor-backtest/top25-single-pick.json
+          python - <<'PY'
+          import json
+          r=json.load(open('out/large-factor-backtest/top25-single-pick.json'))
+          assert r['summary']['evaluated']>=100
+          assert all(x['selected']<=x['fixtures']//4 for x in r['rounds'])
+          assert len({x['id'] for x in r['selected']})==len(r['selected'])
+          print('Top 25% single-pick hit rate:',r['summary']['hit_rate'])
+          PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:
