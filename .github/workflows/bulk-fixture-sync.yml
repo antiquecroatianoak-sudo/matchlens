@@ -21,6 +21,21 @@ jobs:
         run: python -m py_compile scripts/sync_openfootball_supabase.py
       - name: Restore complete historical seasons in batches
         run: python scripts/restore_openfootball_history.py
+      - name: Report archive coverage before database writes
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          files=list(Path('data/openfootball').glob('*.json'))
+          count=0
+          leagues=set()
+          for path in files:
+              obj=json.loads(path.read_text())
+              count+=len(obj.get('matches',[]))
+              leagues.add('.'.join(path.name.split('.')[1:3]))
+          print(f'Archive: {len(files)} files, {count} match records, {len(leagues)} leagues')
+          assert count>=10000, 'Historical download incomplete: refusing partial bulk sync'
+          PY
       - name: Sync fixture batches to Supabase
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
