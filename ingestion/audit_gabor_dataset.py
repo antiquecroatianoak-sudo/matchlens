@@ -9,7 +9,7 @@ import json
 import re
 import unicodedata
 import urllib.request
-from collections import Counter,defaultdict
+from collections import defaultdict
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -23,7 +23,6 @@ def fetch_csv(name):
         raw=response.read()
     return csv.DictReader(io.StringIO(raw.decode("utf-8-sig",errors="replace")))
 def run():
-    from datetime import date
     idx=defaultdict(list)
     for path in (ROOT/"data/normalized_archive").glob("*.json"):
         for m in json.loads(path.read_text(encoding="utf-8"))["matches"]:
@@ -50,9 +49,11 @@ def run():
                            if row.get(x) not in (None,"")]})
     elo=fetch_csv("EloRatings.csv")
     elo_rows=sum(1 for _ in elo)
+    # Preserve every validated link; the previous 250-row truncation silently lost matches.
+    unique={x["match_id"]:x for x in linked}
     report={"source":BASE,"source_matches":total,"source_elo_snapshots":elo_rows,
-            "exact_linked":len(linked),"prematch_verified":0,
-            "match_columns":columns,"links":linked[:250],
+            "exact_linked":len(unique),"duplicate_link_rows":len(linked)-len(unique),"prematch_verified":0,
+            "match_columns":columns,"links":list(unique.values()),
             "notes":"Only exact fixture/date/team/score links. Match-day stats are postmatch and forbidden as same-match predictors. Elo snapshot dates are not publication timestamps; do not claim full factor validation."}
     output=ROOT/"data"/"gabor_source_audit.json"
     output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
