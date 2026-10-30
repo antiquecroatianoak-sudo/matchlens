@@ -17,6 +17,11 @@ class FactorIntakeTests(unittest.TestCase):
     def test_missing_timezone_rejected(self):
         row = dict(BASE, observed_at="2026-10-30T10:00:00")
         self.assertIn("invalid_timestamp:observed_at", validate_factor(row))
+    def test_nonfinite_and_non_numeric_values_rejected(self):
+        for value in (float("nan"), float("inf"), float("-inf"), "not-a-number", True):
+            with self.subTest(value=value):
+                self.assertIn("invalid_numeric_value", validate_factor(dict(BASE, value=value)))
+
     def test_batch_counts(self):
         result = accepted_factors([BASE, dict(BASE, source="")])
         self.assertEqual((len(result["accepted"]), len(result["rejected"])), (1,1))

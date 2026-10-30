@@ -4,6 +4,7 @@ Research infrastructure only: this module does not fetch data, claim a source is
 licensed, or promote a feature into the live model.
 """
 from datetime import datetime, timezone
+import math
 
 REQUIRED = ("match_id", "factor", "value", "source", "observed_at", "available_at", "prediction_at")
 
@@ -16,6 +17,12 @@ def validate_factor(record):
         errors.append("source_required")
     if not isinstance(record["factor"], str) or not record["factor"].strip():
         errors.append("factor_required")
+    try:
+        value = record["value"]
+        if isinstance(value, bool) or not math.isfinite(float(value)):
+            raise ValueError("nonfinite or boolean factor")
+    except (TypeError, ValueError, OverflowError):
+        errors.append("invalid_numeric_value")
     parsed = {}
     for key in ("observed_at", "available_at", "prediction_at"):
         try:
