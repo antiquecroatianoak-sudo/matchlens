@@ -9,7 +9,7 @@ export async function GET(){
  if(!base||!key)return Response.json({error:"Izvor utakmica nije konfiguriran."},{status:503});
  try{
   const url=new URL("/rest/v1/fixtures",base);
-  url.searchParams.set("select","id,match_date,home_team,away_team,league");
+  url.searchParams.set("select","id,match_date");
   url.searchParams.set("match_date","gte."+new Date().toISOString().slice(0,10));
   url.searchParams.set("order","match_date.asc");
   url.searchParams.set("limit","200");
