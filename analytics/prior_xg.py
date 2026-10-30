@@ -43,7 +43,7 @@ def prior_xg_features(history, fixtures, *, min_history=3, max_history=10):
             if identity in seen:
                 raise ValueError("duplicate team-match observation")
             seen.add(identity)
-            by_team[row["team_id"]].append((published, ended, row["match_id"], xg, row["source"]))
+            by_team[str(row["team_id"])].append((published, ended, str(row["match_id"]), xg, row["source"]))
         except (KeyError, TypeError, ValueError, AttributeError) as exc:
             rejected.append({"index": index, "reason": str(exc)})
     output, missing = [], []
@@ -52,8 +52,8 @@ def prior_xg_features(history, fixtures, *, min_history=3, max_history=10):
             prediction = _utc(fixture["prediction_at"])
             match_id, team_id = fixture["match_id"], fixture["team_id"]
             eligible = sorted(
-                (r for r in by_team.get(team_id, ()) if r[0] < prediction and r[1] < prediction and r[2] != match_id),
-                key=lambda r: (r[0], r[2]),
+                (r for r in by_team.get(str(team_id), ()) if r[0] < prediction and r[1] < prediction and r[2] != str(match_id)),
+                key=lambda r: (r[1], r[0], r[2]),
             )[-max_history:]
             if len(eligible) < min_history:
                 missing.append({"match_id": match_id, "team_id": team_id, "reason": "insufficient_verified_prior_matches", "count": len(eligible)})
