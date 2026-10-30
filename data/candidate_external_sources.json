@@ -139,6 +139,16 @@
       "original_publication_timestamp_verified": false,
       "access_status": "api_key_and_plan_required",
       "notes": "Use official API with key and plan; verify historical endpoint coverage and publication timing; never commit credentials."
+    },
+    {
+      "name": "Club Football Match Data 2000-2025",
+      "url": "https://github.com/xgabora/Club-Football-Match-Data-2000-2025",
+      "scope": "historical_matches_elo_form_shots_cards_corners_fouls",
+      "automated_access_approved": true,
+      "verified_prematch_records": 0,
+      "original_publication_timestamp_verified": false,
+      "access_status": "public_github_repository_with_upstream_provenance_review",
+      "notes": "Repository declares MIT; underlying matches credited to Football-Data.co.uk and Elo to ClubElo. Review upstream reuse rights. Strictly lag postmatch columns; exclude odds and clusters potentially derived from final match."
     }
   ],
   "policy": "Use documented permitted access only. For retrospective player/team statistics use strictly prior completed matches. Never infer original availability from current page dates."
