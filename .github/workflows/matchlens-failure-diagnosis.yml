@@ -43,6 +43,18 @@ jobs:
                                           lines.append('RESULT '+name+' '+json.dumps({k:v for k,v in data.items() if k in ('summary','years','comparison','baseline','challenger','period','protocol')},ensure_ascii=False)[:9000])
                                           if name.endswith('five-year-round-learning.json'):
                                               lines.append('ROUND COUNT '+str(len(data.get('rounds',[]))))
+                                              rounds=data.get('rounds',[])
+                                              paired=[q for q in rounds if 'challenger' in q]
+                                              for label,subset in [('ALL',rounds),('PAIRED',paired)]:
+                                                  for model in ('baseline','challenger'):
+                                                      stats=[q[model] for q in subset if model in q and q[model].get('evaluated')]
+                                                      n=sum(q['evaluated'] for q in stats); h=sum(q['hits'] for q in stats)
+                                                      lines.append(f'FIVE_YEAR {label} {model} rounds={len(stats)} evaluated={n} hits={h} hit_rate={h/n if n else None}')
+                                              for season in sorted(set(q['season'] for q in paired)):
+                                                  group=[q for q in paired if q['season']==season]
+                                                  for model in ('baseline','challenger'):
+                                                      n=sum(q[model]['evaluated'] for q in group);h=sum(q[model]['hits'] for q in group)
+                                                      lines.append(f'SEASON {season} {model} evaluated={n} hits={h} rate={h/n if n else None}')
               jobs=gh(f"/repos/{repo}/actions/runs/{run['id']}/jobs")['jobs']
               for job in jobs:
                   lines.append(f"Job {job['name']} | {job['conclusion']} | job_id={job['id']}")
