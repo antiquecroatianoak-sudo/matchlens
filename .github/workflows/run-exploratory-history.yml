@@ -8,6 +8,7 @@ jobs:
       - run: python -m analytics.build_result_features
       - run: python -m ingestion.import_statsbomb_catalog
       - run: python -m ingestion.link_statsbomb_matches
+      - run: python -m ingestion.import_statsbomb_events
       - run: python -m analytics.create_factor_database /tmp/matchlens_factors.sqlite
       - run: python -m analytics.connect_external_factors
       - run: python -m analytics.audit_normalized_readiness
