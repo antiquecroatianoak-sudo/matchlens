@@ -15,7 +15,7 @@ def main():
     canonical,_=load_matches('data/openfootball')
     report=[];total=0
     for year in YEARS:
-        season=f'{year}-{str((year+1)%100):02d}'
+        season=f'{year}-{(year+1)%100:02d}'
         for league,division in LEAGUES.items():
             url=f'{BASE}/{year%100:02d}{(year+1)%100:02d}/{division}.csv'
             item={'source':'football-data.co.uk','league':league,'season':season,'url':url}
