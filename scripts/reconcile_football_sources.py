@@ -64,7 +64,8 @@ def main():
              'by_file':report,'warning':'Postmatch statistics are NOT pre-match features; odds require timestamp validation.'}
     (root/'fixture-links.jsonl').write_text(''.join(json.dumps(x)+'\n' for x in linked))
     (root/'reconciliation.json').write_text(json.dumps(summary,indent=2))
-    print('SOURCE RECONCILIATION',json.dumps({k:v for k,v in summary.items() if k!='by_file'}),flush=True)
+    totals=dict(sum((Counter({k:v for k,v in row.items() if k!='file'}) for row in report),Counter()))
+    print('SOURCE RECONCILIATION',json.dumps({**{k:v for k,v in summary.items() if k!='by_file'},'totals':totals,'sample_files':report[:3]}),flush=True)
     if list(root.glob('*.csv')) and not linked:
         raise SystemExit('External CSV files exist but no fixtures reconciled; inspect alias/date diagnostics')
 if __name__=='__main__':main()
