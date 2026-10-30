@@ -1,0 +1,47 @@
+name: MatchLens large historical factor backtest
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+  workflow_dispatch:
+jobs:
+  historical-factor-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical dependencies
+        run: python -m pip install numpy scipy scikit-learn
+      - name: Verify historical coverage
+        run: |
+          python - <<'PY'
+          from analytics.backtest import load_matches
+          rows,source=load_matches('data/openfootball')
+          print('Historical rows:',len(rows))
+          print('Coverage:',source['coverage'])
+          assert len(rows)>=10000, 'Historical archive is insufficient for large testing'
+          PY
+      - name: Run 84-feature large historical test
+        run: python -m analytics.factor_search --data data/openfootball --output out/large-factor-backtest
+      - name: Verify result volume and factor families
+        run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('out/large-factor-backtest/factor-report.json'))
+          assert r['protocol']['features']>=11
+          assert r['protocol']['features']==84
+          assert r['audit']['matches']>=1000
+          print('Historical audit matches:',r['audit']['matches'])
+          print('Development matches:',r['protocol']['chosen']['outcome']['development']['matches'])
+          print('84-feature configurations:',r['protocol']['candidates'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: matchlens-large-historical-factor-results
+          path: out/large-factor-backtest/
+          retention-days: 14
