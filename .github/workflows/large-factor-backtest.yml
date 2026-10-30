@@ -16,6 +16,8 @@ jobs:
           python-version: '3.11'
       - name: Install numerical dependencies
         run: python -m pip install numpy scipy scikit-learn
+      - name: Restore historical football archive
+        run: python scripts/restore_openfootball_history.py
       - name: Verify historical coverage
         run: |
           python - <<'PY'
