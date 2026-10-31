@@ -62,6 +62,9 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_select_prospective_model.py'
       - name: Verify two completed historical seasons
         run: python -m unittest discover -s tests -p 'test_recent_history_restore.py'
+      - name: Settle previously saved predictions after confirmed final scores
+        if: github.ref == 'refs/heads/main'
+        run: python -m scripts.sync_prospective_settlement_oidc
       - name: Retrieve upcoming fixtures
         run: python -m scripts.fetch_future_fixtures
       - name: Persist verified future fixtures in MatchLens database
@@ -71,7 +74,7 @@ jobs:
         run: python -m scripts.restore_openfootball_history --recent-two
       - name: Score upcoming fixtures using past-only baseline
         run: python -m scripts.score_future_baseline
-      - name: Score upcoming fixtures with locked advanced challenger (research only)
+      - name: Score upcoming fixtures with locked advanced model
         run: python -m scripts.score_future_advanced
       - name: Report verified fixture and model coverage before persistence
         run: |
@@ -89,7 +92,7 @@ jobs:
           print('ADVANCED SKIPS:',json.dumps(advanced['skipped'])[:3000])
           if not fixtures['fixtures']:
               raise SystemExit('No verified future fixtures from providers; cannot create genuine predictions')
-          if not baseline['scored']:
+          if not (baseline['scored'] or advanced['scored']):
               raise SystemExit('No scoreable future fixtures; inspect mapping and historical coverage')
           PY
       - name: Prefer validated advanced forecasts for production snapshots
@@ -101,9 +104,6 @@ jobs:
         run: python -m scripts.sync_prospective_oidc
       - name: Check provider results for snapshot (research)
         run: python -m scripts.settle_prospective_predictions
-      - name: Settle previously saved predictions after confirmed final scores
-        if: github.ref == 'refs/heads/main'
-        run: python -m scripts.sync_prospective_settlement_oidc
       - name: Publish fixture snapshot
         uses: actions/upload-artifact@v4
         with:
