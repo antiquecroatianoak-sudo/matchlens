@@ -53,10 +53,14 @@ def select(rows, created_at, round_lookup=certified_round_ids):
                   "selection_rule": "top_25_percent_per_league_round"}
         groups.setdefault((row["league"], row["season"], row["round"]), []).append(record)
     all_rows = []
+    round_cache = {}
     for (league, season, round_id), group in groups.items():
         # Deterministic ranking independent of upstream source ordering.
         group.sort(key=lambda r: (-r["confidence"], r["kickoff_utc"], r["id"]))
-        expected = round_lookup(league, season, round_id, created_at)
+        key = (league, season, round_id)
+        if key not in round_cache:
+            round_cache[key] = round_lookup(league, season, round_id, created_at)
+        expected = round_cache[key]
         if expected is not None:
             expected = set(expected)
         observed = [r["id"] for r in group]
