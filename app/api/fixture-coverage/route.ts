@@ -11,9 +11,10 @@ export async function GET(){
  if(!url||!key)return Response.json({error:"Supabase veza nije konfigurirana."},{status:503});
  try{
   const headers={apikey:key,Authorization:"Bearer "+key,Prefer:"count=exact"};
+  const todayZagreb=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Zagreb",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
   const [all,upcoming,latest]=await Promise.all([
    fetch(url+"/rest/v1/fixtures?select=id&limit=0",{headers,cache:"no-store"}),
-   fetch(url+"/rest/v1/fixtures?select=id&match_date=gte."+new Date().toISOString().slice(0,10)+"&limit=0",{headers,cache:"no-store"}),
+   fetch(url+"/rest/v1/fixtures?select=id&match_date=gte."+todayZagreb+"&limit=0",{headers,cache:"no-store"}),
    fetch(url+"/rest/v1/fixtures?select=match_date&order=match_date.desc&limit=1",{headers,cache:"no-store"})
   ]);
   if(!all.ok||!upcoming.ok||!latest.ok)throw Error("Supabase query failed");
