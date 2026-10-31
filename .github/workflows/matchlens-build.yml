@@ -18,6 +18,12 @@ jobs:
           node-version: '22'
       - name: Install dependencies
         run: npm install --no-audit --no-fund
+      - name: Verify required project files
+        run: |
+          test -f package.json
+          test -f tsconfig.json
+          test -f app/page.tsx
+          test -f app/api/session/route.ts
       - name: TypeScript check
         run: npm run typecheck
       - name: Production build
