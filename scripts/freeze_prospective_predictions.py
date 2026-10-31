@@ -18,7 +18,7 @@ def select(rows, created_at):
             candidates = [(k, float(probs[k])) for k in ("home","draw","away") if k in probs]
         else:
             candidates = []  # Only explicit 1X2 market labels are supported.
-        if not candidates or not all(math.isfinite(v) and 0 <= v <= 1 for _, v in candidates):
+        if len(candidates)!=3 or not all(math.isfinite(v) and 0 <= v <= 1 for _, v in candidates) or abs(sum(v for _,v in candidates)-1)>0.002:
             continue
         outcome, confidence = max(candidates, key=lambda kv: kv[1])
         record = {**row, "predicted_outcome": outcome, "confidence": confidence,
