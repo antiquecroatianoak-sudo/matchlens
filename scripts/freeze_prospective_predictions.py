@@ -80,6 +80,7 @@ def main():
         group["scored"] += 1
         group["selected"] += int(row["top25"])
         group["certified"] = bool(row["round_certified"])
+        group["reason"] = "complete_round" if row["round_certified"] else "incomplete_or_unverified_round"
     round_coverage = sorted(rounds.values(), key=lambda g: (g["league"], g["season"], g["round"]))
     Path("out/prospective-round-coverage.json").write_text(json.dumps(round_coverage, indent=2) + "\\n")
     summary = {"generated_at_utc": created_at.isoformat(), "scored": len(rows),
