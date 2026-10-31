@@ -1,14 +1,18 @@
 """Restore permitted OpenFootball historical match JSON for the ten leagues."""
 import json,urllib.request,time
+from datetime import datetime,timezone
 from pathlib import Path
 
 LEAGUES=("en.1","it.1","es.1","de.1","fr.1","pt.1","be.1","nl.1","tr.1","gr.1")
-SEASONS=tuple(f"{year}-{str((year+1)%100).zfill(2)}" for year in range(2010,2026))
+def completed_seasons(now=None):
+    now=now or datetime.now(timezone.utc)
+    last_start=now.year-1 if now.month>=7 else now.year-2
+    return tuple(f"{y}-{(y+1)%100:02d}" for y in (last_start-1,last_start))
 BASE="https://raw.githubusercontent.com/openfootball/football.json/master"
 def main():
     folder=Path("data/openfootball");folder.mkdir(parents=True,exist_ok=True)
     manifest=[]
-    for season in SEASONS:
+    for season in completed_seasons():
         for league in LEAGUES:
             url=f"{BASE}/{season}/{league}.json"
             target=folder/f"{season}.{league}.json"
