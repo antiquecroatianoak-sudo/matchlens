@@ -1,14 +1,8 @@
-import {getChatGPTUser} from "../../chatgpt-auth";
 export const dynamic="force-dynamic";
 
 type Forecast={fixture_id:string;model_version:string;predicted_at_utc:string;kickoff_utc:string;league:string;home_team:string;away_team:string;probabilities:Record<string,number>;predicted_outcome:string;confidence:number;top25:boolean;actual_outcome:string|null;score_home:number|null;score_away:number|null};
 
 export async function GET(){
- const user=await getChatGPTUser();
- if(!user)return Response.json({error:"Potrebna je prijava."},{status:401});
- const ownerId=process.env.MATCHLENS_ALLOWED_USER_ID;
- if(!ownerId)return Response.json({error:"Privatni vlasnik nije konfiguriran."},{status:503});
- if(user.userId!==ownerId)return Response.json({error:"Pristup nije dopušten."},{status:403});
  const url=process.env.SUPABASE_URL||process.env.NEXT_PUBLIC_SUPABASE_URL;
  const key=process.env.SUPABASE_SERVICE_ROLE_KEY;
  if(!url||!key)return Response.json({error:"Supabase veza nije konfigurirana."},{status:503});
