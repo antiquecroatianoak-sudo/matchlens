@@ -8,9 +8,10 @@ on:
       - 'analytics/backtest.py'
       - 'scripts/restore_openfootball_history.py'
       - 'scripts/optimize_top25.py'
-      - 'scripts/export_trained_research_model.py'
+      - 'scripts/export_trained_research_model.py scripts/top25_quality_gate.py'
       - 'scripts/top25_from_backtest.py'
       - 'scripts/top25_error_audit.py'
+      - 'scripts/top25_quality_gate.py'
   schedule:
     - cron: '17 */6 * * *'
 permissions:
@@ -49,6 +50,8 @@ jobs:
         run: python scripts/top25_from_backtest.py out/top25-baseline/predictions.jsonl --output out/top25-baseline/top25-report.json
       - name: Audit missed selections versus unselected correct picks
         run: python scripts/top25_error_audit.py out/top25-baseline/predictions.jsonl --output out/top25-baseline/top25-errors.json
+      - name: Evaluate publication readiness without enabling predictions
+        run: python scripts/top25_quality_gate.py out/top25-baseline/backtest.json out/top25-baseline/top25-report.json --output out/top25-baseline/publication-readiness.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -59,4 +62,5 @@ jobs:
             out/top25-baseline/top25-report.json
             out/top25-baseline/top25-errors.json
             out/top25-baseline/trained-model.json
+            out/top25-baseline/publication-readiness.json
           retention-days: 30
