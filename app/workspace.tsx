@@ -36,12 +36,12 @@ export default function Workspace(){
  const oddsRanked=useMemo(()=>rankPredictions(rows,{minOdds:2}),[rows]);
  // Only a complete, source-verified round may yield official selections.
  const roundRows=useMemo(()=>rows.filter(r=>r.kind==='match'&&r.roundId&&r.fixtureVerified===true),[rows]);
- const roundIds=useMemo(()=>Array.from(new Set(roundRows.map(r=>String(r.roundId)))),[roundRows]);
+ const roundIds=useMemo(()=>Array.from(new Set(roundRows.map(r=>String(r.league||'')+'::'+String(r.season||'')+'::'+String(r.roundId)))),[roundRows]);
  const [activeRound,setActiveRound]=useState('');
  const chosenRound=roundIds.includes(activeRound)?activeRound:(roundIds[0]||'');
- const roundMatches=useMemo(()=>roundRows.filter(r=>String(r.roundId)===chosenRound),[roundRows,chosenRound]);
+ const roundMatches=useMemo(()=>roundRows.filter(r=>String(r.league||'')+'::'+String(r.season||'')+'::'+String(r.roundId)===chosenRound),[roundRows,chosenRound]);
  const roundComplete=roundMatches.length>0&&roundMatches.every(r=>r.roundComplete===true)&&
-   roundMatches.every(r=>Number.isInteger(Number(r.roundFixtureCount))&&Number(r.roundFixtureCount)===roundMatches.length)&&
+   roundMatches.every(r=>typeof r.roundFixtureCount==='number'&&Number.isInteger(r.roundFixtureCount)&&r.roundFixtureCount===roundMatches.length)&&
    new Set(roundMatches.map(r=>String(r.matchId||r.id))).size===roundMatches.length;
  const roundSelection=useMemo(()=>selectRoundRecommendations(rows,roundMatches.map(r=>String(r.matchId||r.id)),{completeRound:roundComplete}),[rows,roundMatches,roundComplete]);
  useEffect(()=>{if(!predictionView)return;const onKey=(e:KeyboardEvent)=>{if(e.key==='Escape')setPredictionView(null);};document.addEventListener('keydown',onKey);const before=document.body.style.overflow;document.body.style.overflow='hidden';return()=>{document.removeEventListener('keydown',onKey);document.body.style.overflow=before;};},[predictionView]);
