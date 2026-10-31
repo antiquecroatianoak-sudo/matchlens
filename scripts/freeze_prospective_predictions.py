@@ -54,8 +54,11 @@ def select(rows, created_at, round_lookup=certified_round_ids):
         groups.setdefault((row["league"], row["season"], row["round"]), []).append(record)
     all_rows = []
     for (league, season, round_id), group in groups.items():
+        # Deterministic ranking independent of upstream source ordering.
         group.sort(key=lambda r: (-r["confidence"], r["kickoff_utc"], r["id"]))
         expected = round_lookup(league, season, round_id, created_at)
+        if expected is not None:
+            expected = set(expected)
         observed = [r["id"] for r in group]
         certified = expected is not None and len(observed) == len(set(observed)) and set(observed) == set(expected)
         count = max(1, math.ceil(len(group) / 4)) if certified else 0
