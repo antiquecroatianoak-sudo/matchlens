@@ -58,7 +58,7 @@ def select(rows, created_at, round_lookup=certified_round_ids):
         expected = round_lookup(league, season, round_id, created_at)
         observed = [r["id"] for r in group]
         certified = expected is not None and len(observed) == len(set(observed)) and set(observed) == set(expected)
-        count = len(group) // 4 if certified else 0
+        count = max(1, math.ceil(len(group) / 4)) if certified else 0
         for index, row in enumerate(group):
             row["top25"] = index < count
             row["round_certified"] = certified
