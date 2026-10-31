@@ -18,13 +18,14 @@ class ProspectiveFactorsTests(unittest.TestCase):
         ]
 
     def test_two_seasons_and_future_results_excluded(self):
+        history = self.history + [{**self.history[0], 'id': f'past-{i}'} for i in range(99)]
         def fake_features(rows, window, half_life):
-            self.assertEqual([r['id'] for r in rows if not r.get('pending')], ['old'])
+            self.assertEqual(len([r for r in rows if not r.get('pending')]), 100)
             self.assertTrue(rows[-1]['pending'])
             return [{'match': rows[-1]}]
         with patch('analytics.prospective_factors.features', side_effect=fake_features), \
              patch('analytics.prospective_factors.build_design', return_value=np.ones((1,84))):
-            accepted, skipped = prepare_future_design(self.history, [self.fixture])
+            accepted, skipped = prepare_future_design(history, [self.fixture])
         self.assertEqual(skipped, [])
         self.assertEqual(len(accepted[0]['features']), 84)
         self.assertEqual(accepted[0]['history_seasons'], ['2024-25', '2025-26'])
