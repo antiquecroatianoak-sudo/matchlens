@@ -1,6 +1,14 @@
 name: MatchLens future fixture monitoring (research)
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/future-fixture-monitor.yml'
+      - 'scripts/score_future_baseline.py'
+      - 'scripts/fetch_future_fixtures.py'
+      - 'scripts/openligadb_future_fixtures.py'
+      - 'tests/test_future_team_mapping_regression.py'
   push:
     branches: [main, 'fix/openligadb-historical-team-mapping']
     paths:
