@@ -9,6 +9,7 @@ on:
       - 'scripts/score_future_baseline.py'
       - 'scripts/football_data_fixture_candidates.py'
       - 'scripts/openligadb_future_fixtures.py'
+      - 'scripts/freeze_prospective_predictions.py'
       - 'tests/test_live_poisson_mapping.py'
   schedule:
     - cron: '17 7 * * *'
@@ -30,6 +31,8 @@ jobs:
         run: python -m scripts.restore_openfootball_history
       - name: Score upcoming fixtures using past-only baseline
         run: python -m scripts.score_future_baseline
+      - name: Freeze prospective predictions and research top 25 percent
+        run: python -m scripts.freeze_prospective_predictions
       - name: Publish fixture snapshot
         uses: actions/upload-artifact@v4
         with:
@@ -38,4 +41,6 @@ jobs:
             out/future-fixtures.json
             out/upcoming-probabilities.jsonl
             out/upcoming-coverage.json
+            out/prospective-predictions.jsonl
+            out/prospective-summary.json
           retention-days: 30
