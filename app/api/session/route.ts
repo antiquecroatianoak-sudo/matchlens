@@ -12,6 +12,8 @@ export async function POST(req:Request){
  if(!res.ok)return Response.json({error:"Prijava nije uspjela. Provjerite podatke."},{status:401});
  const data=await res.json() as {access_token?:string;expires_in?:number};
  if(!data.access_token)return Response.json({error:"Prijava nije uspjela."},{status:502});
+ const verified=await fetch(new URL("/auth/v1/user",url),{headers:{apikey:key,Authorization:"Bearer "+data.access_token},cache:"no-store"});
+ if(!verified.ok)return Response.json({error:"Nije moguće potvrditi korisnika."},{status:401});
  const jar=await cookies();jar.set("matchlens_access_token",data.access_token,{httpOnly:true,secure:process.env.NODE_ENV==="production",sameSite:"lax",path:"/",maxAge:Math.min(Math.max(data.expires_in||3600,60),3600)});
  return Response.json({ok:true},{headers:{"Cache-Control":"no-store"}});
  }catch{return Response.json({error:"Usluga prijave nije dostupna."},{status:503});}
