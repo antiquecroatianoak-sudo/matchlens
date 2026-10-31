@@ -82,7 +82,7 @@ def main():
         group["certified"] = bool(row["round_certified"])
         group["reason"] = "complete_round" if row["round_certified"] else "incomplete_or_unverified_round"
     round_coverage = sorted(rounds.values(), key=lambda g: (g["league"], g["season"], g["round"]))
-    Path("out/prospective-round-coverage.json").write_text(json.dumps(round_coverage, indent=2) + "\\n")
+    Path("out/prospective-round-coverage.json").write_text(json.dumps(round_coverage, indent=2) + "\n")
     summary = {"generated_at_utc": created_at.isoformat(), "scored": len(rows),
                "eligible": len(selected), "top25": sum(r["top25"] for r in selected),
                "certified_rounds": len({(r["league"],r["season"],r["round"]) for r in selected if r["round_certified"]}),
