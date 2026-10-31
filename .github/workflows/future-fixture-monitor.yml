@@ -23,6 +23,7 @@ on:
       - 'tests/test_prospective_advanced.py'
       - 'analytics/prospective_advanced.py'
       - 'scripts/score_future_advanced.py'
+      - 'scripts/select_prospective_model.py'
   schedule:
     - cron: '17 7 * * *'
 jobs:
@@ -84,6 +85,8 @@ jobs:
           if not baseline['scored']:
               raise SystemExit('No scoreable future fixtures; inspect mapping and historical coverage')
           PY
+      - name: Prefer validated advanced forecasts for production snapshots
+        run: python -m scripts.select_prospective_model
       - name: Freeze prospective predictions and research top 25 percent
         run: python -m scripts.freeze_prospective_predictions
       - name: Persist prospective snapshots in MatchLens database
