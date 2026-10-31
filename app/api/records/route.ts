@@ -14,7 +14,20 @@ function sameOrigin(req:Request){const origin=req.headers.get("origin");return !
 function endpoint(url:string,params:Record<string,string>){const u=new URL("/rest/v1/matchlens_records",url);Object.entries(params).forEach(([k,v])=>u.searchParams.set(k,v));return u;}
 export async function GET(){
  const c=await context();if(!c)return Response.json({error:"Potrebna je prijava."},{status:401});if("error" in c)return c.error;
- try{const r=await fetch(endpoint(c.url,{select:"id,kind,payload,created_at",owner:"eq."+c.user.userId,order:"created_at.desc",limit:"5000"}),{headers:headers(c.key),cache:"no-store"});if(!r.ok)throw Error();const rows=await r.json() as Array<{id:string;kind:string;payload:Record<string,unknown>;created_at:string}>;return Response.json(rows.map(x=>({id:x.id,kind:x.kind,...x.payload,createdAt:x.created_at})),{headers:{"Cache-Control":"no-store"}});}catch{return Response.json({error:"Zapisi nisu dostupni."},{status:503});}
+ try{
+  type RecordRow={id:string;kind:string;payload:Record<string,unknown>;created_at:string};
+  const rows:RecordRow[]=[];
+  const pageSize=1000;
+  for(let offset=0;;offset+=pageSize){
+   const r=await fetch(endpoint(c.url,{select:"id,kind,payload,created_at",owner:"eq."+c.user.userId,order:"created_at.desc,id.desc",limit:String(pageSize),offset:String(offset)}),{headers:headers(c.key),cache:"no-store"});
+   if(!r.ok)throw Error("Record query failed");
+   const page=await r.json() as RecordRow[];
+   if(!Array.isArray(page))throw Error("Invalid records response");
+   rows.push(...page);
+   if(page.length<pageSize)break;
+  }
+  return Response.json(rows.map(x=>({id:x.id,kind:x.kind,...x.payload,createdAt:x.created_at})),{headers:{"Cache-Control":"no-store"}});
+ }catch{return Response.json({error:"Zapisi nisu dostupni."},{status:503});}
 }
 export async function POST(req:Request){
  const c=await context();if(!c)return Response.json({error:"Potrebna je prijava."},{status:401});if("error" in c)return c.error;
