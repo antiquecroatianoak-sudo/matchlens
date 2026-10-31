@@ -12,16 +12,17 @@ export function rankPredictions<T extends {id:string;kind:string;[key:string]:an
 // Canonical round selection. A round must include the complete verified fixture list;
 // an incomplete fixture denominator must never produce official recommendations.
 export function selectRoundRecommendations<T extends {id:string;kind:string;[key:string]:any}>(
- rows:T[], fixtureIds:string[], options:{now?:number}={}
+ rows:T[], fixtureIds:string[], options:{now?:number;completeRound?:boolean}={}
 ):{selected:T[];rejected:{id:string;reason:string}[];limit:number;fixtures:number}{
  const uniqueFixtures=new Set(fixtureIds.filter(x=>typeof x==='string'&&x.trim()));
+ // The caller must attest that the full round was retrieved and verified.
+ if(options.completeRound!==true)return {selected:[],rejected:rows.map(r=>({id:r.id,reason:'Nepotpun ili nepotvrđen popis kola'})),limit:0,fixtures:uniqueFixtures.size};
  const limit=Math.floor(uniqueFixtures.size*0.25);
  const ranked=rankPredictions(rows,{now:options.now});
  const rejected:{id:string;reason:string}[]=[];
  const eligible:T[]=[];
  for(const row of ranked){
   if(!uniqueFixtures.has(row.matchId)){rejected.push({id:row.id,reason:'Utakmica nije u potvrđenom popisu kola'});continue;}
-  const market=String(row.market).toLowerCase().replace(/\s/g,'');
   const pick=String(row.selection).toUpperCase().replace(/\s/g,'');
   const doubleChance=pick==='1X'||pick==='X2';
   if(!doubleChance&&!['1','X','2','OVER2.5','UNDER2.5','VIŠE2.5','MANJE2.5'].includes(pick)){
@@ -38,12 +39,12 @@ export function selectRoundRecommendations<T extends {id:string;kind:string;[key
    }
   }else if(!(typeof row.odds==='number'&&Number.isFinite(row.odds)&&row.odds>1.30&&
    typeof row.oddsTimestamp==='string'&&Number.isFinite(Date.parse(row.oddsTimestamp))&&
-   Date.parse(row.oddsTimestamp)<Date.parse(row.kickoff)&&Date.parse(row.oddsTimestamp)<=(options.now??Date.now()))){
+   Date.parse(row.oddsTimestamp)<Date.parse(row.kickoff)&&Date.parse(row.oddsTimestamp)<=Date.parse(row.generatedAt))){
    rejected.push({id:row.id,reason:'Nema stvarne datirane kvote strogo iznad 1,30'});continue;
   }
   if(!Array.isArray(row.features)||new Set(row.features.filter((f:any)=>f&&f.value!==null&&f.value!==undefined&&
    typeof f.source==='string'&&f.source.trim()&&typeof f.availableAt==='string'&&
-   Number.isFinite(Date.parse(f.availableAt))&&Date.parse(f.availableAt)<Date.parse(row.kickoff))
+   Number.isFinite(Date.parse(f.availableAt))&&Date.parse(f.availableAt)<=Date.parse(row.generatedAt))
    .map((f:any)=>f.name).filter(Boolean)).size<11){
    rejected.push({id:row.id,reason:'Manje od 11 potvrđenih prematch obilježja'});continue;
   }
