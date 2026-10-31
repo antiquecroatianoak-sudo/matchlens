@@ -3,7 +3,7 @@
 Research fallback while full factor-model prospective inference is not implemented.
 """
 import json
-from collections import defaultdict
+from collections import defaultdict,Counter
 import re
 import unicodedata
 from datetime import date,timedelta
@@ -79,6 +79,9 @@ def main():
     out.write_text(''.join(json.dumps(r,ensure_ascii=False)+'\n' for r in result))
     Path('out/upcoming-coverage.json').write_text(json.dumps({
         'source_fixtures':len(payload['fixtures']),'scored':len(result),'skipped':skipped,
+        'scored_by_league':dict(sorted(Counter(f['league'] for f in result).items())),
+        'skipped_by_reason':dict(sorted(Counter(f['reason'] for f in skipped).items())),
+        'skipped_by_league':dict(sorted(Counter(f['id'].split(':')[0] if ':' not in f['id'] else next((m['league'] for m in payload['fixtures'] if m['id']==f['id']),'unknown') for f in skipped).items())),
         'warning':'Poisson fallback, NOT the previously evaluated factor model; no accuracy claim.'},indent=2))
     print('FUTURE PREMATCH SCORED',len(result),'OF',len(payload['fixtures']))
 if __name__=='__main__':main()
