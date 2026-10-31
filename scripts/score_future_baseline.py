@@ -21,6 +21,7 @@ OPENLIGA_TEAMS={
     "eintracht frankfurt":"Eintracht Frankfurt",
     "sc freiburg":"SC Freiburg",
     "tsg 1899 hoffenheim":"Hoffenheim",
+    "tsg hoffenheim":"Hoffenheim",
     "vfl wolfsburg":"Wolfsburg",
     "1. fc union berlin":"Union Berlin",
     "1. fsv mainz 05":"Mainz 05",
@@ -53,6 +54,11 @@ def main():
     for f in payload['fixtures']:
         match_date=date.fromisoformat(f['kickoff_utc'][:10])
         cutoff=(match_date-timedelta(days=2)).isoformat()
+        # Only Bundesliga 1 has an explicitly verified historical league mapping.
+        # Do not score bl2 against first-division history or infer a league.
+        if f['league']=='bl2':
+            skipped.append({'id':f['id'],'reason':'unsupported historical league mapping: bl2'})
+            continue
         league='de.1' if f['league']=='bl1' else f['league']
         past=[r for r in by_league[league] if r['date']<cutoff]
         known={t for r in past for t in (r['home'],r['away'])}
