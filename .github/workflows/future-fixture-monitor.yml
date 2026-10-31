@@ -64,7 +64,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: python -m scripts.sync_future_fixtures_oidc
       - name: Restore scored historical matches
-        run: python -m scripts.restore_openfootball_history
+        run: python -m scripts.restore_openfootball_history --recent-two
       - name: Score upcoming fixtures using past-only baseline
         run: python -m scripts.score_future_baseline
       - name: Score upcoming fixtures with locked advanced challenger (research only)
