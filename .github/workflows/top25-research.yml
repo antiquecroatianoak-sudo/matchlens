@@ -8,10 +8,11 @@ on:
       - 'analytics/backtest.py'
       - 'scripts/restore_openfootball_history.py'
       - 'scripts/optimize_top25.py'
-      - 'scripts/export_trained_research_model.py scripts/top25_quality_gate.py'
+      - 'scripts/export_trained_research_model.py scripts/top25_quality_gate.py scripts/audit_prematch_evidence.py'
       - 'scripts/top25_from_backtest.py'
       - 'scripts/top25_error_audit.py'
       - 'scripts/top25_quality_gate.py'
+      - 'scripts/audit_prematch_evidence.py'
       - 'tests/test_top25_quality_gate.py'
   schedule:
     - cron: '17 */6 * * *'
@@ -45,6 +46,8 @@ jobs:
               if path.name[:7] not in allowed:
                   path.unlink()
           PY
+      - name: Audit real source fields for missing prematch evidence
+        run: python scripts/audit_prematch_evidence.py data/openfootball --output out/top25-baseline/prematch-source-audit.json
       - name: Run existing chronological calibrated model research
         run: python -m analytics.backtest --data data/openfootball --output out/top25-baseline
       - name: Export automatically trained research model parameters
@@ -66,4 +69,5 @@ jobs:
             out/top25-baseline/top25-errors.json
             out/top25-baseline/trained-model.json
             out/top25-baseline/publication-readiness.json
+            out/top25-baseline/prematch-source-audit.json
           retention-days: 30
