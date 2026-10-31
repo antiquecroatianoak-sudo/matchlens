@@ -1,6 +1,14 @@
 name: MatchLens top25 evaluator smoke test
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/optimize_top25.py'
+      - 'scripts/top25_from_backtest.py'
+      - 'scripts/top25_error_audit.py'
+      - 'scripts/evaluate_top25.py'
+      - '.github/workflows/top25-evaluator.yml'
   push:
     paths:
       - 'scripts/evaluate_top25.py'
@@ -13,6 +21,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Compile all research scripts
+        run: python -m py_compile scripts/evaluate_top25.py scripts/optimize_top25.py scripts/top25_from_backtest.py scripts/top25_error_audit.py
       - name: Verify selection logic using synthetic complete rounds
         run: |
           python - <<'PY'
