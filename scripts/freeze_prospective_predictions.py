@@ -1,9 +1,7 @@
-"""Freeze prospective baseline predictions and rank the strongest 25% per round.
-
-This is an immutable-in-run research snapshot, not database persistence.
-"""
+"""Freeze prematch baseline predictions; never rank uncertified partial rounds."""
 import json
 import math
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -28,7 +26,8 @@ def select(rows, created_at):
     all_rows = []
     for group in groups.values():
         group.sort(key=lambda r: (-r["confidence"], r["kickoff_utc"], r["id"]))
-        count = 0  # No Top 25 publication without independently certified complete round.
+        # Full-round certification is required before publishing a top-quarter pick.
+        count = 0
         for index, row in enumerate(group):
             row["top25"] = index < count
             row["selection_group_size"] = len(group)
@@ -44,7 +43,7 @@ def main():
     out.write_text("".join(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n" for row in selected))
     summary = {"generated_at_utc": created_at.isoformat(), "scored": len(rows),
                "eligible": len(selected), "top25": sum(r["top25"] for r in selected),
-               "warning": "Research only. Top25 disabled until independently certified complete rounds; no durable database persistence."}
+               "warning": "Top25 disabled until full rounds are certified; database persistence is handled by the separate OIDC sync step."}
     Path("out/prospective-summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     print("PROSPECTIVE SNAPSHOT", summary)
 
