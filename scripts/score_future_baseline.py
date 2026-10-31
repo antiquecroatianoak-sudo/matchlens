@@ -8,6 +8,9 @@ from datetime import date,timedelta
 from pathlib import Path
 from analytics.backtest import load_matches,predict
 
+# Provider competition IDs are not historical model league IDs.
+LEAGUE_MAP={'bl1':'de.1'}  # bl2 is deliberately unsupported by this model.
+
 def main():
     fixture_file=Path('out/future-fixtures.json')
     payload=json.loads(fixture_file.read_text())
@@ -18,14 +21,18 @@ def main():
     for f in payload['fixtures']:
         match_date=date.fromisoformat(f['kickoff_utc'][:10])
         cutoff=(match_date-timedelta(days=2)).isoformat()
-        past=[r for r in by_league[f['league']] if r['date']<cutoff]
+        historical_league=LEAGUE_MAP.get(f['league'],f['league'])
+        if historical_league not in by_league:
+            skipped.append({'id':f['id'],'reason':'no corresponding historical league for '+f['league']})
+            continue
+        past=[r for r in by_league[historical_league] if r['date']<cutoff]
         match={'date':match_date.isoformat(),'home':f['home'],'away':f['away']}
         # The historical predictor uses only supplied past results.
         probs=predict(past,match,{'window':50,'half_life':15,'prior':8})
         if probs is None:
             skipped.append({'id':f['id'],'reason':'insufficient historical team or league coverage'})
             continue
-        result.append({**f,'prob':probs,'model':'historical_poisson_fallback_v1',
+        result.append({**f,'historical_league':historical_league,'prob':probs,'model':'historical_poisson_fallback_v1',
                        'history_cutoff_exclusive':cutoff})
     out=Path('out/upcoming-probabilities.jsonl')
     out.write_text(''.join(json.dumps(r,ensure_ascii=False)+'\n' for r in result))
