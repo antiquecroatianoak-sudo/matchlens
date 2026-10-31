@@ -4,6 +4,7 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
@@ -21,3 +22,10 @@ jobs:
         run: npm run typecheck
       - name: Production build
         run: npm run build
+      - name: Upload dependency lockfile for reproducibility
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: matchlens-package-lock
+          path: package-lock.json
+          if-no-files-found: warn
