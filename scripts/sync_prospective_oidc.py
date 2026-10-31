@@ -28,7 +28,10 @@ def upload(rows):
 def main():
     path=Path("out/prospective-predictions.jsonl")
     rows=[json.loads(line) for line in path.read_text().splitlines() if line.strip()]
-    if not rows:\n        print("PROSPECTIVE DATABASE SYNC: no eligible predictions; no upload")\n        return\n    received=inserted=0
+    if not rows:
+        print("PROSPECTIVE DATABASE SYNC: no eligible predictions; no upload")
+        return
+    received=inserted=0
     for start in range(0,len(rows),100):
         result=upload(rows[start:start+100])
         received+=result["received"];inserted+=result["inserted"]
