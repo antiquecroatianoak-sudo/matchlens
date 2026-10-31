@@ -22,10 +22,11 @@ def settle(record, match):
         return {"id":record["id"],"status":"invalid_final_score"}
     actual="home" if home>away else ("away" if away>home else "draw")
     prediction=str(record["predicted_outcome"])
-    # Research Poisson index convention must be verified before accuracy claims.
-    return {"id":record["id"],"status":"finished_unverified_outcome_mapping",
-            "score_home":home,"score_away":away,"actual_index_candidate":actual,
-            "predicted_index":prediction,"correct":None}
+    if prediction not in ("home", "draw", "away"):
+        return {"id":record["id"],"status":"invalid_predicted_outcome"}
+    return {"id":record["id"],"status":"settled",
+            "score_home":home,"score_away":away,"actual_outcome":actual,
+            "predicted_outcome":prediction,"correct":prediction==actual}
 
 def main():
     source=Path("out/prospective-predictions.jsonl")
@@ -46,7 +47,10 @@ def main():
             output.append({"id":row["id"],"status":"provider_error","error":str(exc)[:120]})
     target=Path("out/prospective-settlement.json")
     target.parent.mkdir(parents=True,exist_ok=True)
-    target.write_text(json.dumps({"settlements":output,"verified_accuracy":None,
-        "warning":"No accuracy claims until model outcome index mapping independently validated."},indent=2)+"\n")
+    finished=[r for r in output if r["status"]=="settled"]
+    target.write_text(json.dumps({"settlements":output,
+        "verified_accuracy":(sum(r["correct"] for r in finished)/len(finished) if finished else None),
+        "settled_count":len(finished),
+        "warning":"Accuracy covers only independently finished matches in this snapshot."},indent=2)+"\n")
     print("SETTLEMENT CHECK",len(output),"records")
 if __name__=="__main__":main()
