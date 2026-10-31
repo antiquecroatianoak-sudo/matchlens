@@ -35,5 +35,5 @@ def main():
     for start in range(0,len(rows),100):
         result=upload(rows[start:start+100])
         received+=result["received"];inserted+=result["inserted"]
-    print("PROSPECTIVE DATABASE SYNC",{"received":received,"inserted":inserted})
+    print("PROSPECTIVE DATABASE SYNC",{"received":received,"inserted_or_promoted":inserted,"submitted_top25":sum(bool(r.get("top25")) for r in rows)})
 if __name__=="__main__":main()
