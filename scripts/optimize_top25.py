@@ -26,7 +26,7 @@ def load(path):
                 raise ValueError("Prediction generated at or after kickoff")
             p = float(row["predicted_probability"])
             actual = int(row["actual_correct"])
-            if not (0 <= p <= 1) or actual not in (0, 1):
+            if not math.isfinite(p) or not (0 <= p <= 1) or actual not in (0, 1):
                 raise ValueError("Invalid probability or outcome")
             if int(row["valid_parameters"]) < 11:
                 continue
@@ -48,7 +48,7 @@ def load(path):
 def score(groups, threshold):
     hits = count = 0
     for _, group in groups:
-        ranked = sorted((r for r in group if r["_p"] >= threshold), key=lambda r: r["_p"], reverse=True)
+        ranked = sorted(group, key=lambda r: (-r["_p"], r["match_id"]))
         chosen = ranked[:math.floor(len(group)*0.25)]
         hits += sum(r["_y"] for r in chosen)
         count += len(chosen)
@@ -66,14 +66,14 @@ def main():
     train, holdout=groups[:split],groups[split:]
     if train[-1][0] >= holdout[0][0]:
         raise ValueError("Overlapping train/holdout timestamps")
-    candidates=[round(x/100,2) for x in range(50,96,5)]
-    minimum=max(10,math.ceil(sum(len(g) for _,g in train)*0.05))
+    # Fixed 25% coverage: optimize only tie-break weights/model parameters upstream.\n    # Confidence thresholds are forbidden because they silently reduce coverage.\n    candidates=[0.0]
+    minimum=sum(len(g)//4 for _,g in train)
     viable=[(t,score(train,t)) for t in candidates]
     viable=[(t,s) for t,s in viable if s["selected"] >= minimum]
     if not viable:
         raise ValueError("Insufficient training selections")
     threshold, training=max(viable,key=lambda pair:(pair[1]["accuracy"],pair[1]["selected"]))
-    result={"threshold":threshold,"training":training,"holdout":score(holdout,threshold),"training_rounds":len(train),"holdout_rounds":len(holdout),"warning":"Research only. Holdout must not be reused for tuning; predictions must be truly pre-match."}
+    result={"selection_policy":"exact_top_quarter","threshold":threshold,"training":training,"holdout":score(holdout,threshold),"training_rounds":len(train),"holdout_rounds":len(holdout),"warning":"Research only. Holdout must not be reused for tuning; predictions must be truly pre-match."}
     with open(args.output,"w",encoding="utf-8") as f:
         json.dump(result,f,indent=2)
     print(json.dumps(result,indent=2))
