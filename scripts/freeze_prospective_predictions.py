@@ -39,7 +39,7 @@ def select(rows, created_at, round_lookup=certified_round_ids):
     groups = {}
     for row in rows:
         kickoff = datetime.fromisoformat(row["kickoff_utc"].replace("Z", "+00:00"))
-        if kickoff <= created_at:
+        if kickoff <= created_at + __import__('datetime').timedelta(hours=1):
             continue
         probs = row.get("prob")
         if not isinstance(probs, dict) or not all(k in probs for k in ("home", "draw", "away")):
