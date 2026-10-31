@@ -2,11 +2,12 @@ name: MatchLens future fixture monitoring (research)
 on:
   workflow_dispatch:
   push:
-    branches: [main, 'fix/future-fixture-run-on-push']
+    branches: [main, 'feature/football-data-fixtures-source']
     paths:
       - '.github/workflows/future-fixture-monitor.yml'
       - 'scripts/fetch_future_fixtures.py'
       - 'scripts/score_future_baseline.py'
+      - 'scripts/football_data_fixture_candidates.py'
   schedule:
     - cron: '17 7 * * *'
 jobs:
