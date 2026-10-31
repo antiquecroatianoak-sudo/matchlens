@@ -5,7 +5,9 @@ class SettlementTests(unittest.TestCase):
     def test_finished_home_win(self):
         r={"id":"openligadb:123","predicted_outcome":"home"}
         m={"matchIsFinished":True,"matchResults":[{"resultTypeID":2,"pointsTeam1":2,"pointsTeam2":1}]}
-        self.assertEqual(settle(r,m)["correct"],True)
+        self.assertEqual(settle(r,m)["status"],"finished_unverified_outcome_mapping")
+        self.assertIsNone(settle(r,m)["correct"])
+        self.assertEqual(settle(r,m)["actual_index_candidate"],"home")
     def test_pending_not_marked_wrong(self):
         self.assertEqual(settle({"id":"openligadb:123","predicted_outcome":"away"},None)["status"],"pending")
     def test_ambiguous_final_not_scored(self):
