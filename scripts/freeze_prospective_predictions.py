@@ -63,6 +63,8 @@ def select(rows, created_at, round_lookup=certified_round_ids):
             row["top25"] = index < count
             row["round_certified"] = certified
             row["selection_group_size"] = len(group)
+            row["round_expected_count"] = len(expected) if expected is not None else None
+            row["round_missing_count"] = len(expected - set(observed)) if expected is not None else None
             all_rows.append(row)
     return all_rows
 
@@ -76,7 +78,8 @@ def main():
     for row in selected:
         key = (row["league"], str(row["season"]), str(row["round"]))
         group = rounds.setdefault(key, {"league": key[0], "season": key[1],
-            "round": key[2], "scored": 0, "selected": 0, "certified": False})
+            "round": key[2], "scored": 0, "selected": 0, "certified": False,
+            "expected": row.get("round_expected_count"), "missing": row.get("round_missing_count")})
         group["scored"] += 1
         group["selected"] += int(row["top25"])
         group["certified"] = bool(row["round_certified"])
