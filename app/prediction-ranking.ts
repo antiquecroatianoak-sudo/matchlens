@@ -25,15 +25,19 @@ export function selectRoundRecommendations<T extends {id:string;kind:string;[key
   if(!uniqueFixtures.has(row.matchId)){rejected.push({id:row.id,reason:'Utakmica nije u potvrđenom popisu kola'});continue;}
   const pick=String(row.selection).toUpperCase().replace(/\s/g,'');
   const doubleChance=pick==='1X'||pick==='X2';
+  const market=String(row.market).toUpperCase().replace(/\s/g,'');
+  const validMarket=doubleChance?['DC','DOUBLECHANCE','1X2'].includes(market):['1','X','2'].includes(pick)?['1X2','MATCHRESULT'].includes(market):['OU2.5','OVERUNDER2.5','TOTAL2.5'].includes(market);
+  if(!validMarket){rejected.push({id:row.id,reason:'Tržište i odabrani tip nisu usklađeni'});continue;}
   if(!doubleChance&&!['1','X','2','OVER2.5','UNDER2.5','VIŠE2.5','MANJE2.5'].includes(pick)){
    rejected.push({id:row.id,reason:'Tip nije među dopuštenim tržištima'});continue;
   }
   if(doubleChance){
-   const p1=Number(row.p1),px=Number(row.px),p2=Number(row.p2);
-   if(![p1,px,p2].every(p=>Number.isFinite(p)&&p>=0&&p<=1)||Math.abs(p1+px+p2-1)>0.01){
+   const p1=row.p1,px=row.px,p2=row.p2;
+   if(![p1,px,p2].every(p=>typeof p==='number'&&Number.isFinite(p)&&p>=0&&p<=1)||Math.abs(p1+px+p2-1)>0.01){
     rejected.push({id:row.id,reason:'Nedostaju provjerene vjerojatnosti 1/X/2'});continue;
    }
    const denominator=pick==='1X'?p1+px:px+p2;
+   if(Math.abs(row.prob-denominator*100)>0.1){rejected.push({id:row.id,reason:'Vjerojatnost tipa nije usklađena s 1/X/2'});continue;}
    if(denominator<=0||1/denominator<=2){
     rejected.push({id:row.id,reason:'Sintetička kvota nije strogo iznad 2,00'});continue;
    }
