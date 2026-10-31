@@ -13,6 +13,8 @@ class ProspectiveSelectionTests(unittest.TestCase):
         result=select(self.rows,self.now,lambda *args:{r["id"] for r in self.rows}|{"openligadb:99"})
         self.assertEqual(sum(r["top25"] for r in result),0)
         self.assertTrue(all(not r["round_certified"] for r in result))
+        self.assertTrue(all(r["round_expected_count"] == 9 for r in result))
+        self.assertTrue(all(r["round_missing_count"] == 1 for r in result))
 
     def test_complete_round_selects_two_of_eight(self):
         result=select(self.rows,self.now,lambda *args:{r["id"] for r in self.rows})
