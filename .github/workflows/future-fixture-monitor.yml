@@ -11,6 +11,7 @@ on:
       - 'scripts/openligadb_future_fixtures.py'
       - 'scripts/freeze_prospective_predictions.py'
       - 'scripts/settle_prospective_predictions.py'
+      - 'scripts/sync_prospective_oidc.py'
       - 'tests/test_prospective_settlement.py'
       - 'tests/test_live_poisson_mapping.py'
       - 'tests/test_freeze_prospective_predictions.py'
@@ -21,6 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      id-token: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -40,6 +42,9 @@ jobs:
         run: python -m scripts.score_future_baseline
       - name: Freeze prospective predictions and research top 25 percent
         run: python -m scripts.freeze_prospective_predictions
+      - name: Persist prospective snapshots in MatchLens database
+        if: github.ref == 'refs/heads/main'
+        run: python -m scripts.sync_prospective_oidc
       - name: Check provider results for snapshot (research)
         run: python -m scripts.settle_prospective_predictions
       - name: Publish fixture snapshot
