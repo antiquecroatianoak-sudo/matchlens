@@ -66,7 +66,9 @@ def main():
     train, holdout=groups[:split],groups[split:]
     if train[-1][0] >= holdout[0][0]:
         raise ValueError("Overlapping train/holdout timestamps")
-    # Fixed 25% coverage: optimize only tie-break weights/model parameters upstream.\n    # Confidence thresholds are forbidden because they silently reduce coverage.\n    candidates=[0.0]
+    # Fixed 25% coverage: optimize only tie-break weights/model parameters upstream. 
+    # Confidence thresholds are forbidden because they silently reduce coverage. 
+    candidates=[0.0]
     minimum=sum(len(g)//4 for _,g in train)
     viable=[(t,score(train,t)) for t in candidates]
     viable=[(t,s) for t,s in viable if s["selected"] >= minimum]
