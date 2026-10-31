@@ -58,3 +58,25 @@ jobs:
               assert result["holdout"]["selected"]==12,result
               assert result["holdout"]["accuracy"]==1,result
           PY
+      - name: Verify diagnostic accounting and no hindsight selection
+        run: |
+          python - <<'PY'
+          import json, subprocess, tempfile
+          from pathlib import Path
+          with tempfile.TemporaryDirectory() as d:
+              source=Path(d)/"predictions.jsonl"
+              with source.open("w") as f:
+                  for i in range(8):
+                      row={"id":str(i),"league":"L","season":"2024","round":"1",
+                           "prob":{"home":0.9-i*0.05,"draw":0.03,"away":0.02,"over2.5":0.01,"under2.5":0.04},
+                           "actual":{"home":int(i in (0,2,4)),"draw":0,"away":0,"over2.5":0,"under2.5":0}}
+                      f.write(json.dumps(row)+"\\n")
+              report=Path(d)/"report.json"
+              audit=Path(d)/"audit.json"
+              subprocess.run(["python","scripts/top25_from_backtest.py",str(source),"--output",str(report)],check=True)
+              subprocess.run(["python","scripts/top25_error_audit.py",str(source),"--output",str(audit)],check=True)
+              a=json.loads(audit.read_text())["totals"]
+              b=json.loads(report.read_text())
+              assert (a["selected"],a["selected_hits"],a["not_selected"],a["not_selected_hits"])==(2,1,6,2),a
+              assert (b["selected_observed_top_quarter"],b["hits"])==(2,1),b
+          PY
