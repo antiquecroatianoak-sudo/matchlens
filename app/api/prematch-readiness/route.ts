@@ -13,14 +13,14 @@ export async function GET(){
  else {
   try {
    const u=new URL("/rest/v1/fixtures",url);
-   u.searchParams.set("select","id");
-   u.searchParams.set("match_date","gte."+new Date().toISOString().slice(0,10));
+   u.searchParams.set("select","id,kickoff_utc");
+   u.searchParams.set("kickoff_utc","gt."+new Date().toISOString());
    u.searchParams.set("limit","0");
    const r=await fetch(u,{headers:{apikey:key,Authorization:"Bearer "+key,Prefer:"count=exact"},cache:"no-store",signal:AbortSignal.timeout(8000)});
    if(!r.ok)throw Error("fixtures unavailable");
    upcoming=Number(r.headers.get("content-range")?.split("/")[1]);
    if(!Number.isSafeInteger(upcoming)||upcoming<0)throw Error("missing count");
-   if(upcoming===0)blockers.push("Nema budućih utakmica u postojećoj bazi.");
+   if(upcoming===0)blockers.push("Nema utakmica s potvrđenim budućim UTC početkom u postojećoj bazi.");
   }catch{blockers.push("Nije moguće potvrditi buduće utakmice iz baze.");}
  }
  // Deliberately fail closed until actual verified model and immutable pre-kickoff writer are wired.
