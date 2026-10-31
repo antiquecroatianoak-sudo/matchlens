@@ -15,9 +15,9 @@ def select(rows, created_at):
             continue
         probs = row["prob"]
         if isinstance(probs, dict):
-            candidates = [(str(k), float(v)) for k, v in probs.items()]
+            candidates = [(k, float(probs[k])) for k in ("home","draw","away") if k in probs]
         else:
-            candidates = [(str(i), float(v)) for i, v in enumerate(probs)]
+            candidates = []  # Only explicit 1X2 market labels are supported.
         if not candidates or not all(math.isfinite(v) and 0 <= v <= 1 for _, v in candidates):
             continue
         outcome, confidence = max(candidates, key=lambda kv: kv[1])
