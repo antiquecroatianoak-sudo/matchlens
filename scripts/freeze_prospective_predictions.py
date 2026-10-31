@@ -4,19 +4,26 @@ import math
 import urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+from functools import lru_cache
+
+@lru_cache(maxsize=32)
+def _provider_season_matches(league, season):
+    """Download a league season once per process, not once per round."""
+    url = f"https://api.openligadb.de/getmatchdata/{league}/{season}"
+    req = urllib.request.Request(url, headers={"User-Agent": "MatchLens/1.0"})
+    with urllib.request.urlopen(req, timeout=15) as response:
+        matches = json.load(response)
+    if not isinstance(matches, list):
+        raise ValueError("Invalid provider season response")
+    return matches
 
 def certified_round_ids(league, season, round_id, created_at):
-    """Return complete provider fixture IDs for a wholly future round, or None."""
+    """Return independently verified full-round IDs only before the round starts."""
     if league not in ("bl1", "bl2") or not str(round_id).isdigit():
         return None
-    url = f"https://api.openligadb.de/getmatchdata/{league}/{season}"
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": "MatchLens/1.0"})
-        with urllib.request.urlopen(req, timeout=15) as response:
-            matches = json.load(response)
-        if not isinstance(matches, list):
-            return None
-        matches = [m for m in matches if str((m.get("group") or {}).get("groupOrderID")) == str(round_id)]
+        matches = [m for m in _provider_season_matches(league, season)
+                   if str((m.get("group") or {}).get("groupOrderID")) == str(round_id)]
         if not matches:
             return None
         ids = set()
@@ -28,7 +35,7 @@ def certified_round_ids(league, season, round_id, created_at):
             kickoff = datetime.fromisoformat(kickoff_raw.replace("Z", "+00:00"))
             if kickoff.tzinfo is None:
                 kickoff = kickoff.replace(tzinfo=timezone.utc)
-            if kickoff.astimezone(timezone.utc) <= created_at:
+            if kickoff.astimezone(timezone.utc) < created_at + timedelta(hours=1):
                 return None
             ids.add(f"openligadb:{mid}")
         return ids if len(ids) == len(matches) else None
