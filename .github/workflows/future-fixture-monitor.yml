@@ -129,5 +129,6 @@ jobs:
             out/upcoming-advanced-coverage.json
             out/prospective-predictions.jsonl
             out/prospective-summary.json
+            out/prospective-round-coverage.json
             out/prospective-settlement.json
           retention-days: 30
