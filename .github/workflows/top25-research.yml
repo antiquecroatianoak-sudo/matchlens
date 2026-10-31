@@ -8,10 +8,12 @@ on:
       - 'analytics/backtest.py'
       - 'scripts/restore_openfootball_history.py'
       - 'scripts/optimize_top25.py'
-      - 'scripts/export_trained_research_model.py scripts/top25_quality_gate.py'
+      - 'scripts/export_trained_research_model.py scripts/top25_quality_gate.py scripts/audit_prematch_evidence.py'
       - 'scripts/top25_from_backtest.py'
       - 'scripts/top25_error_audit.py'
       - 'scripts/top25_quality_gate.py'
+      - 'scripts/audit_prematch_evidence.py'
+      - 'tests/test_prematch_evidence_audit.py'
       - 'tests/test_top25_quality_gate.py'
   schedule:
     - cron: '17 */6 * * *'
@@ -33,6 +35,8 @@ jobs:
         run: python -m py_compile analytics/backtest.py scripts/restore_openfootball_history.py scripts/top25_from_backtest.py scripts/top25_error_audit.py scripts/optimize_top25.py scripts/export_trained_research_model.py
       - name: Test publication gate against untrusted evidence claims
         run: python -m unittest discover -s tests -p 'test_top25_quality_gate.py'
+      - name: Test prematch source evidence audit
+        run: python -m unittest discover -s tests -p 'test_prematch_evidence_audit.py'
       - name: Restore real historical OpenFootball results
         run: python -m scripts.restore_openfootball_history
       - name: Restrict restored data to the model's declared seven seasons
@@ -45,6 +49,8 @@ jobs:
               if path.name[:7] not in allowed:
                   path.unlink()
           PY
+      - name: Audit real source fields for missing prematch evidence
+        run: python scripts/audit_prematch_evidence.py data/openfootball --output out/top25-baseline/prematch-source-audit.json
       - name: Run existing chronological calibrated model research
         run: python -m analytics.backtest --data data/openfootball --output out/top25-baseline
       - name: Export automatically trained research model parameters
@@ -66,4 +72,5 @@ jobs:
             out/top25-baseline/top25-errors.json
             out/top25-baseline/trained-model.json
             out/top25-baseline/publication-readiness.json
+            out/top25-baseline/prematch-source-audit.json
           retention-days: 30
