@@ -12,6 +12,7 @@ on:
       - 'scripts/freeze_prospective_predictions.py'
       - 'scripts/settle_prospective_predictions.py'
       - 'scripts/sync_prospective_oidc.py'
+      - 'scripts/sync_future_fixtures_oidc.py'
       - 'tests/test_prospective_settlement.py'
       - 'tests/test_live_poisson_mapping.py'
       - 'tests/test_bundesliga_team_aliases.py'
@@ -55,6 +56,9 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_prospective_advanced.py'
       - name: Retrieve upcoming fixtures
         run: python -m scripts.fetch_future_fixtures
+      - name: Persist verified future fixtures in MatchLens database
+        if: github.ref == 'refs/heads/main'
+        run: python -m scripts.sync_future_fixtures_oidc
       - name: Restore scored historical matches
         run: python -m scripts.restore_openfootball_history
       - name: Score upcoming fixtures using past-only baseline
