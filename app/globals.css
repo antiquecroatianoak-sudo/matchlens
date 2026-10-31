@@ -32,3 +32,20 @@ aside{background:linear-gradient(155deg,#0a1e3b,#030a17)}header{background:#0712
 .top-intro{padding:15px 20px 0}.prediction-empty{padding:24px;color:#b3c5dd}
 input,select,textarea{color:inherit;background:#10233c;border-color:#31517a}
 @media(max-width:800px){aside{background:#07172d}header{background:#071225}.top-predictions .prediction-card{display:flex;gap:10px;flex-wrap:wrap}.prediction-info{min-width:0;flex:1 1 170px}.prediction-value{flex:0 0 auto}.top-intro{padding:12px 14px 0}}
+
+
+/* MatchLens Top 10: compact, structured and readable on narrow screens */
+.top-predictions .prediction-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:12px;padding:16px}
+.top-predictions .forecast-card{display:block;min-width:0;padding:18px;border:1px solid #2b527f;border-radius:15px;background:linear-gradient(145deg,#102744,#09182d);overflow:hidden}
+.forecast-head{display:flex;align-items:center;gap:10px;min-width:0}
+.forecast-head .prediction-rank{font-size:20px;font-weight:800;line-height:1;flex-shrink:0}
+.forecast-head .tag{font-size:11px;padding:5px 9px}
+.forecast-date{margin-left:auto;color:#b5c7e0;font-size:12px;white-space:nowrap}
+.forecast-teams{font-size:17px;line-height:1.4;overflow-wrap:anywhere;margin:16px 0;color:#f3f8ff}
+.forecast-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.forecast-metrics>div{display:flex;flex-direction:column;gap:6px;padding:12px 9px;border:1px solid #29496e;border-radius:10px;background:#07182e}
+.forecast-metrics small{font-size:9px;letter-spacing:.08em;color:#9aafce}
+.forecast-metrics strong{font-size:22px;line-height:1.15;color:#78beff}
+.forecast-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-top:14px;padding-top:12px;border-top:1px solid #284669;color:#dce9f9;font-size:12px}
+.forecast-bottom small{font-size:11px;color:#91a9c8}
+@media(max-width:550px){.top-predictions .prediction-list{padding:10px;gap:10px}.top-predictions .forecast-card{display:block;padding:14px}.forecast-teams{font-size:16px;margin:12px 0}.forecast-metrics strong{font-size:20px}.top-predictions .top-intro{font-size:12px;line-height:1.6;padding:10px 14px 4px}.top-predictions .panel-heading h2{font-size:17px}.top-predictions .panel-heading .eyebrow{font-size:9px}.forecast-bottom{font-size:11px}}
