@@ -81,16 +81,18 @@ def main():
         known={t for r in past for t in (r['home'],r['away'])}
         home=normalize_team(f['home'],known)
         away=normalize_team(f['away'],known)
-        if not home or not away:
-            skipped.append({'id':f['id'],'reason':'unmapped team names','home':f['home'],'away':f['away']})
-            continue
-        match={'date':match_date.isoformat(),'home':home,'away':away}
-        # The historical predictor uses only supplied past results.
-        probs=predict(past,match,{'window':50,'half_life':15,'prior':8})
+        match={'date':match_date.isoformat(),'home':home or f['home'],'away':away or f['away']}
+        # Team-specific estimates need enough historical matches. For newly
+        # promoted or unmatched teams, use an explicitly labelled league-only
+        # prior, never fabricated team results or unsupported confidence.
+        probs=predict(past,match,{'window':50,'half_life':15,'prior':8}) if home and away else None
+        league_prior = probs is None
+        if league_prior:
+            probs=predict(past,match,None)
         if probs is None:
-            skipped.append({'id':f['id'],'reason':'insufficient historical team or league coverage'})
+            skipped.append({'id':f['id'],'reason':'insufficient verified league history'})
             continue
-        result.append({**f,'historical_home':home,'historical_away':away,'historical_league':historical_league,'prob':probs,'model':'historical_poisson_fallback_v1',
+        result.append({**f,'historical_home':home,'historical_away':away,'historical_league':historical_league,'prob':probs,'model':('historical_league_prior_v1' if league_prior else 'historical_poisson_fallback_v1'), 'team_history_covered':not league_prior,
                        'history_cutoff_exclusive':cutoff})
     out=Path('out/upcoming-probabilities.jsonl')
     out.write_text(''.join(json.dumps(r,ensure_ascii=False)+'\n' for r in result))
