@@ -85,7 +85,9 @@ def main():
         group["certified"] = bool(row["round_certified"])
         group["expected"] = row.get("round_expected_count")
         group["missing"] = row.get("round_missing_count")
-        group["reason"] = "complete_round" if row["round_certified"] else "incomplete_or_unverified_round"
+        group["reason"] = ("complete_round" if row["round_certified"] else
+            "missing_scored_fixtures" if row.get("round_missing_count", 0) else
+            "provider_unavailable_or_round_started")
     round_coverage = sorted(rounds.values(), key=lambda g: (g["league"], g["season"], g["round"]))
     Path("out/prospective-round-coverage.json").write_text(json.dumps(round_coverage, indent=2) + "\n")
     summary = {"generated_at_utc": created_at.isoformat(), "scored": len(rows),
