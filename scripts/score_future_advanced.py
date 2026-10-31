@@ -46,7 +46,7 @@ def main():
                              'historical_home': home, 'historical_away': away,
                              'status': 'challenger_research_only'})
     Path('out/upcoming-advanced-probabilities.jsonl').write_text(
-        ''.join(json.dumps(r, ensure_ascii=False) + '\\n' for r in accepted))
+        ''.join(json.dumps(r, ensure_ascii=False) + '\n' for r in accepted))
     Path('out/upcoming-advanced-coverage.json').write_text(
         json.dumps({'fixtures': len(source['fixtures']), 'scored': len(accepted),
                     'skipped': skipped, 'status': 'research_only_not_published'}, indent=2))
