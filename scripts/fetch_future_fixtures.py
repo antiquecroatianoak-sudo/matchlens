@@ -60,6 +60,13 @@ def fetch(now=None,days=14):
                 fixtures.append({"id":identifier,"league":league,"season":season,
                     "round":str(m.get("round","unknown")),"kickoff_utc":kickoff.isoformat(),
                     "home":home,"away":away,"source":url})
+    from scripts.openligadb_future_fixtures import fetch_verified
+    verified_extra, extra_errors=fetch_verified(now=now,days=days)
+    errors.extend(extra_errors)
+    for fixture in verified_extra:
+        if fixture['id'] not in seen:
+            seen.add(fixture['id'])
+            fixtures.append(fixture)
     from scripts.football_data_fixture_candidates import fetch_candidates
     try:
         candidates=fetch_candidates(now=now,days=days)
