@@ -19,6 +19,11 @@ class ProspectiveSelectionTests(unittest.TestCase):
         self.assertEqual(sum(r["top25"] for r in result),2)
         self.assertTrue(all(r["round_certified"] for r in result))
 
+    def test_odd_sized_certified_round_selects_ceil_quarter(self):
+        rows=self.rows[:5]
+        result=select(rows,self.now,lambda *args:{r["id"] for r in rows})
+        self.assertEqual(sum(r["top25"] for r in result),2)
+
     def test_duplicate_fixture_blocks_certification(self):
         result=select(self.rows+[self.rows[0]],self.now,lambda *args:{r["id"] for r in self.rows})
         self.assertEqual(sum(r["top25"] for r in result),0)
