@@ -45,6 +45,11 @@ def normalize_team(name,known):
     matches=[t for t in known if key(t)==key(alias)]
     return matches[0] if len(matches)==1 else None
 
+def last_two_completed_seasons(match_date):
+    """Use only the last two fully completed July-June seasons before kickoff."""
+    last_start = match_date.year - 1 if match_date.month >= 7 else match_date.year - 2
+    return {f'{y}-{str((y + 1) % 100).zfill(2)}' for y in (last_start - 1, last_start)}
+
 def main():
     fixture_file=Path('out/future-fixtures.json')
     payload=json.loads(fixture_file.read_text())
@@ -59,7 +64,8 @@ def main():
         if historical_league not in by_league:
             skipped.append({'id':f['id'],'reason':'no corresponding historical league for '+f['league']})
             continue
-        past=[r for r in by_league[historical_league] if r['date']<cutoff]
+        eligible_seasons=last_two_completed_seasons(match_date)
+        past=[r for r in by_league[historical_league] if r['season'] in eligible_seasons and r['date']<cutoff]
         known={t for r in past for t in (r['home'],r['away'])}
         home=normalize_team(f['home'],known)
         away=normalize_team(f['away'],known)
