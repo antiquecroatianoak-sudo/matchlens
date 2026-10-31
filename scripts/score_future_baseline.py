@@ -43,6 +43,18 @@ def normalize_team(name,known):
         s=unicodedata.normalize("NFKD",s.casefold())
         return re.sub(r"[^a-z0-9]","", "".join(ch for ch in s if not unicodedata.combining(ch)))
     matches=[t for t in known if key(t)==key(alias)]
+    if len(matches)==1:
+        return matches[0]
+    if matches:
+        return None
+    # Match generic club prefixes only if the result is unambiguous.
+    generic={"fc","sc","sv","vfl","vfb","tsg","fk","cf","ac","as","club"}
+    def club_tokens(s):
+        normalized=unicodedata.normalize("NFKD",s.casefold())
+        normalized="".join(ch for ch in normalized if not unicodedata.combining(ch))
+        return tuple(t for t in re.findall(r"[a-z0-9]+",normalized) if t not in generic)
+    target=club_tokens(alias)
+    matches=[t for t in known if target and club_tokens(t)==target]
     return matches[0] if len(matches)==1 else None
 
 def last_two_completed_seasons(match_date):
