@@ -2,7 +2,7 @@
 import json,urllib.request,time
 from pathlib import Path
 
-LEAGUES=("en.1","it.1","es.1","de.1","fr.1","pt.1","be.1","nl.1","tr.1","gr.1")
+LEAGUES=("en.1","it.1","es.1","de.1","de.2","fr.1","pt.1","be.1","nl.1","tr.1","gr.1")
 SEASONS=tuple(f"{year}-{str((year+1)%100).zfill(2)}" for year in range(2010,2026))
 BASE="https://raw.githubusercontent.com/openfootball/football.json/master"
 def main():
