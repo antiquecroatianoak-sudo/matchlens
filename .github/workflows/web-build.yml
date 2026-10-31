@@ -1,0 +1,40 @@
+name: MatchLens web build
+on:
+  pull_request:
+    paths:
+      - 'app/**'
+      - 'db/**'
+      - 'package.json'
+      - 'tsconfig.json'
+      - 'next-env.d.ts'
+      - '.github/workflows/web-build.yml'
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npm run typecheck
+      - run: npm run build
+      - name: Smoke test anonymous access and private API protection
+        run: |
+          npm run start -- --hostname 127.0.0.1 --port 3210 > /tmp/matchlens-next.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+          for i in $(seq 1 40); do
+            if curl -fsS http://127.0.0.1:3210/ -o /tmp/matchlens-home.html; then break; fi
+            sleep 2
+          done
+          grep -q 'Prijavite se' /tmp/matchlens-home.html
+          test "$(curl -s -o /tmp/matchlens-forecast.json -w '%{http_code}' http://127.0.0.1:3210/api/prospective-forecasts)" = "401"
+          test "$(curl -s -o /tmp/matchlens-records.json -w '%{http_code}' http://127.0.0.1:3210/api/records)" = "401"
+          test "$(curl -s -o /tmp/matchlens-session.json -w '%{http_code}' -X POST -H 'Content-Type: application/json' -d '{}' http://127.0.0.1:3210/api/session)" = "400"
+          test "$(curl -s -o /tmp/matchlens-refresh.json -w '%{http_code}' -X PUT http://127.0.0.1:3210/api/session)" = "401"
+          test "$(curl -s -o /tmp/matchlens-origin.json -w '%{http_code}' -X DELETE -H 'Origin: https://example.invalid' http://127.0.0.1:3210/api/session)" = "403"
+          test "$(curl -s -o /tmp/matchlens-logout.json -w '%{http_code}' -X DELETE http://127.0.0.1:3210/api/session)" = "200"

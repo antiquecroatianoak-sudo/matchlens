@@ -121,3 +121,10 @@ Preostali razvojni posao: stvarni dopušteni podaci trenera i izravnih parova ig
 - Supabase projekt jhsakrbcdjabxkgdalta: izravni SQL potvrdio je točno 3 retka s top25=true. Edge Function prospective-sync v5 omogućila je naknadno označavanje postojećih, nepromijenjenih prognoza najmanje sat prije početka.
 - Sučelje app/workspace.tsx na main, SHA fc35ba3, prikazuje sve modele, Top25 na početku i broj odabira. Nije potvrđen build niti objava tog SHA na privatni Sites URL. Repozitorij nema package.json i README navodi da je platforma/hosting izvan repozitorija; GitHub Actions za Python analitiku nisu dokaz web objave.
 - Preostalo: potvrditi integraciju najnovijeg app/workspace.tsx u privatni Sites runtime, provesti stvarni build i provjeriti da prijavljeni korisnik vidi 3 odabira. Ne tvrditi da je web objava gotova bez tog dokaza.
+
+## 31.10.2026. — samostalna izgradnja (PR #49)
+- Na zasebnoj grani release-readiness-20261031 dodani package.json, tsconfig.json, next-env.d.ts, app/chatgpt-auth.ts, db/index.ts i web-build.yml.
+- GitHub Actions run 41209374657, SHA 83bef753: npm install, npm run typecheck i npm run build svi uspješni. Ovo potvrđuje kompilaciju, NE potvrđuje produkcijsku prijavu, rad baze ni objavu.
+- Novi auth adapter provjerava Supabase Auth token iz matchlens_access_token kolačića putem /auth/v1/user; bez valjanog tokena odbija pristup. Još nije povezan tok stvarne prijave niti potvrđena kompatibilnost sa starim Sites prijavama.
+- Privatni zapisi zahtijevaju zasebne MATCHLENS_RECORDS_DATABASE_URL i MATCHLENS_RECORDS_DATABASE_TOKEN; u njihovoj odsutnosti API vraća grešku umjesto pristupa tuđim podacima. Potrebno provjeriti shemu i migraciju prije uporabe.
+- Ne spajati PR #49 niti objavljivati kao dovršeno prije provjere prijave, stvarnog Supabase čitanja i mobilnog smoke testa; postojeća Sites aplikacija ostaje nepromijenjena.
