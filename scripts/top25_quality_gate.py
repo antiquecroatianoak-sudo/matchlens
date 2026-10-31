@@ -24,15 +24,16 @@ def assess(backtest, top25, evidence=None):
     if not isinstance(hits, int) or not 0 <= hits <= selected:
         raise ValueError("Invalid hit count")
     evidence = evidence or {}
-    # An assertion is valid only with independently auditable proof; flags alone
-    # cannot certify readiness.
-    missing = [name for name in REQUIRED_EVIDENCE
-               if not (isinstance(evidence.get(name), dict)
-                       and evidence[name].get("verified") is True
-                       and isinstance(evidence[name].get("source"), str)
-                       and evidence[name]["source"].strip())]
+    # User-provided flags, paths, or source labels are claims, not independent
+    # verification. Keep release blocked until a separate trusted verifier
+    # checks source contents, timestamps, coverage and provenance.
+    claimed = [name for name in REQUIRED_EVIDENCE
+               if isinstance(evidence.get(name), dict)
+               and evidence[name].get("verified") is True]
+    missing = list(REQUIRED_EVIDENCE)
     return {
-        "status": "blocked_for_publication" if missing else "requires_manual_release_review",
+        "status": "blocked_for_publication",
+        "untrusted_evidence_claims": claimed,
         "live_predictions_enabled": False,
         "research_accuracy": hits / selected,
         "research_selected": selected,
