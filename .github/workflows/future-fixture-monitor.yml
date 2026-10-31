@@ -2,7 +2,7 @@ name: MatchLens future fixture monitoring (research)
 on:
   workflow_dispatch:
   push:
-    branches: [main, 'feature/football-data-fixtures-source']
+    branches: [main, 'feature/verified-kickoff-provider-clean']
     paths:
       - '.github/workflows/future-fixture-monitor.yml'
       - 'scripts/fetch_future_fixtures.py'
