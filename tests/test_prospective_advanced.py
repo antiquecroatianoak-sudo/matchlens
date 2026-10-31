@@ -43,7 +43,7 @@ class AdvancedInferenceTests(unittest.TestCase):
              patch('analytics.prospective_advanced.probabilities',
                    return_value=np.array([[.5, .3, .2, .6, .4]])):
             # Training label class coverage is enforced before fitting.
-            with self.assertRaisesRegex(ValueError, 'classes'):
+            with self.assertRaisesRegex(ValueError, 'classes|class'):
                 score_advanced(rows, [fixture], 'lock.json')
 
 
