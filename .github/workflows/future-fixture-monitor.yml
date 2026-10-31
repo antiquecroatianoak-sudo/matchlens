@@ -29,7 +29,7 @@ on:
       - 'tests/test_select_prospective_model.py'
       - 'tests/test_recent_history_restore.py'
   schedule:
-    - cron: '17 7 * * *'
+    - cron: '17 * * * *'
 jobs:
   settle-previous-predictions:
     runs-on: ubuntu-latest
