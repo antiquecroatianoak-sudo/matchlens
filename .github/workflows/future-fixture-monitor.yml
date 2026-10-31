@@ -2,7 +2,7 @@ name: MatchLens future fixture monitoring (research)
 on:
   workflow_dispatch:
   push:
-    branches: [main, 'feature/prospective-cycle-20261031']
+    branches: [main, 'feature/advanced-live-model-20261031']
     paths:
       - '.github/workflows/future-fixture-monitor.yml'
       - 'scripts/fetch_future_fixtures.py'
@@ -16,6 +16,12 @@ on:
       - 'tests/test_live_poisson_mapping.py'
       - 'tests/test_bundesliga_team_aliases.py'
       - 'tests/test_freeze_prospective_predictions.py'
+      - 'tests/test_two_season_prospective_window.py'
+      - 'tests/test_prospective_factors.py'
+      - 'tests/test_prospective_model_lock.py'
+      - 'tests/test_prospective_advanced.py'
+      - 'analytics/prospective_advanced.py'
+      - 'scripts/score_future_advanced.py'
   schedule:
     - cron: '17 7 * * *'
 jobs:
@@ -29,6 +35,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install advanced model test dependencies
+        run: python -m pip install 'numpy>=1.26,<3' 'scipy>=1.11,<2' 'scikit-learn>=1.4,<2'
       - name: Test live fixture league mapping
         run: python -m unittest discover -s tests -p 'test_live_poisson_mapping.py'
       - name: Test Bundesliga team name aliases
@@ -37,12 +45,22 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_freeze_prospective_predictions.py'
       - name: Test prospective settlement
         run: python -m unittest discover -s tests -p 'test_prospective_settlement.py'
+      - name: Test two completed seasons for prospective inference
+        run: python -m unittest discover -s tests -p 'test_two_season_prospective_window.py'
+      - name: Test 84-feature prospective isolation
+        run: python -m unittest discover -s tests -p 'test_prospective_factors.py'
+      - name: Test advanced model lock validation
+        run: python -m unittest discover -s tests -p 'test_prospective_model_lock.py'
+      - name: Test two-season advanced inference
+        run: python -m unittest discover -s tests -p 'test_prospective_advanced.py'
       - name: Retrieve upcoming fixtures
         run: python -m scripts.fetch_future_fixtures
       - name: Restore scored historical matches
         run: python -m scripts.restore_openfootball_history
       - name: Score upcoming fixtures using past-only baseline
         run: python -m scripts.score_future_baseline
+      - name: Score upcoming fixtures with locked advanced challenger (research only)
+        run: python -m scripts.score_future_advanced
       - name: Freeze prospective predictions and research top 25 percent
         run: python -m scripts.freeze_prospective_predictions
       - name: Persist prospective snapshots in MatchLens database
@@ -58,6 +76,8 @@ jobs:
             out/future-fixtures.json
             out/upcoming-probabilities.jsonl
             out/upcoming-coverage.json
+            out/upcoming-advanced-probabilities.jsonl
+            out/upcoming-advanced-coverage.json
             out/prospective-predictions.jsonl
             out/prospective-summary.json
             out/prospective-settlement.json
