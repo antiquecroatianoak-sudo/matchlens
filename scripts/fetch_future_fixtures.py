@@ -60,7 +60,14 @@ def fetch(now=None,days=14):
                 fixtures.append({"id":identifier,"league":league,"season":season,
                     "round":str(m.get("round","unknown")),"kickoff_utc":kickoff.isoformat(),
                     "home":home,"away":away,"source":url})
+    from scripts.football_data_fixture_candidates import fetch_candidates
+    try:
+        candidates=fetch_candidates(now=now,days=days)
+    except Exception as exc:
+        candidates=[]
+        errors.append({"source":"football-data-fixtures","error":str(exc)[:120]})
     return {"fetched_at_utc":now.isoformat(),"fixtures":fixtures,
+        "unverified_time_candidates":candidates,
         "source_errors":errors,"skipped_without_verified_kickoff":date_only,
         "probabilities_available":False,
         "status":"fixtures_only_no_predictions_until_prematch_model_feed"}
@@ -73,6 +80,7 @@ def main():
     print("UPCOMING VERIFIED KICKOFFS",len(result["fixtures"]),
         "UNVERIFIED KICKOFFS",result["skipped_without_verified_kickoff"],
         "SOURCE ERRORS",len(result["source_errors"]))
+    print("FOOTBALL-DATA UNVERIFIED TIME CANDIDATES",len(result["unverified_time_candidates"]))
     print("NO LIVE SCORE OR BOOKMAKER ODDS: no verified feed connected")
 
 if __name__=="__main__":
