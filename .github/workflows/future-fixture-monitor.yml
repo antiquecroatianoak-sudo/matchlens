@@ -17,6 +17,7 @@ on:
       - 'tests/test_bundesliga_team_aliases.py'
       - 'tests/test_freeze_prospective_predictions.py'
       - 'tests/test_two_season_prospective_window.py'
+      - 'tests/test_prospective_factors.py'
   schedule:
     - cron: '17 7 * * *'
 jobs:
@@ -40,6 +41,8 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_prospective_settlement.py'
       - name: Test two completed seasons for prospective inference
         run: python -m unittest discover -s tests -p 'test_two_season_prospective_window.py'
+      - name: Test 84-feature prospective isolation
+        run: python -m unittest discover -s tests -p 'test_prospective_factors.py'
       - name: Retrieve upcoming fixtures
         run: python -m scripts.fetch_future_fixtures
       - name: Restore scored historical matches
