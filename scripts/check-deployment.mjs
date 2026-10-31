@@ -10,6 +10,7 @@ const checks=[
  {path:"/api/prospective-forecasts",expect:[401],label:"Forecasts protected"},
  {path:"/api/fixture-coverage",expect:[401],label:"Fixture data protected"},
  {path:"/api/records",expect:[401],label:"Private records protected"},
+ {path:"/api/session",expect:[405],label:"Session endpoint disallows GET"},
 ];
 let failed=0;
 for(const check of checks){
