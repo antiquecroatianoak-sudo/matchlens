@@ -16,3 +16,8 @@ assert(selectRoundRecommendations([make(0,1.30)],Array.from({length:4},(_,i)=>'m
 assert(selectRoundRecommendations([{...make(0),features:features.slice(0,10)}],Array.from({length:4},(_,i)=>'m'+i),{now,completeRound:true}).selected.length===0,'11 features');
 assert(selectRoundRecommendations([{...make(0),oddsTimestamp:'2026-10-31T09:30:00Z'}],Array.from({length:4},(_,i)=>'m'+i),{now,completeRound:true}).selected.length===0,'odds at generation');
 console.log('Canonical round selection regressions passed');
+
+const ids=Array.from({length:4},(_,i)=>'m'+i);
+assert(selectRoundRecommendations([{...make(0),market:'OU2.5'}],ids,{now,completeRound:true}).selected.length===0,'market mismatch');
+assert(selectRoundRecommendations([{...make(0),selection:'1X',p1:null,px:0.3,p2:0.7,prob:30}],ids,{now,completeRound:true}).selected.length===0,'missing synthetic probability');
+assert(selectRoundRecommendations([{...make(0),selection:'1X',p1:0.2,px:0.2,p2:0.6,prob:80}],ids,{now,completeRound:true}).selected.length===0,'synthetic probability mismatch');
