@@ -31,14 +31,14 @@ class AdvancedInferenceTests(unittest.TestCase):
         def fake_features(past, *_):
             self.assertTrue(all(r['id'] != 'leak' for r in past))
             return [{'match': r} for r in past]
-        with patch('analytics.prospective_advanced.read_factor_lock', return_value=selection), \\
+        with patch('analytics.prospective_advanced.read_factor_lock', return_value=selection), \
              patch('analytics.prospective_advanced.prepare_future_design',
-                   return_value=([{'features': [0.] * 84}], [])), \\
-             patch('analytics.prospective_advanced.features', side_effect=fake_features), \\
-             patch('analytics.prospective_advanced.build_design', return_value=np.zeros((200, 84))), \\
+                   return_value=([{'features': [0.] * 84}], [])), \
+             patch('analytics.prospective_advanced.features', side_effect=fake_features), \
+             patch('analytics.prospective_advanced.build_design', return_value=np.zeros((200, 84))), \
              patch('analytics.prospective_advanced.actual_array',
-                   return_value=np.tile([1., 0., 0., 1., 0.], (200, 1))), \\
-             patch('analytics.prospective_advanced.learner', return_value=Model()), \\
+                   return_value=np.tile([1., 0., 0., 1., 0.], (200, 1))), \
+             patch('analytics.prospective_advanced.learner', return_value=Model()), \
              patch('analytics.prospective_advanced.probabilities',
                    return_value=np.array([[.5, .3, .2, .6, .4]])):
             # Training label class coverage is enforced before fitting.
