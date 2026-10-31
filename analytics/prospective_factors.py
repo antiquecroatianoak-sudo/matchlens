@@ -24,7 +24,7 @@ def prepare_future_design(historical_rows, fixtures):
         past = [r for r in historical_rows if r['season'] in seasons and r['date'] < cutoff
                 and r['league'] == fixture['league']]
         known = {name for r in past for name in (r['home'], r['away'])}
-        if fixture['home'] not in known or fixture['away'] not in known:
+        if fixture['home'] not in known or fixture['away'] not in known or len(past) < 100:
             skipped.append({'id': fixture['id'], 'reason': 'unmapped or insufficient team history'})
             continue
         pending = {**fixture, 'season': f"{day.year if day.month >= 7 else day.year - 1}-{str((day.year + 1 if day.month >= 7 else day.year) % 100).zfill(2)}",
