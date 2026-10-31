@@ -14,12 +14,19 @@ export async function GET(){
  if(!url||!key)return Response.json({error:"Supabase veza nije konfigurirana."},{status:503});
  try{
   const fields="fixture_id,model_version,predicted_at_utc,kickoff_utc,league,home_team,away_team,probabilities,predicted_outcome,confidence,top25,actual_outcome,score_home,score_away";
-  const query=new URLSearchParams({select:fields,order:"kickoff_utc.asc",limit:"300"});
-  const res=await fetch(url+"/rest/v1/prospective_predictions?"+query.toString(),{
-   headers:{apikey:key,Authorization:"Bearer "+key},cache:"no-store"});
-  if(!res.ok)throw Error("Forecast query failed");
-  const rows=await res.json() as Forecast[];
-  if(!Array.isArray(rows))throw Error("Invalid forecast response");
+  // Supabase/PostgREST responses are page-limited. Retrieve every page rather than silently dropping forecasts.
+  const rows:Forecast[]=[];
+  const pageSize=1000;
+  for(let offset=0;;offset+=pageSize){
+   const query=new URLSearchParams({select:fields,order:"kickoff_utc.asc,fixture_id.asc",limit:String(pageSize),offset:String(offset)});
+   const res=await fetch(url+"/rest/v1/prospective_predictions?"+query.toString(),{
+    headers:{apikey:key,Authorization:"Bearer "+key},cache:"no-store"});
+   if(!res.ok)throw Error("Forecast query failed");
+   const page=await res.json() as Forecast[];
+   if(!Array.isArray(page))throw Error("Invalid forecast response");
+   rows.push(...page);
+   if(page.length<pageSize)break;
+  }
   const safeRows=rows.filter(row=>row&&typeof row.fixture_id==='string'&&typeof row.kickoff_utc==='string'&&typeof row.predicted_at_utc==='string'&&Date.parse(row.predicted_at_utc)<=Date.parse(row.kickoff_utc)-60*60*1000);
   return Response.json({forecasts:safeRows},{headers:{"Cache-Control":"private, no-store"}});
  }catch{return Response.json({error:"Spremljene prognoze trenutačno nisu dostupne."},{status:503});}
