@@ -32,6 +32,16 @@ class ProspectiveSelectionTests(unittest.TestCase):
         result=select(self.rows,self.now,lambda *args:None)
         self.assertEqual(sum(r["top25"] for r in result),0)
 
+    def test_less_than_one_hour_before_kickoff_is_excluded(self):
+        rows=[{**self.rows[0],"kickoff_utc":(self.now+timedelta(minutes=59)).isoformat()}]
+        self.assertEqual(select(rows,self.now,lambda *args:{"openligadb:0"}),[])
+
+    def test_exactly_one_hour_before_kickoff_is_allowed(self):
+        rows=[{**self.rows[0],"kickoff_utc":(self.now+timedelta(hours=1)).isoformat()}]
+        result=select(rows,self.now,lambda *args:{"openligadb:0"})
+        self.assertEqual(len(result),1)
+        self.assertTrue(result[0]["top25"])
+
     def test_no_after_kickoff(self):
         rows=[{**self.rows[0],"kickoff_utc":self.now.isoformat()}]
         self.assertEqual(select(rows,self.now,lambda *args:{"openligadb:0"}),[])
