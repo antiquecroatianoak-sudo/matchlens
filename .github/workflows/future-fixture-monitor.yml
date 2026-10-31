@@ -1,8 +1,16 @@
 name: MatchLens future fixture monitoring (research)
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/future-fixture-monitor.yml'
+      - 'scripts/score_future_baseline.py'
+      - 'scripts/fetch_future_fixtures.py'
+      - 'scripts/openligadb_future_fixtures.py'
+      - 'tests/test_future_team_mapping_regression.py'
   push:
-    branches: [main, 'feature/verified-kickoff-provider-clean']
+    branches: [main, 'fix/openligadb-historical-team-mapping']
     paths:
       - '.github/workflows/future-fixture-monitor.yml'
       - 'scripts/fetch_future_fixtures.py'
@@ -21,6 +29,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Verify fixture team mapping regressions
+        run: python -m unittest discover -s tests -p 'test_future_team_mapping_regression.py' -v
       - name: Retrieve upcoming fixtures
         run: python -m scripts.fetch_future_fixtures
       - name: Restore scored historical matches

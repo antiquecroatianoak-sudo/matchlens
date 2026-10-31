@@ -1,0 +1,28 @@
+name: MatchLens canonical selection regressions
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'app/prediction-ranking.ts'
+      - 'app/workspace.tsx'
+      - 'tests/canonical-round-selection.ts'
+      - '.github/workflows/canonical-selection-tests.yml'
+  push:
+    branches: ['fix/openligadb-historical-team-mapping', main]
+    paths:
+      - 'app/prediction-ranking.ts'
+      - 'app/workspace.tsx'
+      - 'tests/canonical-round-selection.ts'
+      - '.github/workflows/canonical-selection-tests.yml'
+  workflow_dispatch:
+jobs:
+  canonical-selection:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Execute canonical selection regressions
+        run: npx --yes --package tsx@4.20.6 tsx tests/canonical-round-selection.ts
