@@ -13,7 +13,7 @@ const headers=(key:string)=>({apikey:key,Authorization:"Bearer "+key,"Content-Ty
 function sameOrigin(req:Request){const origin=req.headers.get("origin");return !origin||origin===new URL(req.url).origin;}
 function endpoint(url:string,params:Record<string,string>){const u=new URL("/rest/v1/matchlens_records",url);Object.entries(params).forEach(([k,v])=>u.searchParams.set(k,v));return u;}
 export async function GET(){
- const c=await context();if(!c)return Response.json({error:"Potrebna je prijava."},{status:401});if("error" in c)return c.error;
+ const c=await context();if(!c)return Response.json([],{headers:{"Cache-Control":"no-store"}});if("error" in c)return c.error;
  try{
   type RecordRow={id:string;kind:string;payload:Record<string,unknown>;created_at:string};
   const rows:RecordRow[]=[];
