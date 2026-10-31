@@ -20,7 +20,7 @@ def settle(record, match):
     home,away=result.get("pointsTeam1"),result.get("pointsTeam2")
     if not isinstance(home,int) or not isinstance(away,int) or home<0 or away<0:
         return {"id":record["id"],"status":"invalid_final_score"}
-    actual="0" if home>away else ("2" if away>home else "1")
+    actual="home" if home>away else ("away" if away>home else "draw")
     prediction=str(record["predicted_outcome"])
     # Research Poisson index convention must be verified before accuracy claims.
     return {"id":record["id"],"status":"finished_unverified_outcome_mapping",
