@@ -12,6 +12,7 @@ on:
       - 'scripts/freeze_prospective_predictions.py'
       - 'scripts/settle_prospective_predictions.py'
       - 'scripts/sync_prospective_oidc.py'
+      - 'scripts/sync_prospective_settlement_oidc.py'
       - 'scripts/sync_future_fixtures_oidc.py'
       - 'tests/test_prospective_settlement.py'
       - 'tests/test_live_poisson_mapping.py'
@@ -100,6 +101,9 @@ jobs:
         run: python -m scripts.sync_prospective_oidc
       - name: Check provider results for snapshot (research)
         run: python -m scripts.settle_prospective_predictions
+      - name: Settle previously saved predictions after confirmed final scores
+        if: github.ref == 'refs/heads/main'
+        run: python -m scripts.sync_prospective_settlement_oidc
       - name: Publish fixture snapshot
         uses: actions/upload-artifact@v4
         with:
