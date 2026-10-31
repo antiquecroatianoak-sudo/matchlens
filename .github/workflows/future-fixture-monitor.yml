@@ -8,6 +8,7 @@ on:
       - 'scripts/fetch_future_fixtures.py'
       - 'scripts/score_future_baseline.py'
       - 'scripts/football_data_fixture_candidates.py'
+      - 'scripts/openligadb_future_fixtures.py'
   schedule:
     - cron: '17 7 * * *'
 jobs:
