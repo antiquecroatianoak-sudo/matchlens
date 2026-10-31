@@ -8,7 +8,8 @@ class AdvancedInferenceTests(unittest.TestCase):
     def test_rejects_unknown_team_before_training(self):
         fixture = {'id': 'upcoming', 'date': '2026-10-31', 'league': 'de.1',
                    'home': 'Missing', 'away': 'Other'}
-        scored, skipped = score_advanced([], [fixture], 'unused-lock')
+        with patch('analytics.prospective_advanced.read_factor_lock', return_value={}):
+            scored, skipped = score_advanced([], [fixture], 'unused-lock')
         self.assertEqual(scored, [])
         self.assertEqual(skipped[0]['id'], 'upcoming')
 
