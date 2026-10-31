@@ -1,0 +1,24 @@
+name: MatchLens web build
+on:
+  pull_request:
+    paths:
+      - 'app/**'
+      - 'db/**'
+      - 'package.json'
+      - 'tsconfig.json'
+      - 'next-env.d.ts'
+      - '.github/workflows/web-build.yml'
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npm run typecheck
+      - run: npm run build
