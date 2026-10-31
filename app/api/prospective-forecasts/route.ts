@@ -4,7 +4,7 @@ type Forecast={fixture_id:string;model_version:string;predicted_at_utc:string;ki
 
 export async function GET(){
  const url=process.env.SUPABASE_URL||process.env.NEXT_PUBLIC_SUPABASE_URL;
- const key=process.env.SUPABASE_SERVICE_ROLE_KEY;
+ const key=process.env.SUPABASE_PUBLISHABLE_KEY;
  if(!url||!key)return Response.json({error:"Supabase veza nije konfigurirana."},{status:503});
  try{
   const fields="fixture_id,model_version,predicted_at_utc,kickoff_utc,league,home_team,away_team,probabilities,predicted_outcome,confidence,top25,actual_outcome,score_home,score_away";
