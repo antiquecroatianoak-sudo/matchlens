@@ -22,6 +22,21 @@ export async function GET(){
    if(page.length<pageSize)break;
   }
   const safeRows=rows.filter(row=>row&&typeof row.fixture_id==='string'&&typeof row.kickoff_utc==='string'&&typeof row.predicted_at_utc==='string'&&Date.parse(row.predicted_at_utc)<=Date.parse(row.kickoff_utc)-60*60*1000);
-  return Response.json({forecasts:safeRows},{headers:{"Cache-Control":"private, no-store"}});
+  const liveScores:Record<string,{home:number;away:number;finished:boolean}>={};
+  const fixtureIds=[...new Set(safeRows.map(row=>row.fixture_id).filter(id=>/^openligadb:[0-9]+$/.test(id)))].slice(0,35);
+  await Promise.all(fixtureIds.map(async fixtureId=>{
+    try{
+      const id=fixtureId.split(':')[1];
+      const response=await fetch('https://api.openligadb.de/getmatchdata/'+id,{next:{revalidate:60}});
+      if(!response.ok)return;
+      const match=await response.json();
+      const scores=Array.isArray(match.matchResults)?match.matchResults:[];
+      const final=scores.find((item:{resultTypeID:number})=>item.resultTypeID===2);
+      const interim=scores.find((item:{resultTypeID:number})=>item.resultTypeID===1);
+      const score=match.matchIsFinished?final:(interim||final);
+      if(score&&Number.isInteger(score.pointsTeam1)&&Number.isInteger(score.pointsTeam2))liveScores[fixtureId]={home:score.pointsTeam1,away:score.pointsTeam2,finished:match.matchIsFinished===true};
+    }catch{}
+  }));
+  return Response.json({forecasts:safeRows.map(row=>({...row,live_score:liveScores[row.fixture_id]||null}))},{headers:{"Cache-Control":"private, no-store"}});
  }catch{return Response.json({error:"Spremljene prognoze trenutačno nisu dostupne."},{status:503});}
 }
