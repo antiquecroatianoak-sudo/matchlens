@@ -28,6 +28,14 @@ class ProspectiveSelectionTests(unittest.TestCase):
         result=select(self.rows+[self.rows[0]],self.now,lambda *args:{r["id"] for r in self.rows})
         self.assertEqual(sum(r["top25"] for r in result),0)
 
+    def test_partial_round_never_marks_top25(self):
+        rows=self.rows[:5]
+        expected={r['id'] for r in self.rows}
+        result=select(rows,self.now,lambda *args:expected)
+        self.assertEqual(len(result),5)
+        self.assertTrue(all(not r['top25'] for r in result))
+        self.assertTrue(all(not r['round_certified'] for r in result))
+
     def test_unavailable_provider_blocks_selection(self):
         result=select(self.rows,self.now,lambda *args:None)
         self.assertEqual(sum(r["top25"] for r in result),0)
