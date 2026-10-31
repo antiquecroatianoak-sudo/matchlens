@@ -47,19 +47,15 @@ def normalize_team(name,known):
 def main():
     fixture_file=Path('out/future-fixtures.json')
     payload=json.loads(fixture_file.read_text())
-    history,_=load_matches('data/openfootball')
+    history,_=load_matches('data/openfootball',extra_leagues=('de.2',))
     by_league=defaultdict(list)
     for row in history:by_league[row['league']].append(row)
     result=[];skipped=[]
     for f in payload['fixtures']:
         match_date=date.fromisoformat(f['kickoff_utc'][:10])
         cutoff=(match_date-timedelta(days=2)).isoformat()
-        # Only Bundesliga 1 has an explicitly verified historical league mapping.
-        # Do not score bl2 against first-division history or infer a league.
-        if f['league']=='bl2':
-            skipped.append({'id':f['id'],'reason':'unsupported historical league mapping: bl2'})
-            continue
-        league='de.1' if f['league']=='bl1' else f['league']
+        # Keep first and second Bundesliga histories strictly separated.
+        league={'bl1':'de.1','bl2':'de.2'}.get(f['league'],f['league'])
         past=[r for r in by_league[league] if r['date']<cutoff]
         known={t for r in past for t in (r['home'],r['away'])}
         home=normalize_team(f['home'],known)
