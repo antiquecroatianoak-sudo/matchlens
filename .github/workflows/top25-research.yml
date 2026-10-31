@@ -24,7 +24,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Restore real historical OpenFootball results
+      - name: Validate research Python scripts before downloading data\n        run: python -m py_compile analytics/backtest.py scripts/restore_openfootball_history.py scripts/top25_from_backtest.py scripts/top25_error_audit.py scripts/optimize_top25.py\n      - name: Restore real historical OpenFootball results
         run: python -m scripts.restore_openfootball_history
       - name: Restrict restored data to the model's declared seven seasons\n        run: |\n          python - <<'PY'\n          from pathlib import Path\n          from analytics.backtest import SPLITS\n          allowed=set(sum(SPLITS.values(),[]))\n          for path in Path('data/openfootball').glob('*.json'):\n              if path.name[:7] not in allowed:\n                  path.unlink()\n          PY\n      - name: Run existing chronological calibrated model research
         run: python -m analytics.backtest --data data/openfootball --output out/top25-baseline
