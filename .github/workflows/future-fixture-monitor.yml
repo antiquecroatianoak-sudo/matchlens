@@ -10,6 +10,8 @@ on:
       - 'scripts/football_data_fixture_candidates.py'
       - 'scripts/openligadb_future_fixtures.py'
       - 'scripts/freeze_prospective_predictions.py'
+      - 'scripts/settle_prospective_predictions.py'
+      - 'tests/test_prospective_settlement.py'
       - 'tests/test_live_poisson_mapping.py'
       - 'tests/test_freeze_prospective_predictions.py'
   schedule:
@@ -28,6 +30,8 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_live_poisson_mapping.py'
       - name: Test prospective snapshot safety
         run: python -m unittest discover -s tests -p 'test_freeze_prospective_predictions.py'
+      - name: Test prospective settlement
+        run: python -m unittest discover -s tests -p 'test_prospective_settlement.py'
       - name: Retrieve upcoming fixtures
         run: python -m scripts.fetch_future_fixtures
       - name: Restore scored historical matches
@@ -36,6 +40,8 @@ jobs:
         run: python -m scripts.score_future_baseline
       - name: Freeze prospective predictions and research top 25 percent
         run: python -m scripts.freeze_prospective_predictions
+      - name: Check provider results for snapshot (research)
+        run: python -m scripts.settle_prospective_predictions
       - name: Publish fixture snapshot
         uses: actions/upload-artifact@v4
         with:
@@ -46,4 +52,5 @@ jobs:
             out/upcoming-coverage.json
             out/prospective-predictions.jsonl
             out/prospective-summary.json
+            out/prospective-settlement.json
           retention-days: 30
