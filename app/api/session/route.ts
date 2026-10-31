@@ -13,6 +13,10 @@ export async function POST(req:Request){
  if(!data.access_token||!data.refresh_token)return Response.json({error:"Prijava nije uspjela."},{status:502});
  const verified=await fetch(new URL("/auth/v1/user",url),{headers:{apikey:key,Authorization:"Bearer "+data.access_token},cache:"no-store"});
  if(!verified.ok)return Response.json({error:"Nije moguće potvrditi korisnika."},{status:401});
+ const identity=await verified.json() as {id?:string};
+ const owner=process.env.MATCHLENS_ALLOWED_USER_ID;
+ if(!owner)return Response.json({error:"Privatni vlasnik nije konfiguriran."},{status:503});
+ if(identity.id!==owner)return Response.json({error:"Pristup nije dopušten."},{status:403});
  const jar=await cookies();jar.set("matchlens_access_token",data.access_token,{httpOnly:true,secure:process.env.NODE_ENV==="production",sameSite:"lax",path:"/",maxAge:Math.min(Math.max(data.expires_in||3600,60),3600)});
  jar.set("matchlens_refresh_token",data.refresh_token,{httpOnly:true,secure:process.env.NODE_ENV==="production",sameSite:"lax",path:"/api/session",maxAge:60*60*24*30});
  return Response.json({ok:true},{headers:{"Cache-Control":"no-store"}});
@@ -34,6 +38,12 @@ export async function PUT(req:Request){
  if(!res.ok){jar.delete("matchlens_access_token");jar.delete("matchlens_refresh_token");return Response.json({error:"Sesija je istekla. Prijavite se ponovno."},{status:401});}
  const data=await res.json() as {access_token?:string;refresh_token?:string;expires_in?:number};
  if(!data.access_token||!data.refresh_token)return Response.json({error:"Obnova sesije nije uspjela."},{status:502});
+ const verified=await fetch(new URL("/auth/v1/user",url),{headers:{apikey:key,Authorization:"Bearer "+data.access_token},cache:"no-store"});
+ if(!verified.ok)return Response.json({error:"Nije moguće potvrditi korisnika."},{status:401});
+ const identity=await verified.json() as {id?:string};
+ const owner=process.env.MATCHLENS_ALLOWED_USER_ID;
+ if(!owner)return Response.json({error:"Privatni vlasnik nije konfiguriran."},{status:503});
+ if(identity.id!==owner)return Response.json({error:"Pristup nije dopušten."},{status:403});
  jar.set("matchlens_access_token",data.access_token,{httpOnly:true,secure:process.env.NODE_ENV==="production",sameSite:"lax",path:"/",maxAge:Math.min(Math.max(data.expires_in||3600,60),3600)});
  jar.set("matchlens_refresh_token",data.refresh_token,{httpOnly:true,secure:process.env.NODE_ENV==="production",sameSite:"lax",path:"/api/session",maxAge:60*60*24*30});
  return Response.json({ok:true},{headers:{"Cache-Control":"no-store"}});
