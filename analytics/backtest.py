@@ -16,11 +16,11 @@ def fulltime(item):
     score=item.get("score",{})
     return score.get("ft") if isinstance(score,dict) else score if isinstance(score,list) else None
 
-def load_matches(folder):
+def load_matches(folder, extra_leagues=()):
     rows=[];manifest=[];seen=set();quality=[]
     for path in sorted(Path(folder).glob('*.json')):
         raw=path.read_bytes();season=path.name[:7];league=path.name[8:-5];dataset=json.loads(raw)
-        if league not in LEAGUES:continue
+        if league not in LEAGUES and league not in extra_leagues:continue
         scored=sum(bool(fulltime(m)) for m in dataset['matches'])
         quality.append(dict(league=league,season=season,listed=len(dataset['matches']),scored=scored,missing_results=len(dataset['matches'])-scored))
         manifest.append(dict(file=path.name,sha256=hashlib.sha256(raw).hexdigest(),url=f'https://github.com/openfootball/football.json/blob/master/{season}/{league}.json',supplemental_source=dataset.get('supplemental_source'),transformed=bool(dataset.get('supplemental_source'))))
