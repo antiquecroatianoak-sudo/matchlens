@@ -1,0 +1,100 @@
+name: MatchLens top25 evaluator smoke test
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/optimize_top25.py'
+      - 'scripts/top25_from_backtest.py'
+      - 'scripts/top25_error_audit.py'
+      - 'scripts/export_trained_research_model.py'
+      - 'scripts/evaluate_top25.py'
+      - '.github/workflows/top25-evaluator.yml'
+  push:
+    paths:
+      - 'scripts/evaluate_top25.py'
+      - '.github/workflows/top25-evaluator.yml'
+jobs:
+  evaluator:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile all research scripts
+        run: python -m py_compile scripts/evaluate_top25.py scripts/optimize_top25.py scripts/top25_from_backtest.py scripts/top25_error_audit.py scripts/export_trained_research_model.py
+      - name: Verify selection logic using synthetic complete rounds
+        run: |
+          python - <<'PY'
+          import csv, subprocess, tempfile
+          from pathlib import Path
+          with tempfile.TemporaryDirectory() as d:
+              p = Path(d) / "predictions.csv"
+              fields = ["kickoff","league","season","round","match_id","predicted_probability","actual_correct","valid_parameters","round_complete"]
+              with p.open("w",newline="") as f:
+                  w=csv.DictWriter(f,fieldnames=fields); w.writeheader()
+                  for i in range(20):
+                      w.writerow(dict(kickoff="2025-01-01T12:00:00Z",league="A",season="2024",round="1",match_id=str(i),predicted_probability=0.99-i*0.01,actual_correct=int(i<5),valid_parameters=11,round_complete="true"))
+              out=subprocess.check_output(["python","scripts/evaluate_top25.py",str(p)],text=True)
+              assert "selected=5 hits=5 accuracy=100.0000%" in out, out
+          PY
+      - name: Verify optimizer on synthetic chronological rounds
+        run: |
+          python - <<'PY'
+          import csv, json, subprocess, tempfile
+          from pathlib import Path
+          with tempfile.TemporaryDirectory() as d:
+              p=Path(d)/"history.csv"
+              fields=["kickoff","league","season","round","match_id","predicted_probability","actual_correct","valid_parameters","round_complete","prediction_created_at"]
+              with p.open("w",newline="") as f:
+                  w=csv.DictWriter(f,fieldnames=fields);w.writeheader()
+                  for rnd in range(1,21):
+                      for i in range(8):
+                          w.writerow(dict(kickoff=f"2025-01-{rnd:02d}T15:00:00Z",league="A",season="2024",round=rnd,match_id=f"{rnd}-{i}",predicted_probability=0.9-i*0.05,actual_correct=int(i<2),valid_parameters=11,round_complete="true",prediction_created_at=f"2025-01-{rnd:02d}T09:00:00Z"))
+              out=Path(d)/"result.json"
+              subprocess.run(["python","scripts/optimize_top25.py",str(p),"--output",str(out)],check=True)
+              result=json.loads(out.read_text())
+              assert result["training"]["selected"]==28,result
+              assert result["holdout"]["selected"]==12,result
+              assert result["holdout"]["accuracy"]==1,result
+          PY
+      - name: Verify diagnostic accounting and no hindsight selection
+        run: |
+          python - <<'PY'
+          import json, subprocess, tempfile
+          from pathlib import Path
+          with tempfile.TemporaryDirectory() as d:
+              source=Path(d)/"predictions.jsonl"
+              with source.open("w") as f:
+                  for i in range(8):
+                      row={"id":str(i),"league":"L","season":"2024","round":"1",
+                           "prob":{"home":0.9-i*0.05,"draw":0.03,"away":0.02,"over2.5":0.01,"under2.5":0.04},
+                           "actual":{"home":int(i in (0,2,4)),"draw":0,"away":0,"over2.5":0,"under2.5":0}}
+                      f.write(json.dumps(row)+"\n")
+              report=Path(d)/"report.json"
+              audit=Path(d)/"audit.json"
+              subprocess.run(["python","scripts/top25_from_backtest.py",str(source),"--output",str(report)],check=True)
+              subprocess.run(["python","scripts/top25_error_audit.py",str(source),"--output",str(audit)],check=True)
+              a=json.loads(audit.read_text())["totals"]
+              b=json.loads(report.read_text())
+              assert (a["selected"],a["selected_hits"],a["not_selected"],a["not_selected_hits"])==(2,1,6,2),a
+              assert (b["selected_observed_top_quarter"],b["hits"])==(2,1),b
+          PY
+      - name: Verify research model export rejects overlapping seasons
+        run: |
+          python - <<'PY'
+          import json, subprocess, tempfile
+          from pathlib import Path
+          with tempfile.TemporaryDirectory() as d:
+              p=Path(d)/"backtest.json"
+              report={"status":"research_only","splits":{"warmup":["2019"],"tuning":["2020"],"calibration":["2021"],"test":["2022"]},"selected_config":{"window":10},"trials":[{"config":{"window":10}}],"configurations_tested":1,"selection_metric":"brier"}
+              p.write_text(json.dumps(report))
+              target=Path(d)/"model.json"
+              subprocess.run(["python","scripts/export_trained_research_model.py",str(p),"--output",str(target)],check=True)
+              assert json.loads(target.read_text())["selected_config"]=={"window":10}
+              report["splits"]["test"]=["2020"]
+              p.write_text(json.dumps(report))
+              result=subprocess.run(["python","scripts/export_trained_research_model.py",str(p),"--output",str(target)],capture_output=True)
+              assert result.returncode!=0
+          PY

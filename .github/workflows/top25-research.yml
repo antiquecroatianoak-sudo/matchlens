@@ -1,0 +1,62 @@
+name: MatchLens scheduled top25 historical research
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/top25-research.yml'
+      - 'analytics/backtest.py'
+      - 'scripts/restore_openfootball_history.py'
+      - 'scripts/optimize_top25.py'
+      - 'scripts/export_trained_research_model.py'
+      - 'scripts/top25_from_backtest.py'
+      - 'scripts/top25_error_audit.py'
+  schedule:
+    - cron: '17 */6 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: top25-research
+  cancel-in-progress: false
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate research Python scripts before downloading data
+        run: python -m py_compile analytics/backtest.py scripts/restore_openfootball_history.py scripts/top25_from_backtest.py scripts/top25_error_audit.py scripts/optimize_top25.py scripts/export_trained_research_model.py
+      - name: Restore real historical OpenFootball results
+        run: python -m scripts.restore_openfootball_history
+      - name: Restrict restored data to the model's declared seven seasons
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from analytics.backtest import SPLITS
+          allowed=set(sum(SPLITS.values(),[]))
+          for path in Path('data/openfootball').glob('*.json'):
+              if path.name[:7] not in allowed:
+                  path.unlink()
+          PY
+      - name: Run existing chronological calibrated model research
+        run: python -m analytics.backtest --data data/openfootball --output out/top25-baseline
+      - name: Export automatically trained research model parameters
+        run: python scripts/export_trained_research_model.py out/top25-baseline/backtest.json --output out/top25-baseline/trained-model.json
+      - name: Evaluate top quarter from frozen historical predictions
+        run: python scripts/top25_from_backtest.py out/top25-baseline/predictions.jsonl --output out/top25-baseline/top25-report.json
+      - name: Audit missed selections versus unselected correct picks
+        run: python scripts/top25_error_audit.py out/top25-baseline/predictions.jsonl --output out/top25-baseline/top25-errors.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: top25-historical-research
+          path: |
+            out/source_restore.json
+            out/top25-baseline/backtest.json
+            out/top25-baseline/top25-report.json
+            out/top25-baseline/top25-errors.json
+            out/top25-baseline/trained-model.json
+          retention-days: 30
