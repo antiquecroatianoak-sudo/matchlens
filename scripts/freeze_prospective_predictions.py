@@ -72,6 +72,16 @@ def main():
     created_at = datetime.now(timezone.utc)
     selected = select(rows, created_at)
     Path("out/prospective-predictions.jsonl").write_text("".join(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n" for row in selected))
+    rounds = {}
+    for row in selected:
+        key = (row["league"], str(row["season"]), str(row["round"]))
+        group = rounds.setdefault(key, {"league": key[0], "season": key[1],
+            "round": key[2], "scored": 0, "selected": 0, "certified": False})
+        group["scored"] += 1
+        group["selected"] += int(row["top25"])
+        group["certified"] = bool(row["round_certified"])
+    round_coverage = sorted(rounds.values(), key=lambda g: (g["league"], g["season"], g["round"]))
+    Path("out/prospective-round-coverage.json").write_text(json.dumps(round_coverage, indent=2) + "\\n")
     summary = {"generated_at_utc": created_at.isoformat(), "scored": len(rows),
                "eligible": len(selected), "top25": sum(r["top25"] for r in selected),
                "certified_rounds": len({(r["league"],r["season"],r["round"]) for r in selected if r["round_certified"]}),
