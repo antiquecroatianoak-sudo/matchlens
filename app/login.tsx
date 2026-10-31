@@ -1,11 +1,7 @@
 "use client";
 import {useEffect,useState} from "react";
 export default function Login(){
- useEffect(()=>{fetch("/api/session",{method:"PUT"}).then(r=>{if(r.ok)window.location.reload();}).catch(()=>{});},[]);
- const [email,setEmail]=useState(""),[password,setPassword]=useState(""),[error,setError]=useState(""),[busy,setBusy]=useState(false);
- async function submit(e:React.FormEvent){e.preventDefault();setBusy(true);setError("");
- try{const r=await fetch("/api/session",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email,password})});const d=await r.json();if(!r.ok)throw Error(d.error||"Prijava nije uspjela.");window.location.reload();}
- catch(e){setError(e instanceof Error?e.message:"Prijava nije uspjela.");}finally{setBusy(false);}}
- const fieldStyle={display:"block",width:"100%",boxSizing:"border-box" as const,minHeight:48,fontSize:16,padding:12,margin:"8px 0 16px"};
- return <main style={{maxWidth:420,width:"100%",boxSizing:"border-box",margin:"min(12vh,72px) auto",padding:"24px 20px",fontFamily:"system-ui"}}><h1>MatchLens</h1><p>Prijavite se za pristup privatnoj analizi utakmica.</p><form onSubmit={submit}><label>E-mail<input type="email" required autoComplete="username" value={email} onChange={e=>setEmail(e.target.value)} style={fieldStyle}/></label><label>Lozinka<input type="password" required autoComplete="current-password" value={password} onChange={e=>setPassword(e.target.value)} style={fieldStyle}/></label><button type="submit" disabled={busy} style={{padding:12,width:"100%",minHeight:48,fontSize:16}}>{busy?"Prijava...":"Prijavi se"}</button>{error&&<p role="alert">{error}</p>}</form></main>;
+ const [error,setError]=useState("");
+ useEffect(()=>{fetch("/api/session",{method:"PUT"}).then(r=>{if(r.ok)location.reload()}).catch(()=>{})},[]);
+ return <main style={{maxWidth:420,margin:"12vh auto",padding:24,fontFamily:"system-ui"}}><h1>MatchLens</h1><p>Privatni pristup aplikaciji.</p><a href="/api/auth/google" style={{display:"block",padding:16,textAlign:"center",border:"1px solid #888",borderRadius:10,fontWeight:700}}>Prijavi se putem Googlea</a><p>Pristup je dopušten samo vlasniku aplikacije.</p>{error&&<p role="alert">{error}</p>}</main>
 }
