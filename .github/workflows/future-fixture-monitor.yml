@@ -61,6 +61,25 @@ jobs:
         run: python -m scripts.score_future_baseline
       - name: Score upcoming fixtures with locked advanced challenger (research only)
         run: python -m scripts.score_future_advanced
+      - name: Report verified fixture and model coverage before persistence
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          fixtures=json.loads(Path('out/future-fixtures.json').read_text())
+          baseline=json.loads(Path('out/upcoming-coverage.json').read_text())
+          advanced=json.loads(Path('out/upcoming-advanced-coverage.json').read_text())
+          print('VERIFIED FUTURE FIXTURES:',len(fixtures['fixtures']))
+          print('BASELINE SCORED:',baseline['scored'])
+          print('ADVANCED SCORED:',advanced['scored'])
+          print('SOURCE ERRORS:',json.dumps(fixtures['source_errors'])[:3000])
+          print('BASELINE SKIPS:',json.dumps(baseline['skipped'])[:3000])
+          print('ADVANCED SKIPS:',json.dumps(advanced['skipped'])[:3000])
+          if not fixtures['fixtures']:
+              raise SystemExit('No verified future fixtures from providers; cannot create genuine predictions')
+          if not baseline['scored']:
+              raise SystemExit('No scoreable future fixtures; inspect mapping and historical coverage')
+          PY
       - name: Freeze prospective predictions and research top 25 percent
         run: python -m scripts.freeze_prospective_predictions
       - name: Persist prospective snapshots in MatchLens database
