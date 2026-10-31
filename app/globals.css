@@ -14,3 +14,21 @@
 .top-predictions .prediction-card{border-radius:10px}
 .prediction-nav{display:grid;gap:7px;margin-top:16px}
 @media(max-width:800px){aside{width:100%;height:auto;position:sticky;top:0;inset:auto;padding:10px 12px;z-index:30;box-shadow:0 3px 16px #152b3214}aside .brand{font-size:18px}aside .workspace-label,aside .side-bottom{display:none}aside nav,aside .prediction-nav{display:flex;overflow-x:auto;gap:6px;scrollbar-width:thin;margin:8px 0 0;padding-bottom:4px}aside .nav-item{flex:0 0 auto;padding:10px 12px;font-size:11px;white-space:nowrap;border:1px solid var(--line)}aside .nav-item svg{width:17px;height:17px}.main{margin-left:0}header{height:auto;min-height:48px;padding:10px 15px}main{padding:18px 12px 0}.page-heading{margin-bottom:15px}.page-heading h1{font-size:21px}.top-predictions .panel-heading{padding:14px}.top-predictions .prediction-list{padding:8px}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.two-col,.factor-grid{grid-template-columns:1fr}.hero-content{width:100%}.pitch{opacity:.18}.header-actions .small-btn{padding:8px}.prediction-card{min-width:0}}
+
+/* Dark navy and electric blue visual identity from the original MatchLens reference */
+:root{--bg:#050d1c;--ink:#edf5ff;--muted:#9aaccc;--line:#244266;--green:#338df2;--navy:#07162c}
+body{background:radial-gradient(ellipse at 85% 5%,#102d58 0%,transparent 37%),linear-gradient(145deg,#07162b,#020814 70%);color:var(--ink)}
+aside,header,.panel,.stat,.record,.factor,.empty{background:#0b1930;color:#edf5ff;border-color:#244266}
+aside{background:linear-gradient(155deg,#0a1e3b,#030a17)}header{background:#071225}
+.brand-icon,.primary{background:linear-gradient(135deg,#3198f9,#1456b8);border-color:#358ce7}
+.nav-item,.page-heading p,.muted,.prediction-info small,.stat small,.record-foot,.details{color:#a4b5d1}
+.nav-item.active,.nav-item:hover{background:#15345b;color:#f3f8ff}
+.secondary,.tag,.side-card,.user>span,.search,.record,.modal{background:#122540;color:#dceaff;border-color:#2b4b74}
+.top-predictions:first-of-type{border:1px solid #3d90e6;box-shadow:0 0 0 1px #2361a450,0 12px 45px #020a1890}
+.top-predictions .panel-heading,.panel-heading,.record-foot{border-color:#28476b}
+.hero{background:linear-gradient(125deg,#102f5a,#050f24)}.hero-button{background:#123b70;border-color:#3478c5}
+.prediction-card{background:#0d203b;border:1px solid #284b78;color:#f1f7ff}
+.prediction-rank{color:#65b3ff}.prediction-value strong,.text-button{color:#75bdff}
+.top-intro{padding:15px 20px 0}.prediction-empty{padding:24px;color:#b3c5dd}
+input,select,textarea{color:inherit;background:#10233c;border-color:#31517a}
+@media(max-width:800px){aside{background:#07172d}header{background:#071225}.top-predictions .prediction-card{display:flex;gap:10px;flex-wrap:wrap}.prediction-info{min-width:0;flex:1 1 170px}.prediction-value{flex:0 0 auto}.top-intro{padding:12px 14px 0}}
