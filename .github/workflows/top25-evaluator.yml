@@ -7,6 +7,7 @@ on:
       - 'scripts/optimize_top25.py'
       - 'scripts/top25_from_backtest.py'
       - 'scripts/top25_error_audit.py'
+      - 'scripts/export_trained_research_model.py'
       - 'scripts/evaluate_top25.py'
       - '.github/workflows/top25-evaluator.yml'
   push:
@@ -22,7 +23,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Compile all research scripts
-        run: python -m py_compile scripts/evaluate_top25.py scripts/optimize_top25.py scripts/top25_from_backtest.py scripts/top25_error_audit.py
+        run: python -m py_compile scripts/evaluate_top25.py scripts/optimize_top25.py scripts/top25_from_backtest.py scripts/top25_error_audit.py scripts/export_trained_research_model.py
       - name: Verify selection logic using synthetic complete rounds
         run: |
           python - <<'PY'
@@ -79,4 +80,21 @@ jobs:
               b=json.loads(report.read_text())
               assert (a["selected"],a["selected_hits"],a["not_selected"],a["not_selected_hits"])==(2,1,6,2),a
               assert (b["selected_observed_top_quarter"],b["hits"])==(2,1),b
+          PY
+      - name: Verify research model export rejects overlapping seasons
+        run: |
+          python - <<'PY'
+          import json, subprocess, tempfile
+          from pathlib import Path
+          with tempfile.TemporaryDirectory() as d:
+              p=Path(d)/"backtest.json"
+              report={"status":"research_only","splits":{"warmup":["2019"],"tuning":["2020"],"calibration":["2021"],"test":["2022"]},"selected_config":{"window":10},"trials":[{"config":{"window":10}}],"configurations_tested":1,"selection_metric":"brier"}
+              p.write_text(json.dumps(report))
+              target=Path(d)/"model.json"
+              subprocess.run(["python","scripts/export_trained_research_model.py",str(p),"--output",str(target)],check=True)
+              assert json.loads(target.read_text())["selected_config"]=={"window":10}
+              report["splits"]["test"]=["2020"]
+              p.write_text(json.dumps(report))
+              result=subprocess.run(["python","scripts/export_trained_research_model.py",str(p),"--output",str(target)],capture_output=True)
+              assert result.returncode!=0
           PY
