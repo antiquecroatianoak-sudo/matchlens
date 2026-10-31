@@ -70,7 +70,7 @@ jobs:
                       row={"id":str(i),"league":"L","season":"2024","round":"1",
                            "prob":{"home":0.9-i*0.05,"draw":0.03,"away":0.02,"over2.5":0.01,"under2.5":0.04},
                            "actual":{"home":int(i in (0,2,4)),"draw":0,"away":0,"over2.5":0,"under2.5":0}}
-                      f.write(json.dumps(row)+"\\n")
+                      f.write(json.dumps(row)+"\n")
               report=Path(d)/"report.json"
               audit=Path(d)/"audit.json"
               subprocess.run(["python","scripts/top25_from_backtest.py",str(source),"--output",str(report)],check=True)
