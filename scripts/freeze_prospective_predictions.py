@@ -28,7 +28,7 @@ def select(rows, created_at):
     all_rows = []
     for group in groups.values():
         group.sort(key=lambda r: (-r["confidence"], r["kickoff_utc"], r["id"]))
-        count = max(1, math.floor(len(group) * .25)) if len(group) >= 4 else 0
+        count = 0  # No Top 25 publication without independently certified complete round.
         for index, row in enumerate(group):
             row["top25"] = index < count
             row["selection_group_size"] = len(group)
@@ -44,7 +44,7 @@ def main():
     out.write_text("".join(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n" for row in selected))
     summary = {"generated_at_utc": created_at.isoformat(), "scored": len(rows),
                "eligible": len(selected), "top25": sum(r["top25"] for r in selected),
-               "warning": "Research only. Incomplete rounds and no durable database persistence."}
+               "warning": "Research only. Top25 disabled until independently certified complete rounds; no durable database persistence."}
     Path("out/prospective-summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     print("PROSPECTIVE SNAPSHOT", summary)
 
