@@ -17,6 +17,7 @@ export async function GET(){
   if(!res.ok)throw Error("Forecast query failed");
   const rows=await res.json() as Forecast[];
   if(!Array.isArray(rows))throw Error("Invalid forecast response");
-  return Response.json({forecasts:rows},{headers:{"Cache-Control":"private, no-store"}});
+  const safeRows=rows.filter(row=>row&&typeof row.fixture_id==='string'&&typeof row.kickoff_utc==='string'&&typeof row.predicted_at_utc==='string'&&Date.parse(row.predicted_at_utc)<Date.parse(row.kickoff_utc));
+  return Response.json({forecasts:safeRows},{headers:{"Cache-Control":"private, no-store"}});
  }catch{return Response.json({error:"Spremljene prognoze trenutačno nisu dostupne."},{status:503});}
 }
