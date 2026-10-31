@@ -1,6 +1,7 @@
 "use client";
-import {useState} from "react";
+import {useEffect,useState} from "react";
 export default function Login(){
+ useEffect(()=>{fetch("/api/session",{method:"PUT"}).then(r=>{if(r.ok)window.location.reload();}).catch(()=>{});},[]);
  const [email,setEmail]=useState(""),[password,setPassword]=useState(""),[error,setError]=useState(""),[busy,setBusy]=useState(false);
  async function submit(e:React.FormEvent){e.preventDefault();setBusy(true);setError("");
  try{const r=await fetch("/api/session",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email,password})});const d=await r.json();if(!r.ok)throw Error(d.error||"Prijava nije uspjela.");window.location.reload();}
